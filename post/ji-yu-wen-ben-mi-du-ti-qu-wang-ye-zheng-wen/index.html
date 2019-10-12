@@ -1,0 +1,345 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>常名斋</title>
+<meta name="description" content="万物有名，常名斋，藏名斋。" />
+<link rel="shortcut icon" href="https://x956606865.github.io/normal-balance//favicon.ico?v=1570879491003">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<link rel="stylesheet" href="https://x956606865.github.io/normal-balance//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="常名斋 - Atom Feed" href="https://x956606865.github.io/normal-balance//atom.xml">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100208259-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100208259-1');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://x956606865.github.io/normal-balance/">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://x956606865.github.io/normal-balance//images/avatar.png?v=1570879491003" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">常名斋</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0">实现</a></li>
+<li><a href="#%E8%BF%9B%E4%B8%80%E6%AD%A5%E6%80%9D%E8%80%83">进一步思考</a>
+<ul>
+<li><a href="#md%E7%9A%84%E8%BD%AC%E6%8D%A2">MD的转换</a></li>
+<li><a href="#md%E7%9A%84%E5%86%99%E4%BD%9C%E4%B9%A0%E6%83%AF">MD的写作习惯</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BF%AE%E6%94%B9">修改</a></li>
+<li><a href="#%E7%BB%93%E8%AF%AD">结语</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">至大无外，至小无内。</div>
+    <a class="rss" href="https://x956606865.github.io/normal-balance//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">基于文本密度提取网页正文</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2019-10-11 / 8 min read
+        </div>
+        
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://x956606865.github.io/normal-balance//post-images/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen.jpg" alt="">
+        
+        <div class="post-content yue">
+          <p>Link:<a href="https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664">https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664</a></p>
+<h2 id="前言">前言</h2>
+<p>近期看到了一篇蛮不错的论文《<a href="http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637061287807268750&amp;DBCODE=CJFQ&amp;TABLEName=CJFDLAST2019&amp;FileName=GWDZ201908029&amp;RESULT=1&amp;SIGN=Ru92HQCAbOX5F3X475n1xKVQA7I%3d&amp;UID=WEEvREcwSlJHSldTTEYzVTE0ZUZRMGFJdytrZXZHWmJkaE5oc3RlMlJyMD0%3d%249A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&amp;autoLogin=0">基于文本及符号密度的网页正文提取方法</a>》，因为刚好在学习Rust写hello world，想想干脆试试能不能实现这个思路吧，于是开始尝试代码实现。</p>
+<h2 id="思路">思路</h2>
+<p>总的来说，这篇论文分析了大部分新闻网站页面，思考了其中的数学共性。虽然不同的网站，结构千变万化，但是从读者的直观印象来说，正文部分是十分明显的。打开一个新闻网页，我们总能很轻松的找出正文在哪里，而不会把广告或者页脚什么的当成正文。</p>
+<p>按照这个思路走下去，我们大脑是如何识别正文的呢？首先，文本的数量必然是关键变量之一。其次就是文本的密集程度，正文的内容总是密集耦合在一起的，而不是部分在页面上方，部分在右下角这样分散排布的，正文总是会被一个“框”给包裹起来成为一个整体。对于读者来说，这个“框”是设计上的分割线，对于网页来说，这个“框”就是所有正文所公共的父级DOM节点。</p>
+<p>假如我们能抽象出一个公式来模拟大脑的识别，那么我们就能像读者找出正文所在的“框”一样，找出包裹着正文的最近的DOM节点，从而精确提取出正文。</p>
+<h2 id="实现">实现</h2>
+<ol>
+<li>
+<p>DOM树生成</p>
+<p>首先根据拿到的网页源代码，我们可以很简单的生成一颗DOM树，这个在不同语言都有自己的实现，可以很轻松的生成。</p>
+</li>
+<li>
+<p>Info树的生成</p>
+<p>因为我们实际需要的每个树节点的部分信息，因此，我们需要遍历DOM树，拿到每个节点的特定信息后生成一棵新的Info树。之后所有的操作都基于这颗Info树来进行。</p>
+<p>p.s. 因为正文必然是在Body标签内部的，所以我们可以直接把Body标签作为新树的根节点。</p>
+<p>p.p.s 同样因为我们不关心渲染与执行，所以script、form、img、style等等标签除了影响结果外毫无用处，所以新树生成的时候需要过滤掉这些节点。</p>
+<p>p.p.p.s 在现代网页中，因为网页很多标签是动态生成的，所以会有大量的无内容的空标签占位，同样需要将其移除。</p>
+<p>最后每个Info 树的节点大概会像这样的:</p>
+<pre><code> pub struct Node {
+     pub tag_num: i16, // 该节点子代tag节点数量
+     pub text_length: i32, // 该节点总文本长度
+     pub link_tag_num: i16, // 该节点子代中超链接tag节点数量
+     pub text_tag_num: i16, // 该节点子代中文本tag节点数量
+     pub punctuation_num: i16, // 该节点子代中所有文本符号数量
+     pub link_tag_text_length: i16, // 该节点子代节点中超链接tag节点文本长度
+     pub td: f32, // 该节点计算出的文本密度
+     pub sbd:f64, // 该节点计算出的符号密度
+     pub score: f64, // 该节点计算出的分数
+     pub node_type: NodeTypeEnum, // 该节点的类型
+     pub tag_name: String, // 标签名称
+     pub text: String, // 如果是文本标签，则保存了对应的文本值
+     pub children: Vec&lt;Node&gt;, // 子代节点
+ }
+</code></pre>
+</li>
+<li>
+<p>计算</p>
+<p>可以看出，除去基本信息，我们需要计算的就是每个节点的文本密度、符号密度以及所有节点的文本密度的标准差。然后带入公式对每个节点进行打分。</p>
+<p>p.s. 具体公式以及公式推导请参考论文，这里不太适合将别人研究成果直接放在文章内。《<a href="http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637061287807268750&amp;DBCODE=CJFQ&amp;TABLEName=CJFDLAST2019&amp;FileName=GWDZ201908029&amp;RESULT=1&amp;SIGN=Ru92HQCAbOX5F3X475n1xKVQA7I%3d&amp;UID=WEEvREcwSlJHSldTTEYzVTE0ZUZRMGFJdytrZXZHWmJkaE5oc3RlMlJyMD0%3d%249A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&amp;autoLogin=0">基于文本及符号密度的网页正文提取方法</a>》</p>
+</li>
+<li>
+<p>遍历</p>
+<p>遍历整棵树找出分数最高的节点，就是对应的正文节点。</p>
+</li>
+<li>
+<p>测试</p>
+<p>论文中提到的新闻网差不多正确率百分之九十九左右，虽然是论文中自己提供的正确率，但是实际测试确实还没有遇到提取失败的情况。</p>
+</li>
+</ol>
+<h2 id="进一步思考">进一步思考</h2>
+<p>在基础实现后，我尝试对掘金、简书等技术文章网站进行了测试，发现效果极差，几乎没有成功的案例。</p>
+<p>所以和新闻网站结构类似的文章网站为什么会失效呢？从我们之前的分析来说，应该不会因为是文章而不是新闻而产生差异啊。</p>
+<p>经过对比后发现，主要原因在于掘金等这些偏技术的文章网站，文章内容主要是由MD格式的文章转换成HTML而来的，而MD特殊之处导致了公式中很多变量产生了变动.</p>
+<h3 id="md的转换">MD的转换</h3>
+<p>虽然从结果来看，直接写html的文章和写md格式的文章转换成html显示，这两种方式并不会有什么差别，用户也可以无感知的使用在线编辑器。</p>
+<p>但是对比可以发现，因为MD的语法习惯，所以会有大量的斜体、加粗、强调、引用等等样式标记被装换成b、i、strong等等标签，而在新闻网中，这些往往是交给css处理的样式。这样就导致产生了大量的零碎的标签，降低父文本的文本密度。</p>
+<p>其次，在转换中，p标签的出现次数也极低，大部分文本在转换中直接成了div的子元素，而不是被包裹在标准的p标签中。</p>
+<p>对于标准html来说，正文往往就是被一大堆p标签分割的段落组成。然而在MD转换的html代码中，正文大部分被div、li、code、pre等等多种多样的标签包裹，影响打分。</p>
+<h3 id="md的写作习惯">MD的写作习惯</h3>
+<p>同时，因为MD语法被程序员用的最多，并且技术文章的结构特性，也导致了文章中大概率会出现非常多的有序列表和无序列表还有代码举例，所以li、ol、code、pre这几个标签分别占有了文本总长度中非常高的比例。</p>
+<p>综上所述，如果按照原有计算方式计算，最后父节点的打分会非常低，而一些直接包裹文本的节点会因为文本密度非常高而分数变得异常的高。</p>
+<h2 id="修改">修改</h2>
+<p>针对以上情况，可以考虑做以下处理:</p>
+<ul>
+<li>因为div在该模型中主要担当container的角色，所以不应该直接包裹文本元素，在生成Info树的时候，如果遇到直接属于div的文本内容，应手动为其包裹一层p标签。</li>
+<li>对于strong、b、i这类纯样式修饰的行内标签，可以直接移除，包裹的文本直接归并到上一级文本节点中。</li>
+<li>原论文中在打分公式中计算了整颗树p标签节点的数量来作为参考变量。而在md中，应考虑将ul、code、pre等高频标签当做p标签来计数。除去渲染出来的样式，他们在整体结构中，和p标签的作用是一致的。</li>
+<li>因为内容被各种标签分成了太多的小块，导致部分文本标签打分异常暴涨可能性极高，可以考虑查找最高分数的节点的时候，主动过滤掉不可能成为正文父节点的一些标签，如p、code、pre等等，找出容器类标签中分值最高的那一个节点。（ p.s. 这条才是真正可以大幅度提高正确率的操作 ）</li>
+</ul>
+<h2 id="结语">结语</h2>
+<p>修改后的代码，对于掘金、简书等文章基本可以正确的提取正文了。（ p.s. 缺乏充足的用例测试 ）</p>
+<p>最后吐槽，rust的思路真的太难受了，比起用其他语言实现，起码多花了一倍的时间在思考语法该怎么写上面Orz。</p>
+<p>附上链接:</p>
+<p>论文：《<a href="http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637061287807268750&amp;DBCODE=CJFQ&amp;TABLEName=CJFDLAST2019&amp;FileName=GWDZ201908029&amp;RESULT=1&amp;SIGN=Ru92HQCAbOX5F3X475n1xKVQA7I%3d&amp;UID=WEEvREcwSlJHSldTTEYzVTE0ZUZRMGFJdytrZXZHWmJkaE5oc3RlMlJyMD0%3d%249A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&amp;autoLogin=0">基于文本及符号密度的网页正文提取方法</a>》</p>
+<p>我的 rust 代码例子: <a href="https://github.com/x956606865/test-extract">https://github.com/x956606865/test-extract</a></p>
+<p>另一位大佬用python写的更牛逼的版本:  <a href="https://github.com/kingname/GeneralNewsExtractor">https://github.com/kingname/GeneralNewsExtractor</a></p>
+
+        </div>
+
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://x956606865.github.io/normal-balance//tag/o7b9FcN8k">
+            <span class="flex-auto">Rust</span>
+          </a>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://x956606865.github.io/normal-balance//tag/re4eMjzigC">
+            <span class="flex-auto">Program</span>
+          </a>
+        
+
+
+        <div class="flex justify-between py-8">
+          
+
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '76291ba0cf1990c7ea9c',
+    clientSecret: '6470aeab5dae3db34487b64b739450bdf3c53036',
+    repo: 'normal-balance',
+    owner: 'x956606865',
+    admin: ['x956606865'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+      </div>
+    </div>
+
+    <script src="https://x956606865.github.io/normal-balance//media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
+</html>

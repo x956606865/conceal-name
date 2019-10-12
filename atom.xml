@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://x956606865.github.io/normal-balance/</id>
     <title>常名斋</title>
-    <updated>2019-10-12T11:14:50.062Z</updated>
+    <updated>2019-10-12T11:24:53.761Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://x956606865.github.io/normal-balance/"/>
     <link rel="self" href="https://x956606865.github.io/normal-balance//atom.xml"/>
@@ -11,35 +11,89 @@
     <icon>https://x956606865.github.io/normal-balance//favicon.ico</icon>
     <rights>All rights reserved 2019, 常名斋</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://x956606865.github.io/normal-balance//post/hello-gridea</id>
-        <link href="https://x956606865.github.io/normal-balance//post/hello-gridea">
+        <title type="html"><![CDATA[基于文本密度提取网页正文]]></title>
+        <id>https://x956606865.github.io/normal-balance//post/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen</id>
+        <link href="https://x956606865.github.io/normal-balance//post/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+        <updated>2019-10-11T11:17:19.000Z</updated>
+        <content type="html"><![CDATA[<p>Link:<a href="https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664">https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664</a></p>
+<h2 id="前言">前言</h2>
+<p>近期看到了一篇蛮不错的论文《<a href="http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637061287807268750&amp;DBCODE=CJFQ&amp;TABLEName=CJFDLAST2019&amp;FileName=GWDZ201908029&amp;RESULT=1&amp;SIGN=Ru92HQCAbOX5F3X475n1xKVQA7I%3d&amp;UID=WEEvREcwSlJHSldTTEYzVTE0ZUZRMGFJdytrZXZHWmJkaE5oc3RlMlJyMD0%3d%249A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&amp;autoLogin=0">基于文本及符号密度的网页正文提取方法</a>》，因为刚好在学习Rust写hello world，想想干脆试试能不能实现这个思路吧，于是开始尝试代码实现。</p>
+<h2 id="思路">思路</h2>
+<p>总的来说，这篇论文分析了大部分新闻网站页面，思考了其中的数学共性。虽然不同的网站，结构千变万化，但是从读者的直观印象来说，正文部分是十分明显的。打开一个新闻网页，我们总能很轻松的找出正文在哪里，而不会把广告或者页脚什么的当成正文。</p>
+<p>按照这个思路走下去，我们大脑是如何识别正文的呢？首先，文本的数量必然是关键变量之一。其次就是文本的密集程度，正文的内容总是密集耦合在一起的，而不是部分在页面上方，部分在右下角这样分散排布的，正文总是会被一个“框”给包裹起来成为一个整体。对于读者来说，这个“框”是设计上的分割线，对于网页来说，这个“框”就是所有正文所公共的父级DOM节点。</p>
+<p>假如我们能抽象出一个公式来模拟大脑的识别，那么我们就能像读者找出正文所在的“框”一样，找出包裹着正文的最近的DOM节点，从而精确提取出正文。</p>
+<h2 id="实现">实现</h2>
+<ol>
+<li>
+<p>DOM树生成</p>
+<p>首先根据拿到的网页源代码，我们可以很简单的生成一颗DOM树，这个在不同语言都有自己的实现，可以很轻松的生成。</p>
+</li>
+<li>
+<p>Info树的生成</p>
+<p>因为我们实际需要的每个树节点的部分信息，因此，我们需要遍历DOM树，拿到每个节点的特定信息后生成一棵新的Info树。之后所有的操作都基于这颗Info树来进行。</p>
+<p>p.s. 因为正文必然是在Body标签内部的，所以我们可以直接把Body标签作为新树的根节点。</p>
+<p>p.p.s 同样因为我们不关心渲染与执行，所以script、form、img、style等等标签除了影响结果外毫无用处，所以新树生成的时候需要过滤掉这些节点。</p>
+<p>p.p.p.s 在现代网页中，因为网页很多标签是动态生成的，所以会有大量的无内容的空标签占位，同样需要将其移除。</p>
+<p>最后每个Info 树的节点大概会像这样的:</p>
+<pre><code> pub struct Node {
+     pub tag_num: i16, // 该节点子代tag节点数量
+     pub text_length: i32, // 该节点总文本长度
+     pub link_tag_num: i16, // 该节点子代中超链接tag节点数量
+     pub text_tag_num: i16, // 该节点子代中文本tag节点数量
+     pub punctuation_num: i16, // 该节点子代中所有文本符号数量
+     pub link_tag_text_length: i16, // 该节点子代节点中超链接tag节点文本长度
+     pub td: f32, // 该节点计算出的文本密度
+     pub sbd:f64, // 该节点计算出的符号密度
+     pub score: f64, // 该节点计算出的分数
+     pub node_type: NodeTypeEnum, // 该节点的类型
+     pub tag_name: String, // 标签名称
+     pub text: String, // 如果是文本标签，则保存了对应的文本值
+     pub children: Vec&lt;Node&gt;, // 子代节点
+ }
+</code></pre>
+</li>
+<li>
+<p>计算</p>
+<p>可以看出，除去基本信息，我们需要计算的就是每个节点的文本密度、符号密度以及所有节点的文本密度的标准差。然后带入公式对每个节点进行打分。</p>
+<p>p.s. 具体公式以及公式推导请参考论文，这里不太适合将别人研究成果直接放在文章内。《<a href="http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637061287807268750&amp;DBCODE=CJFQ&amp;TABLEName=CJFDLAST2019&amp;FileName=GWDZ201908029&amp;RESULT=1&amp;SIGN=Ru92HQCAbOX5F3X475n1xKVQA7I%3d&amp;UID=WEEvREcwSlJHSldTTEYzVTE0ZUZRMGFJdytrZXZHWmJkaE5oc3RlMlJyMD0%3d%249A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&amp;autoLogin=0">基于文本及符号密度的网页正文提取方法</a>》</p>
+</li>
+<li>
+<p>遍历</p>
+<p>遍历整棵树找出分数最高的节点，就是对应的正文节点。</p>
+</li>
+<li>
+<p>测试</p>
+<p>论文中提到的新闻网差不多正确率百分之九十九左右，虽然是论文中自己提供的正确率，但是实际测试确实还没有遇到提取失败的情况。</p>
+</li>
+</ol>
+<h2 id="进一步思考">进一步思考</h2>
+<p>在基础实现后，我尝试对掘金、简书等技术文章网站进行了测试，发现效果极差，几乎没有成功的案例。</p>
+<p>所以和新闻网站结构类似的文章网站为什么会失效呢？从我们之前的分析来说，应该不会因为是文章而不是新闻而产生差异啊。</p>
+<p>经过对比后发现，主要原因在于掘金等这些偏技术的文章网站，文章内容主要是由MD格式的文章转换成HTML而来的，而MD特殊之处导致了公式中很多变量产生了变动.</p>
+<h3 id="md的转换">MD的转换</h3>
+<p>虽然从结果来看，直接写html的文章和写md格式的文章转换成html显示，这两种方式并不会有什么差别，用户也可以无感知的使用在线编辑器。</p>
+<p>但是对比可以发现，因为MD的语法习惯，所以会有大量的斜体、加粗、强调、引用等等样式标记被装换成b、i、strong等等标签，而在新闻网中，这些往往是交给css处理的样式。这样就导致产生了大量的零碎的标签，降低父文本的文本密度。</p>
+<p>其次，在转换中，p标签的出现次数也极低，大部分文本在转换中直接成了div的子元素，而不是被包裹在标准的p标签中。</p>
+<p>对于标准html来说，正文往往就是被一大堆p标签分割的段落组成。然而在MD转换的html代码中，正文大部分被div、li、code、pre等等多种多样的标签包裹，影响打分。</p>
+<h3 id="md的写作习惯">MD的写作习惯</h3>
+<p>同时，因为MD语法被程序员用的最多，并且技术文章的结构特性，也导致了文章中大概率会出现非常多的有序列表和无序列表还有代码举例，所以li、ol、code、pre这几个标签分别占有了文本总长度中非常高的比例。</p>
+<p>综上所述，如果按照原有计算方式计算，最后父节点的打分会非常低，而一些直接包裹文本的节点会因为文本密度非常高而分数变得异常的高。</p>
+<h2 id="修改">修改</h2>
+<p>针对以上情况，可以考虑做以下处理:</p>
+<ul>
+<li>因为div在该模型中主要担当container的角色，所以不应该直接包裹文本元素，在生成Info树的时候，如果遇到直接属于div的文本内容，应手动为其包裹一层p标签。</li>
+<li>对于strong、b、i这类纯样式修饰的行内标签，可以直接移除，包裹的文本直接归并到上一级文本节点中。</li>
+<li>原论文中在打分公式中计算了整颗树p标签节点的数量来作为参考变量。而在md中，应考虑将ul、code、pre等高频标签当做p标签来计数。除去渲染出来的样式，他们在整体结构中，和p标签的作用是一致的。</li>
+<li>因为内容被各种标签分成了太多的小块，导致部分文本标签打分异常暴涨可能性极高，可以考虑查找最高分数的节点的时候，主动过滤掉不可能成为正文父节点的一些标签，如p、code、pre等等，找出容器类标签中分值最高的那一个节点。（ p.s. 这条才是真正可以大幅度提高正确率的操作 ）</li>
+</ul>
+<h2 id="结语">结语</h2>
+<p>修改后的代码，对于掘金、简书等文章基本可以正确的提取正文了。（ p.s. 缺乏充足的用例测试 ）</p>
+<p>最后吐槽，rust的思路真的太难受了，比起用其他语言实现，起码多花了一倍的时间在思考语法该怎么写上面Orz。</p>
+<p>附上链接:</p>
+<p>论文：《<a href="http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637061287807268750&amp;DBCODE=CJFQ&amp;TABLEName=CJFDLAST2019&amp;FileName=GWDZ201908029&amp;RESULT=1&amp;SIGN=Ru92HQCAbOX5F3X475n1xKVQA7I%3d&amp;UID=WEEvREcwSlJHSldTTEYzVTE0ZUZRMGFJdytrZXZHWmJkaE5oc3RlMlJyMD0%3d%249A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&amp;autoLogin=0">基于文本及符号密度的网页正文提取方法</a>》</p>
+<p>我的 rust 代码例子: <a href="https://github.com/x956606865/test-extract">https://github.com/x956606865/test-extract</a></p>
+<p>另一位大佬用python写的更牛逼的版本:  <a href="https://github.com/kingname/GeneralNewsExtractor">https://github.com/kingname/GeneralNewsExtractor</a></p>
 ]]></content>
     </entry>
 </feed>
