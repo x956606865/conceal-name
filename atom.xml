@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://x956606865.github.io/normal-balance/</id>
     <title>常名斋</title>
-    <updated>2019-10-12T11:31:17.664Z</updated>
+    <updated>2019-10-12T11:47:34.238Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://x956606865.github.io/normal-balance/"/>
     <link rel="self" href="https://x956606865.github.io/normal-balance//atom.xml"/>
@@ -98,6 +98,305 @@
 <p>我的 rust 代码例子: <a href="https://github.com/x956606865/test-extract">https://github.com/x956606865/test-extract</a></p>
 <p>另一位大佬用python写的更牛逼的版本:  <a href="https://github.com/kingname/GeneralNewsExtractor">https://github.com/kingname/GeneralNewsExtractor</a></p>
 <p>Link:<a href="https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664">https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[项目规范化开发探索]]></title>
+        <id>https://x956606865.github.io/normal-balance//post/xiang-mu-gui-fan-hua-kai-fa-tan-suo</id>
+        <link href="https://x956606865.github.io/normal-balance//post/xiang-mu-gui-fan-hua-kai-fa-tan-suo">
+        </link>
+        <updated>2018-11-12T11:38:22.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="前因">前因</h2>
+<p>这次在fcc2018前端大会上，听到了余澈前辈的《开源项目维护》分享，深有收获.所以站在前人的肩膀上探索探索</p>
+<h2 id="痛点">痛点</h2>
+<p>现在前端项目开发，主要是由代码、依赖库、文档、changelog、测试文件等等几部分组成。但是由于前端开发的不规范，大部分创业公司开发都是不考虑文档以及changelog之类的部分的，只要代码跑通，就OK。同样的，注释什么的自然也是不会去写的，整个项目就显得十分的杂乱，后来人也难以接手。</p>
+<h2 id="思路">思路</h2>
+<p>其实文档、changelog之类的内容都具有一定的可预见性，遵循于一定的原则，由此可见，理论上是可以由代码来自动实现的。因此，主要的自动化处理方式便是使用jsdoc注释规则规范化注释，由此可以借助jsdoc之类的工具自动生成文档。其次，使用统一的eslint文件规范代码的风格，使用统一的prettier配置文件规范代码的样式，然后使用统一的commitlint文件规范并自动生成commit message，有了规范的commit message后，就可以使用工具提取相应的内容，自动生成changelog。由此而来，项目最繁琐的几个痛点便可以轻松简化到规范的注释以及规范的commit message两点，即可。</p>
+<h2 id="husky">Husky</h2>
+<p>自动规范化项目，最核心的一个工具便是husky，简单来说，husky提供了几个钩子，可以拦截到git的比如commit、push等等操作，然后在操作前，执行某些脚本，预处理被操作的对象。</p>
+<ul>
+<li>
+<p>安装</p>
+<pre><code>  npm install husky --save-dev
+</code></pre>
+</li>
+<li>
+<p>配置</p>
+<p>在最新版中，hasky的配置不需要写在npm script中了，直接在package.json中添加一下字段即可。</p>
+<pre><code>      {
+      &quot;husky&quot;: {
+          &quot;hooks&quot;: {
+          &quot;pre-commit&quot;: &quot;npm run test&quot;,
+          &quot;pre-push&quot;: &quot;npm run test&quot;,
+          &quot;...&quot;: &quot;...&quot;
+          }
+      }
+      }
+</code></pre>
+</li>
+</ul>
+<h2 id="lint-staged">Lint-staged</h2>
+<p>Lint-staged是自动规范化项目第二重要的工具，主要功能为依次运行传入的命令数组，但是，约束命令的作用范围只会影响到git staged范围内的文件，即用git add 添加到待commit队列的文件，从而避免影响到其他文件，同时也能加快预处理脚本的速度。</p>
+<ul>
+<li>
+<p>安装</p>
+<pre><code>  npm install --save-dev lint-staged
+</code></pre>
+</li>
+<li>
+<p>配置</p>
+<p>同样是直接在package.json文件中直接添加lint-staged的命令列表</p>
+<pre><code>      &quot;lint-staged&quot;: {
+      &quot;*.js&quot;: [&quot;eslint --fix&quot;, &quot;git add&quot;]
+      }
+</code></pre>
+<p>然后，将lint-staged与husky整合:</p>
+<pre><code>      &quot;husky&quot;: {
+      &quot;hooks&quot;: {  
+          &quot;pre-commit&quot;: &quot;lint-staged&quot;
+      }
+      }
+</code></pre>
+<p>这样，便做到了每次commit的时候自动eslint将要上传的文件，然后才commit，其他没有被add的文件不会被eslint处理。</p>
+</li>
+</ul>
+<h2 id="prettier">Prettier</h2>
+<p>有了以上条件后，我们便可以来添加我们的第一个预处理脚本Prettier。prettier是最出名的代码格式化工具之一。由于我们每个人的编程习惯不一样，有的人喜欢分号，有些人不喜欢分号，有些人四个空格缩进，有些人八个空格缩进。如果强制每个人编码习惯一样，总是让人比较难受，所以这里可以约定一个统一个代码风格配置文件，在提交的时候自动处理代码，将它们格式化为统一的风格，这样每个人写代码的时候可以按着自己的习惯写，最后提交的代码又是风格一致的，两全其美。</p>
+<ul>
+<li>
+<p>安装</p>
+<pre><code>  yarn global add prettier
+</code></pre>
+</li>
+<li>
+<p>配置</p>
+</li>
+</ul>
+<p><a href="https://prettier.io/docs/en/configuration.html">https://prettier.io/docs/en/configuration.html</a></p>
+<ul>
+<li>
+<p>整合到lint-staged</p>
+<pre><code>  &quot;*.js&quot;: [
+      &quot;prettier --config ./.prettierrc --write&quot;,
+      &quot;git add&quot;
+    ]
+</code></pre>
+</li>
+</ul>
+<h2 id="commit-message-规范">Commit-message 规范</h2>
+<p>要从commit message中提取到有用的数据用来生成CHANGELOG，那么commit message就必须有一个相对固定的格式，同时这个格式能够基本覆盖到所有的comm操作类型。</p>
+<p>目前比较流行的格式为<a href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines">Angular Git Commit Guidelines</a></p>
+<p>大致的格式如下:</p>
+<pre><code>&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+&lt;BLANK LINE&gt;
+&lt;body&gt;
+&lt;BLANK LINE&gt;
+&lt;footer&gt;
+</code></pre>
+<ul>
+<li>&lt;type&gt;:本次commit的类型，比如新特性feat，bug修复fix等等</li>
+<li>&lt;scope&gt;:本次操作波及的范围，可自定义</li>
+<li>&lt;BLANK LINE&gt;:空行</li>
+<li>&lt;body&gt;:可选，描述本次commit的动机等等，如需换行，在行尾添加&quot;|&quot;</li>
+<li>&lt;footer&gt;:可选，描述如解决了某个issue，或者这次为breaking change，对应的upgrade的方法等等</li>
+</ul>
+<h2 id="commitizen">Commitizen</h2>
+<p>由上可见，一个规范的commit message其实十分的麻烦，对于一个连注释都不写的公司来说，要求同事都这样规范的写commit message显然是不可能的。所以，我们需要工具，能够自动生成这样格式的commit message，所以有了工具commitizen。</p>
+<ul>
+<li>
+<p>安装</p>
+<pre><code>  npm install -g commitizen
+</code></pre>
+</li>
+</ul>
+<p>安装完成后，系统便会多出git cz命令，git cz能够完全的代替git commit命令，拥有其所有的参数，使用方法完全一样，同时也可以被husky所拦截到.</p>
+<p>commitizen采用了询问的方式来获取对应的commit信息，大致页面如下:</p>
+<p><a href="https://www.notion.so/57b80f3f75b741e3a54546c20ae5e8e7#740da08879544516a6e90da754cb9b4a"></a></p>
+<h2 id="cz-conventional-changelog">cz-conventional-changelog</h2>
+<p>有了格式化的commit message后，我们便可以用来自动生成changelog了，好在Commitizen有着配套的工具。</p>
+<pre><code>commitizen init cz-conventional-changelog --save-dev --save-exact
+</code></pre>
+<p>使用commitizen初始化cz-conventional-changelog，他会作为一个adapter来解析对应的内容。由于commit message的规范其实有很多种，angular的规范只是很常用的规范之一，所以对于不同的规范需要不同的adapter才能解析出对应的数据，不过因为和commitizen整合，所以不需要考虑格式和adapter不匹配的问题，毕竟格式是有commitizen自动生成的。</p>
+<h2 id="commitlint">Commitlint</h2>
+<p>虽然有了自动生成工具，但是肯定还是有偷懒的小伙伴懒得去写，直接随便写个message就上传，这样的话就会破坏掉原有的格式（强迫症也会表示很难受啊喂），所以我们需要一个lint工具来替我们检测对应的commit message是不是一个合法的commit message。当然，这个工具也应该自动调用，在上传的时候自动检测。</p>
+<ul>
+<li>
+<p>安装</p>
+<pre><code>  npm install --save-dev @commitlint/config-conventional @commitlint/cli
+</code></pre>
+<p>安装conventional格式的lint以及对应的cli（commitlint也有其他格式的adapter，若使用的是其他规范，请参考<a href="https://github.com/marionebl/commitlint">官网</a>）</p>
+</li>
+<li>
+<p>配置</p>
+<pre><code>  echo &quot;module.exports = {extends: ['@commitlint/config-conventional']}&quot; &gt; commitlint.config.js
+</code></pre>
+<p>你要是不嫌麻烦，新建对应的文件，然后把内容拷进去效果也一样。</p>
+</li>
+<li>
+<p>与husky整合</p>
+<pre><code>  {
+    &quot;husky&quot;: {
+      &quot;hooks&quot;: {
+        &quot;commit-msg&quot;: &quot;commitlint -E HUSKY_GIT_PARAMS&quot;
+      }  
+    }
+  }
+</code></pre>
+<p>这样便可以做到在commit的时候自动检测commit message是否合法了</p>
+</li>
+</ul>
+<h2 id="standard-version">standard-version</h2>
+<p>有了对应的adapter，就可以提取commit-message的信息，从而生成changelog。我们可以使用Conventional Changelog来生成changelog，不过Conventional Changelog是生成changelog的基本库，它们更推荐使用基于它们来实现的库standard-version来进行CHANGELOG的生成：</p>
+<p><a href="https://www.notion.so/57b80f3f75b741e3a54546c20ae5e8e7#5a6f6095097d46bdb2a2d63df422ed6d"></a></p>
+<ul>
+<li>
+<p>安装</p>
+<pre><code>  npm i --save-dev standard-version
+</code></pre>
+</li>
+<li>
+<p>在package中使用npm script整合standard-version</p>
+<pre><code>  {
+    &quot;scripts&quot;: {
+      &quot;release&quot;: &quot;standard-version&quot;
+    }
+  }
+</code></pre>
+</li>
+</ul>
+<p>这样，我们每次到了需要发布一个新版本的时候，使用npm run release就可以生成上一个版本到现在的CHANGELOG，同时standard-version本身也可以用作项目的版本管理工具。</p>
+<h2 id="jsdoc">JSDOC</h2>
+<p>jsdoc是一个通过注释自动生成文档的工具，虽然jsdoc已经很久没有人维护了，很多新语法都不支持（连PR都没人去通过了，感觉凉凉了），不过jsdoc的注释语法却是注释生成文档的通用语法，而且和vscode等编辑器整合的非常好，简单的snippet便可以生成对应的注释，如果再加上document-this插件，就基本OK了，写注释十分轻松。不过现在注释生成文档的工具，要么很丑，要么就是很久没维护了，就很蛋疼emmmm，只能说将就着用一用。。。。</p>
+<p>待续。。。。。</p>
+<p>Link: <a href="https://www.notion.so/aj0k3r/57b80f3f75b741e3a54546c20ae5e8e7"></a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ECMA 提案-'decorator' 研究]]></title>
+        <id>https://x956606865.github.io/normal-balance//post/ecma-ti-an-decorator-yan-jiu</id>
+        <link href="https://x956606865.github.io/normal-balance//post/ecma-ti-an-decorator-yan-jiu">
+        </link>
+        <updated>2018-11-04T11:32:24.000Z</updated>
+        <summary type="html"><![CDATA[<p>//ps:根据大佬的解释，现在提案修改，不推荐使用legacy这种模式了，新版模式待研究后再更新Orz</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>//ps:根据大佬的解释，现在提案修改，不推荐使用legacy这种模式了，新版模式待研究后再更新Orz</p>
+<!-- more -->
+<h2 id="提案状态stage-2">提案状态：Stage-2</h2>
+<h2 id="链接httpstc39githubioproposal-decorators">链接:<a href="https://tc39.github.io/proposal-decorators/"><em>https://tc39.github.io/proposal-decorators/</em></a></h2>
+<h2 id="需求-babel-7">需求: Babel-7</h2>
+<h2 id="插件babelplugin-proposal-decorators">插件:@babel/plugin-proposal-decorators</h2>
+<pre><code>          (ps:babel7以后插件名称全部有所改动)
+</code></pre>
+<h2 id="快速安装">快速安装：</h2>
+<pre><code>    yarn global add @babel/cli
+    yarn global add @babel/node
+    yarn add @babel/plugin-proposal-decorators
+</code></pre>
+<p>使用babel-node、babel-cli这样的名称只能安装到6版本的babel工具，7版本的工具全部改由@babel前缀</p>
+<p>新建.babelrc文件:</p>
+<pre><code>    {
+        &quot;plugins&quot;:[
+    				[&quot;@babel/plugin-proposal-pipeline-operator&quot;, { &quot;proposal&quot;: &quot;minimal&quot; }],
+    				[&quot;@babel/plugin-proposal-decorators&quot;,{&quot;legacy&quot;:true}]]
+    }
+</code></pre>
+<p>新建index.js文件:</p>
+<pre><code>    function testable(isTestable) {
+        return function(target) {
+            target.isTestable = isTestable;
+        }
+    }
+    
+    @testable(true)
+    class MyTestableClass {}
+    console.log(MyTestableClass.isTestable)// true
+     
+    
+    @testable(false)
+    class MyClass {}
+    console.log(MyClass.isTestable)// false
+</code></pre>
+<p>然后执行:</p>
+<pre><code>babel-node index.js
+</code></pre>
+<p>即可看到对应的输出结果。</p>
+<h2 id="思考">思考:</h2>
+<ul>
+<li>
+<p>装饰器语法本身只是单纯的用一个函数去处理一个类，大多数时候都是对其prototype的修改，用es5也能实现对应的功能，但是使用装饰器能使代码更加简洁，结构更加清晰。</p>
+</li>
+<li>
+<p>虽然在js中，class和function不存在本质上的区别，只是一个语法糖的存在，但是由于函数的作用域提升的问题，如果函数中有自由变量的使用，就会出现不可预期的一些bug。</p>
+<p>例如如下代码:(案例来自阮一峰es6教程)</p>
+</li>
+</ul>
+<pre><code>    var counter = 0;
+    
+    var add = function () {
+      counter++;
+    };
+    
+    @add
+    function foo() {
+    }
+</code></pre>
+<p>在实际编译后，会变成如下：</p>
+<pre><code>    @add
+    function foo() {
+    }
+    
+    var counter;
+    var add;
+    
+    counter = 0;
+    
+    add = function () {
+      counter++;
+    };
+</code></pre>
+<p>从而导致程序出粗。</p>
+<ul>
+<li>由于装饰器可以优雅的修改prototype，猜想可以优雅的尝试AOP编程，例如:</li>
+</ul>
+<pre><code>    function AOP(options) {
+        const {beforeFunc,afterFunc}=Object.assign({
+            beforeFunc:()=&gt;{},
+            afterFunc:()=&gt;{}
+        },options)
+        return function(target, key, descriptor) {
+            const oldTarget = descriptor.value
+            descriptor.value=function(){
+                beforeFunc.apply(this,arguments)
+                const value=oldTarget.apply(this,arguments)
+                afterFunc.apply(this.arguments)
+                return value
+            }
+            return descriptor
+        }
+    }
+    function logBefore(){
+        console.log(&quot;before&quot;)
+    }
+    function logAfter(){
+        console.log(&quot;after&quot;)
+    }
+    class MyClass {
+        @AOP({
+            beforeFunc:logBefore,
+            afterFunc:logAfter
+        })
+        func(){
+            console.log(&quot;run&quot;)
+        }
+    }
+    const obj=new MyClass()
+    obj.func()
+</code></pre>
+<p>这样每次就简单清晰的注入了before和after两个函数，在这两个函数中可以做数据预处理、数据状态监测等等一系列的功能，包括GA数据的监测也可以这样放入。这样和JAVA的AOP思路就十分的接近了。</p>
+<ul>
+<li>同样由于可以处理proptype，理论上可以实现类的依赖注入，传入依赖的字符串数组，然后解析出是npm模块还是本地文件，然后使用inline require动态加载对应的库，注入到类中。同样可以注入的还可以有项目的config的配置变量等等。</li>
+<li>待续</li>
+</ul>
 ]]></content>
     </entry>
 </feed>

@@ -46,10 +46,12 @@
             <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
-<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81">👨‍💻 博主是谁</a></li>
-<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
-<li><a href="#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 联系我呀</a></li>
+<li><a href="#%E6%8F%90%E6%A1%88%E7%8A%B6%E6%80%81stage-2">提案状态：Stage-2</a></li>
+<li><a href="#%E9%93%BE%E6%8E%A5httpstc39githubioproposal-decorators">链接:<em>https://tc39.github.io/proposal-decorators/</em></a></li>
+<li><a href="#%E9%9C%80%E6%B1%82-babel-7">需求: Babel-7</a></li>
+<li><a href="#%E6%8F%92%E4%BB%B6babelplugin-proposal-decorators">插件:@babel/plugin-proposal-decorators</a></li>
+<li><a href="#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85">快速安装：</a></li>
+<li><a href="#%E6%80%9D%E8%80%83">思考:</a></li>
 </ul>
 </li>
 </ul>
@@ -98,26 +100,156 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">关于</h1>
+        <h1 class="text-3xl font-bold lg:mt-16">ECMA 提案-&#39;decorator&#39; 研究</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2019-01-25 / 1 min read
+          2018-11-04 / 3 min read
         </div>
         
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://x956606865.github.io/normal-balance//post-images/ecma-ti-an-decorator-yan-jiu.png" alt="">
+        
         <div class="post-content yue">
-          <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+          <p>//ps:根据大佬的解释，现在提案修改，不推荐使用legacy这种模式了，新版模式待研究后再更新Orz</p>
+<!-- more -->
+<h2 id="提案状态stage-2">提案状态：Stage-2</h2>
+<h2 id="链接httpstc39githubioproposal-decorators">链接:<a href="https://tc39.github.io/proposal-decorators/"><em>https://tc39.github.io/proposal-decorators/</em></a></h2>
+<h2 id="需求-babel-7">需求: Babel-7</h2>
+<h2 id="插件babelplugin-proposal-decorators">插件:@babel/plugin-proposal-decorators</h2>
+<pre><code>          (ps:babel7以后插件名称全部有所改动)
+</code></pre>
+<h2 id="快速安装">快速安装：</h2>
+<pre><code>    yarn global add @babel/cli
+    yarn global add @babel/node
+    yarn add @babel/plugin-proposal-decorators
+</code></pre>
+<p>使用babel-node、babel-cli这样的名称只能安装到6版本的babel工具，7版本的工具全部改由@babel前缀</p>
+<p>新建.babelrc文件:</p>
+<pre><code>    {
+        &quot;plugins&quot;:[
+    				[&quot;@babel/plugin-proposal-pipeline-operator&quot;, { &quot;proposal&quot;: &quot;minimal&quot; }],
+    				[&quot;@babel/plugin-proposal-decorators&quot;,{&quot;legacy&quot;:true}]]
+    }
+</code></pre>
+<p>新建index.js文件:</p>
+<pre><code>    function testable(isTestable) {
+        return function(target) {
+            target.isTestable = isTestable;
+        }
+    }
+    
+    @testable(true)
+    class MyTestableClass {}
+    console.log(MyTestableClass.isTestable)// true
+     
+    
+    @testable(false)
+    class MyClass {}
+    console.log(MyClass.isTestable)// false
+</code></pre>
+<p>然后执行:</p>
+<pre><code>babel-node index.js
+</code></pre>
+<p>即可看到对应的输出结果。</p>
+<h2 id="思考">思考:</h2>
+<ul>
+<li>
+<p>装饰器语法本身只是单纯的用一个函数去处理一个类，大多数时候都是对其prototype的修改，用es5也能实现对应的功能，但是使用装饰器能使代码更加简洁，结构更加清晰。</p>
+</li>
+<li>
+<p>虽然在js中，class和function不存在本质上的区别，只是一个语法糖的存在，但是由于函数的作用域提升的问题，如果函数中有自由变量的使用，就会出现不可预期的一些bug。</p>
+<p>例如如下代码:(案例来自阮一峰es6教程)</p>
+</li>
+</ul>
+<pre><code>    var counter = 0;
+    
+    var add = function () {
+      counter++;
+    };
+    
+    @add
+    function foo() {
+    }
+</code></pre>
+<p>在实际编译后，会变成如下：</p>
+<pre><code>    @add
+    function foo() {
+    }
+    
+    var counter;
+    var add;
+    
+    counter = 0;
+    
+    add = function () {
+      counter++;
+    };
+</code></pre>
+<p>从而导致程序出粗。</p>
+<ul>
+<li>由于装饰器可以优雅的修改prototype，猜想可以优雅的尝试AOP编程，例如:</li>
+</ul>
+<pre><code>    function AOP(options) {
+        const {beforeFunc,afterFunc}=Object.assign({
+            beforeFunc:()=&gt;{},
+            afterFunc:()=&gt;{}
+        },options)
+        return function(target, key, descriptor) {
+            const oldTarget = descriptor.value
+            descriptor.value=function(){
+                beforeFunc.apply(this,arguments)
+                const value=oldTarget.apply(this,arguments)
+                afterFunc.apply(this.arguments)
+                return value
+            }
+            return descriptor
+        }
+    }
+    function logBefore(){
+        console.log(&quot;before&quot;)
+    }
+    function logAfter(){
+        console.log(&quot;after&quot;)
+    }
+    class MyClass {
+        @AOP({
+            beforeFunc:logBefore,
+            afterFunc:logAfter
+        })
+        func(){
+            console.log(&quot;run&quot;)
+        }
+    }
+    const obj=new MyClass()
+    obj.func()
+</code></pre>
+<p>这样每次就简单清晰的注入了before和after两个函数，在这两个函数中可以做数据预处理、数据状态监测等等一系列的功能，包括GA数据的监测也可以这样放入。这样和JAVA的AOP思路就十分的接近了。</p>
+<ul>
+<li>同样由于可以处理proptype，理论上可以实现类的依赖注入，传入依赖的字符串数组，然后解析出是npm模块还是本地文件，然后使用inline require动态加载对应的库，注入到类中。同样可以注入的还可以有项目的config的配置变量等等。</li>
+<li>待续</li>
+</ul>
 
         </div>
 
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://x956606865.github.io/normal-balance//tag/hawpsltzL">
+            <span class="flex-auto">Javascript</span>
+          </a>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://x956606865.github.io/normal-balance//tag/re4eMjzigC">
+            <span class="flex-auto">Program</span>
+          </a>
         
 
 
         <div class="flex justify-between py-8">
+          
+            <div class="prev-post">
+              <a href="https://x956606865.github.io/normal-balance//post/xiang-mu-gui-fan-hua-kai-fa-tan-suo">
+                <h3 class="post-title">
+                  <i class="remixicon-arrow-left-line"></i>
+                  项目规范化开发探索
+                </h3>
+              </a>
+            </div>
           
 
           
