@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://x956606865.github.io/normal-balance/</id>
     <title>常名斋</title>
-    <updated>2019-10-12T11:28:28.912Z</updated>
+    <updated>2019-10-12T11:31:17.664Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://x956606865.github.io/normal-balance/"/>
     <link rel="self" href="https://x956606865.github.io/normal-balance//atom.xml"/>
@@ -16,9 +16,12 @@
         <link href="https://x956606865.github.io/normal-balance//post/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen">
         </link>
         <updated>2019-10-11T11:17:19.000Z</updated>
-        <content type="html"><![CDATA[<p>Link:<a href="https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664">https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664</a></p>
-<h2 id="前言">前言</h2>
+        <summary type="html"><![CDATA[<h2 id="前言">前言</h2>
 <p>近期看到了一篇蛮不错的论文《<a href="http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637061287807268750&amp;DBCODE=CJFQ&amp;TABLEName=CJFDLAST2019&amp;FileName=GWDZ201908029&amp;RESULT=1&amp;SIGN=Ru92HQCAbOX5F3X475n1xKVQA7I%3d&amp;UID=WEEvREcwSlJHSldTTEYzVTE0ZUZRMGFJdytrZXZHWmJkaE5oc3RlMlJyMD0%3d%249A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&amp;autoLogin=0">基于文本及符号密度的网页正文提取方法</a>》，因为刚好在学习Rust写hello world，想想干脆试试能不能实现这个思路吧，于是开始尝试代码实现。</p>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="前言">前言</h2>
+<p>近期看到了一篇蛮不错的论文《<a href="http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637061287807268750&amp;DBCODE=CJFQ&amp;TABLEName=CJFDLAST2019&amp;FileName=GWDZ201908029&amp;RESULT=1&amp;SIGN=Ru92HQCAbOX5F3X475n1xKVQA7I%3d&amp;UID=WEEvREcwSlJHSldTTEYzVTE0ZUZRMGFJdytrZXZHWmJkaE5oc3RlMlJyMD0%3d%249A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&amp;autoLogin=0">基于文本及符号密度的网页正文提取方法</a>》，因为刚好在学习Rust写hello world，想想干脆试试能不能实现这个思路吧，于是开始尝试代码实现。</p>
+<!-- more -->
 <h2 id="思路">思路</h2>
 <p>总的来说，这篇论文分析了大部分新闻网站页面，思考了其中的数学共性。虽然不同的网站，结构千变万化，但是从读者的直观印象来说，正文部分是十分明显的。打开一个新闻网页，我们总能很轻松的找出正文在哪里，而不会把广告或者页脚什么的当成正文。</p>
 <p>按照这个思路走下去，我们大脑是如何识别正文的呢？首先，文本的数量必然是关键变量之一。其次就是文本的密集程度，正文的内容总是密集耦合在一起的，而不是部分在页面上方，部分在右下角这样分散排布的，正文总是会被一个“框”给包裹起来成为一个整体。对于读者来说，这个“框”是设计上的分割线，对于网页来说，这个“框”就是所有正文所公共的父级DOM节点。</p>
@@ -94,6 +97,7 @@
 <p>论文：《<a href="http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637061287807268750&amp;DBCODE=CJFQ&amp;TABLEName=CJFDLAST2019&amp;FileName=GWDZ201908029&amp;RESULT=1&amp;SIGN=Ru92HQCAbOX5F3X475n1xKVQA7I%3d&amp;UID=WEEvREcwSlJHSldTTEYzVTE0ZUZRMGFJdytrZXZHWmJkaE5oc3RlMlJyMD0%3d%249A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&amp;autoLogin=0">基于文本及符号密度的网页正文提取方法</a>》</p>
 <p>我的 rust 代码例子: <a href="https://github.com/x956606865/test-extract">https://github.com/x956606865/test-extract</a></p>
 <p>另一位大佬用python写的更牛逼的版本:  <a href="https://github.com/kingname/GeneralNewsExtractor">https://github.com/kingname/GeneralNewsExtractor</a></p>
+<p>Link:<a href="https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664">https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664</a></p>
 ]]></content>
     </entry>
 </feed>

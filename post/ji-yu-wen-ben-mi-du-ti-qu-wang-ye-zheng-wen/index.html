@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>常名斋</title>
 <meta name="description" content="万物有名，常名斋，藏名斋。" />
-<link rel="shortcut icon" href="https://x956606865.github.io/normal-balance//favicon.ico?v=1570879701453">
+<link rel="shortcut icon" href="https://x956606865.github.io/normal-balance//favicon.ico?v=1570879854195">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -33,7 +33,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://x956606865.github.io/normal-balance/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://x956606865.github.io/normal-balance//images/avatar.png?v=1570879701453" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://x956606865.github.io/normal-balance//images/avatar.png?v=1570879854195" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">常名斋</h1>
       </div>
@@ -113,9 +113,9 @@
           <img class="post-feature-image rounded-lg mx-auto my-4" src="https://x956606865.github.io/normal-balance//post-images/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen.jpg" alt="">
         
         <div class="post-content yue">
-          <p>Link:<a href="https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664">https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664</a></p>
-<h2 id="前言">前言</h2>
+          <h2 id="前言">前言</h2>
 <p>近期看到了一篇蛮不错的论文《<a href="http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637061287807268750&amp;DBCODE=CJFQ&amp;TABLEName=CJFDLAST2019&amp;FileName=GWDZ201908029&amp;RESULT=1&amp;SIGN=Ru92HQCAbOX5F3X475n1xKVQA7I%3d&amp;UID=WEEvREcwSlJHSldTTEYzVTE0ZUZRMGFJdytrZXZHWmJkaE5oc3RlMlJyMD0%3d%249A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&amp;autoLogin=0">基于文本及符号密度的网页正文提取方法</a>》，因为刚好在学习Rust写hello world，想想干脆试试能不能实现这个思路吧，于是开始尝试代码实现。</p>
+<!-- more -->
 <h2 id="思路">思路</h2>
 <p>总的来说，这篇论文分析了大部分新闻网站页面，思考了其中的数学共性。虽然不同的网站，结构千变万化，但是从读者的直观印象来说，正文部分是十分明显的。打开一个新闻网页，我们总能很轻松的找出正文在哪里，而不会把广告或者页脚什么的当成正文。</p>
 <p>按照这个思路走下去，我们大脑是如何识别正文的呢？首先，文本的数量必然是关键变量之一。其次就是文本的密集程度，正文的内容总是密集耦合在一起的，而不是部分在页面上方，部分在右下角这样分散排布的，正文总是会被一个“框”给包裹起来成为一个整体。对于读者来说，这个“框”是设计上的分割线，对于网页来说，这个“框”就是所有正文所公共的父级DOM节点。</p>
@@ -191,6 +191,7 @@
 <p>论文：《<a href="http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637061287807268750&amp;DBCODE=CJFQ&amp;TABLEName=CJFDLAST2019&amp;FileName=GWDZ201908029&amp;RESULT=1&amp;SIGN=Ru92HQCAbOX5F3X475n1xKVQA7I%3d&amp;UID=WEEvREcwSlJHSldTTEYzVTE0ZUZRMGFJdytrZXZHWmJkaE5oc3RlMlJyMD0%3d%249A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&amp;autoLogin=0">基于文本及符号密度的网页正文提取方法</a>》</p>
 <p>我的 rust 代码例子: <a href="https://github.com/x956606865/test-extract">https://github.com/x956606865/test-extract</a></p>
 <p>另一位大佬用python写的更牛逼的版本:  <a href="https://github.com/kingname/GeneralNewsExtractor">https://github.com/kingname/GeneralNewsExtractor</a></p>
+<p>Link:<a href="https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664">https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664</a></p>
 
         </div>
 
