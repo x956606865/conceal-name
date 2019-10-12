@@ -1,0 +1,411 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>常名斋</title>
+<meta name="description" content="万物有名，常名斋，藏名斋。" />
+<link rel="shortcut icon" href="https://x956606865.github.io/normal-balance//favicon.ico?v=1570882139346">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<link rel="stylesheet" href="https://x956606865.github.io/normal-balance//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="常名斋 - Atom Feed" href="https://x956606865.github.io/normal-balance//atom.xml">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100208259-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100208259-1');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://x956606865.github.io/normal-balance/">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://x956606865.github.io/normal-balance//images/avatar.png?v=1570882139346" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">常名斋</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%84%9A%E6%89%8B%E6%9E%B6">脚手架</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AApackage">创建第一个package</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E4%BE%9D%E8%B5%96">第三方依赖</a></li>
+<li><a href="#%E6%9C%89%E9%80%89%E6%8B%A9%E7%9A%84%E5%8D%87%E7%BA%A7">有选择的升级</a></li>
+<li><a href="#%E5%86%85%E9%83%A8%E4%BE%9D%E8%B5%96">内部依赖</a></li>
+<li><a href="#%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81">相关代码</a></li>
+<li><a href="#bootstrap">Bootstrap</a></li>
+<li><a href="#%E4%B8%8B%E4%B8%80%E6%AD%A5">下一步</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="https://x956606865.github.io/normal-balance/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="https://x956606865.github.io/normal-balance//archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="https://x956606865.github.io/normal-balance//tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="https://x956606865.github.io/normal-balance//post/about/" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">至大无外，至小无内。</div>
+    <a class="rss" href="https://x956606865.github.io/normal-balance//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">[译] 跟着例子学 monorepo (一)</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2019-01-25 / 6 min read
+        </div>
+        
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://x956606865.github.io/normal-balance//post-images/yi-gen-zhao-li-zi-xue-monorepo-yi.jpg" alt="">
+        
+        <div class="post-content yue">
+          <p>原文链接:  <a href="https://codeburst.io/monorepos-by-example-part-1-3a883b49047e">https://codeburst.io/monorepos-by-example-part-1-3a883b49047e</a></p>
+<!-- more -->
+<p>让我们通过实例来探索 monorepos.</p>
+<figure data-type="image" tabindex="1"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6c320ff3-c7a8-4673-864d-86dd61a42b31/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45MSRJ7VNW%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120642Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEAAaCXVzLXdlc3QtMiJHMEUCIQDxMSzMZ6jd9XKBzRKqzL5nrcGb9z7v38n9To2RRhRBdwIgLXinDAM9oUp6QrCLo2RpNQ2xeam6bLTMgGc%2FM8rZ5UQq4wMI6f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwyNzQ1NjcxNDkzNzAiDOJkK8XwXItE8Th7iCq3A7V9680a4NGC%2BM6IrB8JQqCNhQO6SM39nNEv8THQ9Uj0NLuIP2f%2BtWeWc00wmD0Ede3Tlv8vcEKCSDHY9uwUBxzV3PqVGEX%2FaV0VMML3pLDZRxqkjGyp7ELJ%2BMg5iaV7dFxk7uURWPyn7CdVfmsgY2XLC5mfaRnXQHCikrvHFA0A7PMFoPoJXp8K5Nkt43sKQCwSOJINWii5orJoXkno4tPGlIkoy1woEBZd%2FHE9YM0h5Soez9qYje0e2pMOFdNFmC%2BEY%2BUauYQnXo22hilKsqFEqfUxe1%2BLNjGUgQjh4gM0aAi0ud9vRuAMUMazq4il23uBdIqes9Mtge%2B6Kvqw9nocgqGGg57edHdM4IFwoDaM6M52KSfRMQpHa4c6l%2FG7tG0XeShMU3ojhty51iysmvypxuBVgKT7ozUg8pq8GZMVOBo8c4UnwZ5ip%2BaEbcRiiJFH1267kFtOdEvOTf6813AiZofv1RXxDMYVfWcEnWe9yLamrQoy9uUdq664Re5PRppybvymkAiWht6awoO0uBRGuETvxnqydcApq3nI3FF2yIIeuAvki1rXR5Y3BhuSRcbyhRYVk9Aw0I6G7QU6tAF3ViJTpyXgJsd61h1AHwg2cRIXNBDR%2FNCHmXUHl2hLOzCh20%2B5m3b9L%2BQ034RtSGuYoiWOqz5ZKP2fI5b1CaqkVX%2BWf6uYRn2aEfLHK%2FPA9uqOo6MpXNBPJXjY2dEBTx%2Fr7rU%2FEMZkLQyw9IYD%2BRyRm1nw0dt72Smv86PrwqDap%2FjaQy7HAE6GpazithtM5AMEnNl3ykK6PXz7gsY1VmC4z9dITceA9IjjjukWbtmfbUXiI0M%3D&amp;X-Amz-Signature=890a8bc1afe6a8c11ced249a506fbadb40c858c167b1633a8db20a6cc71b9c1a&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
+<p>首先，关于 monorepo:</p>
+<blockquote>
+<p>Definitions vary, but we define a monorepo as follows:<br>
+The repository contains more than one logical project (e.g. an iOS client and a web-application)<br>
+These projects are most likely unrelated, loosely connected or can be connected by other means (e.g via dependency management tools)<br>
+The repository is large in many ways:</p>
+</blockquote>
+<ul>
+<li>Number of commits</li>
+<li>Number of branches and/or tags</li>
+<li>Number of files tracked</li>
+<li>Size of content tracked (as measured by looking at the .git directory of the repository)</li>
+</ul>
+<p>Atlassian — Monorepos in Git.</p>
+<p>其次，我也赞同这些反对 monorepo 项目的论据:</p>
+<p><a href="https://medium.com/@maoberlehner/monorepos-in-the-wild-33c6eb246cb9">Monorepos in the Wild - Markus Oberlehner - Medium</a></p>
+<p>接下来，我们将通过示例来讨论几个实际的问题，使用 lerna 来管理一个 monorepo 项目（ javascript 项目 ) .</p>
+<p>这个系列的最终 monorepo 在这里，<a href="https://github.com/larkintuckerllc/hello-monorepo">点击查看</a>.</p>
+<h2 id="脚手架">脚手架</h2>
+<p>在我们处理 monprepo项目 ( 特别是lerna所管理的monorepo项目 ) 的问题时,  我们需要先建立一个 lerna monorepo 项目,  幸运的是这十分的简单.</p>
+<p>首先,  全局安装lerna:</p>
+<pre><code>sudo npm install --global lerna
+</code></pre>
+<p><strong>注意</strong>:  本教程使用的是nodejs v8.9.4 与 Lerna  v2.9.0</p>
+<p>创建一个新的文件夹,  并在其中运行一下命令将其转换为一个Lerna monorepo 项目.</p>
+<pre><code>git init
+lerna init
+</code></pre>
+<p>最后生成的文件夹结构应该是这个样子的:</p>
+<figure data-type="image" tabindex="2"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e6236042-0794-4d12-a3bb-5f7f6673c9d8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45ONFOS75K%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120703Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFXVh8HY55tza4cXP7A8AAAasLjdsPmkOAzSmAHeqJn1AiBf14AV8z6WeXTfPCQJLxJpFo%2BbQPHM0jDTRECHkWDLEyrjAwjo%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDI3NDU2NzE0OTM3MCIMW0PS2PjOwTS1YDQTKrcDyerVOXeZZ8oqjMXH3z%2FAIWjy6Ebv2mBzdPxqAv0DNrNbhJ9GBBndQ8NHn3oO9U9UgJzId4CTKoWagYRY%2FVCBLFH56%2BtOb4RVB80fJG%2FwrM0S6riX%2BZPIE0LzzPGBbi%2BUhjMOqwTycgw8gNlIYYJOiVaKIOytLKqk18YThdwr48arh9rKyZ4vJYAWz7fXRSZptkDPtsRnqWDH2Ns7Jlen%2Bn9ske3bkrY8WOl7usxRO8PCwrcWW%2By2qf8zFekZBMRNCSUNdtMqpBDq4pXP73X0hQbhNg%2BZIAAGXipTPIUZAUYIzK%2FKtIlu0HQ3HnFLE9ebJsHPXbTuV89NTcUi4KHGnY1AzfVmHAfHP%2FS4NtCZkCu9ewO6rGw3OJAP9esozyr9mu6nnHDpGw9r7UMW30I3sMkkgCFZl1oM92o36h4IPJVGDAoAZ8Z6lV%2Fu8T17zpvFGNR2x6Okc5RIZqmz2Grk8Bcpo4cmxj%2FsT9%2Br1DANzBtvZR8dJqjTs2woCbxf5dlPutYMaVCB1WWFD7X4%2Bn9idHq033d9dzUPt4S7p4uX3%2F9uihQATZBdgFOo65MFp%2F3cXMO0G07GHzD69oXtBTq1AeY5bcKG%2Bz3Mg54SBAvFiQ1n%2F3pu220PXsTIaqXvFBKSXUm%2BYBvkYzSGygE0gZu92ZVFhLCVJalSzp%2BwcucqDbLbfrMkeCn%2FQIDHVTpoI6CR%2Fi0ZIqe4e8BgKZ5tOFKV%2B%2F71i6aJ18F0%2FzLR0pXbc0GaeW6E6kJnGxrZwbfWviooJJNXacln6iuvIS%2BUrtoj%2BMsb98E2tSM9UqWpqLcr5sMmc4kkxmyxRLZ3zM51TpHklHFHOho%3D&amp;X-Amz-Signature=c8a2712d091e11648e627377de26b28e83dc74c6fc855a167660dd11d73ba6f8&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
+<h2 id="创建第一个package">创建第一个package</h2>
+<p>现在，我们已经有了一个 Lerna monorepo 项目,  就可以开始尝试创建 package 了.  在部署到 npm 仓库中时,  每个package 将会是以单独的一个 npm package 的形式存在的.  通俗来说就是,  package 允许更松散的耦合以及独立的依赖管理( 稍后会做介绍 ).</p>
+<p>我们可以通过在 packages 文件夹下新建一个文件的形式来创建一个 package, 并在对应目录下执行以下命令 :</p>
+<pre><code>npm init -y
+</code></pre>
+<p>这时，项目文件夹结构会类似这样:</p>
+<figure data-type="image" tabindex="3"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/36ddea1a-a400-4be3-b787-81bce47bc391/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45LZLCVEHV%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120718Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEAAaCXVzLXdlc3QtMiJHMEUCIHeMXwTjQdYh2X0En3fLEOTR6btDLr7YHVQ2FWzlgiIVAiEAjU4JQA9aCxXoc28K%2Bc2028wbRvjcaCGLPgl6UpztDMIq4wMI6f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwyNzQ1NjcxNDkzNzAiDMTLLo2flcj%2BLKam2Sq3AyPNa8l7%2FyI%2B44Lkx6IdK4Mn5o1Ahu9nfBAD5HpChinlIipZ6WyJ4ILx4OCFQ69%2BRnoY3HBXK2EAQ4N9rEsPAmat%2Fktb4TfhK3Ake1xB9VgB%2FPMbBpMbT%2FrsQe6B%2BOosNxfe41g4FXE5SJ%2BzagOgMUJr%2BK4qlfsCfactdANoS%2BUgoaQtR7l7d%2BcuP1Qr8T6q63ARni8KCj9YjEm4HQQpmEsjlBvc4d2DMxUK8C6rM58Uhygb%2FMUWrw7fx4nQ3qv%2FEQekHdik76GJiFGn9TK%2Bv7Olg1t8zYxhL10Tz707ktx5DpMvcA5LI8YdzFeabEjeVfifmUHfH374SvK5pDQ39eCtqZnH%2FCYgOT3HcFFzuEGCSb3Vhvks5PYbr2PsxDudgNs0uxB4ekjT0LYL668qiZRSE%2FGpYNXBSreLA3dvkmzi8NJ4TZTL2St9N14UYClLQA4AgfCZIXascKB0s%2BJIEITizxdwi5TRnjNooESqAHeYnbgoPvmefurEFwhxehDbKeQNAe7ykv3sGz94HftY61WYkjCsJ7bgPEWn6tLHALByrPt2%2Fm8M7wu5N%2FdcMOrKQs7m7elYb3gws4%2BG7QU6tAFQhZKUIAJusg7%2F3ZS3opmS3zZ2tpkU%2BjRC6NaOFlzSvh%2BMKgNbYuwlAQTo9A%2BdCTCpNl%2BLNdVuokbfZhCb90KxJzoOxSvZYLkRD61oITou5SbCH7eV8I%2FIBGT77GJa7ZjRhbnV1aGsRKPJLj0aRv5CxAR1nPKJKG%2BfALixgyFaoQcs5XNZj89fkmGeyUdAiUXbURcZULcGYmM0rmiQFjCKqxCxJSF7XQvBEcclgBplp1NcIsI%3D&amp;X-Amz-Signature=7597a8b79d9d38dc9f5d79568bfe6cd39cf85a48c35b9ea98f870dafc73b9cf5&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
+<h2 id="第三方依赖">第三方依赖</h2>
+<p>假设我们三个项目都依赖于 npm 包 sillyname@0.0.3  ( 特定版本 ),  我们可以运行命令: ( Lerna 命令可以在项目下的任何文件夹中执行  )</p>
+<pre><code>lerna add sillyname@0.0.3
+</code></pre>
+<p>然后, 项目的目录结构将会是类似于这样的:</p>
+<figure data-type="image" tabindex="4"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a3da5a86-d2b0-4d67-ae24-5a29e3aef528/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45A7KMKUXE%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120730Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD1YLxe6Z4xK7f9s92jKIoPV1WGXuoif8s0%2B8ztdLoEJQIgfdRgDpR3mW2xjvEqaMYTGHpLZjzTBwYaQEA7uLwWHJIq4wMI6P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwyNzQ1NjcxNDkzNzAiDEtlJzYXgtUWFHsbLiq3A1Nn9CPRRM6WTVXxhihGPbjfO3H9%2F8G7qsnow1l7omXs5m3Udae%2Fy64qBsukWxD5S5Ejmh4HxQGUnE70PlMrJ%2FSeEBV6DA%2B5UZoum5ltgju%2FAqLeHNpnMNhWfXg99Z%2FUFGC2iQ1uDYWW7Zu6iHR7gUbaUwgnwdFzN0AdiP3ivTqLbBbfhmSYdXERm2uXXEN00J5rJoBKfcs2YcdaxW9sbOK2ofUSkeywGPorvNZafPV0zfxan5HtoHIsHzbSdsaLXF4AHyluLQax%2FJeEXgNtYDjT7nB6qXI8dvM%2FJDOM9TWzfDsYB35oBow%2Bo0gmSuiu6swdr8KtiSESGMV9G6zoZwD6O4OGMrByxpdL4bCBRc2JquUVIrvV7tPCu09rTfEYRlKUsVJjnJWV%2FP5Wjcxu8qpscEDwCIDXTexx1s%2BQZuAeZkO3CnUwuIZZdQszsveb2mx3fw9krcka5RP%2FPdst4yceXbSh8H6lw9hN23f%2BLwX0IhR8hmZAwfkMlNwXnldot6WUNH1CDR%2FhTOUNFOXQmSKc0hvcYUP4mCiyoW9Y%2FLYydfc3U62KuYXq8YSl5SYm9n5JmlQhfs4wmvuF7QU6tAFL3sCn6xEh7aHadhzQywv0LOZMOkjUUntvrbohmii3t3XsB%2Bjw%2Feo6q%2F2u%2FosNoxCBRVpBaeM12eoPovzwcdZam1DLYqYogJXCHaVPavk0Fe6pMCt4MTNoUGD5Mvvw5utZSs%2F2z%2FhK8t8YuhE4uxETvks061IHArE1ovtvz6qDc87q%2Be%2BJo8R14t7C0jWtPMVnGu7C4Onls5HQG4l1F4nBGLIuwD22jQbylDa1FNH56NVKJB8%3D&amp;X-Amz-Signature=e71c2a1903a71ff06fb13440b3c08446e09ca49285f3a7b7b652caf78802d078&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
+<p>显然:</p>
+<ul>
+<li>因为我们希望每个 package 都是独立的，所以每个 package 都会更新自己的 package.json 具有对 sillyname 的依赖.</li>
+<li>注意，他生成了 package-lock.json ( 很像 yarn , npm 现在锁定了二级依赖 ). 另外,  Lerna 文档中提到, 他也是支持 yarn 的.</li>
+<li>使用 Lerna 我们可以使用一条命令将依赖安装到每个 package 中.</li>
+<li>每个 package 都有着自己的 sillyname 副本, 安装缓慢同时也浪费磁盘.</li>
+<li>一种更高效的方式便是手动更新每个包的 package.json 然后在父文件夹的 node_modules 中安装 sillyname ( nodejs 是会在父文件夹中查找依赖的 ), 不过这是令人乏味的.</li>
+</ul>
+<p>对此, Lerna 也有着解决方法; 使用  <em>hoist</em> 参数</p>
+<pre><code>lerna add sillyname@0.0.3 --hoist
+</code></pre>
+<p>最后的项目文件夹结构将会是这样的 (截图中并没有展示庞大的 node_modules 文件夹) :</p>
+<figure data-type="image" tabindex="5"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/519f0c3d-d351-4a2a-b9e1-8b780837ba33/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45DEWQT7VH%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120747Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEAAaCXVzLXdlc3QtMiJIMEYCIQCTNeZsUW4kWuDjxCem3bAMns7l0qqj5r7%2BUhHu6eDWCwIhAKgCov7rmj7qt7F6uUgn%2BJ3CjFU2eVxz6zMs2lSywgNTKuMDCOn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjc0NTY3MTQ5MzcwIgxtrFZF0%2FlxfKQKP6kqtwPUFlgOSZr3faYZAgwoRUCglBwFnfj7COe9mzidJ58Q96UJO5R73YYHkcWOqwPmrZDqcy6rScKV5GBg8a8meQaWBpUIqTW4ry%2FZsEccYxMnVS1w%2FbQsLO8roqwjcvJr13zT0msp%2Bqy%2FU0PhaYTMF4yJtcuvHz35VS0tcTVTmXsgdbH43eB7lEbrehsY3c6RysOpNNfNz0YDRcXhEwEIOZodS4oy2BYjj4bA9CZEXbhbuNOla37PzFPhGS1H4M9X0SLpqDXTln0vLThqO9jzTto2fBAJsHRidCt3hOznqDvhkh3VThvmg%2BEq4Y85gSIO8UVJ2XBUzoBnuH8qEdVqNlxYLGScfleTckTU%2BtDt0DVd%2FVomcAZOdOIiGc3iaG2KU129sJsVOu7b3FhqGToNXnTKiT0870PJjnYnhVtZvm5ptC%2FwCUGAqxAzjNVgPEGxHDdASnWP3T1Zvw%2BWPGSPyAvDNQCIWylInaWmA7Osw6AjVrrix89PkMyKYSEMH1yK8%2FI%2FT5QqECNgHqi8ZmhfiXYxjknlY1Whq0qQnsKYGDZqp9PBYICyAgEXDS3IUvLBpNuEUGW%2BzMkNMI%2F%2Fhe0FOrMBAUbPzXUS61xlonQk2PQQwSzZgCMPOY9nPZO15TLmU5mjLAMVYK%2FatSNa3atKN6VdybjsWiUDCWgC4tNcSCkcKhGE3fXQquQfEvX9RDSF%2BgvOCpjNuA3vr5lgalT6zconZzxBA9fpDiJ95Ekr2Wx6J2Qc0mcql2mW%2BQooyOFZwVIe3iiJPVew9dCHmr6Ay2uQ1emi10nB7%2FNcEivMigzcYmfrR0ApVVb2%2BFK2buyy1nrbxQQ%3D&amp;X-Amz-Signature=ee9ff4d07bbb8f58b17793ec8cbfdaca991cd5c6f3cac29d894f720754e034f6&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
+<p>显然:</p>
+<ul>
+<li>每个 package.json 都将 sillyname 列为依赖项.</li>
+<li>sillyname 安装在了项目根目录的 node_modules 文件夹中</li>
+<li>node_modules 中的其他软件包是因为 Lerna 是软件的开发依赖.</li>
+</ul>
+<h2 id="有选择的升级">有选择的升级</h2>
+<p>假如我们只想为 grocery 这个 package 升级 sillyname 的版本, 我们可以执行以下命令:</p>
+<pre><code>lerna add sillyname@0.1.0 --scope=grocery
+</code></pre>
+<p>然后, 项目的目录结构将会是类似于这样的:</p>
+<figure data-type="image" tabindex="6"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/59129a27-7714-4d98-973f-a5ee45c08ffc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45OC3NB4GW%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120800Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEAAaCXVzLXdlc3QtMiJHMEUCIQDhTqc1Jnwj6mIVYJjwbKRo2eQPmLA3npna%2B%2FA00mj6WgIgTt%2BiHMXaChYKcdsWuH3968hh4ifm7ezsvAv72bv8Dgkq4wMI6f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwyNzQ1NjcxNDkzNzAiDKetLgzXi4ziNzxeDCq3A1Ocd1eRgkabUgdynq0EUQHutC47P3ygEWOiyXXn2Ezf2NG8zVxzloEXX9Yo%2BzoOqrglkXIJ57B49UCmjpQDV69z%2FT6ktjH0%2F9yJyP%2BYnhKRsL8UgrXU5RAvzSN18o2x2vw8chr6UIF3FZC%2Fa7w7d519joBZtyUsZEciBM26TWEyabU60jSPb3JZCBtkWElKWZIfWWxOllSJpNCd1kHJWX8QlxCtP%2Bnp%2BDAMU4HHas0L7L%2BHRsCXcpnZz5Lun2fYTzfE5QxupQCrg%2B5JGYJgPj7pAs%2BYX2cKWQpik6OF9rpmYLXEMJwJApXgwdhPLxbJQSoeqCcyclRUzR1Aj%2B2iCZH4MsTZrEeILhgBZpCzSoZKKjm71FWl4ASNdHhEOWngzP4QppQYvv0sl8kTs1ZEOlWlWBU9TfSndlb9cH2mDJpY5O5xokgOToQfEqftttMZXlLPEJUuJIEG2FvGruQjnYxdrRzxfYknjs0q3Hj2xm88lZmUV69DW%2BXVtCDgG3bPDiRHe6O%2FxSX5t77QvURc6do11iJRfEvf3%2BzDFp1Sn1DR8RwuYLoUJToWz12prKmmc7NPcUQ76igwgoaG7QU6tAFVgts3DCcXsNqqPFNRgsGCDc8h8tS6edOi3OcMtvLIT2cDlcKcmOr4Sv%2Fgk5688L%2BgH1Wmy6F65fHBC%2Fw2Y59jZJPgwkndSpYbrDoJvYISQ%2BherYC2LPnIcxCbyJRQyiyWWlgDWov3gzBWZSUOIowO7RvkCIy29OtdOiDY7dw7%2FfgBO6DZaW3PJt1rO5CpfiZfWoDBBSJGGvIV2sl3ROZx1Pj25m5h%2FFZgRqSaqcqF7IuInDY%3D&amp;X-Amz-Signature=f0169fe7bc8c3da4a505d7e5d3e7b975ef98448674f29a405b107c9c73ce2bc3&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
+<p>显然:</p>
+<ul>
+<li>grocery 的 package.json 会更新为依赖 sillyname@0.1.0</li>
+<li>grocery 文件夹下会有一个 node_modules, 其中包含了新版本的 sillyname</li>
+</ul>
+<h2 id="内部依赖">内部依赖</h2>
+<p>现在, 加入我们希望 grocery 去依赖 apple 和 banana, 我们可以执行以下命令:</p>
+<pre><code>lerna add apple banana --scope=grocery
+</code></pre>
+<p>最后的项目文件夹结构将会是这样的</p>
+<figure data-type="image" tabindex="7"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/894d88e0-af5e-4888-9fbe-724ddaa9030b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45AVFIE2OT%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120817Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCBTc4PJH8QtP3ilSv4Oz7EMiZbYza8Cau9tl1j7L5%2B8wIhAMcvg%2FXheFlPTe3xX19OiDvpG0XB1XydWbzkVGdnCh8AKuMDCOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjc0NTY3MTQ5MzcwIgzzMDBbl3pdBO16vdcqtwOtY%2BYs1XzZaUN7HdryTaDunWze4jKG52Z%2BYwOd1BdFUN8ba9Sz2tY7xu532G%2BtsmNX0IzFCr0N2Mf9y52uto8Pb%2B7YhcDeyzv1Tj2%2FbGBfBSvdSciitxDAga3WnDXGQAwXAFUomSMB50BGl%2B3KNVsG2m7ftGBLiudsbZ5Xm4Cm64Y4%2BRZi6bnt8xqVoX3%2BKQamc0s3jyC6XevxaBYm2j2YjcUIQQXmG9nXnkoACRTVPo4BqWjlLY%2FWlLARGjFbX5R9VlcD6oSJqpxJn%2BrueT05rxzRfp0gNAEr3gUVXk6puUkEiYx6iehqZCpaDgw2KVgurhXQzs4H%2BJVvYM1qO1qI7nSNhQ02JXqmOhvWlrzf%2BIYHfy3f7uJiNhujN664F63SiLOMsIXlBERL7T%2Bwv8TzIGK0phlUzuq%2BLiYacGzM0fxmIbWUlzErmEbar8HhWWbCZAdqMAP4v8oJf903%2B4o5TLKZ0Vo1d1xEE%2FCyMJ%2FtRxsFCaC3NMtRIab4RoaqQ0Ta6YbJDH6AS5uoHuztZEnpA3C109WKfmw4kk3g5KB7KBfn0N1M7WuN3YFKkbY3N3IGgxYnM3KDMJv8he0FOrMB2Mdch5WiRjnYOi6rxEwW2LmxmKaKViEiOIRNXzIBEzmKGHr8%2BLk17C8v6vqvS%2FpqaAjqruRTQcdGmYUm3sIxJc2MYvqb0ie1eItv4PmPKaIm8Ed9Zblu1hb%2FbsW9qer0jT2FomdlV5jCYxZt1GKG5ZDrWzZkbnV7RGX3dV7XnBg6tc0IG%2Fq%2BdFZJVz1MwGcRaRDhWFzBQm%2F3cyBXUgMFPkFlH2OoKBckXijR8TXODKCqVmA%3D&amp;X-Amz-Signature=143de3cfaaa805715d562c0d9cfcd5823970d76dee0ec45700d057fc04d37d92&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
+<p>显然:</p>
+<ul>
+<li>grocery 的 package.json 已更新, 依赖于 apple 和 banana.</li>
+<li>Lerna 在 grocery 的 node_modules 文件夹中创建了软连接, 运行 grocery 透明的访问 apple 和 banana 中的文件.</li>
+</ul>
+<h2 id="相关代码">相关代码</h2>
+<p>现在, 我们已经设置好了相关依赖, 可以开始编写一些代码了.</p>
+<p><em>packages/apple/index.js</em></p>
+<pre><code>const sillyname = require('sillyname');
+module.exports = `apple and ${sillyname()}`;
+</code></pre>
+<p><em>packages/banana/index.js</em></p>
+<pre><code>const sillyname = require('sillyname');
+module.exports = `banana and ${sillyname()}`;
+</code></pre>
+<p><em>packages/apple/grocery.js</em></p>
+<pre><code>const sillyname = require('sillyname');
+const apple = require('apple');
+const banana = require('banana');
+console.log(`grocery and ${sillyname()}`);
+console.log(apple);
+console.log(banana);
+</code></pre>
+<p>然后在 grocery 的目录下运行一下命令:</p>
+<pre><code>node index.js
+</code></pre>
+<p>最后的输出会是这样的:</p>
+<pre><code>grocery and Linenhiss Butterfly
+apple and Trailspeaker Scribe
+banana and Translucentpuma Kangaroo
+</code></pre>
+<p>完成编码后, 我们添加以下文件, 因为我们不希望将 node_modules 文件夹存储在源代码管理中.</p>
+<p><em>.gitignore</em></p>
+<pre><code>**/node_modules
+</code></pre>
+<p>然后将所有的文件提交到 git 仓库之中.</p>
+<h2 id="bootstrap">Bootstrap</h2>
+<p>现在, 假如团队的另一名成员要加入开发. 首先, 他需要全局安装 Lerna.</p>
+<pre><code>sudo npm install --global lerna
+</code></pre>
+<p>然后, 他需要克隆仓库, 然后运行对应的名来安装所有依赖 ( 包括符号链接 ):</p>
+<pre><code>lerna bootstrap --hoist
+</code></pre>
+<p>现在, 这么成员就可以开始编码了. 遵循他们自己的工作流模式 (创建新分支等等).</p>
+<h2 id="下一步">下一步</h2>
+<p>在下一篇文章<a href="https://medium.com/@johntucker_48673/monorepos-by-example-part-2-4153712cfa31">Monorepos By Example：Part 2</a> ( 未翻译 )中，我们将继续探讨一些更实际的问题。</p>
+
+        </div>
+
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://x956606865.github.io/normal-balance//tag/1HGBuA8Gx">
+            <span class="flex-auto">Translate</span>
+          </a>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://x956606865.github.io/normal-balance//tag/re4eMjzigC">
+            <span class="flex-auto">Program</span>
+          </a>
+        
+
+
+        <div class="flex justify-between py-8">
+          
+            <div class="prev-post">
+              <a href="https://x956606865.github.io/normal-balance//post/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua">
+                <h3 class="post-title">
+                  <i class="remixicon-arrow-left-line"></i>
+                  [译]Node v11 中定时器和微指令的新变化
+                </h3>
+              </a>
+            </div>
+          
+
+          
+            <div class="next-post">
+              <a href="https://x956606865.github.io/normal-balance//post/lerna-xue-xi-san-fa-bu-pian">
+                <h3 class="post-title">
+                  lerna学习（三）发布篇
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '76291ba0cf1990c7ea9c',
+    clientSecret: '6470aeab5dae3db34487b64b739450bdf3c53036',
+    repo: 'normal-balance',
+    owner: 'x956606865',
+    admin: ['x956606865'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+      </div>
+    </div>
+
+    <script src="https://x956606865.github.io/normal-balance//media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
+</html>

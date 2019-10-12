@@ -46,12 +46,13 @@
             <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E6%8F%90%E6%A1%88%E7%8A%B6%E6%80%81stage-2">提案状态：Stage-2</a></li>
-<li><a href="#%E9%93%BE%E6%8E%A5httpstc39githubioproposal-decorators">链接:<em>https://tc39.github.io/proposal-decorators/</em></a></li>
-<li><a href="#%E9%9C%80%E6%B1%82-babel-7">需求: Babel-7</a></li>
-<li><a href="#%E6%8F%92%E4%BB%B6babelplugin-proposal-decorators">插件:@babel/plugin-proposal-decorators</a></li>
-<li><a href="#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85">快速安装：</a></li>
-<li><a href="#%E6%80%9D%E8%80%83">思考:</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96">初始化</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BApackage">创建package</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E5%90%84%E7%A7%8D%E4%BE%9D%E8%B5%96">安装各种依赖</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E5%8C%85">安装依赖包</a></li>
+<li><a href="#%E5%BF%AB%E9%80%9F%E6%96%B0%E5%BB%BApackage">快速新建package</a></li>
+<li><a href="#%E5%80%BC%E5%BE%97%E6%B3%A8%E6%84%8F%E7%9A%84%E5%91%BD%E4%BB%A4">值得注意的命令</a></li>
 </ul>
 </li>
 </ul>
@@ -100,158 +101,131 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">ECMA 提案-&#39;decorator&#39; 研究</h1>
+        <h1 class="text-3xl font-bold lg:mt-16">lerna学习（二）</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2018-11-04 / 3 min read
+          2018-11-23 / 5 min read
         </div>
         
-          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://x956606865.github.io/normal-balance//post-images/ecma-ti-an-decorator-yan-jiu.png" alt="">
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://x956606865.github.io/normal-balance//post-images/lerna-xue-xi-er.jpg" alt="">
         
         <div class="post-content yue">
-          <p>//ps:根据大佬的解释，现在提案修改，不推荐使用legacy这种模式了，新版模式待研究后再更新Orz</p>
+          <h2 id="安装">安装</h2>
+<p>lerna的安装类似于webpack，需要全局安装作为一个命令来使用，可以选择使用npx直接使用，不过为了方便，还是全局安装方便一些。</p>
+<pre><code>yarn global add lerna
+</code></pre>
 <!-- more -->
-<h2 id="提案状态stage-2">提案状态：Stage-2</h2>
-<h2 id="链接httpstc39githubioproposal-decorators">链接:<a href="https://tc39.github.io/proposal-decorators/"><em>https://tc39.github.io/proposal-decorators/</em></a></h2>
-<h2 id="需求-babel-7">需求: Babel-7</h2>
-<h2 id="插件babelplugin-proposal-decorators">插件:@babel/plugin-proposal-decorators</h2>
-<pre><code>          (ps:babel7以后插件名称全部有所改动)
+<h2 id="初始化">初始化</h2>
+<pre><code>mkdir myLerna
+cd myLerna
+lerna init --independent
 </code></pre>
-<h2 id="快速安装">快速安装：</h2>
-<pre><code>    yarn global add @babel/cli
-    yarn global add @babel/node
-    yarn add @babel/plugin-proposal-decorators
+<p>lerna的初始化分为fix模式以及independent模式两种，默认是fix模式，或者叫做锁定模式，项目内所有的package共用版本号。不过我认为这种情况其实很少，大部分人应该都是使用独立模式，每个package拥有自己的版本号。</p>
+<h2 id="创建package">创建package</h2>
+<pre><code>cd packages
+mkdir package-1
+cd package-1
+yarn init -y
+cd ..
+mkdir package-2
+cd package-2
+yarn init -y
 </code></pre>
-<p>使用babel-node、babel-cli这样的名称只能安装到6版本的babel工具，7版本的工具全部改由@babel前缀</p>
-<p>新建.babelrc文件:</p>
-<pre><code>    {
-        &quot;plugins&quot;:[
-    				[&quot;@babel/plugin-proposal-pipeline-operator&quot;, { &quot;proposal&quot;: &quot;minimal&quot; }],
-    				[&quot;@babel/plugin-proposal-decorators&quot;,{&quot;legacy&quot;:true}]]
-    }
+<p>这里要注意，如果你没有创建任何package，你是不能使用lerna add命令安装依赖包的，因为默认lerna会为每个package安装依赖。</p>
+<h2 id="安装各种依赖">安装各种依赖</h2>
+<p>在开发之前，肯定是需要先安装各种eslint、prettier、commit-lint等等规范化库的，我们为啥要把一堆package放到一个仓库？其中一个原因不就是为了直接复用一套规范文件么。</p>
+<p>所以各种lint文件肯定是安装到项目全局的，这时如果使用lerna的安装命令:</p>
+<pre><code>lerna add eslint --dev
 </code></pre>
-<p>新建index.js文件:</p>
-<pre><code>    function testable(isTestable) {
-        return function(target) {
-            target.isTestable = isTestable;
-        }
-    }
-    
-    @testable(true)
-    class MyTestableClass {}
-    console.log(MyTestableClass.isTestable)// true
-     
-    
-    @testable(false)
-    class MyClass {}
-    console.log(MyClass.isTestable)// false
+<p>就会发现一个问题，每个package都被单独安装了eslint，这明显是不合适的，既然是同一个项目，安装多次同一个模块算个什么事？</p>
+<p>然后我们发现，lerna有提到如果你想只安装一次，那么可以把这些依赖写到每个package的package.json中，然后回到根目录运行:</p>
+<pre><code>lerna bootstrap --hoist
 </code></pre>
-<p>然后执行:</p>
-<pre><code>babel-node index.js
+<p>bootstrap是learna一键为所有package安装依赖的命令，如果加上了--hoist参数，那么就是告诉lerna，把所有依赖全部安装到根目录中，然后分别在各自的文件夹中创建软连接指向对应的模块实际路径。</p>
+<p>从解决问题的眼光来看，确实解决了重复安装的问题，不过所有模块都装到根目录混杂在一起，这让强迫症心里很不舒服，我们希望的其实是只有lint这些公共库提取出来，其他的他们自己的依赖放到他们自己的文件夹中。</p>
+<p>在参考了<a href="https://github.com/babel/babel">Babel</a>仓库的做法后，明白了。因为node自身在查找模块的时候有向父级目录查询的操作，所以其实软连接什么的并不需要，甚至都不需要lerna，我们直接</p>
+<pre><code>yarn add -D eslint
 </code></pre>
-<p>即可看到对应的输出结果。</p>
-<h2 id="思考">思考:</h2>
+<p>这样便直接将eslint安装到了根目录中，由于层级高，所以子目录都会受到lint规则的约束。同样，为此安装好husky等等基本库，完成仓库的初始化。(可以参考我的另一篇<a href="https://www.notion.so/aj0k3r/57b80f3f75b741e3a54546c20ae5e8e7">文章</a>)</p>
+<h2 id="安装依赖包">安装依赖包</h2>
+<p>安装依赖包有很多种方式，虽然可以进入对应的文件夹中直接使用yarn安装，不过为了项目统一，还是推荐使用lerna的命令来安装依赖</p>
 <ul>
 <li>
-<p>装饰器语法本身只是单纯的用一个函数去处理一个类，大多数时候都是对其prototype的修改，用es5也能实现对应的功能，但是使用装饰器能使代码更加简洁，结构更加清晰。</p>
+<p>给所有package安装某个第三方依赖：</p>
+<pre><code>  lerna add module-A
+</code></pre>
 </li>
 <li>
-<p>虽然在js中，class和function不存在本质上的区别，只是一个语法糖的存在，但是由于函数的作用域提升的问题，如果函数中有自由变量的使用，就会出现不可预期的一些bug。</p>
-<p>例如如下代码:(案例来自阮一峰es6教程)</p>
+<p>给package-A安装第三方依赖：</p>
+<pre><code>  lerna add module-A packages/package-A
+</code></pre>
+<p>ps:这里可以使用正则，比如官方举例的：</p>
+<pre><code>  lerna add module-1 packages/prefix-*
+</code></pre>
+</li>
+<li>
+<p>package-A依赖package-B：</p>
+<pre><code>  lerna add package-B --scope=package-A
+</code></pre>
+</li>
+<li>
+<p>所有package都依赖package-C：</p>
+<pre><code>  lerna add package-C
+</code></pre>
+<p>PS.  lerna处理package互相依赖时采用的是软连接的模式，所以不用担心重复安装的问题。</p>
 </li>
 </ul>
-<pre><code>    var counter = 0;
-    
-    var add = function () {
-      counter++;
-    };
-    
-    @add
-    function foo() {
-    }
+<h2 id="快速新建package">快速新建package</h2>
+<p>lerna提供了一个命令来快速新建package，避免了重复机械的操作</p>
+<pre><code>    lerna create package-D --dependencie=[&quot;package-A&quot;,&quot;lodash&quot;]
 </code></pre>
-<p>在实际编译后，会变成如下：</p>
-<pre><code>    @add
-    function foo() {
-    }
-    
-    var counter;
-    var add;
-    
-    counter = 0;
-    
-    add = function () {
-      counter++;
-    };
-</code></pre>
-<p>从而导致程序出粗。</p>
+<p>这样可以快速新建一个package并且申明他依赖的内部package或者外部包</p>
+<h2 id="值得注意的命令">值得注意的命令</h2>
 <ul>
-<li>由于装饰器可以优雅的修改prototype，猜想可以优雅的尝试AOP编程，例如:</li>
+<li>
+<p>lerna run xxx</p>
+<p>按照官方说法，是为所有的package执行xxx这个script，听起来有点唬人，所以我测试了一下。</p>
+<p>首先，这里的命令，不是指根目录的package.json里面的script，lerna根本不会去管根目录里面的script。</p>
+<p>当你运行 lerna run xxx时，他会依次遍历每个package目录的package.json，如果有同名的script就执行，没有的就跳过，每个目录对应的xxx script执行的内容也可以完全不一样，互不干扰。</p>
+</li>
+<li>
+<p>lerna exec — xxx</p>
+<p>与run命令对应的另一个命令就是exec命令，不过不同的是exec命令接受的是bash命令而不是script名称，他会为每个package执行对应的bash操作，不会跳过</p>
+</li>
 </ul>
-<pre><code>    function AOP(options) {
-        const {beforeFunc,afterFunc}=Object.assign({
-            beforeFunc:()=&gt;{},
-            afterFunc:()=&gt;{}
-        },options)
-        return function(target, key, descriptor) {
-            const oldTarget = descriptor.value
-            descriptor.value=function(){
-                beforeFunc.apply(this,arguments)
-                const value=oldTarget.apply(this,arguments)
-                afterFunc.apply(this.arguments)
-                return value
-            }
-            return descriptor
-        }
-    }
-    function logBefore(){
-        console.log(&quot;before&quot;)
-    }
-    function logAfter(){
-        console.log(&quot;after&quot;)
-    }
-    class MyClass {
-        @AOP({
-            beforeFunc:logBefore,
-            afterFunc:logAfter
-        })
-        func(){
-            console.log(&quot;run&quot;)
-        }
-    }
-    const obj=new MyClass()
-    obj.func()
-</code></pre>
-<p>这样每次就简单清晰的注入了before和after两个函数，在这两个函数中可以做数据预处理、数据状态监测等等一系列的功能，包括GA数据的监测也可以这样放入。这样和JAVA的AOP思路就十分的接近了。</p>
+<p>第二篇结束......</p>
+<p>参考链接:</p>
 <ul>
-<li>同样由于可以处理proptype，理论上可以实现类的依赖注入，传入依赖的字符串数组，然后解析出是npm模块还是本地文件，然后使用inline require动态加载对应的库，注入到类中。同样可以注入的还可以有项目的config的配置变量等等。</li>
-<li>待续</li>
+<li><a href="https://codeburst.io/monorepos-by-example-part-1-3a883b49047e">Monorepos By Example: Part 1</a></li>
+<li><a href="https://codeburst.io/monorepos-by-example-part-2-4153712cfa31">Monorepos By Example: Part 2</a></li>
+<li><a href="https://codeburst.io/monorepos-by-example-part-3-1ebdea7ccbea">Monorepos By Example: Part 3</a></li>
 </ul>
 
         </div>
 
-        
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://x956606865.github.io/normal-balance//tag/hawpsltzL">
-            <span class="flex-auto">Javascript</span>
-          </a>
-        
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://x956606865.github.io/normal-balance//tag/re4eMjzigC">
-            <span class="flex-auto">Program</span>
-          </a>
         
 
 
         <div class="flex justify-between py-8">
           
             <div class="prev-post">
-              <a href="https://x956606865.github.io/normal-balance//post/xiang-mu-gui-fan-hua-kai-fa-tan-suo">
+              <a href="https://x956606865.github.io/normal-balance//post/lerna-xue-xi-san-fa-bu-pian">
                 <h3 class="post-title">
                   <i class="remixicon-arrow-left-line"></i>
-                  项目规范化开发探索
+                  lerna学习（三）发布篇
                 </h3>
               </a>
             </div>
           
 
+          
+            <div class="next-post">
+              <a href="https://x956606865.github.io/normal-balance//post/lerna-xue-xi-yi-si-lu-pian">
+                <h3 class="post-title">
+                  lerna 学习（一）思路篇
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
           
         </div>
 

@@ -46,12 +46,8 @@
             <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E6%8F%90%E6%A1%88%E7%8A%B6%E6%80%81stage-2">提案状态：Stage-2</a></li>
-<li><a href="#%E9%93%BE%E6%8E%A5httpstc39githubioproposal-decorators">链接:<em>https://tc39.github.io/proposal-decorators/</em></a></li>
-<li><a href="#%E9%9C%80%E6%B1%82-babel-7">需求: Babel-7</a></li>
-<li><a href="#%E6%8F%92%E4%BB%B6babelplugin-proposal-decorators">插件:@babel/plugin-proposal-decorators</a></li>
-<li><a href="#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85">快速安装：</a></li>
-<li><a href="#%E6%80%9D%E8%80%83">思考:</a></li>
+<li><a href="#%E7%A7%81%E6%9C%89npm%E4%BB%93%E5%BA%93%E7%9A%84%E6%90%AD%E5%BB%BA">私有npm仓库的搭建</a></li>
+<li><a href="#%E6%95%B4%E5%90%88lerna%E5%8F%91%E5%B8%83">整合lerna发布</a></li>
 </ul>
 </li>
 </ul>
@@ -100,139 +96,64 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">ECMA 提案-&#39;decorator&#39; 研究</h1>
+        <h1 class="text-3xl font-bold lg:mt-16">lerna学习（三）发布篇</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2018-11-04 / 3 min read
+          2018-11-24 / 5 min read
         </div>
         
-          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://x956606865.github.io/normal-balance//post-images/ecma-ti-an-decorator-yan-jiu.png" alt="">
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://x956606865.github.io/normal-balance//post-images/lerna-xue-xi-san-fa-bu-pian.jpg" alt="">
         
         <div class="post-content yue">
-          <p>//ps:根据大佬的解释，现在提案修改，不推荐使用legacy这种模式了，新版模式待研究后再更新Orz</p>
+          <p>接着之前的思路，现在我们已经完成了项目的初始化构建，然后开始往里面写新的package。</p>
+<p>在写入的package后就需要涉及到上传的问题了，如果是开源项目，那直接使用lerna的publish命令即可。但是比如一些公司的技术沉淀之类的整合，有很多是不适合直接公开在网络上的，所以需要的是上传私有库。比起npm的私有包的方案，其实我更倾向于搭建私有npm仓库的做法。一来，代码是存储在自己的服务器的。二来，lerna也默认不允许直接发布私有包。</p>
 <!-- more -->
-<h2 id="提案状态stage-2">提案状态：Stage-2</h2>
-<h2 id="链接httpstc39githubioproposal-decorators">链接:<a href="https://tc39.github.io/proposal-decorators/"><em>https://tc39.github.io/proposal-decorators/</em></a></h2>
-<h2 id="需求-babel-7">需求: Babel-7</h2>
-<h2 id="插件babelplugin-proposal-decorators">插件:@babel/plugin-proposal-decorators</h2>
-<pre><code>          (ps:babel7以后插件名称全部有所改动)
-</code></pre>
-<h2 id="快速安装">快速安装：</h2>
-<pre><code>    yarn global add @babel/cli
-    yarn global add @babel/node
-    yarn add @babel/plugin-proposal-decorators
-</code></pre>
-<p>使用babel-node、babel-cli这样的名称只能安装到6版本的babel工具，7版本的工具全部改由@babel前缀</p>
-<p>新建.babelrc文件:</p>
-<pre><code>    {
-        &quot;plugins&quot;:[
-    				[&quot;@babel/plugin-proposal-pipeline-operator&quot;, { &quot;proposal&quot;: &quot;minimal&quot; }],
-    				[&quot;@babel/plugin-proposal-decorators&quot;,{&quot;legacy&quot;:true}]]
-    }
-</code></pre>
-<p>新建index.js文件:</p>
-<pre><code>    function testable(isTestable) {
-        return function(target) {
-            target.isTestable = isTestable;
-        }
-    }
-    
-    @testable(true)
-    class MyTestableClass {}
-    console.log(MyTestableClass.isTestable)// true
-     
-    
-    @testable(false)
-    class MyClass {}
-    console.log(MyClass.isTestable)// false
-</code></pre>
-<p>然后执行:</p>
-<pre><code>babel-node index.js
-</code></pre>
-<p>即可看到对应的输出结果。</p>
-<h2 id="思考">思考:</h2>
+<h2 id="私有npm仓库的搭建">私有npm仓库的搭建</h2>
+<p>目前网络上开源的构建私有npm的框架很多。最出名的就是淘宝cnpm开源的<a href="https://github.com/cnpm/cnpmjs.org">cnpm.org</a>，这个库可以说把整个cnpm的功能都实现的，功能十分强大。不过代价就是搭建十分麻烦，而且较为不稳定，时常出现奇怪的bug。</p>
+<p>对于普通公司来说，其实并没有那么全的功能需求的，其实只要满足基本的功能就足够使用了。所以这里我选择的是一个十分小众的框架<a href="https://cevio.github.io/cpm/">CPM</a></p>
+<p>这个框架的搭建十分简单，按照官方文档搭建，很快便可以搭建成功。不过有几个要注意的点:</p>
 <ul>
 <li>
-<p>装饰器语法本身只是单纯的用一个函数去处理一个类，大多数时候都是对其prototype的修改，用es5也能实现对应的功能，但是使用装饰器能使代码更加简洁，结构更加清晰。</p>
+<p>在导入数据库的时候，文档说的很模糊。其实根目录下有一个database.sql文件，如果你不是使用navcat之类的图像化工具，那么你就需要用mysql命令登入mysql，然后:</p>
+<pre><code>  &gt; create database cpm;
+  &gt; use cpm;
+  &gt; source ./database.sql;
+</code></pre>
+<p>因为他提供的sql文件本身不会去创建数据库，所以你需要自己去创建，并切换。</p>
 </li>
 <li>
-<p>虽然在js中，class和function不存在本质上的区别，只是一个语法糖的存在，但是由于函数的作用域提升的问题，如果函数中有自由变量的使用，就会出现不可预期的一些bug。</p>
-<p>例如如下代码:(案例来自阮一峰es6教程)</p>
+<p>不同于cnpm.org，cnpm.org使用了两个端口，一个用作仓库，一个用作web服务。对于cpm来说，他只会暴露一个端口。在不修改package.json的情况下，dev模式是7002，production是7001。所以会出现一些问题。比如文档建议在上线时，将config设置中的registryHost直接修改成你的域名，不带端口。并且示例中使用的也直接是域名。这样就会带来一个问题，你的服务跑在了7001端口，但是你的仓库被设置成了80端口。看起来能用。但是当你上传package后，就会发现没法下载，因为80端口去找下载包就会出现404错误。解决方法，要么保持registryHost是7001端口，要么去修改package.json为80端口，然后重新上传package。</p>
+</li>
+<li>
+<p>对于数据库配置，如果你的数据库不是跑在默认的3306端口，在设置plugin的时候需要手动加上port这个字段。（还好字段名称没有被作者魔改）</p>
+</li>
+<li>
+<p>因为私有包必须以自身的scope为前缀命名，比如@exampleScope/packageName，所以请务必记住 将自己公司用的scope名称添加到app/service/authorization.js允许的scope数组中，不然可能会无法上传。</p>
+</li>
+<li>
+<p>对于package的命名，除了需要一scope作为前缀，同时还需要注意的是不可以使用驼峰法，请务必使用中划线分割单词。因为驼峰法会被分割成多级目录的格式。这样的话会触发cpm的一个bug，如果安装时一般的包找不到会包一个json格式的错误，说本地没有这个包。如果是这种被分割成了多级目录，由于没有触发到路由的匹配，所以会报一个404的文本回来，从来导致本地触发报错说json数据解析失败，数据非法什么的。</p>
+</li>
+<li>
+<p>同时，不知道是不是作者大意了，cpm会读取本地packages目录下的文件来查询已有的本地模块文件，不过他默认没有新建这个文件夹，所以需要手动在cpm根目录新建packages文件夹，不然fs模块会报错说路径不存在。</p>
 </li>
 </ul>
-<pre><code>    var counter = 0;
-    
-    var add = function () {
-      counter++;
-    };
-    
-    @add
-    function foo() {
-    }
+<h2 id="整合lerna发布">整合lerna发布</h2>
+<p>在搭建好了自己的npm仓库后，就可以开始尝试发布自己的模块了。因为我们私有的模块是基于npm的，所以记住，千万不能在配置文件中将lerna的client设置成“yarn”。</p>
+<!-- more -->
+<p>然后，我们可以：</p>
+<pre><code>git add .
+git-cz
+lerna publish --registry=http://xxxx.com:7001
 </code></pre>
-<p>在实际编译后，会变成如下：</p>
-<pre><code>    @add
-    function foo() {
-    }
-    
-    var counter;
-    var add;
-    
-    counter = 0;
-    
-    add = function () {
-      counter++;
-    };
-</code></pre>
-<p>从而导致程序出粗。</p>
+<p>使用git-cz格式化我们的commit，然后使用lerna publish命令。lerna会帮我们将代码push到github对应的分支，同时依次将各个模块上传到私有的npm仓库中，同时还会修改每个package的版本号，然后去修改每个相互依赖package的版本号。</p>
+<p>注意点:</p>
 <ul>
-<li>由于装饰器可以优雅的修改prototype，猜想可以优雅的尝试AOP编程，例如:</li>
-</ul>
-<pre><code>    function AOP(options) {
-        const {beforeFunc,afterFunc}=Object.assign({
-            beforeFunc:()=&gt;{},
-            afterFunc:()=&gt;{}
-        },options)
-        return function(target, key, descriptor) {
-            const oldTarget = descriptor.value
-            descriptor.value=function(){
-                beforeFunc.apply(this,arguments)
-                const value=oldTarget.apply(this,arguments)
-                afterFunc.apply(this.arguments)
-                return value
-            }
-            return descriptor
-        }
-    }
-    function logBefore(){
-        console.log(&quot;before&quot;)
-    }
-    function logAfter(){
-        console.log(&quot;after&quot;)
-    }
-    class MyClass {
-        @AOP({
-            beforeFunc:logBefore,
-            afterFunc:logAfter
-        })
-        func(){
-            console.log(&quot;run&quot;)
-        }
-    }
-    const obj=new MyClass()
-    obj.func()
-</code></pre>
-<p>这样每次就简单清晰的注入了before和after两个函数，在这两个函数中可以做数据预处理、数据状态监测等等一系列的功能，包括GA数据的监测也可以这样放入。这样和JAVA的AOP思路就十分的接近了。</p>
-<ul>
-<li>同样由于可以处理proptype，理论上可以实现类的依赖注入，传入依赖的字符串数组，然后解析出是npm模块还是本地文件，然后使用inline require动态加载对应的库，注入到类中。同样可以注入的还可以有项目的config的配置变量等等。</li>
+<li>发布前记得确认命令行内的npm处于登录状态的，否则可能会因为未登录而无法上传模块，但是因为lerna会提前修改版本号，导致各个模块版本号已经增加了，但是模块没能更新上去，下次想要上传，就得手动控制版本号不要继续加一，否则就调版本了。</li>
+<li>因为lerna会自己执行一些github命令，来推送代码，所以请务必关闭husk中添加的commitlint功能，除非你知道怎么去修改lerna执行时填写的commit message。</li>
 <li>待续</li>
 </ul>
 
         </div>
 
-        
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://x956606865.github.io/normal-balance//tag/hawpsltzL">
-            <span class="flex-auto">Javascript</span>
-          </a>
         
           <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://x956606865.github.io/normal-balance//tag/re4eMjzigC">
             <span class="flex-auto">Program</span>
@@ -243,15 +164,24 @@
         <div class="flex justify-between py-8">
           
             <div class="prev-post">
-              <a href="https://x956606865.github.io/normal-balance//post/xiang-mu-gui-fan-hua-kai-fa-tan-suo">
+              <a href="https://x956606865.github.io/normal-balance//post/yi-gen-zhao-li-zi-xue-monorepo-yi">
                 <h3 class="post-title">
                   <i class="remixicon-arrow-left-line"></i>
-                  项目规范化开发探索
+                  [译] 跟着例子学 monorepo (一)
                 </h3>
               </a>
             </div>
           
 
+          
+            <div class="next-post">
+              <a href="https://x956606865.github.io/normal-balance//post/lerna-xue-xi-er">
+                <h3 class="post-title">
+                  lerna学习（二）
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
           
         </div>
 

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://x956606865.github.io/normal-balance/</id>
     <title>常名斋</title>
-    <updated>2019-10-12T11:47:34.238Z</updated>
+    <updated>2019-10-12T12:09:03.659Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://x956606865.github.io/normal-balance/"/>
     <link rel="self" href="https://x956606865.github.io/normal-balance//atom.xml"/>
@@ -98,6 +98,433 @@
 <p>我的 rust 代码例子: <a href="https://github.com/x956606865/test-extract">https://github.com/x956606865/test-extract</a></p>
 <p>另一位大佬用python写的更牛逼的版本:  <a href="https://github.com/kingname/GeneralNewsExtractor">https://github.com/kingname/GeneralNewsExtractor</a></p>
 <p>Link:<a href="https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664">https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[译]Node v11 中定时器和微指令的新变化]]></title>
+        <id>https://x956606865.github.io/normal-balance//post/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua</id>
+        <link href="https://x956606865.github.io/normal-balance//post/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua">
+        </link>
+        <updated>2019-03-04T11:59:34.000Z</updated>
+        <summary type="html"><![CDATA[<p>本文是我之前关于  Node.js  事件循环的系列文章的简短跟进。在之前的系列文章中，我详细讨论了Timers，setImmediate，process.nextTick，Promises等等。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>本文是我之前关于  Node.js  事件循环的系列文章的简短跟进。在之前的系列文章中，我详细讨论了Timers，setImmediate，process.nextTick，Promises等等。</p>
+<!-- more -->
+<p>但是，自 Node.js  v11.0.0 起，对 setTimeout，setImmediate，process.nextTick 和Promises 的行为进行了一些重大更改。在本文中，我将讨论这些新的更改以及 Node &lt; v11.0.0 和 Node ≥ v11.0.0 之间的功能的一些比较。如果您错过了我之前关于 Node.js事件循环的任何文章，我建议您从以下链接中阅读它们然后返回此处以查看 Node v11.0.0中引入的新更改。</p>
+<ul>
+<li><a href="https://jsblog.insiderattack.net/event-loop-and-the-big-picture-nodejs-event-loop-part-1-1cb67a182810">Reactor Pattern and the Big Picture</a></li>
+<li><a href="https://jsblog.insiderattack.net/timers-immediates-and-process-nexttick-nodejs-event-loop-part-2-2c53fd511bb3">Timers and Immediates</a></li>
+<li><a href="https://jsblog.insiderattack.net/promises-next-ticks-and-immediates-nodejs-event-loop-part-3-9226cbe7a6aa">Promises, Next-Ticks and Immediates</a></li>
+<li><a href="https://jsblog.insiderattack.net/handling-io-nodejs-event-loop-part-4-418062f917d1">Handling I/O</a></li>
+<li><a href="https://jsblog.insiderattack.net/event-loop-best-practices-nodejs-event-loop-part-5-e29b2b50bfe2">Event Loop Best Practices</a></li>
+</ul>
+<h2 id="详解">详解</h2>
+<p>如果您分别在浏览器和 Node.js 中单独运行以下代码，会得到完全相反的结果。</p>
+<pre><code>setTimeout(() =&gt; console.log('timeout1'));
+setTimeout(() =&gt; {
+    console.log('timeout2')
+    Promise.resolve().then(() =&gt; console.log('promise resolve'))
+});
+setTimeout(() =&gt; console.log('timeout3'));
+setTimeout(() =&gt; console.log('timeout4'));
+</code></pre>
+<p>在浏览器中，会输出如下结果:</p>
+<pre><code>timeout1
+timeout2
+promise resolve
+timeout3
+timeout4
+</code></pre>
+<p>然而在低于v11.0.0版本的 Node.js 中，会输出以下结果:</p>
+<pre><code>timeout1
+timeout2
+timeout3
+timeout4
+promise resolve
+</code></pre>
+<p>在 Node.js 的实现中，当程序横跨 C ++  /  JavaScript 边界时，会在事件循环( event loop )的每个阶段之间执行 process.nextTick 回调和微任务 (  microtasks, 例如，promise回调 )。因此，在执行 Promise 的回调之前，所有定时器的回调都会在事件循环( event loop )的定时器阶段执行，从而产生上述输出。</p>
+<p>然而，浏览器和Node之间的这种矛盾的输出已经被讨论了很长一段时间了，并且一个特性（或bug修复）已经登陆 Node.js v11.0.0 用以跟踪浏览器行为。使用此功能，Node.js v11.0.0或更高版本将输出与浏览器输出匹配的以下内容：</p>
+<pre><code>timeout1
+timeout2
+promise resolve
+timeout3
+timeout4
+</code></pre>
+<p>请参阅以下 Node v10.15.1 和 Node v11.10.0 之间的比较：</p>
+<p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ca22d429-50db-40fd-a389-edf611079489/untitled?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45IHKPGFWL%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120545Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEAAaCXVzLXdlc3QtMiJIMEYCIQD7cIh6Ogu3uSmm1LmURDDLOhnyVAok8Yf9cpXGHZoVQgIhALx22mjTlUoVvLPE9xg1gxlR7BpaCyYWaraURiPylDAKKuMDCOn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjc0NTY3MTQ5MzcwIgw2iGxPzJTAHFEAkHoqtwNX1BlUpi6okLhxieOgHtnAkg5hHKP3NwUssG9WM7PvyF1zS3%2F9qXiwRWwCpw9%2Bn3bsiIAzwpHZXGjsnGaQ2gwDzF83bk8gA6TDJ0nMY9FOftyxzW7E5nSxyFZYALR1hEEnJOHxsngssr%2B9ahKsSGKzGRVglYVlLQg1GIGIaWUNKZMjyCltOZeAIxV%2F%2FunsgiZmrxs1YqFVJq1fzt1XxMZbxqVo72yA1sC6%2Br2al%2FO7BnMHdHwlYSb4WQ4OsWeQ7fzNG1tnVl0540Idp2hzBhMv5Q84A8i0oNOKMYorj7Ysfv7k2Sg6Cw7bSPTBo%2Fmhfd7Vb%2FMfO%2BY6%2Bv%2FkH5s5GN2YrmpNBEh9%2BhHpEUXpQV1dpbhB%2FALWKPv9sV0%2BllFPZu8VKCTovbrwmNXFaHz5UwOtqSgSwEtFIOAhL0CHJNkaAEQ2xZoWVQklvfB3ni3JcBl8VDnsfanulYgmCUDrK%2FgainU4UY9VveReiu%2BBeNMPe3OobJGCCtCy9gy%2BjURt3A4MKNusa7xA3MotuSflIPY827yual90Ud7Cqo6u3O%2FlcuVNh6XnQCXNtf2PTRBq3HMpz%2F310culMKaPhu0FOrMBUzZpowHsAMtb9HgyA4UhHmsH9W%2BSjl%2BkIHHh%2Bp9cmGNXWXvlWz%2FOVIfkPAOvbhCs8lHUZhqvsFG9O4xN%2Bg23MVtrh12dJSjLswXbD39I%2F5Hlt9g6aZH8vmjAB2hP5F0bJaZTz%2F13sxIQrYLQS9u8mQepB3HRHb3VO9mohLDqzNKrncOAkCb7MJJRBzoYs1qgtRHBAnEk%2Fx32iwv12%2FC%2FBb%2BWrS7sSRz%2BeD14gpGODEjAKEI%3D&amp;X-Amz-Signature=41a70cb147d978f47017168b826ca73eccdfd8ef5153e4ab770d277d0c249b99&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22untitled%22" alt=""><br>
+Different outputs in Node v10 and v11</p>
+<p>此更改不仅会影响到 setTimeout，还会影响 setImmediate。让我们尝试在 Node v10 和Node v11 中运行以下代码，看看输出是怎样的:</p>
+<pre><code>setImmediate(() =&gt; console.log('immediate1'));
+setImmediate(() =&gt; {
+    console.log('immediate2')
+    Promise.resolve().then(() =&gt; console.log('promise resolve'))
+});
+setImmediate(() =&gt; console.log('immediate3'));
+setImmediate(() =&gt; console.log('immediate4'));
+</code></pre>
+<p>Node.js v10 和 Node.js v11 明确地给出了两个不同的输出：</p>
+<figure data-type="image" tabindex="1"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/14a4d2e1-5e40-44ce-a5bc-52dd5ffbc8ab/untitled?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45ONFOS75K%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120533Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFXVh8HY55tza4cXP7A8AAAasLjdsPmkOAzSmAHeqJn1AiBf14AV8z6WeXTfPCQJLxJpFo%2BbQPHM0jDTRECHkWDLEyrjAwjo%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDI3NDU2NzE0OTM3MCIMW0PS2PjOwTS1YDQTKrcDyerVOXeZZ8oqjMXH3z%2FAIWjy6Ebv2mBzdPxqAv0DNrNbhJ9GBBndQ8NHn3oO9U9UgJzId4CTKoWagYRY%2FVCBLFH56%2BtOb4RVB80fJG%2FwrM0S6riX%2BZPIE0LzzPGBbi%2BUhjMOqwTycgw8gNlIYYJOiVaKIOytLKqk18YThdwr48arh9rKyZ4vJYAWz7fXRSZptkDPtsRnqWDH2Ns7Jlen%2Bn9ske3bkrY8WOl7usxRO8PCwrcWW%2By2qf8zFekZBMRNCSUNdtMqpBDq4pXP73X0hQbhNg%2BZIAAGXipTPIUZAUYIzK%2FKtIlu0HQ3HnFLE9ebJsHPXbTuV89NTcUi4KHGnY1AzfVmHAfHP%2FS4NtCZkCu9ewO6rGw3OJAP9esozyr9mu6nnHDpGw9r7UMW30I3sMkkgCFZl1oM92o36h4IPJVGDAoAZ8Z6lV%2Fu8T17zpvFGNR2x6Okc5RIZqmz2Grk8Bcpo4cmxj%2FsT9%2Br1DANzBtvZR8dJqjTs2woCbxf5dlPutYMaVCB1WWFD7X4%2Bn9idHq033d9dzUPt4S7p4uX3%2F9uihQATZBdgFOo65MFp%2F3cXMO0G07GHzD69oXtBTq1AeY5bcKG%2Bz3Mg54SBAvFiQ1n%2F3pu220PXsTIaqXvFBKSXUm%2BYBvkYzSGygE0gZu92ZVFhLCVJalSzp%2BwcucqDbLbfrMkeCn%2FQIDHVTpoI6CR%2Fi0ZIqe4e8BgKZ5tOFKV%2B%2F71i6aJ18F0%2FzLR0pXbc0GaeW6E6kJnGxrZwbfWviooJJNXacln6iuvIS%2BUrtoj%2BMsb98E2tSM9UqWpqLcr5sMmc4kkxmyxRLZ3zM51TpHklHFHOho%3D&amp;X-Amz-Signature=ddab24370e2a688e968a080477ad79f98be8f97abd0a23451c6515f4dc54a41a&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22untitled%22" alt=""></figure>
+<p>如果您替换 Promise.resolve（）然后使用 process.nextTick，则此结果完全相同，因为微任务是在运行 process.nextTick 回调之后才会运行。让我们尝试运行以下代码段：</p>
+<pre><code>setImmediate(() =&gt; console.log('timeout1'));
+setImmediate(() =&gt; {
+    console.log('timeout2')
+    process.nextTick(() =&gt; console.log('next tick'))
+});
+setImmediate(() =&gt; console.log('timeout3'));
+setImmediate(() =&gt; console.log('timeout4'));
+</code></pre>
+<p>上述脚本在 Node.js v10 和 Node.js  v11 中的输出如下：</p>
+<figure data-type="image" tabindex="2"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b84ac947-af7a-446b-a959-23db4f52ab10/untitled?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45CXUAYZWA%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120446Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCJ7oIbNAtX2v369L2krOhV%2BqbpEY1X9ch3xdsIexPKZwIhAOFAyPEvPdUcrIj61GZOQuNHz6NY5HjrAaXFBq4aED9HKuMDCOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjc0NTY3MTQ5MzcwIgxf5QY9SHTwFz9aY5kqtwPgaV%2Fiw2STipPnG7MzSsSVBeimQQ4o2L%2FUC0pVw9mohITvRqsYbMhMGm%2FQ9qKqyYvmKUDolG4A8xxEZOynbBoSKiicwU6DYpEHqjqCTpkjqSCBSxaG9uyLXJo2YQzbn3oQ0F3aLgYKh8Xmj6c75Rzkk3fAufTkBQcs%2Fe0LJOr9ptInNHMzstRHYlNTUOnF2Spj%2FCXl8%2B0PLUuVhfPrYTi424azWQNL2enqzbb1fpRb9dAxr6z%2FRDjLlmVfNz4vo9ag767%2FRARYSRnhAmKAT6toJafrJsa%2B6F7DoTWf7EIqrk4DrBYinM9XRz96WCX%2FS89QtxQc2yhXua%2BIUZbrajS0ag%2FzJzBRwzmXriSPtp5pvEw9cJwtrdKhiTtnmOqD1iAaTaXDHs6AfP693zHo%2BPrHdZhWAPhKjZnhncUYFpzPsxJPNE69x14J0zBQcJsgALPUhHOKPv4ArOPzzKlwlABkqS%2FPRmGHTWuDxi4Z6NSmsqGfK1ZdmUnFZ7oMmYcZaXgHwNrm6JzO%2FgNFohj27wpTou8G95CzmJqO7n7QiDij7vCMHqHTRR%2BRkuqZ%2Bv2gm1dAiywtXMHNMPLvhe0FOrMB%2BphHhVxJ5lnhblEY1ZVuS17FV1Bomyr5JrPJzESKN%2BEyHmo8VoGSqTNbIvt1h5kcuhC%2FVdxqGYERwOY%2FFrTucQWGvj5cdhgBXuPJokqlRyPTRsiPpQ4oOWuv93HeV1BKFQD05GshSeCVXO87Rjd4gqtmD1ddP2dAJStAio3KxIbB8gnv2DCXgspkncSywBjP78eV2mykGyxvkO5jfp4NilDMLZFd%2FgxRRqn1ecgQC3gFEe4%3D&amp;X-Amz-Signature=7e792e689db5fa9456902102730ca49895426a6a48fd836a492964aace21a178&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22untitled%22" alt=""></figure>
+<h2 id="这其中发生了什么">这其中发生了什么？</h2>
+<p>随着 Node v11 的新改动，nextTick 回调 和 微任务( microtasks )将在每个单独的 setTimeout 和setImmediate 回调之间运行，即使定时器队列或 immediates 队列不为空。就setTimeout 和 Promise 回调而言，Node.js v11中的新改动与浏览器行为相匹配，从而提高了 Node.js 中浏览器JavaScript的可重用性。但是，这一重大变化可能会破坏明确依赖旧行为的现有的 Node.js 应用程序。因此，如果要升级到Node v11或更高版本（最好是下一个LTS v12），您可能需要谨慎考虑。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[译] 跟着例子学 monorepo (一)]]></title>
+        <id>https://x956606865.github.io/normal-balance//post/yi-gen-zhao-li-zi-xue-monorepo-yi</id>
+        <link href="https://x956606865.github.io/normal-balance//post/yi-gen-zhao-li-zi-xue-monorepo-yi">
+        </link>
+        <updated>2019-01-25T11:57:10.000Z</updated>
+        <summary type="html"><![CDATA[<p>原文链接:  <a href="https://codeburst.io/monorepos-by-example-part-1-3a883b49047e">https://codeburst.io/monorepos-by-example-part-1-3a883b49047e</a></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>原文链接:  <a href="https://codeburst.io/monorepos-by-example-part-1-3a883b49047e">https://codeburst.io/monorepos-by-example-part-1-3a883b49047e</a></p>
+<!-- more -->
+<p>让我们通过实例来探索 monorepos.</p>
+<figure data-type="image" tabindex="1"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6c320ff3-c7a8-4673-864d-86dd61a42b31/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45MSRJ7VNW%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120642Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEAAaCXVzLXdlc3QtMiJHMEUCIQDxMSzMZ6jd9XKBzRKqzL5nrcGb9z7v38n9To2RRhRBdwIgLXinDAM9oUp6QrCLo2RpNQ2xeam6bLTMgGc%2FM8rZ5UQq4wMI6f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwyNzQ1NjcxNDkzNzAiDOJkK8XwXItE8Th7iCq3A7V9680a4NGC%2BM6IrB8JQqCNhQO6SM39nNEv8THQ9Uj0NLuIP2f%2BtWeWc00wmD0Ede3Tlv8vcEKCSDHY9uwUBxzV3PqVGEX%2FaV0VMML3pLDZRxqkjGyp7ELJ%2BMg5iaV7dFxk7uURWPyn7CdVfmsgY2XLC5mfaRnXQHCikrvHFA0A7PMFoPoJXp8K5Nkt43sKQCwSOJINWii5orJoXkno4tPGlIkoy1woEBZd%2FHE9YM0h5Soez9qYje0e2pMOFdNFmC%2BEY%2BUauYQnXo22hilKsqFEqfUxe1%2BLNjGUgQjh4gM0aAi0ud9vRuAMUMazq4il23uBdIqes9Mtge%2B6Kvqw9nocgqGGg57edHdM4IFwoDaM6M52KSfRMQpHa4c6l%2FG7tG0XeShMU3ojhty51iysmvypxuBVgKT7ozUg8pq8GZMVOBo8c4UnwZ5ip%2BaEbcRiiJFH1267kFtOdEvOTf6813AiZofv1RXxDMYVfWcEnWe9yLamrQoy9uUdq664Re5PRppybvymkAiWht6awoO0uBRGuETvxnqydcApq3nI3FF2yIIeuAvki1rXR5Y3BhuSRcbyhRYVk9Aw0I6G7QU6tAF3ViJTpyXgJsd61h1AHwg2cRIXNBDR%2FNCHmXUHl2hLOzCh20%2B5m3b9L%2BQ034RtSGuYoiWOqz5ZKP2fI5b1CaqkVX%2BWf6uYRn2aEfLHK%2FPA9uqOo6MpXNBPJXjY2dEBTx%2Fr7rU%2FEMZkLQyw9IYD%2BRyRm1nw0dt72Smv86PrwqDap%2FjaQy7HAE6GpazithtM5AMEnNl3ykK6PXz7gsY1VmC4z9dITceA9IjjjukWbtmfbUXiI0M%3D&amp;X-Amz-Signature=890a8bc1afe6a8c11ced249a506fbadb40c858c167b1633a8db20a6cc71b9c1a&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
+<p>首先，关于 monorepo:</p>
+<blockquote>
+<p>Definitions vary, but we define a monorepo as follows:<br>
+The repository contains more than one logical project (e.g. an iOS client and a web-application)<br>
+These projects are most likely unrelated, loosely connected or can be connected by other means (e.g via dependency management tools)<br>
+The repository is large in many ways:</p>
+</blockquote>
+<ul>
+<li>Number of commits</li>
+<li>Number of branches and/or tags</li>
+<li>Number of files tracked</li>
+<li>Size of content tracked (as measured by looking at the .git directory of the repository)</li>
+</ul>
+<p>Atlassian — Monorepos in Git.</p>
+<p>其次，我也赞同这些反对 monorepo 项目的论据:</p>
+<p><a href="https://medium.com/@maoberlehner/monorepos-in-the-wild-33c6eb246cb9">Monorepos in the Wild - Markus Oberlehner - Medium</a></p>
+<p>接下来，我们将通过示例来讨论几个实际的问题，使用 lerna 来管理一个 monorepo 项目（ javascript 项目 ) .</p>
+<p>这个系列的最终 monorepo 在这里，<a href="https://github.com/larkintuckerllc/hello-monorepo">点击查看</a>.</p>
+<h2 id="脚手架">脚手架</h2>
+<p>在我们处理 monprepo项目 ( 特别是lerna所管理的monorepo项目 ) 的问题时,  我们需要先建立一个 lerna monorepo 项目,  幸运的是这十分的简单.</p>
+<p>首先,  全局安装lerna:</p>
+<pre><code>sudo npm install --global lerna
+</code></pre>
+<p><strong>注意</strong>:  本教程使用的是nodejs v8.9.4 与 Lerna  v2.9.0</p>
+<p>创建一个新的文件夹,  并在其中运行一下命令将其转换为一个Lerna monorepo 项目.</p>
+<pre><code>git init
+lerna init
+</code></pre>
+<p>最后生成的文件夹结构应该是这个样子的:</p>
+<figure data-type="image" tabindex="2"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e6236042-0794-4d12-a3bb-5f7f6673c9d8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45ONFOS75K%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120703Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFXVh8HY55tza4cXP7A8AAAasLjdsPmkOAzSmAHeqJn1AiBf14AV8z6WeXTfPCQJLxJpFo%2BbQPHM0jDTRECHkWDLEyrjAwjo%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDI3NDU2NzE0OTM3MCIMW0PS2PjOwTS1YDQTKrcDyerVOXeZZ8oqjMXH3z%2FAIWjy6Ebv2mBzdPxqAv0DNrNbhJ9GBBndQ8NHn3oO9U9UgJzId4CTKoWagYRY%2FVCBLFH56%2BtOb4RVB80fJG%2FwrM0S6riX%2BZPIE0LzzPGBbi%2BUhjMOqwTycgw8gNlIYYJOiVaKIOytLKqk18YThdwr48arh9rKyZ4vJYAWz7fXRSZptkDPtsRnqWDH2Ns7Jlen%2Bn9ske3bkrY8WOl7usxRO8PCwrcWW%2By2qf8zFekZBMRNCSUNdtMqpBDq4pXP73X0hQbhNg%2BZIAAGXipTPIUZAUYIzK%2FKtIlu0HQ3HnFLE9ebJsHPXbTuV89NTcUi4KHGnY1AzfVmHAfHP%2FS4NtCZkCu9ewO6rGw3OJAP9esozyr9mu6nnHDpGw9r7UMW30I3sMkkgCFZl1oM92o36h4IPJVGDAoAZ8Z6lV%2Fu8T17zpvFGNR2x6Okc5RIZqmz2Grk8Bcpo4cmxj%2FsT9%2Br1DANzBtvZR8dJqjTs2woCbxf5dlPutYMaVCB1WWFD7X4%2Bn9idHq033d9dzUPt4S7p4uX3%2F9uihQATZBdgFOo65MFp%2F3cXMO0G07GHzD69oXtBTq1AeY5bcKG%2Bz3Mg54SBAvFiQ1n%2F3pu220PXsTIaqXvFBKSXUm%2BYBvkYzSGygE0gZu92ZVFhLCVJalSzp%2BwcucqDbLbfrMkeCn%2FQIDHVTpoI6CR%2Fi0ZIqe4e8BgKZ5tOFKV%2B%2F71i6aJ18F0%2FzLR0pXbc0GaeW6E6kJnGxrZwbfWviooJJNXacln6iuvIS%2BUrtoj%2BMsb98E2tSM9UqWpqLcr5sMmc4kkxmyxRLZ3zM51TpHklHFHOho%3D&amp;X-Amz-Signature=c8a2712d091e11648e627377de26b28e83dc74c6fc855a167660dd11d73ba6f8&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
+<h2 id="创建第一个package">创建第一个package</h2>
+<p>现在，我们已经有了一个 Lerna monorepo 项目,  就可以开始尝试创建 package 了.  在部署到 npm 仓库中时,  每个package 将会是以单独的一个 npm package 的形式存在的.  通俗来说就是,  package 允许更松散的耦合以及独立的依赖管理( 稍后会做介绍 ).</p>
+<p>我们可以通过在 packages 文件夹下新建一个文件的形式来创建一个 package, 并在对应目录下执行以下命令 :</p>
+<pre><code>npm init -y
+</code></pre>
+<p>这时，项目文件夹结构会类似这样:</p>
+<figure data-type="image" tabindex="3"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/36ddea1a-a400-4be3-b787-81bce47bc391/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45LZLCVEHV%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120718Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEAAaCXVzLXdlc3QtMiJHMEUCIHeMXwTjQdYh2X0En3fLEOTR6btDLr7YHVQ2FWzlgiIVAiEAjU4JQA9aCxXoc28K%2Bc2028wbRvjcaCGLPgl6UpztDMIq4wMI6f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwyNzQ1NjcxNDkzNzAiDMTLLo2flcj%2BLKam2Sq3AyPNa8l7%2FyI%2B44Lkx6IdK4Mn5o1Ahu9nfBAD5HpChinlIipZ6WyJ4ILx4OCFQ69%2BRnoY3HBXK2EAQ4N9rEsPAmat%2Fktb4TfhK3Ake1xB9VgB%2FPMbBpMbT%2FrsQe6B%2BOosNxfe41g4FXE5SJ%2BzagOgMUJr%2BK4qlfsCfactdANoS%2BUgoaQtR7l7d%2BcuP1Qr8T6q63ARni8KCj9YjEm4HQQpmEsjlBvc4d2DMxUK8C6rM58Uhygb%2FMUWrw7fx4nQ3qv%2FEQekHdik76GJiFGn9TK%2Bv7Olg1t8zYxhL10Tz707ktx5DpMvcA5LI8YdzFeabEjeVfifmUHfH374SvK5pDQ39eCtqZnH%2FCYgOT3HcFFzuEGCSb3Vhvks5PYbr2PsxDudgNs0uxB4ekjT0LYL668qiZRSE%2FGpYNXBSreLA3dvkmzi8NJ4TZTL2St9N14UYClLQA4AgfCZIXascKB0s%2BJIEITizxdwi5TRnjNooESqAHeYnbgoPvmefurEFwhxehDbKeQNAe7ykv3sGz94HftY61WYkjCsJ7bgPEWn6tLHALByrPt2%2Fm8M7wu5N%2FdcMOrKQs7m7elYb3gws4%2BG7QU6tAFQhZKUIAJusg7%2F3ZS3opmS3zZ2tpkU%2BjRC6NaOFlzSvh%2BMKgNbYuwlAQTo9A%2BdCTCpNl%2BLNdVuokbfZhCb90KxJzoOxSvZYLkRD61oITou5SbCH7eV8I%2FIBGT77GJa7ZjRhbnV1aGsRKPJLj0aRv5CxAR1nPKJKG%2BfALixgyFaoQcs5XNZj89fkmGeyUdAiUXbURcZULcGYmM0rmiQFjCKqxCxJSF7XQvBEcclgBplp1NcIsI%3D&amp;X-Amz-Signature=7597a8b79d9d38dc9f5d79568bfe6cd39cf85a48c35b9ea98f870dafc73b9cf5&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
+<h2 id="第三方依赖">第三方依赖</h2>
+<p>假设我们三个项目都依赖于 npm 包 sillyname@0.0.3  ( 特定版本 ),  我们可以运行命令: ( Lerna 命令可以在项目下的任何文件夹中执行  )</p>
+<pre><code>lerna add sillyname@0.0.3
+</code></pre>
+<p>然后, 项目的目录结构将会是类似于这样的:</p>
+<figure data-type="image" tabindex="4"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a3da5a86-d2b0-4d67-ae24-5a29e3aef528/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45A7KMKUXE%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120730Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD1YLxe6Z4xK7f9s92jKIoPV1WGXuoif8s0%2B8ztdLoEJQIgfdRgDpR3mW2xjvEqaMYTGHpLZjzTBwYaQEA7uLwWHJIq4wMI6P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwyNzQ1NjcxNDkzNzAiDEtlJzYXgtUWFHsbLiq3A1Nn9CPRRM6WTVXxhihGPbjfO3H9%2F8G7qsnow1l7omXs5m3Udae%2Fy64qBsukWxD5S5Ejmh4HxQGUnE70PlMrJ%2FSeEBV6DA%2B5UZoum5ltgju%2FAqLeHNpnMNhWfXg99Z%2FUFGC2iQ1uDYWW7Zu6iHR7gUbaUwgnwdFzN0AdiP3ivTqLbBbfhmSYdXERm2uXXEN00J5rJoBKfcs2YcdaxW9sbOK2ofUSkeywGPorvNZafPV0zfxan5HtoHIsHzbSdsaLXF4AHyluLQax%2FJeEXgNtYDjT7nB6qXI8dvM%2FJDOM9TWzfDsYB35oBow%2Bo0gmSuiu6swdr8KtiSESGMV9G6zoZwD6O4OGMrByxpdL4bCBRc2JquUVIrvV7tPCu09rTfEYRlKUsVJjnJWV%2FP5Wjcxu8qpscEDwCIDXTexx1s%2BQZuAeZkO3CnUwuIZZdQszsveb2mx3fw9krcka5RP%2FPdst4yceXbSh8H6lw9hN23f%2BLwX0IhR8hmZAwfkMlNwXnldot6WUNH1CDR%2FhTOUNFOXQmSKc0hvcYUP4mCiyoW9Y%2FLYydfc3U62KuYXq8YSl5SYm9n5JmlQhfs4wmvuF7QU6tAFL3sCn6xEh7aHadhzQywv0LOZMOkjUUntvrbohmii3t3XsB%2Bjw%2Feo6q%2F2u%2FosNoxCBRVpBaeM12eoPovzwcdZam1DLYqYogJXCHaVPavk0Fe6pMCt4MTNoUGD5Mvvw5utZSs%2F2z%2FhK8t8YuhE4uxETvks061IHArE1ovtvz6qDc87q%2Be%2BJo8R14t7C0jWtPMVnGu7C4Onls5HQG4l1F4nBGLIuwD22jQbylDa1FNH56NVKJB8%3D&amp;X-Amz-Signature=e71c2a1903a71ff06fb13440b3c08446e09ca49285f3a7b7b652caf78802d078&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
+<p>显然:</p>
+<ul>
+<li>因为我们希望每个 package 都是独立的，所以每个 package 都会更新自己的 package.json 具有对 sillyname 的依赖.</li>
+<li>注意，他生成了 package-lock.json ( 很像 yarn , npm 现在锁定了二级依赖 ). 另外,  Lerna 文档中提到, 他也是支持 yarn 的.</li>
+<li>使用 Lerna 我们可以使用一条命令将依赖安装到每个 package 中.</li>
+<li>每个 package 都有着自己的 sillyname 副本, 安装缓慢同时也浪费磁盘.</li>
+<li>一种更高效的方式便是手动更新每个包的 package.json 然后在父文件夹的 node_modules 中安装 sillyname ( nodejs 是会在父文件夹中查找依赖的 ), 不过这是令人乏味的.</li>
+</ul>
+<p>对此, Lerna 也有着解决方法; 使用  <em>hoist</em> 参数</p>
+<pre><code>lerna add sillyname@0.0.3 --hoist
+</code></pre>
+<p>最后的项目文件夹结构将会是这样的 (截图中并没有展示庞大的 node_modules 文件夹) :</p>
+<figure data-type="image" tabindex="5"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/519f0c3d-d351-4a2a-b9e1-8b780837ba33/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45DEWQT7VH%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120747Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEAAaCXVzLXdlc3QtMiJIMEYCIQCTNeZsUW4kWuDjxCem3bAMns7l0qqj5r7%2BUhHu6eDWCwIhAKgCov7rmj7qt7F6uUgn%2BJ3CjFU2eVxz6zMs2lSywgNTKuMDCOn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjc0NTY3MTQ5MzcwIgxtrFZF0%2FlxfKQKP6kqtwPUFlgOSZr3faYZAgwoRUCglBwFnfj7COe9mzidJ58Q96UJO5R73YYHkcWOqwPmrZDqcy6rScKV5GBg8a8meQaWBpUIqTW4ry%2FZsEccYxMnVS1w%2FbQsLO8roqwjcvJr13zT0msp%2Bqy%2FU0PhaYTMF4yJtcuvHz35VS0tcTVTmXsgdbH43eB7lEbrehsY3c6RysOpNNfNz0YDRcXhEwEIOZodS4oy2BYjj4bA9CZEXbhbuNOla37PzFPhGS1H4M9X0SLpqDXTln0vLThqO9jzTto2fBAJsHRidCt3hOznqDvhkh3VThvmg%2BEq4Y85gSIO8UVJ2XBUzoBnuH8qEdVqNlxYLGScfleTckTU%2BtDt0DVd%2FVomcAZOdOIiGc3iaG2KU129sJsVOu7b3FhqGToNXnTKiT0870PJjnYnhVtZvm5ptC%2FwCUGAqxAzjNVgPEGxHDdASnWP3T1Zvw%2BWPGSPyAvDNQCIWylInaWmA7Osw6AjVrrix89PkMyKYSEMH1yK8%2FI%2FT5QqECNgHqi8ZmhfiXYxjknlY1Whq0qQnsKYGDZqp9PBYICyAgEXDS3IUvLBpNuEUGW%2BzMkNMI%2F%2Fhe0FOrMBAUbPzXUS61xlonQk2PQQwSzZgCMPOY9nPZO15TLmU5mjLAMVYK%2FatSNa3atKN6VdybjsWiUDCWgC4tNcSCkcKhGE3fXQquQfEvX9RDSF%2BgvOCpjNuA3vr5lgalT6zconZzxBA9fpDiJ95Ekr2Wx6J2Qc0mcql2mW%2BQooyOFZwVIe3iiJPVew9dCHmr6Ay2uQ1emi10nB7%2FNcEivMigzcYmfrR0ApVVb2%2BFK2buyy1nrbxQQ%3D&amp;X-Amz-Signature=ee9ff4d07bbb8f58b17793ec8cbfdaca991cd5c6f3cac29d894f720754e034f6&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
+<p>显然:</p>
+<ul>
+<li>每个 package.json 都将 sillyname 列为依赖项.</li>
+<li>sillyname 安装在了项目根目录的 node_modules 文件夹中</li>
+<li>node_modules 中的其他软件包是因为 Lerna 是软件的开发依赖.</li>
+</ul>
+<h2 id="有选择的升级">有选择的升级</h2>
+<p>假如我们只想为 grocery 这个 package 升级 sillyname 的版本, 我们可以执行以下命令:</p>
+<pre><code>lerna add sillyname@0.1.0 --scope=grocery
+</code></pre>
+<p>然后, 项目的目录结构将会是类似于这样的:</p>
+<figure data-type="image" tabindex="6"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/59129a27-7714-4d98-973f-a5ee45c08ffc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45OC3NB4GW%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120800Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEAAaCXVzLXdlc3QtMiJHMEUCIQDhTqc1Jnwj6mIVYJjwbKRo2eQPmLA3npna%2B%2FA00mj6WgIgTt%2BiHMXaChYKcdsWuH3968hh4ifm7ezsvAv72bv8Dgkq4wMI6f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwyNzQ1NjcxNDkzNzAiDKetLgzXi4ziNzxeDCq3A1Ocd1eRgkabUgdynq0EUQHutC47P3ygEWOiyXXn2Ezf2NG8zVxzloEXX9Yo%2BzoOqrglkXIJ57B49UCmjpQDV69z%2FT6ktjH0%2F9yJyP%2BYnhKRsL8UgrXU5RAvzSN18o2x2vw8chr6UIF3FZC%2Fa7w7d519joBZtyUsZEciBM26TWEyabU60jSPb3JZCBtkWElKWZIfWWxOllSJpNCd1kHJWX8QlxCtP%2Bnp%2BDAMU4HHas0L7L%2BHRsCXcpnZz5Lun2fYTzfE5QxupQCrg%2B5JGYJgPj7pAs%2BYX2cKWQpik6OF9rpmYLXEMJwJApXgwdhPLxbJQSoeqCcyclRUzR1Aj%2B2iCZH4MsTZrEeILhgBZpCzSoZKKjm71FWl4ASNdHhEOWngzP4QppQYvv0sl8kTs1ZEOlWlWBU9TfSndlb9cH2mDJpY5O5xokgOToQfEqftttMZXlLPEJUuJIEG2FvGruQjnYxdrRzxfYknjs0q3Hj2xm88lZmUV69DW%2BXVtCDgG3bPDiRHe6O%2FxSX5t77QvURc6do11iJRfEvf3%2BzDFp1Sn1DR8RwuYLoUJToWz12prKmmc7NPcUQ76igwgoaG7QU6tAFVgts3DCcXsNqqPFNRgsGCDc8h8tS6edOi3OcMtvLIT2cDlcKcmOr4Sv%2Fgk5688L%2BgH1Wmy6F65fHBC%2Fw2Y59jZJPgwkndSpYbrDoJvYISQ%2BherYC2LPnIcxCbyJRQyiyWWlgDWov3gzBWZSUOIowO7RvkCIy29OtdOiDY7dw7%2FfgBO6DZaW3PJt1rO5CpfiZfWoDBBSJGGvIV2sl3ROZx1Pj25m5h%2FFZgRqSaqcqF7IuInDY%3D&amp;X-Amz-Signature=f0169fe7bc8c3da4a505d7e5d3e7b975ef98448674f29a405b107c9c73ce2bc3&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
+<p>显然:</p>
+<ul>
+<li>grocery 的 package.json 会更新为依赖 sillyname@0.1.0</li>
+<li>grocery 文件夹下会有一个 node_modules, 其中包含了新版本的 sillyname</li>
+</ul>
+<h2 id="内部依赖">内部依赖</h2>
+<p>现在, 加入我们希望 grocery 去依赖 apple 和 banana, 我们可以执行以下命令:</p>
+<pre><code>lerna add apple banana --scope=grocery
+</code></pre>
+<p>最后的项目文件夹结构将会是这样的</p>
+<figure data-type="image" tabindex="7"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/894d88e0-af5e-4888-9fbe-724ddaa9030b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45AVFIE2OT%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120817Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCBTc4PJH8QtP3ilSv4Oz7EMiZbYza8Cau9tl1j7L5%2B8wIhAMcvg%2FXheFlPTe3xX19OiDvpG0XB1XydWbzkVGdnCh8AKuMDCOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjc0NTY3MTQ5MzcwIgzzMDBbl3pdBO16vdcqtwOtY%2BYs1XzZaUN7HdryTaDunWze4jKG52Z%2BYwOd1BdFUN8ba9Sz2tY7xu532G%2BtsmNX0IzFCr0N2Mf9y52uto8Pb%2B7YhcDeyzv1Tj2%2FbGBfBSvdSciitxDAga3WnDXGQAwXAFUomSMB50BGl%2B3KNVsG2m7ftGBLiudsbZ5Xm4Cm64Y4%2BRZi6bnt8xqVoX3%2BKQamc0s3jyC6XevxaBYm2j2YjcUIQQXmG9nXnkoACRTVPo4BqWjlLY%2FWlLARGjFbX5R9VlcD6oSJqpxJn%2BrueT05rxzRfp0gNAEr3gUVXk6puUkEiYx6iehqZCpaDgw2KVgurhXQzs4H%2BJVvYM1qO1qI7nSNhQ02JXqmOhvWlrzf%2BIYHfy3f7uJiNhujN664F63SiLOMsIXlBERL7T%2Bwv8TzIGK0phlUzuq%2BLiYacGzM0fxmIbWUlzErmEbar8HhWWbCZAdqMAP4v8oJf903%2B4o5TLKZ0Vo1d1xEE%2FCyMJ%2FtRxsFCaC3NMtRIab4RoaqQ0Ta6YbJDH6AS5uoHuztZEnpA3C109WKfmw4kk3g5KB7KBfn0N1M7WuN3YFKkbY3N3IGgxYnM3KDMJv8he0FOrMB2Mdch5WiRjnYOi6rxEwW2LmxmKaKViEiOIRNXzIBEzmKGHr8%2BLk17C8v6vqvS%2FpqaAjqruRTQcdGmYUm3sIxJc2MYvqb0ie1eItv4PmPKaIm8Ed9Zblu1hb%2FbsW9qer0jT2FomdlV5jCYxZt1GKG5ZDrWzZkbnV7RGX3dV7XnBg6tc0IG%2Fq%2BdFZJVz1MwGcRaRDhWFzBQm%2F3cyBXUgMFPkFlH2OoKBckXijR8TXODKCqVmA%3D&amp;X-Amz-Signature=143de3cfaaa805715d562c0d9cfcd5823970d76dee0ec45700d057fc04d37d92&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
+<p>显然:</p>
+<ul>
+<li>grocery 的 package.json 已更新, 依赖于 apple 和 banana.</li>
+<li>Lerna 在 grocery 的 node_modules 文件夹中创建了软连接, 运行 grocery 透明的访问 apple 和 banana 中的文件.</li>
+</ul>
+<h2 id="相关代码">相关代码</h2>
+<p>现在, 我们已经设置好了相关依赖, 可以开始编写一些代码了.</p>
+<p><em>packages/apple/index.js</em></p>
+<pre><code>const sillyname = require('sillyname');
+module.exports = `apple and ${sillyname()}`;
+</code></pre>
+<p><em>packages/banana/index.js</em></p>
+<pre><code>const sillyname = require('sillyname');
+module.exports = `banana and ${sillyname()}`;
+</code></pre>
+<p><em>packages/apple/grocery.js</em></p>
+<pre><code>const sillyname = require('sillyname');
+const apple = require('apple');
+const banana = require('banana');
+console.log(`grocery and ${sillyname()}`);
+console.log(apple);
+console.log(banana);
+</code></pre>
+<p>然后在 grocery 的目录下运行一下命令:</p>
+<pre><code>node index.js
+</code></pre>
+<p>最后的输出会是这样的:</p>
+<pre><code>grocery and Linenhiss Butterfly
+apple and Trailspeaker Scribe
+banana and Translucentpuma Kangaroo
+</code></pre>
+<p>完成编码后, 我们添加以下文件, 因为我们不希望将 node_modules 文件夹存储在源代码管理中.</p>
+<p><em>.gitignore</em></p>
+<pre><code>**/node_modules
+</code></pre>
+<p>然后将所有的文件提交到 git 仓库之中.</p>
+<h2 id="bootstrap">Bootstrap</h2>
+<p>现在, 假如团队的另一名成员要加入开发. 首先, 他需要全局安装 Lerna.</p>
+<pre><code>sudo npm install --global lerna
+</code></pre>
+<p>然后, 他需要克隆仓库, 然后运行对应的名来安装所有依赖 ( 包括符号链接 ):</p>
+<pre><code>lerna bootstrap --hoist
+</code></pre>
+<p>现在, 这么成员就可以开始编码了. 遵循他们自己的工作流模式 (创建新分支等等).</p>
+<h2 id="下一步">下一步</h2>
+<p>在下一篇文章<a href="https://medium.com/@johntucker_48673/monorepos-by-example-part-2-4153712cfa31">Monorepos By Example：Part 2</a> ( 未翻译 )中，我们将继续探讨一些更实际的问题。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[lerna学习（三）发布篇]]></title>
+        <id>https://x956606865.github.io/normal-balance//post/lerna-xue-xi-san-fa-bu-pian</id>
+        <link href="https://x956606865.github.io/normal-balance//post/lerna-xue-xi-san-fa-bu-pian">
+        </link>
+        <updated>2018-11-24T11:54:37.000Z</updated>
+        <summary type="html"><![CDATA[<p>接着之前的思路，现在我们已经完成了项目的初始化构建，然后开始往里面写新的package。</p>
+<p>在写入的package后就需要涉及到上传的问题了，如果是开源项目，那直接使用lerna的publish命令即可。但是比如一些公司的技术沉淀之类的整合，有很多是不适合直接公开在网络上的，所以需要的是上传私有库。比起npm的私有包的方案，其实我更倾向于搭建私有npm仓库的做法。一来，代码是存储在自己的服务器的。二来，lerna也默认不允许直接发布私有包。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>接着之前的思路，现在我们已经完成了项目的初始化构建，然后开始往里面写新的package。</p>
+<p>在写入的package后就需要涉及到上传的问题了，如果是开源项目，那直接使用lerna的publish命令即可。但是比如一些公司的技术沉淀之类的整合，有很多是不适合直接公开在网络上的，所以需要的是上传私有库。比起npm的私有包的方案，其实我更倾向于搭建私有npm仓库的做法。一来，代码是存储在自己的服务器的。二来，lerna也默认不允许直接发布私有包。</p>
+<!-- more -->
+<h2 id="私有npm仓库的搭建">私有npm仓库的搭建</h2>
+<p>目前网络上开源的构建私有npm的框架很多。最出名的就是淘宝cnpm开源的<a href="https://github.com/cnpm/cnpmjs.org">cnpm.org</a>，这个库可以说把整个cnpm的功能都实现的，功能十分强大。不过代价就是搭建十分麻烦，而且较为不稳定，时常出现奇怪的bug。</p>
+<p>对于普通公司来说，其实并没有那么全的功能需求的，其实只要满足基本的功能就足够使用了。所以这里我选择的是一个十分小众的框架<a href="https://cevio.github.io/cpm/">CPM</a></p>
+<p>这个框架的搭建十分简单，按照官方文档搭建，很快便可以搭建成功。不过有几个要注意的点:</p>
+<ul>
+<li>
+<p>在导入数据库的时候，文档说的很模糊。其实根目录下有一个database.sql文件，如果你不是使用navcat之类的图像化工具，那么你就需要用mysql命令登入mysql，然后:</p>
+<pre><code>  &gt; create database cpm;
+  &gt; use cpm;
+  &gt; source ./database.sql;
+</code></pre>
+<p>因为他提供的sql文件本身不会去创建数据库，所以你需要自己去创建，并切换。</p>
+</li>
+<li>
+<p>不同于cnpm.org，cnpm.org使用了两个端口，一个用作仓库，一个用作web服务。对于cpm来说，他只会暴露一个端口。在不修改package.json的情况下，dev模式是7002，production是7001。所以会出现一些问题。比如文档建议在上线时，将config设置中的registryHost直接修改成你的域名，不带端口。并且示例中使用的也直接是域名。这样就会带来一个问题，你的服务跑在了7001端口，但是你的仓库被设置成了80端口。看起来能用。但是当你上传package后，就会发现没法下载，因为80端口去找下载包就会出现404错误。解决方法，要么保持registryHost是7001端口，要么去修改package.json为80端口，然后重新上传package。</p>
+</li>
+<li>
+<p>对于数据库配置，如果你的数据库不是跑在默认的3306端口，在设置plugin的时候需要手动加上port这个字段。（还好字段名称没有被作者魔改）</p>
+</li>
+<li>
+<p>因为私有包必须以自身的scope为前缀命名，比如@exampleScope/packageName，所以请务必记住 将自己公司用的scope名称添加到app/service/authorization.js允许的scope数组中，不然可能会无法上传。</p>
+</li>
+<li>
+<p>对于package的命名，除了需要一scope作为前缀，同时还需要注意的是不可以使用驼峰法，请务必使用中划线分割单词。因为驼峰法会被分割成多级目录的格式。这样的话会触发cpm的一个bug，如果安装时一般的包找不到会包一个json格式的错误，说本地没有这个包。如果是这种被分割成了多级目录，由于没有触发到路由的匹配，所以会报一个404的文本回来，从来导致本地触发报错说json数据解析失败，数据非法什么的。</p>
+</li>
+<li>
+<p>同时，不知道是不是作者大意了，cpm会读取本地packages目录下的文件来查询已有的本地模块文件，不过他默认没有新建这个文件夹，所以需要手动在cpm根目录新建packages文件夹，不然fs模块会报错说路径不存在。</p>
+</li>
+</ul>
+<h2 id="整合lerna发布">整合lerna发布</h2>
+<p>在搭建好了自己的npm仓库后，就可以开始尝试发布自己的模块了。因为我们私有的模块是基于npm的，所以记住，千万不能在配置文件中将lerna的client设置成“yarn”。</p>
+<!-- more -->
+<p>然后，我们可以：</p>
+<pre><code>git add .
+git-cz
+lerna publish --registry=http://xxxx.com:7001
+</code></pre>
+<p>使用git-cz格式化我们的commit，然后使用lerna publish命令。lerna会帮我们将代码push到github对应的分支，同时依次将各个模块上传到私有的npm仓库中，同时还会修改每个package的版本号，然后去修改每个相互依赖package的版本号。</p>
+<p>注意点:</p>
+<ul>
+<li>发布前记得确认命令行内的npm处于登录状态的，否则可能会因为未登录而无法上传模块，但是因为lerna会提前修改版本号，导致各个模块版本号已经增加了，但是模块没能更新上去，下次想要上传，就得手动控制版本号不要继续加一，否则就调版本了。</li>
+<li>因为lerna会自己执行一些github命令，来推送代码，所以请务必关闭husk中添加的commitlint功能，除非你知道怎么去修改lerna执行时填写的commit message。</li>
+<li>待续</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[lerna学习（二）]]></title>
+        <id>https://x956606865.github.io/normal-balance//post/lerna-xue-xi-er</id>
+        <link href="https://x956606865.github.io/normal-balance//post/lerna-xue-xi-er">
+        </link>
+        <updated>2018-11-23T11:51:20.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="安装">安装</h2>
+<p>lerna的安装类似于webpack，需要全局安装作为一个命令来使用，可以选择使用npx直接使用，不过为了方便，还是全局安装方便一些。</p>
+<pre><code>yarn global add lerna</code></pre>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="安装">安装</h2>
+<p>lerna的安装类似于webpack，需要全局安装作为一个命令来使用，可以选择使用npx直接使用，不过为了方便，还是全局安装方便一些。</p>
+<pre><code>yarn global add lerna
+</code></pre>
+<!-- more -->
+<h2 id="初始化">初始化</h2>
+<pre><code>mkdir myLerna
+cd myLerna
+lerna init --independent
+</code></pre>
+<p>lerna的初始化分为fix模式以及independent模式两种，默认是fix模式，或者叫做锁定模式，项目内所有的package共用版本号。不过我认为这种情况其实很少，大部分人应该都是使用独立模式，每个package拥有自己的版本号。</p>
+<h2 id="创建package">创建package</h2>
+<pre><code>cd packages
+mkdir package-1
+cd package-1
+yarn init -y
+cd ..
+mkdir package-2
+cd package-2
+yarn init -y
+</code></pre>
+<p>这里要注意，如果你没有创建任何package，你是不能使用lerna add命令安装依赖包的，因为默认lerna会为每个package安装依赖。</p>
+<h2 id="安装各种依赖">安装各种依赖</h2>
+<p>在开发之前，肯定是需要先安装各种eslint、prettier、commit-lint等等规范化库的，我们为啥要把一堆package放到一个仓库？其中一个原因不就是为了直接复用一套规范文件么。</p>
+<p>所以各种lint文件肯定是安装到项目全局的，这时如果使用lerna的安装命令:</p>
+<pre><code>lerna add eslint --dev
+</code></pre>
+<p>就会发现一个问题，每个package都被单独安装了eslint，这明显是不合适的，既然是同一个项目，安装多次同一个模块算个什么事？</p>
+<p>然后我们发现，lerna有提到如果你想只安装一次，那么可以把这些依赖写到每个package的package.json中，然后回到根目录运行:</p>
+<pre><code>lerna bootstrap --hoist
+</code></pre>
+<p>bootstrap是learna一键为所有package安装依赖的命令，如果加上了--hoist参数，那么就是告诉lerna，把所有依赖全部安装到根目录中，然后分别在各自的文件夹中创建软连接指向对应的模块实际路径。</p>
+<p>从解决问题的眼光来看，确实解决了重复安装的问题，不过所有模块都装到根目录混杂在一起，这让强迫症心里很不舒服，我们希望的其实是只有lint这些公共库提取出来，其他的他们自己的依赖放到他们自己的文件夹中。</p>
+<p>在参考了<a href="https://github.com/babel/babel">Babel</a>仓库的做法后，明白了。因为node自身在查找模块的时候有向父级目录查询的操作，所以其实软连接什么的并不需要，甚至都不需要lerna，我们直接</p>
+<pre><code>yarn add -D eslint
+</code></pre>
+<p>这样便直接将eslint安装到了根目录中，由于层级高，所以子目录都会受到lint规则的约束。同样，为此安装好husky等等基本库，完成仓库的初始化。(可以参考我的另一篇<a href="https://www.notion.so/aj0k3r/57b80f3f75b741e3a54546c20ae5e8e7">文章</a>)</p>
+<h2 id="安装依赖包">安装依赖包</h2>
+<p>安装依赖包有很多种方式，虽然可以进入对应的文件夹中直接使用yarn安装，不过为了项目统一，还是推荐使用lerna的命令来安装依赖</p>
+<ul>
+<li>
+<p>给所有package安装某个第三方依赖：</p>
+<pre><code>  lerna add module-A
+</code></pre>
+</li>
+<li>
+<p>给package-A安装第三方依赖：</p>
+<pre><code>  lerna add module-A packages/package-A
+</code></pre>
+<p>ps:这里可以使用正则，比如官方举例的：</p>
+<pre><code>  lerna add module-1 packages/prefix-*
+</code></pre>
+</li>
+<li>
+<p>package-A依赖package-B：</p>
+<pre><code>  lerna add package-B --scope=package-A
+</code></pre>
+</li>
+<li>
+<p>所有package都依赖package-C：</p>
+<pre><code>  lerna add package-C
+</code></pre>
+<p>PS.  lerna处理package互相依赖时采用的是软连接的模式，所以不用担心重复安装的问题。</p>
+</li>
+</ul>
+<h2 id="快速新建package">快速新建package</h2>
+<p>lerna提供了一个命令来快速新建package，避免了重复机械的操作</p>
+<pre><code>    lerna create package-D --dependencie=[&quot;package-A&quot;,&quot;lodash&quot;]
+</code></pre>
+<p>这样可以快速新建一个package并且申明他依赖的内部package或者外部包</p>
+<h2 id="值得注意的命令">值得注意的命令</h2>
+<ul>
+<li>
+<p>lerna run xxx</p>
+<p>按照官方说法，是为所有的package执行xxx这个script，听起来有点唬人，所以我测试了一下。</p>
+<p>首先，这里的命令，不是指根目录的package.json里面的script，lerna根本不会去管根目录里面的script。</p>
+<p>当你运行 lerna run xxx时，他会依次遍历每个package目录的package.json，如果有同名的script就执行，没有的就跳过，每个目录对应的xxx script执行的内容也可以完全不一样，互不干扰。</p>
+</li>
+<li>
+<p>lerna exec — xxx</p>
+<p>与run命令对应的另一个命令就是exec命令，不过不同的是exec命令接受的是bash命令而不是script名称，他会为每个package执行对应的bash操作，不会跳过</p>
+</li>
+</ul>
+<p>第二篇结束......</p>
+<p>参考链接:</p>
+<ul>
+<li><a href="https://codeburst.io/monorepos-by-example-part-1-3a883b49047e">Monorepos By Example: Part 1</a></li>
+<li><a href="https://codeburst.io/monorepos-by-example-part-2-4153712cfa31">Monorepos By Example: Part 2</a></li>
+<li><a href="https://codeburst.io/monorepos-by-example-part-3-1ebdea7ccbea">Monorepos By Example: Part 3</a></li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[lerna 学习（一）思路篇]]></title>
+        <id>https://x956606865.github.io/normal-balance//post/lerna-xue-xi-yi-si-lu-pian</id>
+        <link href="https://x956606865.github.io/normal-balance//post/lerna-xue-xi-yi-si-lu-pian">
+        </link>
+        <updated>2018-11-22T11:47:59.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="lerna是啥">Lerna是啥?</h2>
+<blockquote>
+<p>Lerna is a tool that optimizes the workflow around managing multi-package repositories with git and npm.</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="lerna是啥">Lerna是啥?</h2>
+<blockquote>
+<p>Lerna is a tool that optimizes the workflow around managing multi-package repositories with git and npm.</p>
+</blockquote>
+<!-- more -->
+<p>这是来自lerna的github仓库的自我描述。大致意思就是他是一个用来管理multi-package项目的工具，通过使用git和npm（其实yarn也是支持的）</p>
+<h2 id="multi-repo以及mono-repo">multi-repo以及mono-repo</h2>
+<p>lerna是标准的mono-repo的工具，与普遍的multi-repo的组织架构有着显著的区别。</p>
+<p>传统开发即是multi-repo的，即一个module一个仓库，比如公司内部提炼的常用工具、常用组件都是分开存放，开发的时候install在同一个项目里。</p>
+<p>而mono-repo则是一个仓库包含整个项目的所有，分成多个package目录分开管理，统一处理相互依赖。比如Babel、react、angular等等知名的库都是采用了mono-repo的方式。比如babel，babel-cli、babel-core、babel-node等等工具都是放在了同一个仓库“babel”中的，而我们安装的时候实际上是yarn add @babel/babel-core这样的安装方式。这就是很典型的mono-repo的模式，整个babel的产品都内聚到了babel的整个仓库内。</p>
+<h2 id="mono-repo的优点">mono-repo的优点</h2>
+<ul>
+<li>项目规范可以更轻松的整合;</li>
+<li>模块间依赖稳定，统一更新，避免了开发人员相互间使用对方模块时版本更新不一致导致的bug;</li>
+<li>可以更高效的复用模块，加快开发效率;</li>
+<li>各模块间相互依赖，开发又相对独立，避免对于特定项目的过强的耦合;</li>
+<li>统一整合各个模块单独的更新生成一个CHANGELOG;</li>
+<li>唯一的仓库，避免用户issue的分散，以及issue的scope的不明确。</li>
+</ul>
+<h2 id="mono-repo的缺点">mono-repo的缺点：</h2>
+<ul>
+<li>仓库体积会非常的大;</li>
+<li>统一CHANGELOG也会混入一些和整体项目无关的模块更新。</li>
+</ul>
+<h2 id="是否值得使用">是否值得使用？</h2>
+<p>对于新知识来说，最重要的一点就是是否值得使用？什么时候应该用？适合哪些情况？</p>
+<p>首先，作为一个外包型产品公司的码农，我认为对新项目使用mono-repo是不值得的。或者说一开始学习的时候，我就一直以公司产品的角度来看待mono-repo，想了好久都不明白这么做的意义在哪里？公共组件如果在同一个项目中，那么新项目怎么办？是copy过去？还是干脆一个仓库把后续的新项目都包括了？</p>
+<p>这显然是不合适的，而且把原有的问题变得更复杂了。主要在与一个冲突：外包型的公司产品是互不关联的，他们没有任何内聚在一起的理由。同时，公司自己提炼的组件、工具等，其实和做的产品也是没有内聚的理由的。新项目依赖公司提炼的东西，但是他们之间只是开发上的依赖而不是内在的概念性依赖。就好像babel-core和babel-compile这是概念性的强联系，即使他们并不一定直接依赖。但是我们的项目依赖了babel-core,这就是一种仅仅在开发上的依赖。</p>
+<p>那么是否可以使用mono-repo呢？当然是可以的，作为公司本身，我们的公共组件、工具等等等等是完全内聚的，完全可以合并成一个mono-repo，然后新项目来依赖这个repo这是完全可以的。好处也是有的，工具自己的内部依赖随时都是一致的，可以保证了整个repo的稳定性。但是好处并不明显，不管是lerna宣传的版本号统一还是自动处理多package生成统一的changelog，这对于外包型项目都没有显著的好处。</p>
+<blockquote>
+<p>所以，对于大多数外包型的项目，mono-repo都没有足够的好处，意义不大</p>
+</blockquote>
+<p>其次，对于来源项目开发者来说，对大多数个人开发者来说也是不太适合的。因为个人项目大多数体积偏小、功能比较单一，可以说没有拆分的意义。毕竟不是每个人都能像尤雨奚大佬一样一个人维护一个超大的项目的(&gt;﹏&lt;)。</p>
+<blockquote>
+<p>所以，mono-repo更适合那些大型开源项目，本身复杂性较高，多人维护需要保证相互间版本一致，同时功能复杂，大多数可以独立成单独的项目维护的开源项目</p>
+</blockquote>
 ]]></content>
     </entry>
     <entry>

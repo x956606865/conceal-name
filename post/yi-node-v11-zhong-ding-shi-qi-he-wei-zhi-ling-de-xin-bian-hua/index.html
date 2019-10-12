@@ -1,0 +1,349 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>常名斋</title>
+<meta name="description" content="万物有名，常名斋，藏名斋。" />
+<link rel="shortcut icon" href="https://x956606865.github.io/normal-balance//favicon.ico?v=1570882139346">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<link rel="stylesheet" href="https://x956606865.github.io/normal-balance//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="常名斋 - Atom Feed" href="https://x956606865.github.io/normal-balance//atom.xml">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100208259-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100208259-1');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://x956606865.github.io/normal-balance/">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://x956606865.github.io/normal-balance//images/avatar.png?v=1570882139346" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">常名斋</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%AF%A6%E8%A7%A3">详解</a></li>
+<li><a href="#%E8%BF%99%E5%85%B6%E4%B8%AD%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88">这其中发生了什么？</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="https://x956606865.github.io/normal-balance/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="https://x956606865.github.io/normal-balance//archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="https://x956606865.github.io/normal-balance//tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="https://x956606865.github.io/normal-balance//post/about/" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">至大无外，至小无内。</div>
+    <a class="rss" href="https://x956606865.github.io/normal-balance//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">[译]Node v11 中定时器和微指令的新变化</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2019-03-04 / 4 min read
+        </div>
+        
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://x956606865.github.io/normal-balance//post-images/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua.jpg" alt="">
+        
+        <div class="post-content yue">
+          <p>本文是我之前关于  Node.js  事件循环的系列文章的简短跟进。在之前的系列文章中，我详细讨论了Timers，setImmediate，process.nextTick，Promises等等。</p>
+<!-- more -->
+<p>但是，自 Node.js  v11.0.0 起，对 setTimeout，setImmediate，process.nextTick 和Promises 的行为进行了一些重大更改。在本文中，我将讨论这些新的更改以及 Node &lt; v11.0.0 和 Node ≥ v11.0.0 之间的功能的一些比较。如果您错过了我之前关于 Node.js事件循环的任何文章，我建议您从以下链接中阅读它们然后返回此处以查看 Node v11.0.0中引入的新更改。</p>
+<ul>
+<li><a href="https://jsblog.insiderattack.net/event-loop-and-the-big-picture-nodejs-event-loop-part-1-1cb67a182810">Reactor Pattern and the Big Picture</a></li>
+<li><a href="https://jsblog.insiderattack.net/timers-immediates-and-process-nexttick-nodejs-event-loop-part-2-2c53fd511bb3">Timers and Immediates</a></li>
+<li><a href="https://jsblog.insiderattack.net/promises-next-ticks-and-immediates-nodejs-event-loop-part-3-9226cbe7a6aa">Promises, Next-Ticks and Immediates</a></li>
+<li><a href="https://jsblog.insiderattack.net/handling-io-nodejs-event-loop-part-4-418062f917d1">Handling I/O</a></li>
+<li><a href="https://jsblog.insiderattack.net/event-loop-best-practices-nodejs-event-loop-part-5-e29b2b50bfe2">Event Loop Best Practices</a></li>
+</ul>
+<h2 id="详解">详解</h2>
+<p>如果您分别在浏览器和 Node.js 中单独运行以下代码，会得到完全相反的结果。</p>
+<pre><code>setTimeout(() =&gt; console.log('timeout1'));
+setTimeout(() =&gt; {
+    console.log('timeout2')
+    Promise.resolve().then(() =&gt; console.log('promise resolve'))
+});
+setTimeout(() =&gt; console.log('timeout3'));
+setTimeout(() =&gt; console.log('timeout4'));
+</code></pre>
+<p>在浏览器中，会输出如下结果:</p>
+<pre><code>timeout1
+timeout2
+promise resolve
+timeout3
+timeout4
+</code></pre>
+<p>然而在低于v11.0.0版本的 Node.js 中，会输出以下结果:</p>
+<pre><code>timeout1
+timeout2
+timeout3
+timeout4
+promise resolve
+</code></pre>
+<p>在 Node.js 的实现中，当程序横跨 C ++  /  JavaScript 边界时，会在事件循环( event loop )的每个阶段之间执行 process.nextTick 回调和微任务 (  microtasks, 例如，promise回调 )。因此，在执行 Promise 的回调之前，所有定时器的回调都会在事件循环( event loop )的定时器阶段执行，从而产生上述输出。</p>
+<p>然而，浏览器和Node之间的这种矛盾的输出已经被讨论了很长一段时间了，并且一个特性（或bug修复）已经登陆 Node.js v11.0.0 用以跟踪浏览器行为。使用此功能，Node.js v11.0.0或更高版本将输出与浏览器输出匹配的以下内容：</p>
+<pre><code>timeout1
+timeout2
+promise resolve
+timeout3
+timeout4
+</code></pre>
+<p>请参阅以下 Node v10.15.1 和 Node v11.10.0 之间的比较：</p>
+<p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ca22d429-50db-40fd-a389-edf611079489/untitled?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45IHKPGFWL%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120545Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEAAaCXVzLXdlc3QtMiJIMEYCIQD7cIh6Ogu3uSmm1LmURDDLOhnyVAok8Yf9cpXGHZoVQgIhALx22mjTlUoVvLPE9xg1gxlR7BpaCyYWaraURiPylDAKKuMDCOn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjc0NTY3MTQ5MzcwIgw2iGxPzJTAHFEAkHoqtwNX1BlUpi6okLhxieOgHtnAkg5hHKP3NwUssG9WM7PvyF1zS3%2F9qXiwRWwCpw9%2Bn3bsiIAzwpHZXGjsnGaQ2gwDzF83bk8gA6TDJ0nMY9FOftyxzW7E5nSxyFZYALR1hEEnJOHxsngssr%2B9ahKsSGKzGRVglYVlLQg1GIGIaWUNKZMjyCltOZeAIxV%2F%2FunsgiZmrxs1YqFVJq1fzt1XxMZbxqVo72yA1sC6%2Br2al%2FO7BnMHdHwlYSb4WQ4OsWeQ7fzNG1tnVl0540Idp2hzBhMv5Q84A8i0oNOKMYorj7Ysfv7k2Sg6Cw7bSPTBo%2Fmhfd7Vb%2FMfO%2BY6%2Bv%2FkH5s5GN2YrmpNBEh9%2BhHpEUXpQV1dpbhB%2FALWKPv9sV0%2BllFPZu8VKCTovbrwmNXFaHz5UwOtqSgSwEtFIOAhL0CHJNkaAEQ2xZoWVQklvfB3ni3JcBl8VDnsfanulYgmCUDrK%2FgainU4UY9VveReiu%2BBeNMPe3OobJGCCtCy9gy%2BjURt3A4MKNusa7xA3MotuSflIPY827yual90Ud7Cqo6u3O%2FlcuVNh6XnQCXNtf2PTRBq3HMpz%2F310culMKaPhu0FOrMBUzZpowHsAMtb9HgyA4UhHmsH9W%2BSjl%2BkIHHh%2Bp9cmGNXWXvlWz%2FOVIfkPAOvbhCs8lHUZhqvsFG9O4xN%2Bg23MVtrh12dJSjLswXbD39I%2F5Hlt9g6aZH8vmjAB2hP5F0bJaZTz%2F13sxIQrYLQS9u8mQepB3HRHb3VO9mohLDqzNKrncOAkCb7MJJRBzoYs1qgtRHBAnEk%2Fx32iwv12%2FC%2FBb%2BWrS7sSRz%2BeD14gpGODEjAKEI%3D&amp;X-Amz-Signature=41a70cb147d978f47017168b826ca73eccdfd8ef5153e4ab770d277d0c249b99&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22untitled%22" alt=""><br>
+Different outputs in Node v10 and v11</p>
+<p>此更改不仅会影响到 setTimeout，还会影响 setImmediate。让我们尝试在 Node v10 和Node v11 中运行以下代码，看看输出是怎样的:</p>
+<pre><code>setImmediate(() =&gt; console.log('immediate1'));
+setImmediate(() =&gt; {
+    console.log('immediate2')
+    Promise.resolve().then(() =&gt; console.log('promise resolve'))
+});
+setImmediate(() =&gt; console.log('immediate3'));
+setImmediate(() =&gt; console.log('immediate4'));
+</code></pre>
+<p>Node.js v10 和 Node.js v11 明确地给出了两个不同的输出：</p>
+<figure data-type="image" tabindex="1"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/14a4d2e1-5e40-44ce-a5bc-52dd5ffbc8ab/untitled?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45ONFOS75K%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120533Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFXVh8HY55tza4cXP7A8AAAasLjdsPmkOAzSmAHeqJn1AiBf14AV8z6WeXTfPCQJLxJpFo%2BbQPHM0jDTRECHkWDLEyrjAwjo%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDI3NDU2NzE0OTM3MCIMW0PS2PjOwTS1YDQTKrcDyerVOXeZZ8oqjMXH3z%2FAIWjy6Ebv2mBzdPxqAv0DNrNbhJ9GBBndQ8NHn3oO9U9UgJzId4CTKoWagYRY%2FVCBLFH56%2BtOb4RVB80fJG%2FwrM0S6riX%2BZPIE0LzzPGBbi%2BUhjMOqwTycgw8gNlIYYJOiVaKIOytLKqk18YThdwr48arh9rKyZ4vJYAWz7fXRSZptkDPtsRnqWDH2Ns7Jlen%2Bn9ske3bkrY8WOl7usxRO8PCwrcWW%2By2qf8zFekZBMRNCSUNdtMqpBDq4pXP73X0hQbhNg%2BZIAAGXipTPIUZAUYIzK%2FKtIlu0HQ3HnFLE9ebJsHPXbTuV89NTcUi4KHGnY1AzfVmHAfHP%2FS4NtCZkCu9ewO6rGw3OJAP9esozyr9mu6nnHDpGw9r7UMW30I3sMkkgCFZl1oM92o36h4IPJVGDAoAZ8Z6lV%2Fu8T17zpvFGNR2x6Okc5RIZqmz2Grk8Bcpo4cmxj%2FsT9%2Br1DANzBtvZR8dJqjTs2woCbxf5dlPutYMaVCB1WWFD7X4%2Bn9idHq033d9dzUPt4S7p4uX3%2F9uihQATZBdgFOo65MFp%2F3cXMO0G07GHzD69oXtBTq1AeY5bcKG%2Bz3Mg54SBAvFiQ1n%2F3pu220PXsTIaqXvFBKSXUm%2BYBvkYzSGygE0gZu92ZVFhLCVJalSzp%2BwcucqDbLbfrMkeCn%2FQIDHVTpoI6CR%2Fi0ZIqe4e8BgKZ5tOFKV%2B%2F71i6aJ18F0%2FzLR0pXbc0GaeW6E6kJnGxrZwbfWviooJJNXacln6iuvIS%2BUrtoj%2BMsb98E2tSM9UqWpqLcr5sMmc4kkxmyxRLZ3zM51TpHklHFHOho%3D&amp;X-Amz-Signature=ddab24370e2a688e968a080477ad79f98be8f97abd0a23451c6515f4dc54a41a&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22untitled%22" alt=""></figure>
+<p>如果您替换 Promise.resolve（）然后使用 process.nextTick，则此结果完全相同，因为微任务是在运行 process.nextTick 回调之后才会运行。让我们尝试运行以下代码段：</p>
+<pre><code>setImmediate(() =&gt; console.log('timeout1'));
+setImmediate(() =&gt; {
+    console.log('timeout2')
+    process.nextTick(() =&gt; console.log('next tick'))
+});
+setImmediate(() =&gt; console.log('timeout3'));
+setImmediate(() =&gt; console.log('timeout4'));
+</code></pre>
+<p>上述脚本在 Node.js v10 和 Node.js  v11 中的输出如下：</p>
+<figure data-type="image" tabindex="2"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b84ac947-af7a-446b-a959-23db4f52ab10/untitled?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45CXUAYZWA%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120446Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCJ7oIbNAtX2v369L2krOhV%2BqbpEY1X9ch3xdsIexPKZwIhAOFAyPEvPdUcrIj61GZOQuNHz6NY5HjrAaXFBq4aED9HKuMDCOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjc0NTY3MTQ5MzcwIgxf5QY9SHTwFz9aY5kqtwPgaV%2Fiw2STipPnG7MzSsSVBeimQQ4o2L%2FUC0pVw9mohITvRqsYbMhMGm%2FQ9qKqyYvmKUDolG4A8xxEZOynbBoSKiicwU6DYpEHqjqCTpkjqSCBSxaG9uyLXJo2YQzbn3oQ0F3aLgYKh8Xmj6c75Rzkk3fAufTkBQcs%2Fe0LJOr9ptInNHMzstRHYlNTUOnF2Spj%2FCXl8%2B0PLUuVhfPrYTi424azWQNL2enqzbb1fpRb9dAxr6z%2FRDjLlmVfNz4vo9ag767%2FRARYSRnhAmKAT6toJafrJsa%2B6F7DoTWf7EIqrk4DrBYinM9XRz96WCX%2FS89QtxQc2yhXua%2BIUZbrajS0ag%2FzJzBRwzmXriSPtp5pvEw9cJwtrdKhiTtnmOqD1iAaTaXDHs6AfP693zHo%2BPrHdZhWAPhKjZnhncUYFpzPsxJPNE69x14J0zBQcJsgALPUhHOKPv4ArOPzzKlwlABkqS%2FPRmGHTWuDxi4Z6NSmsqGfK1ZdmUnFZ7oMmYcZaXgHwNrm6JzO%2FgNFohj27wpTou8G95CzmJqO7n7QiDij7vCMHqHTRR%2BRkuqZ%2Bv2gm1dAiywtXMHNMPLvhe0FOrMB%2BphHhVxJ5lnhblEY1ZVuS17FV1Bomyr5JrPJzESKN%2BEyHmo8VoGSqTNbIvt1h5kcuhC%2FVdxqGYERwOY%2FFrTucQWGvj5cdhgBXuPJokqlRyPTRsiPpQ4oOWuv93HeV1BKFQD05GshSeCVXO87Rjd4gqtmD1ddP2dAJStAio3KxIbB8gnv2DCXgspkncSywBjP78eV2mykGyxvkO5jfp4NilDMLZFd%2FgxRRqn1ecgQC3gFEe4%3D&amp;X-Amz-Signature=7e792e689db5fa9456902102730ca49895426a6a48fd836a492964aace21a178&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22untitled%22" alt=""></figure>
+<h2 id="这其中发生了什么">这其中发生了什么？</h2>
+<p>随着 Node v11 的新改动，nextTick 回调 和 微任务( microtasks )将在每个单独的 setTimeout 和setImmediate 回调之间运行，即使定时器队列或 immediates 队列不为空。就setTimeout 和 Promise 回调而言，Node.js v11中的新改动与浏览器行为相匹配，从而提高了 Node.js 中浏览器JavaScript的可重用性。但是，这一重大变化可能会破坏明确依赖旧行为的现有的 Node.js 应用程序。因此，如果要升级到Node v11或更高版本（最好是下一个LTS v12），您可能需要谨慎考虑。</p>
+
+        </div>
+
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://x956606865.github.io/normal-balance//tag/1HGBuA8Gx">
+            <span class="flex-auto">Translate</span>
+          </a>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://x956606865.github.io/normal-balance//tag/hawpsltzL">
+            <span class="flex-auto">Javascript</span>
+          </a>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://x956606865.github.io/normal-balance//tag/re4eMjzigC">
+            <span class="flex-auto">Program</span>
+          </a>
+        
+
+
+        <div class="flex justify-between py-8">
+          
+            <div class="prev-post">
+              <a href="https://x956606865.github.io/normal-balance//post/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen">
+                <h3 class="post-title">
+                  <i class="remixicon-arrow-left-line"></i>
+                  基于文本密度提取网页正文
+                </h3>
+              </a>
+            </div>
+          
+
+          
+            <div class="next-post">
+              <a href="https://x956606865.github.io/normal-balance//post/yi-gen-zhao-li-zi-xue-monorepo-yi">
+                <h3 class="post-title">
+                  [译] 跟着例子学 monorepo (一)
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '76291ba0cf1990c7ea9c',
+    clientSecret: '6470aeab5dae3db34487b64b739450bdf3c53036',
+    repo: 'normal-balance',
+    owner: 'x956606865',
+    admin: ['x956606865'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+      </div>
+    </div>
+
+    <script src="https://x956606865.github.io/normal-balance//media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
+</html>

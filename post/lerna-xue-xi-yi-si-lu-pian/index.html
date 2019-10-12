@@ -46,12 +46,11 @@
             <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E6%8F%90%E6%A1%88%E7%8A%B6%E6%80%81stage-2">提案状态：Stage-2</a></li>
-<li><a href="#%E9%93%BE%E6%8E%A5httpstc39githubioproposal-decorators">链接:<em>https://tc39.github.io/proposal-decorators/</em></a></li>
-<li><a href="#%E9%9C%80%E6%B1%82-babel-7">需求: Babel-7</a></li>
-<li><a href="#%E6%8F%92%E4%BB%B6babelplugin-proposal-decorators">插件:@babel/plugin-proposal-decorators</a></li>
-<li><a href="#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85">快速安装：</a></li>
-<li><a href="#%E6%80%9D%E8%80%83">思考:</a></li>
+<li><a href="#lerna%E6%98%AF%E5%95%A5">Lerna是啥?</a></li>
+<li><a href="#multi-repo%E4%BB%A5%E5%8F%8Amono-repo">multi-repo以及mono-repo</a></li>
+<li><a href="#mono-repo%E7%9A%84%E4%BC%98%E7%82%B9">mono-repo的优点</a></li>
+<li><a href="#mono-repo%E7%9A%84%E7%BC%BA%E7%82%B9">mono-repo的缺点：</a></li>
+<li><a href="#%E6%98%AF%E5%90%A6%E5%80%BC%E5%BE%97%E4%BD%BF%E7%94%A8">是否值得使用？</a></li>
 </ul>
 </li>
 </ul>
@@ -100,139 +99,53 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">ECMA 提案-&#39;decorator&#39; 研究</h1>
+        <h1 class="text-3xl font-bold lg:mt-16">lerna 学习（一）思路篇</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2018-11-04 / 3 min read
+          2018-11-22 / 5 min read
         </div>
         
-          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://x956606865.github.io/normal-balance//post-images/ecma-ti-an-decorator-yan-jiu.png" alt="">
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://x956606865.github.io/normal-balance//post-images/lerna-xue-xi-yi-si-lu-pian.jpg" alt="">
         
         <div class="post-content yue">
-          <p>//ps:根据大佬的解释，现在提案修改，不推荐使用legacy这种模式了，新版模式待研究后再更新Orz</p>
+          <h2 id="lerna是啥">Lerna是啥?</h2>
+<blockquote>
+<p>Lerna is a tool that optimizes the workflow around managing multi-package repositories with git and npm.</p>
+</blockquote>
 <!-- more -->
-<h2 id="提案状态stage-2">提案状态：Stage-2</h2>
-<h2 id="链接httpstc39githubioproposal-decorators">链接:<a href="https://tc39.github.io/proposal-decorators/"><em>https://tc39.github.io/proposal-decorators/</em></a></h2>
-<h2 id="需求-babel-7">需求: Babel-7</h2>
-<h2 id="插件babelplugin-proposal-decorators">插件:@babel/plugin-proposal-decorators</h2>
-<pre><code>          (ps:babel7以后插件名称全部有所改动)
-</code></pre>
-<h2 id="快速安装">快速安装：</h2>
-<pre><code>    yarn global add @babel/cli
-    yarn global add @babel/node
-    yarn add @babel/plugin-proposal-decorators
-</code></pre>
-<p>使用babel-node、babel-cli这样的名称只能安装到6版本的babel工具，7版本的工具全部改由@babel前缀</p>
-<p>新建.babelrc文件:</p>
-<pre><code>    {
-        &quot;plugins&quot;:[
-    				[&quot;@babel/plugin-proposal-pipeline-operator&quot;, { &quot;proposal&quot;: &quot;minimal&quot; }],
-    				[&quot;@babel/plugin-proposal-decorators&quot;,{&quot;legacy&quot;:true}]]
-    }
-</code></pre>
-<p>新建index.js文件:</p>
-<pre><code>    function testable(isTestable) {
-        return function(target) {
-            target.isTestable = isTestable;
-        }
-    }
-    
-    @testable(true)
-    class MyTestableClass {}
-    console.log(MyTestableClass.isTestable)// true
-     
-    
-    @testable(false)
-    class MyClass {}
-    console.log(MyClass.isTestable)// false
-</code></pre>
-<p>然后执行:</p>
-<pre><code>babel-node index.js
-</code></pre>
-<p>即可看到对应的输出结果。</p>
-<h2 id="思考">思考:</h2>
+<p>这是来自lerna的github仓库的自我描述。大致意思就是他是一个用来管理multi-package项目的工具，通过使用git和npm（其实yarn也是支持的）</p>
+<h2 id="multi-repo以及mono-repo">multi-repo以及mono-repo</h2>
+<p>lerna是标准的mono-repo的工具，与普遍的multi-repo的组织架构有着显著的区别。</p>
+<p>传统开发即是multi-repo的，即一个module一个仓库，比如公司内部提炼的常用工具、常用组件都是分开存放，开发的时候install在同一个项目里。</p>
+<p>而mono-repo则是一个仓库包含整个项目的所有，分成多个package目录分开管理，统一处理相互依赖。比如Babel、react、angular等等知名的库都是采用了mono-repo的方式。比如babel，babel-cli、babel-core、babel-node等等工具都是放在了同一个仓库“babel”中的，而我们安装的时候实际上是yarn add @babel/babel-core这样的安装方式。这就是很典型的mono-repo的模式，整个babel的产品都内聚到了babel的整个仓库内。</p>
+<h2 id="mono-repo的优点">mono-repo的优点</h2>
 <ul>
-<li>
-<p>装饰器语法本身只是单纯的用一个函数去处理一个类，大多数时候都是对其prototype的修改，用es5也能实现对应的功能，但是使用装饰器能使代码更加简洁，结构更加清晰。</p>
-</li>
-<li>
-<p>虽然在js中，class和function不存在本质上的区别，只是一个语法糖的存在，但是由于函数的作用域提升的问题，如果函数中有自由变量的使用，就会出现不可预期的一些bug。</p>
-<p>例如如下代码:(案例来自阮一峰es6教程)</p>
-</li>
+<li>项目规范可以更轻松的整合;</li>
+<li>模块间依赖稳定，统一更新，避免了开发人员相互间使用对方模块时版本更新不一致导致的bug;</li>
+<li>可以更高效的复用模块，加快开发效率;</li>
+<li>各模块间相互依赖，开发又相对独立，避免对于特定项目的过强的耦合;</li>
+<li>统一整合各个模块单独的更新生成一个CHANGELOG;</li>
+<li>唯一的仓库，避免用户issue的分散，以及issue的scope的不明确。</li>
 </ul>
-<pre><code>    var counter = 0;
-    
-    var add = function () {
-      counter++;
-    };
-    
-    @add
-    function foo() {
-    }
-</code></pre>
-<p>在实际编译后，会变成如下：</p>
-<pre><code>    @add
-    function foo() {
-    }
-    
-    var counter;
-    var add;
-    
-    counter = 0;
-    
-    add = function () {
-      counter++;
-    };
-</code></pre>
-<p>从而导致程序出粗。</p>
+<h2 id="mono-repo的缺点">mono-repo的缺点：</h2>
 <ul>
-<li>由于装饰器可以优雅的修改prototype，猜想可以优雅的尝试AOP编程，例如:</li>
+<li>仓库体积会非常的大;</li>
+<li>统一CHANGELOG也会混入一些和整体项目无关的模块更新。</li>
 </ul>
-<pre><code>    function AOP(options) {
-        const {beforeFunc,afterFunc}=Object.assign({
-            beforeFunc:()=&gt;{},
-            afterFunc:()=&gt;{}
-        },options)
-        return function(target, key, descriptor) {
-            const oldTarget = descriptor.value
-            descriptor.value=function(){
-                beforeFunc.apply(this,arguments)
-                const value=oldTarget.apply(this,arguments)
-                afterFunc.apply(this.arguments)
-                return value
-            }
-            return descriptor
-        }
-    }
-    function logBefore(){
-        console.log(&quot;before&quot;)
-    }
-    function logAfter(){
-        console.log(&quot;after&quot;)
-    }
-    class MyClass {
-        @AOP({
-            beforeFunc:logBefore,
-            afterFunc:logAfter
-        })
-        func(){
-            console.log(&quot;run&quot;)
-        }
-    }
-    const obj=new MyClass()
-    obj.func()
-</code></pre>
-<p>这样每次就简单清晰的注入了before和after两个函数，在这两个函数中可以做数据预处理、数据状态监测等等一系列的功能，包括GA数据的监测也可以这样放入。这样和JAVA的AOP思路就十分的接近了。</p>
-<ul>
-<li>同样由于可以处理proptype，理论上可以实现类的依赖注入，传入依赖的字符串数组，然后解析出是npm模块还是本地文件，然后使用inline require动态加载对应的库，注入到类中。同样可以注入的还可以有项目的config的配置变量等等。</li>
-<li>待续</li>
-</ul>
+<h2 id="是否值得使用">是否值得使用？</h2>
+<p>对于新知识来说，最重要的一点就是是否值得使用？什么时候应该用？适合哪些情况？</p>
+<p>首先，作为一个外包型产品公司的码农，我认为对新项目使用mono-repo是不值得的。或者说一开始学习的时候，我就一直以公司产品的角度来看待mono-repo，想了好久都不明白这么做的意义在哪里？公共组件如果在同一个项目中，那么新项目怎么办？是copy过去？还是干脆一个仓库把后续的新项目都包括了？</p>
+<p>这显然是不合适的，而且把原有的问题变得更复杂了。主要在与一个冲突：外包型的公司产品是互不关联的，他们没有任何内聚在一起的理由。同时，公司自己提炼的组件、工具等，其实和做的产品也是没有内聚的理由的。新项目依赖公司提炼的东西，但是他们之间只是开发上的依赖而不是内在的概念性依赖。就好像babel-core和babel-compile这是概念性的强联系，即使他们并不一定直接依赖。但是我们的项目依赖了babel-core,这就是一种仅仅在开发上的依赖。</p>
+<p>那么是否可以使用mono-repo呢？当然是可以的，作为公司本身，我们的公共组件、工具等等等等是完全内聚的，完全可以合并成一个mono-repo，然后新项目来依赖这个repo这是完全可以的。好处也是有的，工具自己的内部依赖随时都是一致的，可以保证了整个repo的稳定性。但是好处并不明显，不管是lerna宣传的版本号统一还是自动处理多package生成统一的changelog，这对于外包型项目都没有显著的好处。</p>
+<blockquote>
+<p>所以，对于大多数外包型的项目，mono-repo都没有足够的好处，意义不大</p>
+</blockquote>
+<p>其次，对于来源项目开发者来说，对大多数个人开发者来说也是不太适合的。因为个人项目大多数体积偏小、功能比较单一，可以说没有拆分的意义。毕竟不是每个人都能像尤雨奚大佬一样一个人维护一个超大的项目的(&gt;﹏&lt;)。</p>
+<blockquote>
+<p>所以，mono-repo更适合那些大型开源项目，本身复杂性较高，多人维护需要保证相互间版本一致，同时功能复杂，大多数可以独立成单独的项目维护的开源项目</p>
+</blockquote>
 
         </div>
 
-        
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://x956606865.github.io/normal-balance//tag/hawpsltzL">
-            <span class="flex-auto">Javascript</span>
-          </a>
         
           <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://x956606865.github.io/normal-balance//tag/re4eMjzigC">
             <span class="flex-auto">Program</span>
@@ -243,15 +156,24 @@
         <div class="flex justify-between py-8">
           
             <div class="prev-post">
-              <a href="https://x956606865.github.io/normal-balance//post/xiang-mu-gui-fan-hua-kai-fa-tan-suo">
+              <a href="https://x956606865.github.io/normal-balance//post/lerna-xue-xi-er">
                 <h3 class="post-title">
                   <i class="remixicon-arrow-left-line"></i>
-                  项目规范化开发探索
+                  lerna学习（二）
                 </h3>
               </a>
             </div>
           
 
+          
+            <div class="next-post">
+              <a href="https://x956606865.github.io/normal-balance//post/xiang-mu-gui-fan-hua-kai-fa-tan-suo">
+                <h3 class="post-title">
+                  项目规范化开发探索
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
           
         </div>
 
