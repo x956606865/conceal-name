@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://x956606865.github.io/normal-balance/</id>
+    <id>https://x956606865.github.io/conceal-name/</id>
     <title>常名斋</title>
-    <updated>2019-10-12T12:09:03.659Z</updated>
+    <updated>2019-10-14T02:20:24.201Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://x956606865.github.io/normal-balance/"/>
-    <link rel="self" href="https://x956606865.github.io/normal-balance//atom.xml"/>
+    <link rel="alternate" href="https://x956606865.github.io/conceal-name/"/>
+    <link rel="self" href="https://x956606865.github.io/conceal-name//atom.xml"/>
     <subtitle>万物有名，常名斋，藏名斋。</subtitle>
-    <logo>https://x956606865.github.io/normal-balance//images/avatar.png</logo>
-    <icon>https://x956606865.github.io/normal-balance//favicon.ico</icon>
+    <logo>https://x956606865.github.io/conceal-name//images/avatar.png</logo>
+    <icon>https://x956606865.github.io/conceal-name//favicon.ico</icon>
     <rights>All rights reserved 2019, 常名斋</rights>
     <entry>
         <title type="html"><![CDATA[基于文本密度提取网页正文]]></title>
-        <id>https://x956606865.github.io/normal-balance//post/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen</id>
-        <link href="https://x956606865.github.io/normal-balance//post/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen">
+        <id>https://x956606865.github.io/conceal-name//post/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen</id>
+        <link href="https://x956606865.github.io/conceal-name//post/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen">
         </link>
         <updated>2019-10-11T11:17:19.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="前言">前言</h2>
@@ -102,8 +102,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[[译]Node v11 中定时器和微指令的新变化]]></title>
-        <id>https://x956606865.github.io/normal-balance//post/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua</id>
-        <link href="https://x956606865.github.io/normal-balance//post/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua">
+        <id>https://x956606865.github.io/conceal-name//post/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua</id>
+        <link href="https://x956606865.github.io/conceal-name//post/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua">
         </link>
         <updated>2019-03-04T11:59:34.000Z</updated>
         <summary type="html"><![CDATA[<p>本文是我之前关于  Node.js  事件循环的系列文章的简短跟进。在之前的系列文章中，我详细讨论了Timers，setImmediate，process.nextTick，Promises等等。</p>
@@ -181,8 +181,8 @@ setImmediate(() =&gt; console.log('timeout4'));
     </entry>
     <entry>
         <title type="html"><![CDATA[[译] 跟着例子学 monorepo (一)]]></title>
-        <id>https://x956606865.github.io/normal-balance//post/yi-gen-zhao-li-zi-xue-monorepo-yi</id>
-        <link href="https://x956606865.github.io/normal-balance//post/yi-gen-zhao-li-zi-xue-monorepo-yi">
+        <id>https://x956606865.github.io/conceal-name//post/yi-gen-zhao-li-zi-xue-monorepo-yi</id>
+        <link href="https://x956606865.github.io/conceal-name//post/yi-gen-zhao-li-zi-xue-monorepo-yi">
         </link>
         <updated>2019-01-25T11:57:10.000Z</updated>
         <summary type="html"><![CDATA[<p>原文链接:  <a href="https://codeburst.io/monorepos-by-example-part-1-3a883b49047e">https://codeburst.io/monorepos-by-example-part-1-3a883b49047e</a></p>
@@ -320,8 +320,8 @@ banana and Translucentpuma Kangaroo
     </entry>
     <entry>
         <title type="html"><![CDATA[lerna学习（三）发布篇]]></title>
-        <id>https://x956606865.github.io/normal-balance//post/lerna-xue-xi-san-fa-bu-pian</id>
-        <link href="https://x956606865.github.io/normal-balance//post/lerna-xue-xi-san-fa-bu-pian">
+        <id>https://x956606865.github.io/conceal-name//post/lerna-xue-xi-san-fa-bu-pian</id>
+        <link href="https://x956606865.github.io/conceal-name//post/lerna-xue-xi-san-fa-bu-pian">
         </link>
         <updated>2018-11-24T11:54:37.000Z</updated>
         <summary type="html"><![CDATA[<p>接着之前的思路，现在我们已经完成了项目的初始化构建，然后开始往里面写新的package。</p>
@@ -378,8 +378,8 @@ lerna publish --registry=http://xxxx.com:7001
     </entry>
     <entry>
         <title type="html"><![CDATA[lerna学习（二）]]></title>
-        <id>https://x956606865.github.io/normal-balance//post/lerna-xue-xi-er</id>
-        <link href="https://x956606865.github.io/normal-balance//post/lerna-xue-xi-er">
+        <id>https://x956606865.github.io/conceal-name//post/lerna-xue-xi-er</id>
+        <link href="https://x956606865.github.io/conceal-name//post/lerna-xue-xi-er">
         </link>
         <updated>2018-11-23T11:51:20.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="安装">安装</h2>
@@ -480,8 +480,8 @@ yarn init -y
     </entry>
     <entry>
         <title type="html"><![CDATA[lerna 学习（一）思路篇]]></title>
-        <id>https://x956606865.github.io/normal-balance//post/lerna-xue-xi-yi-si-lu-pian</id>
-        <link href="https://x956606865.github.io/normal-balance//post/lerna-xue-xi-yi-si-lu-pian">
+        <id>https://x956606865.github.io/conceal-name//post/lerna-xue-xi-yi-si-lu-pian</id>
+        <link href="https://x956606865.github.io/conceal-name//post/lerna-xue-xi-yi-si-lu-pian">
         </link>
         <updated>2018-11-22T11:47:59.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="lerna是啥">Lerna是啥?</h2>
@@ -529,8 +529,8 @@ yarn init -y
     </entry>
     <entry>
         <title type="html"><![CDATA[项目规范化开发探索]]></title>
-        <id>https://x956606865.github.io/normal-balance//post/xiang-mu-gui-fan-hua-kai-fa-tan-suo</id>
-        <link href="https://x956606865.github.io/normal-balance//post/xiang-mu-gui-fan-hua-kai-fa-tan-suo">
+        <id>https://x956606865.github.io/conceal-name//post/xiang-mu-gui-fan-hua-kai-fa-tan-suo</id>
+        <link href="https://x956606865.github.io/conceal-name//post/xiang-mu-gui-fan-hua-kai-fa-tan-suo">
         </link>
         <updated>2018-11-12T11:38:22.000Z</updated>
         <content type="html"><![CDATA[<h2 id="前因">前因</h2>
@@ -700,8 +700,8 @@ yarn init -y
     </entry>
     <entry>
         <title type="html"><![CDATA[ECMA 提案-'decorator' 研究]]></title>
-        <id>https://x956606865.github.io/normal-balance//post/ecma-ti-an-decorator-yan-jiu</id>
-        <link href="https://x956606865.github.io/normal-balance//post/ecma-ti-an-decorator-yan-jiu">
+        <id>https://x956606865.github.io/conceal-name//post/ecma-ti-an-decorator-yan-jiu</id>
+        <link href="https://x956606865.github.io/conceal-name//post/ecma-ti-an-decorator-yan-jiu">
         </link>
         <updated>2018-11-04T11:32:24.000Z</updated>
         <summary type="html"><![CDATA[<p>//ps:根据大佬的解释，现在提案修改，不推荐使用legacy这种模式了，新版模式待研究后再更新Orz</p>
