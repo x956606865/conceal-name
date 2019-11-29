@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://x956606865.github.io/conceal-name/</id>
     <title>常名斋</title>
-    <updated>2019-11-22T03:53:17.306Z</updated>
+    <updated>2019-11-29T04:00:03.598Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://x956606865.github.io/conceal-name/"/>
     <link rel="self" href="https://x956606865.github.io/conceal-name//atom.xml"/>
@@ -10,6 +10,165 @@
     <logo>https://x956606865.github.io/conceal-name//images/avatar.png</logo>
     <icon>https://x956606865.github.io/conceal-name//favicon.ico</icon>
     <rights>All rights reserved 2019, 常名斋</rights>
+    <entry>
+        <title type="html"><![CDATA[周报 2019.11.25-2019.11.29]]></title>
+        <id>https://x956606865.github.io/conceal-name//post/zhou-bao-20191125-20191129</id>
+        <link href="https://x956606865.github.io/conceal-name//post/zhou-bao-20191125-20191129">
+        </link>
+        <updated>2019-11-29T03:54:36.000Z</updated>
+        <summary type="html"><![CDATA[<p>(封面图作者: SiyuMU)</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>(封面图作者: SiyuMU)</p>
+<!-- more -->
+<h2 id="新闻">新闻</h2>
+<ul>
+<li>
+<p><a href="https://bre.is/cVPXUnEv">欧洲 IPv4 地址用光</a></p>
+<figure data-type="image" tabindex="1"><img src="https://www.wangbase.com/blogimg/asset/201911/bg2019112602.jpg" alt=""></figure>
+<p>11月25日，欧洲 IP 地址注册机构 RIPE 宣布，欧洲的 IPv4 地址全部分配光了，一个也没剩下，从此没有新的 IP 地址可以分配。为了纪念这个历史时刻，全体人员合影留言（上图）。</p>
+</li>
+</ul>
+<h2 id="文章">文章</h2>
+<ul>
+<li>
+<p><a href="https://bre.is/8wQFYNCK">DNS 基础知识与 dig 命令</a> (英文)</p>
+</li>
+<li>
+<p><a href="https://bre.is/2ad54Wmj">恶意的 SSH 访问分析</a></p>
+<p>暴露在互联网上的服务器，每天都会收到大量的恶意 SSH 登录请求。作者分析了自己服务器的98万次 SSH 日志记录，看看能发现什么。</p>
+</li>
+<li>
+<p><a href="https://bre.is/ejwBzEed">Web 缓存投毒攻击</a></p>
+<p>访问网页，大多数时候都要通过缓存服务器，CDN 就是一种缓存。有可能做到缓存服务器投毒，从而使得网站无法访问，本文介绍它的原理。</p>
+</li>
+</ul>
+<h2 id="资源">资源</h2>
+<ul>
+<li>
+<p><a href="https://github.com/fighting41love/funNLP">fighting41love/funNLP</a></p>
+<p>中文词库的集合。可用于：敏感词、语言检测、拆字词典等。作者整理了很多各方面的资源，学习NLP或者做一些NLP都有可能用到</p>
+</li>
+<li>
+<p><a href="https://docs.microsoft.com/en-us/azure/architecture/">微软 Azure 架构设计文档</a></p>
+<p>Azure 云服务的文档，专门讲解架构知识，包括架构模式，设计原则，设计模式等。</p>
+</li>
+</ul>
+<h2 id="工具">工具</h2>
+<ul>
+<li>
+<p><a href="https://bre.is/qBZA9e1FD">Short URL</a></p>
+<p>快速生成short url的chrome插件，在某个页面直接点击该插件就可以生成对应的短网址。短网址可以有效避免url中出现特殊字符在其他地方使用时的bug或者url过长带来的麻烦问题。该插件同时还会生成对应的url二维码，手机端可以直接扫码查看对应网页</p>
+</li>
+<li>
+<p><a href="https://gitee.com/wallace5303/dapps">wallace5303/dapps</a></p>
+<p>目前来说，这还是个玩具。码云上年度最有潜力项目之一。做了个web端的app商店，可以一键安装各种开发环境或者其他一些应用。核心思路是借用docker拉取对应镜像，然后基于配置去驱动。算是简化了docker的操作，不过目前内容较少，暂时没太大价值</p>
+</li>
+<li>
+<p><a href="https://gitee.com/fastdfs100/fastdfs">fastdfs100/fastdfs</a></p>
+<p>同样是码云上年度最有潜力项目之一，一个轻量级的分布式文件系统。作者从16年就开始开发该项目，中途弃坑一段时间，现在又开始更新。（PS：使用说明被放到了项目wiki里，作者readme里面完全没有提怎么用，找使用说明找了好久Orz）</p>
+</li>
+<li>
+<p><a href="https://github.com/smooth-code/svgr">smooth-code/svgr</a></p>
+<p>将SVG代码转换成React组件的工具，如果有些svg在显示上需要和项目的一些变量高度耦合，可以考虑变成组件然后去处理（PS：如果能转换成RN组件的话就方便了Orz）</p>
+</li>
+<li>
+<p><a href="https://github.com/square/shift">square/shift</a></p>
+<p>ruby写的数据库迁移工具，适用于一些迁移耗时很长的情景（PS：因为是打开浏览器的UI页面操作，理论上可以触发梯子，避免Navicat翻墙麻烦的问题）</p>
+<p>示例图见附录二</p>
+</li>
+<li>
+<p><a href="https://github.com/alibaba/RedisShake">alibaba/RedisShake</a></p>
+<p>alibaba近期开源的redis之间同步数据的工具。</p>
+</li>
+<li>
+<p><a href="https://unbug.github.io/codelf/">codeIf</a></p>
+<p>这个网站总觉得很纠结，这是一个解决变量命名问题的工具。你输入变量的中文词，他会去搜索对应知名的github库里类似的变量名，提供参考。可以说很实用，但是作为一个网页工具，又总是感觉很麻烦。</p>
+<p>示例图见附录二</p>
+</li>
+<li>
+<p><a href="https://github.com/opendevops-cn/opendevops">opendevops-cn/opendevops</a></p>
+<p>CODO是一款为用户提供企业多混合云、一站式DevOps、自动化运维、完全开源的云管理平台、自动化运维平台.</p>
+<p>使用了下他的demo，感觉很厉害，不少东西挺实用。不过emmm，安装有点复杂。</p>
+</li>
+<li>
+<p><a href="https://docs.svrx.io/zh/">svrx</a></p>
+<p>我感觉这个可以用来快速做前端demo，但是似乎有些地方又有点缺陷。需要再研究研究。</p>
+</li>
+<li>
+<p><a href="https://github.com/FiloSottile/mkcert">mkcert</a></p>
+<p>这个工具是给https项目开发用的，有些项目是强制https的，但是本地开发一般是http，所以会遇到各种问题。这个工具可以给本地localhost签发一个https证书，自己信任自己。不过看了下readme，没太弄明白怎么用。也需要再研究研究</p>
+</li>
+<li>
+<p><a href="https://juejin.im/post/5dd1498fe51d453d970d8333#heading-5">Hazel</a></p>
+<p>这是一个自动整理文件的工具，对于像下载文件夹特别乱，文件经常找不到的人（比如我），就很有用，链接的这篇文章大致介绍了常见用法，感觉很赞</p>
+</li>
+<li>
+<p><a href="https://www.52doutu.cn/diy/">斗图大师</a></p>
+<p>写文章或者水群，怎么能少的了表情包。没有合适的表情包？不怕，我们现场做一个！在线表情包制作工具，包含了大量热门表情包的素材，只需要想一想文案，剩下的事情，拖拽就好了喵</p>
+<p>示例图见附录二</p>
+</li>
+</ul>
+<h2 id="js-库">JS 库</h2>
+<ul>
+<li>
+<p><a href="https://github.com/substack/node-mkdirp">substack/node-mkdirp</a></p>
+<p>在写命令行工具的时候很实用，类似于<code>mkdir -p</code>, 直接按照给出的字符串新建多级目录。示例代码见附录一</p>
+</li>
+<li>
+<p><a href="https://github.com/jonschlinkert/normalize-path">jonschlinkert/normalize-path</a></p>
+<p>写跨平台命令行脚本的时候会用到。统一路径字符串，把所有的路径分隔符都转换为unix类型的/，比如在win上面，分隔符就是反斜线\</p>
+</li>
+<li>
+<p><a href="https://github.com/typestack/class-transformer">typestack/class-transformer</a></p>
+<p>nestjs默认内置的工具库，感觉特别的实用。大致功能是将类实例转换为普通的js Object或者将一个js Object映射成一个写好的类的实例。在nestjs中，利用它，我们可以直接在接口中返回数据库的模型实体给前端。只需要在实体声明中用装饰器声明那些字段返回的时候要屏蔽，哪些字段名字映射要变化，哪些字段需要转换等等。这样控制器和service可以更好的保持单一职责的原则。常用的就是直接返回用户模型实体，过滤掉password等字段，头像url声明返回时需要urlEncode转码，角色权限关系需要转换成字符串数组等等</p>
+</li>
+<li>
+<p><a href="https://github.com/vortesnail/qier-player">vortesnail/qier-player</a></p>
+<p>一个轻量级的react视频播放器，在某些情况下可能会用到。</p>
+</li>
+<li>
+<p><a href="https://github.com/eligrey/FileSaver.js">eligrey/FileSaver.js</a></p>
+<p>一个保存文件的库，在浏览器端使用，可以不经过服务器，前端自己生成数据，弹出下载框让用户下载。也可以直接给定url，弹出下载框。</p>
+</li>
+<li>
+<p><a href="https://github.com/nzbin/photoviewer">nzbin/photoviewer</a></p>
+<p>一个预览图片的js库，支持缩放、旋转等常见需求。维护一些老项目的时候可以将就着用。</p>
+</li>
+<li>
+<p><a href="https://bre.is/AWjBfky3">DoKit</a></p>
+<p>严格来说这个不是js库，这个是滴滴给app端做的辅助开发的库，可以直接看安装好的app信息，查看权限是否开齐全了，系统日志输出了些什么，app本地存储了些什么数据。在debug的时候很实用。用过DoKit1.0的版本，接入很方便，2.0加了不少功能，很nice</p>
+</li>
+</ul>
+<h2 id="附录1-部分代码演示">附录1 部分代码演示</h2>
+<ul>
+<li>
+<p>substack/node-mkdirp</p>
+<pre><code class="language-javascript">var mkdirp = require('mkdirp');
+    
+mkdirp('/tmp/foo/bar/baz', function (err) {
+    if (err) console.error(err)
+    else console.log('pow!')
+});
+</code></pre>
+</li>
+</ul>
+<h2 id="附录2-部分截图演示">附录2 部分截图演示</h2>
+<ul>
+<li>
+<p>square/shift</p>
+<figure data-type="image" tabindex="2"><img src="https://github.com/square/shift/raw/master/ui/screenshots/summary.png" alt=""></figure>
+</li>
+<li>
+<p>codeIf</p>
+<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191127113026.png" alt=""></figure>
+</li>
+<li>
+<p>斗图大师</p>
+<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191127113308.png" alt=""></figure>
+</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.11.18-2019.11.22]]></title>
         <id>https://x956606865.github.io/conceal-name//post/zhou-bao-20191118-20191122</id>
@@ -1038,134 +1197,6 @@ yarn init -y
 <p>jsdoc是一个通过注释自动生成文档的工具，虽然jsdoc已经很久没有人维护了，很多新语法都不支持（连PR都没人去通过了，感觉凉凉了），不过jsdoc的注释语法却是注释生成文档的通用语法，而且和vscode等编辑器整合的非常好，简单的snippet便可以生成对应的注释，如果再加上document-this插件，就基本OK了，写注释十分轻松。不过现在注释生成文档的工具，要么很丑，要么就是很久没维护了，就很蛋疼emmmm，只能说将就着用一用。。。。</p>
 <p>待续。。。。。</p>
 <p>Link: <a href="https://www.notion.so/aj0k3r/57b80f3f75b741e3a54546c20ae5e8e7"></a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ECMA 提案-'decorator' 研究]]></title>
-        <id>https://x956606865.github.io/conceal-name//post/ecma-ti-an-decorator-yan-jiu</id>
-        <link href="https://x956606865.github.io/conceal-name//post/ecma-ti-an-decorator-yan-jiu">
-        </link>
-        <updated>2018-11-04T11:32:24.000Z</updated>
-        <summary type="html"><![CDATA[<p>//ps:根据大佬的解释，现在提案修改，不推荐使用legacy这种模式了，新版模式待研究后再更新Orz</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>//ps:根据大佬的解释，现在提案修改，不推荐使用legacy这种模式了，新版模式待研究后再更新Orz</p>
-<!-- more -->
-<h2 id="提案状态stage-2">提案状态：Stage-2</h2>
-<h2 id="链接httpstc39githubioproposal-decorators">链接:<a href="https://tc39.github.io/proposal-decorators/"><em>https://tc39.github.io/proposal-decorators/</em></a></h2>
-<h2 id="需求-babel-7">需求: Babel-7</h2>
-<h2 id="插件babelplugin-proposal-decorators">插件:@babel/plugin-proposal-decorators</h2>
-<pre><code>          (ps:babel7以后插件名称全部有所改动)
-</code></pre>
-<h2 id="快速安装">快速安装：</h2>
-<pre><code>    yarn global add @babel/cli
-    yarn global add @babel/node
-    yarn add @babel/plugin-proposal-decorators
-</code></pre>
-<p>使用babel-node、babel-cli这样的名称只能安装到6版本的babel工具，7版本的工具全部改由@babel前缀</p>
-<p>新建.babelrc文件:</p>
-<pre><code>    {
-        &quot;plugins&quot;:[
-    				[&quot;@babel/plugin-proposal-pipeline-operator&quot;, { &quot;proposal&quot;: &quot;minimal&quot; }],
-    				[&quot;@babel/plugin-proposal-decorators&quot;,{&quot;legacy&quot;:true}]]
-    }
-</code></pre>
-<p>新建index.js文件:</p>
-<pre><code>    function testable(isTestable) {
-        return function(target) {
-            target.isTestable = isTestable;
-        }
-    }
-    
-    @testable(true)
-    class MyTestableClass {}
-    console.log(MyTestableClass.isTestable)// true
-     
-    
-    @testable(false)
-    class MyClass {}
-    console.log(MyClass.isTestable)// false
-</code></pre>
-<p>然后执行:</p>
-<pre><code>babel-node index.js
-</code></pre>
-<p>即可看到对应的输出结果。</p>
-<h2 id="思考">思考:</h2>
-<ul>
-<li>
-<p>装饰器语法本身只是单纯的用一个函数去处理一个类，大多数时候都是对其prototype的修改，用es5也能实现对应的功能，但是使用装饰器能使代码更加简洁，结构更加清晰。</p>
-</li>
-<li>
-<p>虽然在js中，class和function不存在本质上的区别，只是一个语法糖的存在，但是由于函数的作用域提升的问题，如果函数中有自由变量的使用，就会出现不可预期的一些bug。</p>
-<p>例如如下代码:(案例来自阮一峰es6教程)</p>
-</li>
-</ul>
-<pre><code>    var counter = 0;
-    
-    var add = function () {
-      counter++;
-    };
-    
-    @add
-    function foo() {
-    }
-</code></pre>
-<p>在实际编译后，会变成如下：</p>
-<pre><code>    @add
-    function foo() {
-    }
-    
-    var counter;
-    var add;
-    
-    counter = 0;
-    
-    add = function () {
-      counter++;
-    };
-</code></pre>
-<p>从而导致程序出粗。</p>
-<ul>
-<li>由于装饰器可以优雅的修改prototype，猜想可以优雅的尝试AOP编程，例如:</li>
-</ul>
-<pre><code>    function AOP(options) {
-        const {beforeFunc,afterFunc}=Object.assign({
-            beforeFunc:()=&gt;{},
-            afterFunc:()=&gt;{}
-        },options)
-        return function(target, key, descriptor) {
-            const oldTarget = descriptor.value
-            descriptor.value=function(){
-                beforeFunc.apply(this,arguments)
-                const value=oldTarget.apply(this,arguments)
-                afterFunc.apply(this.arguments)
-                return value
-            }
-            return descriptor
-        }
-    }
-    function logBefore(){
-        console.log(&quot;before&quot;)
-    }
-    function logAfter(){
-        console.log(&quot;after&quot;)
-    }
-    class MyClass {
-        @AOP({
-            beforeFunc:logBefore,
-            afterFunc:logAfter
-        })
-        func(){
-            console.log(&quot;run&quot;)
-        }
-    }
-    const obj=new MyClass()
-    obj.func()
-</code></pre>
-<p>这样每次就简单清晰的注入了before和after两个函数，在这两个函数中可以做数据预处理、数据状态监测等等一系列的功能，包括GA数据的监测也可以这样放入。这样和JAVA的AOP思路就十分的接近了。</p>
-<ul>
-<li>同样由于可以处理proptype，理论上可以实现类的依赖注入，传入依赖的字符串数组，然后解析出是npm模块还是本地文件，然后使用inline require动态加载对应的库，注入到类中。同样可以注入的还可以有项目的config的配置变量等等。</li>
-<li>待续</li>
-</ul>
 ]]></content>
     </entry>
 </feed>
