@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://x956606865.github.io/conceal-name/</id>
     <title>常名斋</title>
-    <updated>2019-11-29T04:00:03.598Z</updated>
+    <updated>2019-12-05T10:32:52.184Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://x956606865.github.io/conceal-name/"/>
     <link rel="self" href="https://x956606865.github.io/conceal-name//atom.xml"/>
@@ -10,6 +10,79 @@
     <logo>https://x956606865.github.io/conceal-name//images/avatar.png</logo>
     <icon>https://x956606865.github.io/conceal-name//favicon.ico</icon>
     <rights>All rights reserved 2019, 常名斋</rights>
+    <entry>
+        <title type="html"><![CDATA[小工具安利之<UTool>]]></title>
+        <id>https://x956606865.github.io/conceal-name//post/xiao-gong-ju-an-li-zhi-lessutoolgreater</id>
+        <link href="https://x956606865.github.io/conceal-name//post/xiao-gong-ju-an-li-zhi-lessutoolgreater">
+        </link>
+        <updated>2019-12-05T10:17:26.000Z</updated>
+        <summary type="html"><![CDATA[<p><em>封面图作者:フライ</em></p>
+<h2 id="简介">简介</h2>
+<blockquote>
+<p>uTools是一个极简、插件化、跨平台的现代桌面软件。通过自由选配丰富的插件，打造你得心应手的工具集合。</p>
+<p>当你熟悉它后，能够为你节约大量时间，让你可以更加专注地改变世界。</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<p><em>封面图作者:フライ</em></p>
+<h2 id="简介">简介</h2>
+<blockquote>
+<p>uTools是一个极简、插件化、跨平台的现代桌面软件。通过自由选配丰富的插件，打造你得心应手的工具集合。</p>
+<p>当你熟悉它后，能够为你节约大量时间，让你可以更加专注地改变世界。</p>
+</blockquote>
+<!-- more -->
+<p>总体来说uTools就是一个类似Alfred的产品，基础功能和Alfred基本一致，快速搜索文件、快速打开app、快速执行自定义命令等等，连快捷键都和Alfred很类似，</p>
+<h2 id="对比alfred">对比Alfred</h2>
+<ul>
+<li>优点:
+<ul>
+<li>免费</li>
+<li>面向插件</li>
+<li>对开发者友好</li>
+<li>插件基于JS，书写简单</li>
+</ul>
+</li>
+<li>缺点
+<ul>
+<li>因为基于JS，注定性能要逊色于Alfred</li>
+<li>输入体验不如Alfred</li>
+<li>社区还很新，不够成熟</li>
+</ul>
+</li>
+</ul>
+<h2 id="使用">使用</h2>
+<h3 id="唤出">唤出</h3>
+<p>默认快捷键 <code>option + space</code> 就可以唤出输入框</p>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205173238.png" alt=""></figure>
+<h3 id="快速打开app">快速打开APP</h3>
+<p>这一点其实和Alfred没什么区别，当你直接输入想要打开的app名字时，可以直接搜索到，并回车打开 (可以使用拼音)。</p>
+<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205173525.png" alt=""></figure>
+<h3 id="安装插件">安装插件</h3>
+<p>唤出输入框后，直接点击右侧的原型图标就可以打开插件，安装很多功能增强的插件。</p>
+<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205173745.png" alt=""></figure>
+<h2 id="部分插件介绍">部分插件介绍</h2>
+<h3 id="网页快开">网页快开</h3>
+<p>这个其实就是把输入框变得类似chrome地址栏，输入地址就直接打开浏览器打开对应的网址，输入内容，就调用搜索引擎。</p>
+<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205175130.png" alt=""></figure>
+<p>当然，这个功能其实没啥，不过因为这个插件还可以自己设置一个关键字，设置输入这个关键字后，默认以隐身模式打开特定网址。因为工作中有时候会在一个项目管理工具里来回切换不同的账号，这个功能反而挺有用。</p>
+<h3 id="tempmail">tempmail</h3>
+<p>这个插件在软件测试的时候十分有用，直接唤起uTool，输入插件关键字 <code>tm</code> , 就可以快速获取一个临时邮箱，收发邮件</p>
+<figure data-type="image" tabindex="5"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205175641.png" alt=""></figure>
+<h3 id="各类文档插件">各类文档插件</h3>
+<p>各类文档正在陆续增加中，估计以后会直接集成dash</p>
+<figure data-type="image" tabindex="6"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182013.png" alt=""></figure>
+<h3 id="编码转换">编码转换</h3>
+<p>快速在输入框中进行各种编解码，比如日期格式化、uuid生成、md5等知名hash生成、进制转换等等.</p>
+<figure data-type="image" tabindex="7"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182114.png" alt=""></figure>
+<h3 id="颜色助手">颜色助手</h3>
+<p>输入关键字后可以打开吸管直接全局取色，也可以读取到剪贴板中的图片，识别图片主色，或者输入色值，进行rgb、hex等等格式转换。</p>
+<figure data-type="image" tabindex="8"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182452.png" alt=""></figure>
+<h3 id="等等">等等</h3>
+<p>其他还有不少不错的插件，比如快速修改host、todolist管理、剪贴板历史、翻译、图床等等，不过因为都有更好的原生app替代品，所以就不介绍了......</p>
+<h2 id="补充">补充</h2>
+<p>uTool还有一点我很喜欢，不知道Alfred有没有，之前用的时候没注意。uTool在打开的时候，会尝试读取你的剪贴板，如果你的剪贴板有文件，他就会搜索你的已安装插件里面支持图片处理的插件，然后问你是否要使用这个插件，把剪贴板文件作为输入。</p>
+<figure data-type="image" tabindex="9"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182534.png" alt=""></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.11.25-2019.11.29]]></title>
         <id>https://x956606865.github.io/conceal-name//post/zhou-bao-20191125-20191129</id>
@@ -1026,177 +1099,6 @@ yarn init -y
 <blockquote>
 <p>所以，mono-repo更适合那些大型开源项目，本身复杂性较高，多人维护需要保证相互间版本一致，同时功能复杂，大多数可以独立成单独的项目维护的开源项目</p>
 </blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[项目规范化开发探索]]></title>
-        <id>https://x956606865.github.io/conceal-name//post/xiang-mu-gui-fan-hua-kai-fa-tan-suo</id>
-        <link href="https://x956606865.github.io/conceal-name//post/xiang-mu-gui-fan-hua-kai-fa-tan-suo">
-        </link>
-        <updated>2018-11-12T11:38:22.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="前因">前因</h2>
-<p>这次在fcc2018前端大会上，听到了余澈前辈的《开源项目维护》分享，深有收获.所以站在前人的肩膀上探索探索</p>
-<h2 id="痛点">痛点</h2>
-<p>现在前端项目开发，主要是由代码、依赖库、文档、changelog、测试文件等等几部分组成。但是由于前端开发的不规范，大部分创业公司开发都是不考虑文档以及changelog之类的部分的，只要代码跑通，就OK。同样的，注释什么的自然也是不会去写的，整个项目就显得十分的杂乱，后来人也难以接手。</p>
-<h2 id="思路">思路</h2>
-<p>其实文档、changelog之类的内容都具有一定的可预见性，遵循于一定的原则，由此可见，理论上是可以由代码来自动实现的。因此，主要的自动化处理方式便是使用jsdoc注释规则规范化注释，由此可以借助jsdoc之类的工具自动生成文档。其次，使用统一的eslint文件规范代码的风格，使用统一的prettier配置文件规范代码的样式，然后使用统一的commitlint文件规范并自动生成commit message，有了规范的commit message后，就可以使用工具提取相应的内容，自动生成changelog。由此而来，项目最繁琐的几个痛点便可以轻松简化到规范的注释以及规范的commit message两点，即可。</p>
-<h2 id="husky">Husky</h2>
-<p>自动规范化项目，最核心的一个工具便是husky，简单来说，husky提供了几个钩子，可以拦截到git的比如commit、push等等操作，然后在操作前，执行某些脚本，预处理被操作的对象。</p>
-<ul>
-<li>
-<p>安装</p>
-<pre><code>  npm install husky --save-dev
-</code></pre>
-</li>
-<li>
-<p>配置</p>
-<p>在最新版中，hasky的配置不需要写在npm script中了，直接在package.json中添加一下字段即可。</p>
-<pre><code>      {
-      &quot;husky&quot;: {
-          &quot;hooks&quot;: {
-          &quot;pre-commit&quot;: &quot;npm run test&quot;,
-          &quot;pre-push&quot;: &quot;npm run test&quot;,
-          &quot;...&quot;: &quot;...&quot;
-          }
-      }
-      }
-</code></pre>
-</li>
-</ul>
-<h2 id="lint-staged">Lint-staged</h2>
-<p>Lint-staged是自动规范化项目第二重要的工具，主要功能为依次运行传入的命令数组，但是，约束命令的作用范围只会影响到git staged范围内的文件，即用git add 添加到待commit队列的文件，从而避免影响到其他文件，同时也能加快预处理脚本的速度。</p>
-<ul>
-<li>
-<p>安装</p>
-<pre><code>  npm install --save-dev lint-staged
-</code></pre>
-</li>
-<li>
-<p>配置</p>
-<p>同样是直接在package.json文件中直接添加lint-staged的命令列表</p>
-<pre><code>      &quot;lint-staged&quot;: {
-      &quot;*.js&quot;: [&quot;eslint --fix&quot;, &quot;git add&quot;]
-      }
-</code></pre>
-<p>然后，将lint-staged与husky整合:</p>
-<pre><code>      &quot;husky&quot;: {
-      &quot;hooks&quot;: {  
-          &quot;pre-commit&quot;: &quot;lint-staged&quot;
-      }
-      }
-</code></pre>
-<p>这样，便做到了每次commit的时候自动eslint将要上传的文件，然后才commit，其他没有被add的文件不会被eslint处理。</p>
-</li>
-</ul>
-<h2 id="prettier">Prettier</h2>
-<p>有了以上条件后，我们便可以来添加我们的第一个预处理脚本Prettier。prettier是最出名的代码格式化工具之一。由于我们每个人的编程习惯不一样，有的人喜欢分号，有些人不喜欢分号，有些人四个空格缩进，有些人八个空格缩进。如果强制每个人编码习惯一样，总是让人比较难受，所以这里可以约定一个统一个代码风格配置文件，在提交的时候自动处理代码，将它们格式化为统一的风格，这样每个人写代码的时候可以按着自己的习惯写，最后提交的代码又是风格一致的，两全其美。</p>
-<ul>
-<li>
-<p>安装</p>
-<pre><code>  yarn global add prettier
-</code></pre>
-</li>
-<li>
-<p>配置</p>
-</li>
-</ul>
-<p><a href="https://prettier.io/docs/en/configuration.html">https://prettier.io/docs/en/configuration.html</a></p>
-<ul>
-<li>
-<p>整合到lint-staged</p>
-<pre><code>  &quot;*.js&quot;: [
-      &quot;prettier --config ./.prettierrc --write&quot;,
-      &quot;git add&quot;
-    ]
-</code></pre>
-</li>
-</ul>
-<h2 id="commit-message-规范">Commit-message 规范</h2>
-<p>要从commit message中提取到有用的数据用来生成CHANGELOG，那么commit message就必须有一个相对固定的格式，同时这个格式能够基本覆盖到所有的comm操作类型。</p>
-<p>目前比较流行的格式为<a href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines">Angular Git Commit Guidelines</a></p>
-<p>大致的格式如下:</p>
-<pre><code>&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
-&lt;BLANK LINE&gt;
-&lt;body&gt;
-&lt;BLANK LINE&gt;
-&lt;footer&gt;
-</code></pre>
-<ul>
-<li>&lt;type&gt;:本次commit的类型，比如新特性feat，bug修复fix等等</li>
-<li>&lt;scope&gt;:本次操作波及的范围，可自定义</li>
-<li>&lt;BLANK LINE&gt;:空行</li>
-<li>&lt;body&gt;:可选，描述本次commit的动机等等，如需换行，在行尾添加&quot;|&quot;</li>
-<li>&lt;footer&gt;:可选，描述如解决了某个issue，或者这次为breaking change，对应的upgrade的方法等等</li>
-</ul>
-<h2 id="commitizen">Commitizen</h2>
-<p>由上可见，一个规范的commit message其实十分的麻烦，对于一个连注释都不写的公司来说，要求同事都这样规范的写commit message显然是不可能的。所以，我们需要工具，能够自动生成这样格式的commit message，所以有了工具commitizen。</p>
-<ul>
-<li>
-<p>安装</p>
-<pre><code>  npm install -g commitizen
-</code></pre>
-</li>
-</ul>
-<p>安装完成后，系统便会多出git cz命令，git cz能够完全的代替git commit命令，拥有其所有的参数，使用方法完全一样，同时也可以被husky所拦截到.</p>
-<p>commitizen采用了询问的方式来获取对应的commit信息，大致页面如下:</p>
-<p><a href="https://www.notion.so/57b80f3f75b741e3a54546c20ae5e8e7#740da08879544516a6e90da754cb9b4a"></a></p>
-<h2 id="cz-conventional-changelog">cz-conventional-changelog</h2>
-<p>有了格式化的commit message后，我们便可以用来自动生成changelog了，好在Commitizen有着配套的工具。</p>
-<pre><code>commitizen init cz-conventional-changelog --save-dev --save-exact
-</code></pre>
-<p>使用commitizen初始化cz-conventional-changelog，他会作为一个adapter来解析对应的内容。由于commit message的规范其实有很多种，angular的规范只是很常用的规范之一，所以对于不同的规范需要不同的adapter才能解析出对应的数据，不过因为和commitizen整合，所以不需要考虑格式和adapter不匹配的问题，毕竟格式是有commitizen自动生成的。</p>
-<h2 id="commitlint">Commitlint</h2>
-<p>虽然有了自动生成工具，但是肯定还是有偷懒的小伙伴懒得去写，直接随便写个message就上传，这样的话就会破坏掉原有的格式（强迫症也会表示很难受啊喂），所以我们需要一个lint工具来替我们检测对应的commit message是不是一个合法的commit message。当然，这个工具也应该自动调用，在上传的时候自动检测。</p>
-<ul>
-<li>
-<p>安装</p>
-<pre><code>  npm install --save-dev @commitlint/config-conventional @commitlint/cli
-</code></pre>
-<p>安装conventional格式的lint以及对应的cli（commitlint也有其他格式的adapter，若使用的是其他规范，请参考<a href="https://github.com/marionebl/commitlint">官网</a>）</p>
-</li>
-<li>
-<p>配置</p>
-<pre><code>  echo &quot;module.exports = {extends: ['@commitlint/config-conventional']}&quot; &gt; commitlint.config.js
-</code></pre>
-<p>你要是不嫌麻烦，新建对应的文件，然后把内容拷进去效果也一样。</p>
-</li>
-<li>
-<p>与husky整合</p>
-<pre><code>  {
-    &quot;husky&quot;: {
-      &quot;hooks&quot;: {
-        &quot;commit-msg&quot;: &quot;commitlint -E HUSKY_GIT_PARAMS&quot;
-      }  
-    }
-  }
-</code></pre>
-<p>这样便可以做到在commit的时候自动检测commit message是否合法了</p>
-</li>
-</ul>
-<h2 id="standard-version">standard-version</h2>
-<p>有了对应的adapter，就可以提取commit-message的信息，从而生成changelog。我们可以使用Conventional Changelog来生成changelog，不过Conventional Changelog是生成changelog的基本库，它们更推荐使用基于它们来实现的库standard-version来进行CHANGELOG的生成：</p>
-<p><a href="https://www.notion.so/57b80f3f75b741e3a54546c20ae5e8e7#5a6f6095097d46bdb2a2d63df422ed6d"></a></p>
-<ul>
-<li>
-<p>安装</p>
-<pre><code>  npm i --save-dev standard-version
-</code></pre>
-</li>
-<li>
-<p>在package中使用npm script整合standard-version</p>
-<pre><code>  {
-    &quot;scripts&quot;: {
-      &quot;release&quot;: &quot;standard-version&quot;
-    }
-  }
-</code></pre>
-</li>
-</ul>
-<p>这样，我们每次到了需要发布一个新版本的时候，使用npm run release就可以生成上一个版本到现在的CHANGELOG，同时standard-version本身也可以用作项目的版本管理工具。</p>
-<h2 id="jsdoc">JSDOC</h2>
-<p>jsdoc是一个通过注释自动生成文档的工具，虽然jsdoc已经很久没有人维护了，很多新语法都不支持（连PR都没人去通过了，感觉凉凉了），不过jsdoc的注释语法却是注释生成文档的通用语法，而且和vscode等编辑器整合的非常好，简单的snippet便可以生成对应的注释，如果再加上document-this插件，就基本OK了，写注释十分轻松。不过现在注释生成文档的工具，要么很丑，要么就是很久没维护了，就很蛋疼emmmm，只能说将就着用一用。。。。</p>
-<p>待续。。。。。</p>
-<p>Link: <a href="https://www.notion.so/aj0k3r/57b80f3f75b741e3a54546c20ae5e8e7"></a></p>
 ]]></content>
     </entry>
 </feed>

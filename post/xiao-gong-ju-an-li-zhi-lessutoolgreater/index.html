@@ -46,11 +46,26 @@
             <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#lerna%E6%98%AF%E5%95%A5">Lerna是啥?</a></li>
-<li><a href="#multi-repo%E4%BB%A5%E5%8F%8Amono-repo">multi-repo以及mono-repo</a></li>
-<li><a href="#mono-repo%E7%9A%84%E4%BC%98%E7%82%B9">mono-repo的优点</a></li>
-<li><a href="#mono-repo%E7%9A%84%E7%BC%BA%E7%82%B9">mono-repo的缺点：</a></li>
-<li><a href="#%E6%98%AF%E5%90%A6%E5%80%BC%E5%BE%97%E4%BD%BF%E7%94%A8">是否值得使用？</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E5%AF%B9%E6%AF%94alfred">对比Alfred</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8">使用</a>
+<ul>
+<li><a href="#%E5%94%A4%E5%87%BA">唤出</a></li>
+<li><a href="#%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80app">快速打开APP</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6">安装插件</a></li>
+</ul>
+</li>
+<li><a href="#%E9%83%A8%E5%88%86%E6%8F%92%E4%BB%B6%E4%BB%8B%E7%BB%8D">部分插件介绍</a>
+<ul>
+<li><a href="#%E7%BD%91%E9%A1%B5%E5%BF%AB%E5%BC%80">网页快开</a></li>
+<li><a href="#tempmail">tempmail</a></li>
+<li><a href="#%E5%90%84%E7%B1%BB%E6%96%87%E6%A1%A3%E6%8F%92%E4%BB%B6">各类文档插件</a></li>
+<li><a href="#%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2">编码转换</a></li>
+<li><a href="#%E9%A2%9C%E8%89%B2%E5%8A%A9%E6%89%8B">颜色助手</a></li>
+<li><a href="#%E7%AD%89%E7%AD%89">等等</a></li>
+</ul>
+</li>
+<li><a href="#%E8%A1%A5%E5%85%85">补充</a></li>
 </ul>
 </li>
 </ul>
@@ -99,77 +114,90 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">lerna 学习（一）思路篇</h1>
+        <h1 class="text-3xl font-bold lg:mt-16">小工具安利之&lt;UTool&gt;</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2018-11-22 / 5 min read
+          2019-12-05 / 3 min read
         </div>
         
-          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://x956606865.github.io/conceal-name//post-images/lerna-xue-xi-yi-si-lu-pian.jpg" alt="">
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://x956606865.github.io/conceal-name//post-images/xiao-gong-ju-an-li-zhi-lessutoolgreater.jpg" alt="">
         
         <div class="post-content yue">
-          <h2 id="lerna是啥">Lerna是啥?</h2>
+          <p><em>封面图作者:フライ</em></p>
+<h2 id="简介">简介</h2>
 <blockquote>
-<p>Lerna is a tool that optimizes the workflow around managing multi-package repositories with git and npm.</p>
+<p>uTools是一个极简、插件化、跨平台的现代桌面软件。通过自由选配丰富的插件，打造你得心应手的工具集合。</p>
+<p>当你熟悉它后，能够为你节约大量时间，让你可以更加专注地改变世界。</p>
 </blockquote>
 <!-- more -->
-<p>这是来自lerna的github仓库的自我描述。大致意思就是他是一个用来管理multi-package项目的工具，通过使用git和npm（其实yarn也是支持的）</p>
-<h2 id="multi-repo以及mono-repo">multi-repo以及mono-repo</h2>
-<p>lerna是标准的mono-repo的工具，与普遍的multi-repo的组织架构有着显著的区别。</p>
-<p>传统开发即是multi-repo的，即一个module一个仓库，比如公司内部提炼的常用工具、常用组件都是分开存放，开发的时候install在同一个项目里。</p>
-<p>而mono-repo则是一个仓库包含整个项目的所有，分成多个package目录分开管理，统一处理相互依赖。比如Babel、react、angular等等知名的库都是采用了mono-repo的方式。比如babel，babel-cli、babel-core、babel-node等等工具都是放在了同一个仓库“babel”中的，而我们安装的时候实际上是yarn add @babel/babel-core这样的安装方式。这就是很典型的mono-repo的模式，整个babel的产品都内聚到了babel的整个仓库内。</p>
-<h2 id="mono-repo的优点">mono-repo的优点</h2>
+<p>总体来说uTools就是一个类似Alfred的产品，基础功能和Alfred基本一致，快速搜索文件、快速打开app、快速执行自定义命令等等，连快捷键都和Alfred很类似，</p>
+<h2 id="对比alfred">对比Alfred</h2>
 <ul>
-<li>项目规范可以更轻松的整合;</li>
-<li>模块间依赖稳定，统一更新，避免了开发人员相互间使用对方模块时版本更新不一致导致的bug;</li>
-<li>可以更高效的复用模块，加快开发效率;</li>
-<li>各模块间相互依赖，开发又相对独立，避免对于特定项目的过强的耦合;</li>
-<li>统一整合各个模块单独的更新生成一个CHANGELOG;</li>
-<li>唯一的仓库，避免用户issue的分散，以及issue的scope的不明确。</li>
-</ul>
-<h2 id="mono-repo的缺点">mono-repo的缺点：</h2>
+<li>优点:
 <ul>
-<li>仓库体积会非常的大;</li>
-<li>统一CHANGELOG也会混入一些和整体项目无关的模块更新。</li>
+<li>免费</li>
+<li>面向插件</li>
+<li>对开发者友好</li>
+<li>插件基于JS，书写简单</li>
 </ul>
-<h2 id="是否值得使用">是否值得使用？</h2>
-<p>对于新知识来说，最重要的一点就是是否值得使用？什么时候应该用？适合哪些情况？</p>
-<p>首先，作为一个外包型产品公司的码农，我认为对新项目使用mono-repo是不值得的。或者说一开始学习的时候，我就一直以公司产品的角度来看待mono-repo，想了好久都不明白这么做的意义在哪里？公共组件如果在同一个项目中，那么新项目怎么办？是copy过去？还是干脆一个仓库把后续的新项目都包括了？</p>
-<p>这显然是不合适的，而且把原有的问题变得更复杂了。主要在与一个冲突：外包型的公司产品是互不关联的，他们没有任何内聚在一起的理由。同时，公司自己提炼的组件、工具等，其实和做的产品也是没有内聚的理由的。新项目依赖公司提炼的东西，但是他们之间只是开发上的依赖而不是内在的概念性依赖。就好像babel-core和babel-compile这是概念性的强联系，即使他们并不一定直接依赖。但是我们的项目依赖了babel-core,这就是一种仅仅在开发上的依赖。</p>
-<p>那么是否可以使用mono-repo呢？当然是可以的，作为公司本身，我们的公共组件、工具等等等等是完全内聚的，完全可以合并成一个mono-repo，然后新项目来依赖这个repo这是完全可以的。好处也是有的，工具自己的内部依赖随时都是一致的，可以保证了整个repo的稳定性。但是好处并不明显，不管是lerna宣传的版本号统一还是自动处理多package生成统一的changelog，这对于外包型项目都没有显著的好处。</p>
-<blockquote>
-<p>所以，对于大多数外包型的项目，mono-repo都没有足够的好处，意义不大</p>
-</blockquote>
-<p>其次，对于来源项目开发者来说，对大多数个人开发者来说也是不太适合的。因为个人项目大多数体积偏小、功能比较单一，可以说没有拆分的意义。毕竟不是每个人都能像尤雨奚大佬一样一个人维护一个超大的项目的(&gt;﹏&lt;)。</p>
-<blockquote>
-<p>所以，mono-repo更适合那些大型开源项目，本身复杂性较高，多人维护需要保证相互间版本一致，同时功能复杂，大多数可以独立成单独的项目维护的开源项目</p>
-</blockquote>
+</li>
+<li>缺点
+<ul>
+<li>因为基于JS，注定性能要逊色于Alfred</li>
+<li>输入体验不如Alfred</li>
+<li>社区还很新，不够成熟</li>
+</ul>
+</li>
+</ul>
+<h2 id="使用">使用</h2>
+<h3 id="唤出">唤出</h3>
+<p>默认快捷键 <code>option + space</code> 就可以唤出输入框</p>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205173238.png" alt=""></figure>
+<h3 id="快速打开app">快速打开APP</h3>
+<p>这一点其实和Alfred没什么区别，当你直接输入想要打开的app名字时，可以直接搜索到，并回车打开 (可以使用拼音)。</p>
+<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205173525.png" alt=""></figure>
+<h3 id="安装插件">安装插件</h3>
+<p>唤出输入框后，直接点击右侧的原型图标就可以打开插件，安装很多功能增强的插件。</p>
+<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205173745.png" alt=""></figure>
+<h2 id="部分插件介绍">部分插件介绍</h2>
+<h3 id="网页快开">网页快开</h3>
+<p>这个其实就是把输入框变得类似chrome地址栏，输入地址就直接打开浏览器打开对应的网址，输入内容，就调用搜索引擎。</p>
+<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205175130.png" alt=""></figure>
+<p>当然，这个功能其实没啥，不过因为这个插件还可以自己设置一个关键字，设置输入这个关键字后，默认以隐身模式打开特定网址。因为工作中有时候会在一个项目管理工具里来回切换不同的账号，这个功能反而挺有用。</p>
+<h3 id="tempmail">tempmail</h3>
+<p>这个插件在软件测试的时候十分有用，直接唤起uTool，输入插件关键字 <code>tm</code> , 就可以快速获取一个临时邮箱，收发邮件</p>
+<figure data-type="image" tabindex="5"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205175641.png" alt=""></figure>
+<h3 id="各类文档插件">各类文档插件</h3>
+<p>各类文档正在陆续增加中，估计以后会直接集成dash</p>
+<figure data-type="image" tabindex="6"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182013.png" alt=""></figure>
+<h3 id="编码转换">编码转换</h3>
+<p>快速在输入框中进行各种编解码，比如日期格式化、uuid生成、md5等知名hash生成、进制转换等等.</p>
+<figure data-type="image" tabindex="7"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182114.png" alt=""></figure>
+<h3 id="颜色助手">颜色助手</h3>
+<p>输入关键字后可以打开吸管直接全局取色，也可以读取到剪贴板中的图片，识别图片主色，或者输入色值，进行rgb、hex等等格式转换。</p>
+<figure data-type="image" tabindex="8"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182452.png" alt=""></figure>
+<h3 id="等等">等等</h3>
+<p>其他还有不少不错的插件，比如快速修改host、todolist管理、剪贴板历史、翻译、图床等等，不过因为都有更好的原生app替代品，所以就不介绍了......</p>
+<h2 id="补充">补充</h2>
+<p>uTool还有一点我很喜欢，不知道Alfred有没有，之前用的时候没注意。uTool在打开的时候，会尝试读取你的剪贴板，如果你的剪贴板有文件，他就会搜索你的已安装插件里面支持图片处理的插件，然后问你是否要使用这个插件，把剪贴板文件作为输入。</p>
+<figure data-type="image" tabindex="9"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182534.png" alt=""></figure>
 
         </div>
 
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://x956606865.github.io/conceal-name//tag/re4eMjzigC">
-            <span class="flex-auto">Program</span>
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://x956606865.github.io/conceal-name//tag/-uKxiL2dL">
+            <span class="flex-auto">tool</span>
           </a>
         
 
 
         <div class="flex justify-between py-8">
           
-            <div class="prev-post">
-              <a href="https://x956606865.github.io/conceal-name//post/lerna-xue-xi-er">
-                <h3 class="post-title">
-                  <i class="remixicon-arrow-left-line"></i>
-                  lerna学习（二）
-                </h3>
-              </a>
-            </div>
-          
 
           
             <div class="next-post">
-              <a href="https://x956606865.github.io/conceal-name//post/xiang-mu-gui-fan-hua-kai-fa-tan-suo">
+              <a href="https://x956606865.github.io/conceal-name//post/zhou-bao-20191125-20191129">
                 <h3 class="post-title">
-                  项目规范化开发探索
+                  周报 2019.11.25-2019.11.29
                   <i class="remixicon-arrow-right-line"></i>
                 </h3>
               </a>
