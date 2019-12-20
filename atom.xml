@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://x956606865.github.io/conceal-name/</id>
+    <id>https://x956606865.github.io/conceal-name/</id>
     <title>常名斋</title>
-    <updated>2019-12-20T07:04:27.243Z</updated>
+    <updated>2019-12-20T08:52:10.327Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://x956606865.github.io/conceal-name/"/>
-    <link rel="self" href="http://x956606865.github.io/conceal-name//atom.xml"/>
+    <link rel="alternate" href="https://x956606865.github.io/conceal-name/"/>
+    <link rel="self" href="https://x956606865.github.io/conceal-name//atom.xml"/>
     <subtitle>万物有名，常名斋，藏名斋。</subtitle>
-    <logo>http://x956606865.github.io/conceal-name//images/avatar.png</logo>
-    <icon>http://x956606865.github.io/conceal-name//favicon.ico</icon>
+    <logo>https://x956606865.github.io/conceal-name//images/avatar.png</logo>
+    <icon>https://x956606865.github.io/conceal-name//favicon.ico</icon>
     <rights>All rights reserved 2019, 常名斋</rights>
     <entry>
         <title type="html"><![CDATA[周报 2019.12.16-2019.12.20]]></title>
-        <id>http://x956606865.github.io/conceal-name//post/zhou-bao-20191216-20191220</id>
-        <link href="http://x956606865.github.io/conceal-name//post/zhou-bao-20191216-20191220">
+        <id>https://x956606865.github.io/conceal-name//post/zhou-bao-20191216-20191220</id>
+        <link href="https://x956606865.github.io/conceal-name//post/zhou-bao-20191216-20191220">
         </link>
         <updated>2019-12-20T06:56:05.000Z</updated>
         <summary type="html"><![CDATA[<p>封面图作者: Pnakoticat</p>
@@ -80,8 +80,8 @@ WebAssembly 也叫 Wasm，目前 1.0 版本的 Wasm 已经支持 Chrome、Firefo
     </entry>
     <entry>
         <title type="html"><![CDATA[ 周报 2019.12.02-2019.12.06]]></title>
-        <id>http://x956606865.github.io/conceal-name//post/zhou-bao-20191202-20191206</id>
-        <link href="http://x956606865.github.io/conceal-name//post/zhou-bao-20191202-20191206">
+        <id>https://x956606865.github.io/conceal-name//post/zhou-bao-20191202-20191206</id>
+        <link href="https://x956606865.github.io/conceal-name//post/zhou-bao-20191202-20191206">
         </link>
         <updated>2019-12-06T03:29:14.000Z</updated>
         <summary type="html"><![CDATA[<p><em>(封面图作者: 画师JW)</em></p>
@@ -194,8 +194,8 @@ console.log(boxen('unicorn', {padding: 1, margin: 1, borderStyle: 'double'}));
     </entry>
     <entry>
         <title type="html"><![CDATA[小工具安利之<UTool>]]></title>
-        <id>http://x956606865.github.io/conceal-name//post/xiao-gong-ju-an-li-zhi-lessutoolgreater</id>
-        <link href="http://x956606865.github.io/conceal-name//post/xiao-gong-ju-an-li-zhi-lessutoolgreater">
+        <id>https://x956606865.github.io/conceal-name//post/xiao-gong-ju-an-li-zhi-lessutoolgreater</id>
+        <link href="https://x956606865.github.io/conceal-name//post/xiao-gong-ju-an-li-zhi-lessutoolgreater">
         </link>
         <updated>2019-12-05T10:17:26.000Z</updated>
         <summary type="html"><![CDATA[<p><em>封面图作者:フライ</em></p>
@@ -267,8 +267,8 @@ console.log(boxen('unicorn', {padding: 1, margin: 1, borderStyle: 'double'}));
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.11.25-2019.11.29]]></title>
-        <id>http://x956606865.github.io/conceal-name//post/zhou-bao-20191125-20191129</id>
-        <link href="http://x956606865.github.io/conceal-name//post/zhou-bao-20191125-20191129">
+        <id>https://x956606865.github.io/conceal-name//post/zhou-bao-20191125-20191129</id>
+        <link href="https://x956606865.github.io/conceal-name//post/zhou-bao-20191125-20191129">
         </link>
         <updated>2019-11-29T03:54:36.000Z</updated>
         <summary type="html"><![CDATA[<p>(封面图作者: SiyuMU)</p>
@@ -426,8 +426,8 @@ mkdirp('/tmp/foo/bar/baz', function (err) {
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.11.18-2019.11.22]]></title>
-        <id>http://x956606865.github.io/conceal-name//post/zhou-bao-20191118-20191122</id>
-        <link href="http://x956606865.github.io/conceal-name//post/zhou-bao-20191118-20191122">
+        <id>https://x956606865.github.io/conceal-name//post/zhou-bao-20191118-20191122</id>
+        <link href="https://x956606865.github.io/conceal-name//post/zhou-bao-20191118-20191122">
         </link>
         <updated>2019-11-22T03:30:14.000Z</updated>
         <summary type="html"><![CDATA[<p><em>(封面图作者: nys)</em></p>
@@ -572,8 +572,8 @@ require('yargs')
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.11.11-2019.11.15]]></title>
-        <id>http://x956606865.github.io/conceal-name//post/zhou-bao-20191111-20191115</id>
-        <link href="http://x956606865.github.io/conceal-name//post/zhou-bao-20191111-20191115">
+        <id>https://x956606865.github.io/conceal-name//post/zhou-bao-20191111-20191115</id>
+        <link href="https://x956606865.github.io/conceal-name//post/zhou-bao-20191111-20191115">
         </link>
         <updated>2019-11-15T02:48:04.000Z</updated>
         <summary type="html"><![CDATA[<p><em>(封面图作者: 香川悠作)</em></p>
@@ -768,8 +768,8 @@ console.log(dashify('São Tomé and Príncipe'));
     </entry>
     <entry>
         <title type="html"><![CDATA[基于文本密度提取网页正文]]></title>
-        <id>http://x956606865.github.io/conceal-name//post/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen</id>
-        <link href="http://x956606865.github.io/conceal-name//post/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen">
+        <id>https://x956606865.github.io/conceal-name//post/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen</id>
+        <link href="https://x956606865.github.io/conceal-name//post/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen">
         </link>
         <updated>2019-10-11T11:17:19.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="前言">前言</h2>
@@ -858,8 +858,8 @@ console.log(dashify('São Tomé and Príncipe'));
     </entry>
     <entry>
         <title type="html"><![CDATA[[译]Node v11 中定时器和微指令的新变化]]></title>
-        <id>http://x956606865.github.io/conceal-name//post/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua</id>
-        <link href="http://x956606865.github.io/conceal-name//post/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua">
+        <id>https://x956606865.github.io/conceal-name//post/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua</id>
+        <link href="https://x956606865.github.io/conceal-name//post/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua">
         </link>
         <updated>2019-03-04T11:59:34.000Z</updated>
         <summary type="html"><![CDATA[<p>本文是我之前关于  Node.js  事件循环的系列文章的简短跟进。在之前的系列文章中，我详细讨论了Timers，setImmediate，process.nextTick，Promises等等。</p>
@@ -937,8 +937,8 @@ setImmediate(() =&gt; console.log('timeout4'));
     </entry>
     <entry>
         <title type="html"><![CDATA[[译] 跟着例子学 monorepo (一)]]></title>
-        <id>http://x956606865.github.io/conceal-name//post/yi-gen-zhao-li-zi-xue-monorepo-yi</id>
-        <link href="http://x956606865.github.io/conceal-name//post/yi-gen-zhao-li-zi-xue-monorepo-yi">
+        <id>https://x956606865.github.io/conceal-name//post/yi-gen-zhao-li-zi-xue-monorepo-yi</id>
+        <link href="https://x956606865.github.io/conceal-name//post/yi-gen-zhao-li-zi-xue-monorepo-yi">
         </link>
         <updated>2019-01-25T11:57:10.000Z</updated>
         <summary type="html"><![CDATA[<p>原文链接:  <a href="https://codeburst.io/monorepos-by-example-part-1-3a883b49047e">https://codeburst.io/monorepos-by-example-part-1-3a883b49047e</a></p>
@@ -1076,8 +1076,8 @@ banana and Translucentpuma Kangaroo
     </entry>
     <entry>
         <title type="html"><![CDATA[lerna学习（三）发布篇]]></title>
-        <id>http://x956606865.github.io/conceal-name//post/lerna-xue-xi-san-fa-bu-pian</id>
-        <link href="http://x956606865.github.io/conceal-name//post/lerna-xue-xi-san-fa-bu-pian">
+        <id>https://x956606865.github.io/conceal-name//post/lerna-xue-xi-san-fa-bu-pian</id>
+        <link href="https://x956606865.github.io/conceal-name//post/lerna-xue-xi-san-fa-bu-pian">
         </link>
         <updated>2018-11-24T11:54:37.000Z</updated>
         <summary type="html"><![CDATA[<p>接着之前的思路，现在我们已经完成了项目的初始化构建，然后开始往里面写新的package。</p>
