@@ -46,12 +46,11 @@
             <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E6%8F%90%E6%A1%88%E7%8A%B6%E6%80%81stage-2">提案状态：Stage-2</a></li>
-<li><a href="#%E9%93%BE%E6%8E%A5httpstc39githubioproposal-decorators">链接:<em>https://tc39.github.io/proposal-decorators/</em></a></li>
-<li><a href="#%E9%9C%80%E6%B1%82-babel-7">需求: Babel-7</a></li>
-<li><a href="#%E6%8F%92%E4%BB%B6babelplugin-proposal-decorators">插件:@babel/plugin-proposal-decorators</a></li>
-<li><a href="#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85">快速安装：</a></li>
-<li><a href="#%E6%80%9D%E8%80%83">思考:</a></li>
+<li><a href="#%E6%96%B0%E9%97%BB">新闻</a></li>
+<li><a href="#%E6%96%87%E7%AB%A0">文章</a></li>
+<li><a href="#%E8%B5%84%E6%BA%90">资源</a></li>
+<li><a href="#%E5%B7%A5%E5%85%B7">工具</a></li>
+<li><a href="#js%E5%BA%93">JS库</a></li>
 </ul>
 </li>
 </ul>
@@ -100,158 +99,94 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">ECMA 提案-&#39;decorator&#39; 研究</h1>
+        <h1 class="text-3xl font-bold lg:mt-16">周报 2019.12.16-2019.12.20</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2018-11-04 / 3 min read
+          2019-12-20 / 3 min read
         </div>
         
-          <img class="post-feature-image rounded-lg mx-auto my-4" src="http://x956606865.github.io/conceal-name//post-images/ecma-ti-an-decorator-yan-jiu.png" alt="">
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="http://x956606865.github.io/conceal-name//post-images/zhou-bao-20191216-20191220.jpg" alt="">
         
         <div class="post-content yue">
-          <p>//ps:根据大佬的解释，现在提案修改，不推荐使用legacy这种模式了，新版模式待研究后再更新Orz</p>
+          <p>封面图作者: Pnakoticat</p>
 <!-- more -->
-<h2 id="提案状态stage-2">提案状态：Stage-2</h2>
-<h2 id="链接httpstc39githubioproposal-decorators">链接:<a href="https://tc39.github.io/proposal-decorators/"><em>https://tc39.github.io/proposal-decorators/</em></a></h2>
-<h2 id="需求-babel-7">需求: Babel-7</h2>
-<h2 id="插件babelplugin-proposal-decorators">插件:@babel/plugin-proposal-decorators</h2>
-<pre><code>          (ps:babel7以后插件名称全部有所改动)
-</code></pre>
-<h2 id="快速安装">快速安装：</h2>
-<pre><code>    yarn global add @babel/cli
-    yarn global add @babel/node
-    yarn add @babel/plugin-proposal-decorators
-</code></pre>
-<p>使用babel-node、babel-cli这样的名称只能安装到6版本的babel工具，7版本的工具全部改由@babel前缀</p>
-<p>新建.babelrc文件:</p>
-<pre><code>    {
-        &quot;plugins&quot;:[
-    				[&quot;@babel/plugin-proposal-pipeline-operator&quot;, { &quot;proposal&quot;: &quot;minimal&quot; }],
-    				[&quot;@babel/plugin-proposal-decorators&quot;,{&quot;legacy&quot;:true}]]
-    }
-</code></pre>
-<p>新建index.js文件:</p>
-<pre><code>    function testable(isTestable) {
-        return function(target) {
-            target.isTestable = isTestable;
-        }
-    }
-    
-    @testable(true)
-    class MyTestableClass {}
-    console.log(MyTestableClass.isTestable)// true
-     
-    
-    @testable(false)
-    class MyClass {}
-    console.log(MyClass.isTestable)// false
-</code></pre>
-<p>然后执行:</p>
-<pre><code>babel-node index.js
-</code></pre>
-<p>即可看到对应的输出结果。</p>
-<h2 id="思考">思考:</h2>
+<h2 id="新闻">新闻</h2>
 <ul>
 <li>
-<p>装饰器语法本身只是单纯的用一个函数去处理一个类，大多数时候都是对其prototype的修改，用es5也能实现对应的功能，但是使用装饰器能使代码更加简洁，结构更加清晰。</p>
+<p><a href="https://www.w3.org/2019/12/pressrelease-wasm-rec.html.en">WASM 成为 HTML、CSS 与 JS 之后的第 4 门 Web 语言</a></p>
+<p>近日，万维网联盟 W3C宣布 WebAssembly 核心规范（WebAssembly Core Specification）成为官方 Web 标准，这意味着 WebAssembly 成为了第 4 种 Web 语言。<br>
+WebAssembly 也叫 Wasm，目前 1.0 版本的 Wasm 已经支持 Chrome、Firefox、Safari 与 Edge 浏览器。</p>
+</li>
+</ul>
+<h2 id="文章">文章</h2>
+<ul>
+<li>
+<p><a href="https://yafeilee.com/blogs/100">实时协同编辑的实现</a></p>
+<p>本文以作者自己开发的 ShowMeBug 应用为例，介绍如何实现多人同时编辑一篇文档</p>
 </li>
 <li>
-<p>虽然在js中，class和function不存在本质上的区别，只是一个语法糖的存在，但是由于函数的作用域提升的问题，如果函数中有自由变量的使用，就会出现不可预期的一些bug。</p>
-<p>例如如下代码:(案例来自阮一峰es6教程)</p>
+<p><a href="https://iq.opengenus.org/audio-fingerprinting/">使用浏览器的 AudioContext API 生成用户指纹</a></p>
+<p>很多网站想追踪用户，但是浏览器对 Cookie 的限制越来越严，于是有人想出使用音频 API，为每个用户生成一个音频指纹，通过这个指纹追踪用户。本文给出代码实例。</p>
+</li>
+<li>
+<p><a href="https://paulstamatiou.com/getting-started-with-security-keys/">WebAuthn 密钥入门</a></p>
+<p>WebAuthn 是互联网密钥登陆的国际标准，属于一种双因素认证的方法。本文对用户的密钥硬件和使用方法，进行长篇介绍。</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Karatsuba_algorithm#Example">Karatsuba 算法</a></p>
+<p>Karatsuba 是1960年发现的一种快速相乘算法，可以大大减少大整数相乘的计算步骤。</p>
 </li>
 </ul>
-<pre><code>    var counter = 0;
-    
-    var add = function () {
-      counter++;
-    };
-    
-    @add
-    function foo() {
-    }
-</code></pre>
-<p>在实际编译后，会变成如下：</p>
-<pre><code>    @add
-    function foo() {
-    }
-    
-    var counter;
-    var add;
-    
-    counter = 0;
-    
-    add = function () {
-      counter++;
-    };
-</code></pre>
-<p>从而导致程序出粗。</p>
+<h2 id="资源">资源</h2>
 <ul>
-<li>由于装饰器可以优雅的修改prototype，猜想可以优雅的尝试AOP编程，例如:</li>
+<li>
+<p><a href="https://nlrx-wjc.github.io/Learn-Vue-Source-Code/start/">逐行剖析 Vue.js 源码</a></p>
+<p>一组中文的系列文章，从初学者的角度，将 Vue.js 分成九个模块讲解源码。</p>
+</li>
 </ul>
-<pre><code>    function AOP(options) {
-        const {beforeFunc,afterFunc}=Object.assign({
-            beforeFunc:()=&gt;{},
-            afterFunc:()=&gt;{}
-        },options)
-        return function(target, key, descriptor) {
-            const oldTarget = descriptor.value
-            descriptor.value=function(){
-                beforeFunc.apply(this,arguments)
-                const value=oldTarget.apply(this,arguments)
-                afterFunc.apply(this.arguments)
-                return value
-            }
-            return descriptor
-        }
-    }
-    function logBefore(){
-        console.log(&quot;before&quot;)
-    }
-    function logAfter(){
-        console.log(&quot;after&quot;)
-    }
-    class MyClass {
-        @AOP({
-            beforeFunc:logBefore,
-            afterFunc:logAfter
-        })
-        func(){
-            console.log(&quot;run&quot;)
-        }
-    }
-    const obj=new MyClass()
-    obj.func()
-</code></pre>
-<p>这样每次就简单清晰的注入了before和after两个函数，在这两个函数中可以做数据预处理、数据状态监测等等一系列的功能，包括GA数据的监测也可以这样放入。这样和JAVA的AOP思路就十分的接近了。</p>
+<h2 id="工具">工具</h2>
 <ul>
-<li>同样由于可以处理proptype，理论上可以实现类的依赖注入，传入依赖的字符串数组，然后解析出是npm模块还是本地文件，然后使用inline require动态加载对应的库，注入到类中。同样可以注入的还可以有项目的config的配置变量等等。</li>
-<li>待续</li>
+<li>
+<p><a href="https://getpixelsnap.com/zh/?ref=setapp">PixelSnap</a></p>
+<p>直接系统级全局查看不同元素间距以及尺寸的工具，特别厉害，适合对尺寸要求特别高的项目</p>
+</li>
+</ul>
+<h2 id="js库">JS库</h2>
+<ul>
+<li>
+<p><a href="https://github.com/botpress/botpress">botpress/botpress</a></p>
+<p>一个用Javascript编写开源bot创建工具，它由社区建立的一组丰富源模块提供支持。 我们喜欢说Botpress 就像Chatbots的Wordpress; 任何人都可以创建和重用其他人的模块。</p>
+</li>
+<li>
+<p><a href="https://github.com/soldair/node-qrcode">soldair/node-qrcode</a></p>
+<p>node-qrcode是一个QR码/2d条码生成器。nodejs端和浏览器端通用</p>
+</li>
+<li>
+<p><a href="https://github.com/lovell/sharp">lovell/sharp</a></p>
+<p>sharp 是 Node.js 平台上相当热门的一个图像处理库，其实际上是基于 C 语言编写 的 libvips 库封装而来，因此高性能也成了 sharp 的一大卖点。sharp 可以方便地实现常见的图片编辑操作，如裁剪、格式转换、旋转变换、滤镜添加等。</p>
+</li>
 </ul>
 
         </div>
 
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="http://x956606865.github.io/conceal-name//tag/hawpsltzL">
-            <span class="flex-auto">Javascript</span>
-          </a>
-        
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="http://x956606865.github.io/conceal-name//tag/re4eMjzigC">
-            <span class="flex-auto">Program</span>
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="http://x956606865.github.io/conceal-name//tag/-EWsAsLW4">
+            <span class="flex-auto">weekly</span>
           </a>
         
 
 
         <div class="flex justify-between py-8">
           
-            <div class="prev-post">
-              <a href="http://x956606865.github.io/conceal-name//post/xiang-mu-gui-fan-hua-kai-fa-tan-suo">
+
+          
+            <div class="next-post">
+              <a href="http://x956606865.github.io/conceal-name//post/zhou-bao-20191202-20191206">
                 <h3 class="post-title">
-                  <i class="remixicon-arrow-left-line"></i>
-                  项目规范化开发探索
+                   周报 2019.12.02-2019.12.06
+                  <i class="remixicon-arrow-right-line"></i>
                 </h3>
               </a>
             </div>
-          
-
           
         </div>
 

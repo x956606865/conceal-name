@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://x956606865.github.io/conceal-name/</id>
     <title>常名斋</title>
-    <updated>2019-12-06T09:52:52.934Z</updated>
+    <updated>2019-12-20T07:04:27.243Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://x956606865.github.io/conceal-name/"/>
     <link rel="self" href="http://x956606865.github.io/conceal-name//atom.xml"/>
@@ -10,6 +10,74 @@
     <logo>http://x956606865.github.io/conceal-name//images/avatar.png</logo>
     <icon>http://x956606865.github.io/conceal-name//favicon.ico</icon>
     <rights>All rights reserved 2019, 常名斋</rights>
+    <entry>
+        <title type="html"><![CDATA[周报 2019.12.16-2019.12.20]]></title>
+        <id>http://x956606865.github.io/conceal-name//post/zhou-bao-20191216-20191220</id>
+        <link href="http://x956606865.github.io/conceal-name//post/zhou-bao-20191216-20191220">
+        </link>
+        <updated>2019-12-20T06:56:05.000Z</updated>
+        <summary type="html"><![CDATA[<p>封面图作者: Pnakoticat</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>封面图作者: Pnakoticat</p>
+<!-- more -->
+<h2 id="新闻">新闻</h2>
+<ul>
+<li>
+<p><a href="https://www.w3.org/2019/12/pressrelease-wasm-rec.html.en">WASM 成为 HTML、CSS 与 JS 之后的第 4 门 Web 语言</a></p>
+<p>近日，万维网联盟 W3C宣布 WebAssembly 核心规范（WebAssembly Core Specification）成为官方 Web 标准，这意味着 WebAssembly 成为了第 4 种 Web 语言。<br>
+WebAssembly 也叫 Wasm，目前 1.0 版本的 Wasm 已经支持 Chrome、Firefox、Safari 与 Edge 浏览器。</p>
+</li>
+</ul>
+<h2 id="文章">文章</h2>
+<ul>
+<li>
+<p><a href="https://yafeilee.com/blogs/100">实时协同编辑的实现</a></p>
+<p>本文以作者自己开发的 ShowMeBug 应用为例，介绍如何实现多人同时编辑一篇文档</p>
+</li>
+<li>
+<p><a href="https://iq.opengenus.org/audio-fingerprinting/">使用浏览器的 AudioContext API 生成用户指纹</a></p>
+<p>很多网站想追踪用户，但是浏览器对 Cookie 的限制越来越严，于是有人想出使用音频 API，为每个用户生成一个音频指纹，通过这个指纹追踪用户。本文给出代码实例。</p>
+</li>
+<li>
+<p><a href="https://paulstamatiou.com/getting-started-with-security-keys/">WebAuthn 密钥入门</a></p>
+<p>WebAuthn 是互联网密钥登陆的国际标准，属于一种双因素认证的方法。本文对用户的密钥硬件和使用方法，进行长篇介绍。</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Karatsuba_algorithm#Example">Karatsuba 算法</a></p>
+<p>Karatsuba 是1960年发现的一种快速相乘算法，可以大大减少大整数相乘的计算步骤。</p>
+</li>
+</ul>
+<h2 id="资源">资源</h2>
+<ul>
+<li>
+<p><a href="https://nlrx-wjc.github.io/Learn-Vue-Source-Code/start/">逐行剖析 Vue.js 源码</a></p>
+<p>一组中文的系列文章，从初学者的角度，将 Vue.js 分成九个模块讲解源码。</p>
+</li>
+</ul>
+<h2 id="工具">工具</h2>
+<ul>
+<li>
+<p><a href="https://getpixelsnap.com/zh/?ref=setapp">PixelSnap</a></p>
+<p>直接系统级全局查看不同元素间距以及尺寸的工具，特别厉害，适合对尺寸要求特别高的项目</p>
+</li>
+</ul>
+<h2 id="js库">JS库</h2>
+<ul>
+<li>
+<p><a href="https://github.com/botpress/botpress">botpress/botpress</a></p>
+<p>一个用Javascript编写开源bot创建工具，它由社区建立的一组丰富源模块提供支持。 我们喜欢说Botpress 就像Chatbots的Wordpress; 任何人都可以创建和重用其他人的模块。</p>
+</li>
+<li>
+<p><a href="https://github.com/soldair/node-qrcode">soldair/node-qrcode</a></p>
+<p>node-qrcode是一个QR码/2d条码生成器。nodejs端和浏览器端通用</p>
+</li>
+<li>
+<p><a href="https://github.com/lovell/sharp">lovell/sharp</a></p>
+<p>sharp 是 Node.js 平台上相当热门的一个图像处理库，其实际上是基于 C 语言编写 的 libvips 库封装而来，因此高性能也成了 sharp 的一大卖点。sharp 可以方便地实现常见的图片编辑操作，如裁剪、格式转换、旋转变换、滤镜添加等。</p>
+</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ 周报 2019.12.02-2019.12.06]]></title>
         <id>http://x956606865.github.io/conceal-name//post/zhou-bao-20191202-20191206</id>
@@ -1061,108 +1129,6 @@ lerna publish --registry=http://xxxx.com:7001
 <li>发布前记得确认命令行内的npm处于登录状态的，否则可能会因为未登录而无法上传模块，但是因为lerna会提前修改版本号，导致各个模块版本号已经增加了，但是模块没能更新上去，下次想要上传，就得手动控制版本号不要继续加一，否则就调版本了。</li>
 <li>因为lerna会自己执行一些github命令，来推送代码，所以请务必关闭husk中添加的commitlint功能，除非你知道怎么去修改lerna执行时填写的commit message。</li>
 <li>待续</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[lerna学习（二）]]></title>
-        <id>http://x956606865.github.io/conceal-name//post/lerna-xue-xi-er</id>
-        <link href="http://x956606865.github.io/conceal-name//post/lerna-xue-xi-er">
-        </link>
-        <updated>2018-11-23T11:51:20.000Z</updated>
-        <summary type="html"><![CDATA[<h2 id="安装">安装</h2>
-<p>lerna的安装类似于webpack，需要全局安装作为一个命令来使用，可以选择使用npx直接使用，不过为了方便，还是全局安装方便一些。</p>
-<pre><code>yarn global add lerna</code></pre>
-]]></summary>
-        <content type="html"><![CDATA[<h2 id="安装">安装</h2>
-<p>lerna的安装类似于webpack，需要全局安装作为一个命令来使用，可以选择使用npx直接使用，不过为了方便，还是全局安装方便一些。</p>
-<pre><code>yarn global add lerna
-</code></pre>
-<!-- more -->
-<h2 id="初始化">初始化</h2>
-<pre><code>mkdir myLerna
-cd myLerna
-lerna init --independent
-</code></pre>
-<p>lerna的初始化分为fix模式以及independent模式两种，默认是fix模式，或者叫做锁定模式，项目内所有的package共用版本号。不过我认为这种情况其实很少，大部分人应该都是使用独立模式，每个package拥有自己的版本号。</p>
-<h2 id="创建package">创建package</h2>
-<pre><code>cd packages
-mkdir package-1
-cd package-1
-yarn init -y
-cd ..
-mkdir package-2
-cd package-2
-yarn init -y
-</code></pre>
-<p>这里要注意，如果你没有创建任何package，你是不能使用lerna add命令安装依赖包的，因为默认lerna会为每个package安装依赖。</p>
-<h2 id="安装各种依赖">安装各种依赖</h2>
-<p>在开发之前，肯定是需要先安装各种eslint、prettier、commit-lint等等规范化库的，我们为啥要把一堆package放到一个仓库？其中一个原因不就是为了直接复用一套规范文件么。</p>
-<p>所以各种lint文件肯定是安装到项目全局的，这时如果使用lerna的安装命令:</p>
-<pre><code>lerna add eslint --dev
-</code></pre>
-<p>就会发现一个问题，每个package都被单独安装了eslint，这明显是不合适的，既然是同一个项目，安装多次同一个模块算个什么事？</p>
-<p>然后我们发现，lerna有提到如果你想只安装一次，那么可以把这些依赖写到每个package的package.json中，然后回到根目录运行:</p>
-<pre><code>lerna bootstrap --hoist
-</code></pre>
-<p>bootstrap是learna一键为所有package安装依赖的命令，如果加上了--hoist参数，那么就是告诉lerna，把所有依赖全部安装到根目录中，然后分别在各自的文件夹中创建软连接指向对应的模块实际路径。</p>
-<p>从解决问题的眼光来看，确实解决了重复安装的问题，不过所有模块都装到根目录混杂在一起，这让强迫症心里很不舒服，我们希望的其实是只有lint这些公共库提取出来，其他的他们自己的依赖放到他们自己的文件夹中。</p>
-<p>在参考了<a href="https://github.com/babel/babel">Babel</a>仓库的做法后，明白了。因为node自身在查找模块的时候有向父级目录查询的操作，所以其实软连接什么的并不需要，甚至都不需要lerna，我们直接</p>
-<pre><code>yarn add -D eslint
-</code></pre>
-<p>这样便直接将eslint安装到了根目录中，由于层级高，所以子目录都会受到lint规则的约束。同样，为此安装好husky等等基本库，完成仓库的初始化。(可以参考我的另一篇<a href="https://www.notion.so/aj0k3r/57b80f3f75b741e3a54546c20ae5e8e7">文章</a>)</p>
-<h2 id="安装依赖包">安装依赖包</h2>
-<p>安装依赖包有很多种方式，虽然可以进入对应的文件夹中直接使用yarn安装，不过为了项目统一，还是推荐使用lerna的命令来安装依赖</p>
-<ul>
-<li>
-<p>给所有package安装某个第三方依赖：</p>
-<pre><code>  lerna add module-A
-</code></pre>
-</li>
-<li>
-<p>给package-A安装第三方依赖：</p>
-<pre><code>  lerna add module-A packages/package-A
-</code></pre>
-<p>ps:这里可以使用正则，比如官方举例的：</p>
-<pre><code>  lerna add module-1 packages/prefix-*
-</code></pre>
-</li>
-<li>
-<p>package-A依赖package-B：</p>
-<pre><code>  lerna add package-B --scope=package-A
-</code></pre>
-</li>
-<li>
-<p>所有package都依赖package-C：</p>
-<pre><code>  lerna add package-C
-</code></pre>
-<p>PS.  lerna处理package互相依赖时采用的是软连接的模式，所以不用担心重复安装的问题。</p>
-</li>
-</ul>
-<h2 id="快速新建package">快速新建package</h2>
-<p>lerna提供了一个命令来快速新建package，避免了重复机械的操作</p>
-<pre><code>    lerna create package-D --dependencie=[&quot;package-A&quot;,&quot;lodash&quot;]
-</code></pre>
-<p>这样可以快速新建一个package并且申明他依赖的内部package或者外部包</p>
-<h2 id="值得注意的命令">值得注意的命令</h2>
-<ul>
-<li>
-<p>lerna run xxx</p>
-<p>按照官方说法，是为所有的package执行xxx这个script，听起来有点唬人，所以我测试了一下。</p>
-<p>首先，这里的命令，不是指根目录的package.json里面的script，lerna根本不会去管根目录里面的script。</p>
-<p>当你运行 lerna run xxx时，他会依次遍历每个package目录的package.json，如果有同名的script就执行，没有的就跳过，每个目录对应的xxx script执行的内容也可以完全不一样，互不干扰。</p>
-</li>
-<li>
-<p>lerna exec — xxx</p>
-<p>与run命令对应的另一个命令就是exec命令，不过不同的是exec命令接受的是bash命令而不是script名称，他会为每个package执行对应的bash操作，不会跳过</p>
-</li>
-</ul>
-<p>第二篇结束......</p>
-<p>参考链接:</p>
-<ul>
-<li><a href="https://codeburst.io/monorepos-by-example-part-1-3a883b49047e">Monorepos By Example: Part 1</a></li>
-<li><a href="https://codeburst.io/monorepos-by-example-part-2-4153712cfa31">Monorepos By Example: Part 2</a></li>
-<li><a href="https://codeburst.io/monorepos-by-example-part-3-1ebdea7ccbea">Monorepos By Example: Part 3</a></li>
 </ul>
 ]]></content>
     </entry>
