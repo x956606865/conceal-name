@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://conceal.name</id>
     <title>常名斋</title>
-    <updated>2019-12-20T09:49:47.570Z</updated>
+    <updated>2019-12-27T03:37:09.239Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://conceal.name"/>
     <link rel="self" href="https://conceal.name/atom.xml"/>
@@ -10,6 +10,72 @@
     <logo>https://conceal.name/images/avatar.png</logo>
     <icon>https://conceal.name/favicon.ico</icon>
     <rights>All rights reserved 2019, 常名斋</rights>
+    <entry>
+        <title type="html"><![CDATA[周报 2019.12.23-2019.12.27]]></title>
+        <id>https://conceal.name/post/zhou-bao-20191223-20191227</id>
+        <link href="https://conceal.name/post/zhou-bao-20191223-20191227">
+        </link>
+        <updated>2019-12-27T03:31:01.000Z</updated>
+        <summary type="html"><![CDATA[<p><em>封面图作者: zip</em></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><em>封面图作者: zip</em></p>
+<!-- more -->
+<h2 id="新闻">新闻</h2>
+<ul>
+<li>
+<p><a href="https://v8.dev/blog/v8-release-80">JavaScript引擎V8发布v8.0版本</a></p>
+<p>12月18日，JavaScript引擎V8发布v8.0版本，此版本除了修复一些 bug外，还带来了性能的提高。该版本通过指针压缩，将唯一的低位存储到堆中即可节省内存资源。经过测试，平均节省40％ 的堆内存。更多详情，可从官方渠道了解更多。目前该版本是预览版，正式版将于几个星期后随 Chrome 80 Stable 一起发布。</p>
+</li>
+</ul>
+<h2 id="文章">文章</h2>
+<ul>
+<li>
+<p><a href="https://bre.is/BFhuTv7B">JavaScript, ES6, ES7, ES10 where are we?</a></p>
+<p>介绍了现在ES新特性分别处于stage 0,1,2,3,4阶段的特性有哪些，哪些提案已经被拒绝。( PS:observer提案被拒绝了就很难受 )</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/cSGz9Zf4HYEkxN_2qkIa1g">机器学习中的因果关系</a></p>
+<p>原文章标题满满的公众号营销的感觉。但是实际内容很不错，作为扩展阅读非常合适，不需要深入研究过机器学习。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/BH-gmMpHUkMvBcSBgJWnwA">JWT攻击手册：如何入侵你的Token</a></p>
+<p>jwt的安全相关问题，很多值得注意以及检查的点。</p>
+</li>
+<li>
+<p><a href="https://juejin.im/post/5dfc709b51882579dc6f7f71">你知道 Chrome Devtool Performance报告中的DCL, L, FP, FCP, FMP, LCP 的含义吗</a></p>
+<p>值得看一看</p>
+</li>
+</ul>
+<h2 id="资源">资源</h2>
+<ul>
+<li>
+<p><a href="https://selfhostedsource.tech/self-hosted">self-hosted</a></p>
+<p>一个资源集，持续收集各种可以自己部署的开源优质服务</p>
+</li>
+<li>
+<p><a href="https://github.com/xindoo/eng-practices-cn">谷歌工程实践</a></p>
+<p>谷歌官方的工程实践文档，这是汉化版，目前只汉化了Code Review部分，值得了解</p>
+</li>
+</ul>
+<h2 id="工具">工具</h2>
+<ul>
+<li>
+<p><a href="https://github.com/voidcosmos/npkill">voidcosmos/npkill</a></p>
+<p>列出当前所有目录中的node_moudles目录，以及其大小，然后选择删除。可以瞬间释放大量内存</p>
+</li>
+</ul>
+<h2 id="js库">JS库</h2>
+<ul>
+<li>
+<p><a href="https://github.com/jagenjo/litegraph.js">jagenjo/litegraph.js</a></p>
+<p>使用Javascript编写的图形节点引擎和编辑器。</p>
+</li>
+</ul>
+<h2 id="备注">备注</h2>
+<p>每期周报如果有特别重要的内容，十分值得关注的内容，会被打上&quot;值得关注&quot;标签，然后放到<a href="https://www.notion.so/aj0k3r/7790dd5fcb5e4da2b148c6da46d5298b?v=8490bb6c307443f7a496181fc0582ee3">这个地方</a></p>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/2019-12-27@2x.png" alt=""></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.12.16-2019.12.20]]></title>
         <id>https://conceal.name/post/zhou-bao-20191216-20191220</id>
@@ -1072,64 +1138,6 @@ banana and Translucentpuma Kangaroo
 <p>现在, 这么成员就可以开始编码了. 遵循他们自己的工作流模式 (创建新分支等等).</p>
 <h2 id="下一步">下一步</h2>
 <p>在下一篇文章<a href="https://medium.com/@johntucker_48673/monorepos-by-example-part-2-4153712cfa31">Monorepos By Example：Part 2</a> ( 未翻译 )中，我们将继续探讨一些更实际的问题。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[lerna学习（三）发布篇]]></title>
-        <id>https://conceal.name/post/lerna-xue-xi-san-fa-bu-pian</id>
-        <link href="https://conceal.name/post/lerna-xue-xi-san-fa-bu-pian">
-        </link>
-        <updated>2018-11-24T11:54:37.000Z</updated>
-        <summary type="html"><![CDATA[<p>接着之前的思路，现在我们已经完成了项目的初始化构建，然后开始往里面写新的package。</p>
-<p>在写入的package后就需要涉及到上传的问题了，如果是开源项目，那直接使用lerna的publish命令即可。但是比如一些公司的技术沉淀之类的整合，有很多是不适合直接公开在网络上的，所以需要的是上传私有库。比起npm的私有包的方案，其实我更倾向于搭建私有npm仓库的做法。一来，代码是存储在自己的服务器的。二来，lerna也默认不允许直接发布私有包。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>接着之前的思路，现在我们已经完成了项目的初始化构建，然后开始往里面写新的package。</p>
-<p>在写入的package后就需要涉及到上传的问题了，如果是开源项目，那直接使用lerna的publish命令即可。但是比如一些公司的技术沉淀之类的整合，有很多是不适合直接公开在网络上的，所以需要的是上传私有库。比起npm的私有包的方案，其实我更倾向于搭建私有npm仓库的做法。一来，代码是存储在自己的服务器的。二来，lerna也默认不允许直接发布私有包。</p>
-<!-- more -->
-<h2 id="私有npm仓库的搭建">私有npm仓库的搭建</h2>
-<p>目前网络上开源的构建私有npm的框架很多。最出名的就是淘宝cnpm开源的<a href="https://github.com/cnpm/cnpmjs.org">cnpm.org</a>，这个库可以说把整个cnpm的功能都实现的，功能十分强大。不过代价就是搭建十分麻烦，而且较为不稳定，时常出现奇怪的bug。</p>
-<p>对于普通公司来说，其实并没有那么全的功能需求的，其实只要满足基本的功能就足够使用了。所以这里我选择的是一个十分小众的框架<a href="https://cevio.github.io/cpm/">CPM</a></p>
-<p>这个框架的搭建十分简单，按照官方文档搭建，很快便可以搭建成功。不过有几个要注意的点:</p>
-<ul>
-<li>
-<p>在导入数据库的时候，文档说的很模糊。其实根目录下有一个database.sql文件，如果你不是使用navcat之类的图像化工具，那么你就需要用mysql命令登入mysql，然后:</p>
-<pre><code>  &gt; create database cpm;
-  &gt; use cpm;
-  &gt; source ./database.sql;
-</code></pre>
-<p>因为他提供的sql文件本身不会去创建数据库，所以你需要自己去创建，并切换。</p>
-</li>
-<li>
-<p>不同于cnpm.org，cnpm.org使用了两个端口，一个用作仓库，一个用作web服务。对于cpm来说，他只会暴露一个端口。在不修改package.json的情况下，dev模式是7002，production是7001。所以会出现一些问题。比如文档建议在上线时，将config设置中的registryHost直接修改成你的域名，不带端口。并且示例中使用的也直接是域名。这样就会带来一个问题，你的服务跑在了7001端口，但是你的仓库被设置成了80端口。看起来能用。但是当你上传package后，就会发现没法下载，因为80端口去找下载包就会出现404错误。解决方法，要么保持registryHost是7001端口，要么去修改package.json为80端口，然后重新上传package。</p>
-</li>
-<li>
-<p>对于数据库配置，如果你的数据库不是跑在默认的3306端口，在设置plugin的时候需要手动加上port这个字段。（还好字段名称没有被作者魔改）</p>
-</li>
-<li>
-<p>因为私有包必须以自身的scope为前缀命名，比如@exampleScope/packageName，所以请务必记住 将自己公司用的scope名称添加到app/service/authorization.js允许的scope数组中，不然可能会无法上传。</p>
-</li>
-<li>
-<p>对于package的命名，除了需要一scope作为前缀，同时还需要注意的是不可以使用驼峰法，请务必使用中划线分割单词。因为驼峰法会被分割成多级目录的格式。这样的话会触发cpm的一个bug，如果安装时一般的包找不到会包一个json格式的错误，说本地没有这个包。如果是这种被分割成了多级目录，由于没有触发到路由的匹配，所以会报一个404的文本回来，从来导致本地触发报错说json数据解析失败，数据非法什么的。</p>
-</li>
-<li>
-<p>同时，不知道是不是作者大意了，cpm会读取本地packages目录下的文件来查询已有的本地模块文件，不过他默认没有新建这个文件夹，所以需要手动在cpm根目录新建packages文件夹，不然fs模块会报错说路径不存在。</p>
-</li>
-</ul>
-<h2 id="整合lerna发布">整合lerna发布</h2>
-<p>在搭建好了自己的npm仓库后，就可以开始尝试发布自己的模块了。因为我们私有的模块是基于npm的，所以记住，千万不能在配置文件中将lerna的client设置成“yarn”。</p>
-<!-- more -->
-<p>然后，我们可以：</p>
-<pre><code>git add .
-git-cz
-lerna publish --registry=http://xxxx.com:7001
-</code></pre>
-<p>使用git-cz格式化我们的commit，然后使用lerna publish命令。lerna会帮我们将代码push到github对应的分支，同时依次将各个模块上传到私有的npm仓库中，同时还会修改每个package的版本号，然后去修改每个相互依赖package的版本号。</p>
-<p>注意点:</p>
-<ul>
-<li>发布前记得确认命令行内的npm处于登录状态的，否则可能会因为未登录而无法上传模块，但是因为lerna会提前修改版本号，导致各个模块版本号已经增加了，但是模块没能更新上去，下次想要上传，就得手动控制版本号不要继续加一，否则就调版本了。</li>
-<li>因为lerna会自己执行一些github命令，来推送代码，所以请务必关闭husk中添加的commitlint功能，除非你知道怎么去修改lerna执行时填写的commit message。</li>
-<li>待续</li>
-</ul>
 ]]></content>
     </entry>
 </feed>
