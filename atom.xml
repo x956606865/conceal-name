@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://conceal.name</id>
     <title>常名斋</title>
-    <updated>2020-01-02T10:07:06.848Z</updated>
+    <updated>2020-01-02T10:09:22.067Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://conceal.name"/>
     <link rel="self" href="https://conceal.name/atom.xml"/>
@@ -145,7 +145,7 @@ WebAssembly 也叫 Wasm，目前 1.0 版本的 Wasm 已经支持 Chrome、Firefo
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[2019.12.09-2019.12.13]]></title>
+        <title type="html"><![CDATA[周报 2019.12.09-2019.12.13]]></title>
         <id>https://conceal.name/post/20191209-20191213</id>
         <link href="https://conceal.name/post/20191209-20191213">
         </link>
