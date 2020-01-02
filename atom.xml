@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://conceal.name</id>
     <title>常名斋</title>
-    <updated>2019-12-27T03:37:09.239Z</updated>
+    <updated>2020-01-02T10:07:06.848Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://conceal.name"/>
     <link rel="self" href="https://conceal.name/atom.xml"/>
     <subtitle>万物有名，常名斋，藏名斋。</subtitle>
     <logo>https://conceal.name/images/avatar.png</logo>
     <icon>https://conceal.name/favicon.ico</icon>
-    <rights>All rights reserved 2019, 常名斋</rights>
+    <rights>All rights reserved 2020, 常名斋</rights>
     <entry>
         <title type="html"><![CDATA[周报 2019.12.23-2019.12.27]]></title>
         <id>https://conceal.name/post/zhou-bao-20191223-20191227</id>
@@ -73,7 +73,7 @@
 </ul>
 <h2 id="备注">备注</h2>
 <p>每期周报如果有特别重要的内容，十分值得关注的内容，会被打上&quot;值得关注&quot;标签，然后放到<a href="https://www.notion.so/aj0k3r/7790dd5fcb5e4da2b148c6da46d5298b?v=8490bb6c307443f7a496181fc0582ee3">这个地方</a></p>
-<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/2019-12-27@2x.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/2019-12-27@2x.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
@@ -140,6 +140,93 @@ WebAssembly 也叫 Wasm，目前 1.0 版本的 Wasm 已经支持 Chrome、Firefo
 <li>
 <p><a href="https://github.com/lovell/sharp">lovell/sharp</a></p>
 <p>sharp 是 Node.js 平台上相当热门的一个图像处理库，其实际上是基于 C 语言编写 的 libvips 库封装而来，因此高性能也成了 sharp 的一大卖点。sharp 可以方便地实现常见的图片编辑操作，如裁剪、格式转换、旋转变换、滤镜添加等。</p>
+</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2019.12.09-2019.12.13]]></title>
+        <id>https://conceal.name/post/20191209-20191213</id>
+        <link href="https://conceal.name/post/20191209-20191213">
+        </link>
+        <updated>2019-12-13T10:00:37.000Z</updated>
+        <summary type="html"><![CDATA[<p><em>封面图作者: SiyuMU</em></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><em>封面图作者: SiyuMU</em></p>
+<!-- more -->
+<h2 id="新闻">新闻</h2>
+<ul>
+<li><a href="https://www.solidot.org/story?sid=62899">GitHub 计划在中国设立子公司</a></li>
+</ul>
+<h2 id="设计">设计</h2>
+<ul>
+<li>
+<p><a href="https://free.com.tw/whocanuse/">Who Can Use 檢查網頁配色對視力障礙使用者友善程度</a></p>
+</li>
+<li>
+<p><a href="https://uxdesign.cc/design-better-data-tables-4ecc99d23356">表格的体验优化</a></p>
+<p>本文采用大量示意图，展示了表格应该怎么设计，才能让用户获得最佳的使用体验。</p>
+</li>
+</ul>
+<h2 id="文章">文章</h2>
+<ul>
+<li>
+<p><a href="https://juejin.im/post/5de7c053518825125d1497e2">图形算法（邻接矩阵）</a></p>
+<p>邻接矩阵在前端的部分应用，很值得一阅。</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s/NmIfVW4SNahp7fgn7fUPsw">深入浅出之 swr</a></p>
+<p>前不久才提到的<a href="https://github.com/zeit/swr">swr</a>这个库，才过不久就有了源码解析，不得不说目前这个库在前端的受关注度很高。</p>
+</li>
+<li>
+<p><a href="https://www.cnblogs.com/esofar/p/9291685.html">快速签发 Let's Encrypt 证书指南</a></p>
+<p>目前看到的最简单的签发https证书的方式。</p>
+</li>
+</ul>
+<h2 id="资源">资源</h2>
+<ul>
+<li>
+<p><a href="https://github.com/sindresorhus/awesome">sindresorhus/awesome</a></p>
+<p>收集awesome仓库的awesome仓库，很好，很强。</p>
+</li>
+<li>
+<p><a href="http://theory.stanford.edu/~amitp/GameProgramming/">A* 寻路算法教程</a></p>
+<p>一个免费的英文教程，介绍 A* 寻路算法，寻找两点之间的最短路径。</p>
+</li>
+<li>
+<p><a href="https://github.com/microsoft/api-guidelines/blob/master/Guidelines.md">微软 REST API 设计指南</a></p>
+<p>微软的官方文档，讲解微软对 REST API 的设计要求。</p>
+</li>
+</ul>
+<h2 id="工具">工具</h2>
+<ul>
+<li>
+<p><a href="https://github.com/itsuhane/SwitchKey">SwitchKey</a></p>
+<p>简单实用，为不同的软件添加设置默认的输入法，比如聊天软件默认拼音输入法，编辑器默认英文输入法，省去每次来回切换输入法的蛋疼。重复的事情就应该扔给代码去自动化！！</p>
+<p>使用方法，在对应的软件聚焦的时候，点击顶部图标，点击新增，就会自动记录当前软件以及当前输入法，切换输入法后再次记录会覆盖。( PS: 最新mac系统会看不到新增按钮，不过并不影响，点击最上面的空白区域就是了 )</p>
+<p>示意图见附录一</p>
+</li>
+<li>
+<p><a href="https://free.com.tw/moises-ai/">Moises.ai</a></p>
+<p>一个线上利用AI来去除音乐中人声部分的工具，据说比普通的去除人声的软件效果好很多</p>
+</li>
+</ul>
+<h2 id="js库">JS库</h2>
+<ul>
+<li>
+<p><a href="https://github.com/Valve/fingerprintjs2">fingerprint.js</a></p>
+<p>一个在浏览器生成用户指纹的 JS 库，可以识别用户，不使用 Cookie。</p>
+</li>
+<li>
+<p><a href="https://github.com/lubjs/lub">lubjs</a></p>
+<p>阿里的员工刚开源不久的用于简化命令行工具书写的框架, 用法感觉有点诡异，不过可以关注</p>
+</li>
+</ul>
+<h2 id="附录一">附录一</h2>
+<ul>
+<li>
+<p>SwitchKey</p>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/CleanShot20191210at112318@2x.png" alt="" loading="lazy"></figure>
 </li>
 </ul>
 ]]></content>
@@ -238,11 +325,11 @@ WebAssembly 也叫 Wasm，目前 1.0 版本的 Wasm 已经支持 Chrome、Firefo
 <ul>
 <li>
 <p>madge</p>
-<figure data-type="image" tabindex="1"><img src="https://camo.githubusercontent.com/efe42226657c331807a70f06cc8cea889ef3ba8f/687474703a2f2f706168656e2e6769746875622e696f2f6d616467652f6d616467652e737667" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://camo.githubusercontent.com/efe42226657c331807a70f06cc8cea889ef3ba8f/687474703a2f2f706168656e2e6769746875622e696f2f6d616467652f6d616467652e737667" alt="" loading="lazy"></figure>
 </li>
 <li>
 <p>boxsen</p>
-<figure data-type="image" tabindex="2"><img src="https://github.com/sindresorhus/boxen/raw/master/screenshot.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://github.com/sindresorhus/boxen/raw/master/screenshot.png" alt="" loading="lazy"></figure>
 </li>
 </ul>
 <h2 id="附录二">附录二</h2>
@@ -300,35 +387,35 @@ console.log(boxen('unicorn', {padding: 1, margin: 1, borderStyle: 'double'}));
 <h2 id="使用">使用</h2>
 <h3 id="唤出">唤出</h3>
 <p>默认快捷键 <code>option + space</code> 就可以唤出输入框</p>
-<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205173238.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205173238.png" alt="" loading="lazy"></figure>
 <h3 id="快速打开app">快速打开APP</h3>
 <p>这一点其实和Alfred没什么区别，当你直接输入想要打开的app名字时，可以直接搜索到，并回车打开 (可以使用拼音)。</p>
-<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205173525.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205173525.png" alt="" loading="lazy"></figure>
 <h3 id="安装插件">安装插件</h3>
 <p>唤出输入框后，直接点击右侧的原型图标就可以打开插件，安装很多功能增强的插件。</p>
-<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205173745.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205173745.png" alt="" loading="lazy"></figure>
 <h2 id="部分插件介绍">部分插件介绍</h2>
 <h3 id="网页快开">网页快开</h3>
 <p>这个其实就是把输入框变得类似chrome地址栏，输入地址就直接打开浏览器打开对应的网址，输入内容，就调用搜索引擎。</p>
-<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205175130.png" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205175130.png" alt="" loading="lazy"></figure>
 <p>当然，这个功能其实没啥，不过因为这个插件还可以自己设置一个关键字，设置输入这个关键字后，默认以隐身模式打开特定网址。因为工作中有时候会在一个项目管理工具里来回切换不同的账号，这个功能反而挺有用。</p>
 <h3 id="tempmail">tempmail</h3>
 <p>这个插件在软件测试的时候十分有用，直接唤起uTool，输入插件关键字 <code>tm</code> , 就可以快速获取一个临时邮箱，收发邮件</p>
-<figure data-type="image" tabindex="5"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205175641.png" alt=""></figure>
+<figure data-type="image" tabindex="5"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205175641.png" alt="" loading="lazy"></figure>
 <h3 id="各类文档插件">各类文档插件</h3>
 <p>各类文档正在陆续增加中，估计以后会直接集成dash</p>
-<figure data-type="image" tabindex="6"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182013.png" alt=""></figure>
+<figure data-type="image" tabindex="6"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182013.png" alt="" loading="lazy"></figure>
 <h3 id="编码转换">编码转换</h3>
 <p>快速在输入框中进行各种编解码，比如日期格式化、uuid生成、md5等知名hash生成、进制转换等等.</p>
-<figure data-type="image" tabindex="7"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182114.png" alt=""></figure>
+<figure data-type="image" tabindex="7"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182114.png" alt="" loading="lazy"></figure>
 <h3 id="颜色助手">颜色助手</h3>
 <p>输入关键字后可以打开吸管直接全局取色，也可以读取到剪贴板中的图片，识别图片主色，或者输入色值，进行rgb、hex等等格式转换。</p>
-<figure data-type="image" tabindex="8"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182452.png" alt=""></figure>
+<figure data-type="image" tabindex="8"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182452.png" alt="" loading="lazy"></figure>
 <h3 id="等等">等等</h3>
 <p>其他还有不少不错的插件，比如快速修改host、todolist管理、剪贴板历史、翻译、图床等等，不过因为都有更好的原生app替代品，所以就不介绍了......</p>
 <h2 id="补充">补充</h2>
 <p>uTool还有一点我很喜欢，不知道Alfred有没有，之前用的时候没注意。uTool在打开的时候，会尝试读取你的剪贴板，如果你的剪贴板有文件，他就会搜索你的已安装插件里面支持图片处理的插件，然后问你是否要使用这个插件，把剪贴板文件作为输入。</p>
-<figure data-type="image" tabindex="9"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182534.png" alt=""></figure>
+<figure data-type="image" tabindex="9"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182534.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
@@ -345,7 +432,7 @@ console.log(boxen('unicorn', {padding: 1, margin: 1, borderStyle: 'double'}));
 <ul>
 <li>
 <p><a href="https://bre.is/cVPXUnEv">欧洲 IPv4 地址用光</a></p>
-<figure data-type="image" tabindex="1"><img src="https://www.wangbase.com/blogimg/asset/201911/bg2019112602.jpg" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://www.wangbase.com/blogimg/asset/201911/bg2019112602.jpg" alt="" loading="lazy"></figure>
 <p>11月25日，欧洲 IP 地址注册机构 RIPE 宣布，欧洲的 IPv4 地址全部分配光了，一个也没剩下，从此没有新的 IP 地址可以分配。为了纪念这个历史时刻，全体人员合影留言（上图）。</p>
 </li>
 </ul>
@@ -477,15 +564,15 @@ mkdirp('/tmp/foo/bar/baz', function (err) {
 <ul>
 <li>
 <p>square/shift</p>
-<figure data-type="image" tabindex="2"><img src="https://github.com/square/shift/raw/master/ui/screenshots/summary.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://github.com/square/shift/raw/master/ui/screenshots/summary.png" alt="" loading="lazy"></figure>
 </li>
 <li>
 <p>codeIf</p>
-<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191127113026.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191127113026.png" alt="" loading="lazy"></figure>
 </li>
 <li>
 <p>斗图大师</p>
-<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191127113308.png" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191127113308.png" alt="" loading="lazy"></figure>
 </li>
 </ul>
 ]]></content>
@@ -623,15 +710,15 @@ require('yargs')
 <ul>
 <li>
 <p>Redis Manager</p>
-<figure data-type="image" tabindex="1"><img src="https://github.com/ngbdf/redis-manager/raw/master/documents/images/index.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://github.com/ngbdf/redis-manager/raw/master/documents/images/index.png" alt="" loading="lazy"></figure>
 </li>
 <li>
 <p>Mckinsey666/chart-race-react</p>
-<figure data-type="image" tabindex="2"><img src="https://hellogithub.cn-bj.ufileos.com/hellogithub/43/img/chart-race-react.gif" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://hellogithub.cn-bj.ufileos.com/hellogithub/43/img/chart-race-react.gif" alt="" loading="lazy"></figure>
 </li>
 <li>
 <p>fiora</p>
-<figure data-type="image" tabindex="3"><img src="https://hellogithub.cn-bj.ufileos.com/hellogithub/43/img/fiora.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://hellogithub.cn-bj.ufileos.com/hellogithub/43/img/fiora.png" alt="" loading="lazy"></figure>
 </li>
 </ul>
 ]]></content>
@@ -810,23 +897,23 @@ console.log(dashify('São Tomé and Príncipe'));
 <p>solo</p>
 <ul>
 <li>
-<figure data-type="image" tabindex="1"><img src="https://user-images.githubusercontent.com/970828/56886176-f210a700-6aa0-11e9-894f-75eda5cf3317.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://user-images.githubusercontent.com/970828/56886176-f210a700-6aa0-11e9-894f-75eda5cf3317.png" alt="" loading="lazy"></figure>
 </li>
 <li>
-<figure data-type="image" tabindex="2"><img src="https://user-images.githubusercontent.com/970828/56886177-f2a93d80-6aa0-11e9-8a87-14731bdf59e7.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://user-images.githubusercontent.com/970828/56886177-f2a93d80-6aa0-11e9-8a87-14731bdf59e7.png" alt="" loading="lazy"></figure>
 </li>
 </ul>
 </li>
 <li>
 <p>mcollina/autocannon</p>
 <ul>
-<li><img src="https://raw.githubusercontent.com/mcollina/autocannon/master/demo.gif" alt=""></li>
+<li><img src="https://raw.githubusercontent.com/mcollina/autocannon/master/demo.gif" alt="" loading="lazy"></li>
 </ul>
 </li>
 <li>
 <p>n8n-io/n8n</p>
 <ul>
-<li><img src="https://raw.githubusercontent.com/n8n-io/n8n/master/docs/images/n8n-screenshot.png" alt=""></li>
+<li><img src="https://raw.githubusercontent.com/n8n-io/n8n/master/docs/images/n8n-screenshot.png" alt="" loading="lazy"></li>
 </ul>
 </li>
 </ul>
@@ -973,7 +1060,7 @@ timeout3
 timeout4
 </code></pre>
 <p>请参阅以下 Node v10.15.1 和 Node v11.10.0 之间的比较：</p>
-<p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ca22d429-50db-40fd-a389-edf611079489/untitled?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45IHKPGFWL%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120545Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEAAaCXVzLXdlc3QtMiJIMEYCIQD7cIh6Ogu3uSmm1LmURDDLOhnyVAok8Yf9cpXGHZoVQgIhALx22mjTlUoVvLPE9xg1gxlR7BpaCyYWaraURiPylDAKKuMDCOn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjc0NTY3MTQ5MzcwIgw2iGxPzJTAHFEAkHoqtwNX1BlUpi6okLhxieOgHtnAkg5hHKP3NwUssG9WM7PvyF1zS3%2F9qXiwRWwCpw9%2Bn3bsiIAzwpHZXGjsnGaQ2gwDzF83bk8gA6TDJ0nMY9FOftyxzW7E5nSxyFZYALR1hEEnJOHxsngssr%2B9ahKsSGKzGRVglYVlLQg1GIGIaWUNKZMjyCltOZeAIxV%2F%2FunsgiZmrxs1YqFVJq1fzt1XxMZbxqVo72yA1sC6%2Br2al%2FO7BnMHdHwlYSb4WQ4OsWeQ7fzNG1tnVl0540Idp2hzBhMv5Q84A8i0oNOKMYorj7Ysfv7k2Sg6Cw7bSPTBo%2Fmhfd7Vb%2FMfO%2BY6%2Bv%2FkH5s5GN2YrmpNBEh9%2BhHpEUXpQV1dpbhB%2FALWKPv9sV0%2BllFPZu8VKCTovbrwmNXFaHz5UwOtqSgSwEtFIOAhL0CHJNkaAEQ2xZoWVQklvfB3ni3JcBl8VDnsfanulYgmCUDrK%2FgainU4UY9VveReiu%2BBeNMPe3OobJGCCtCy9gy%2BjURt3A4MKNusa7xA3MotuSflIPY827yual90Ud7Cqo6u3O%2FlcuVNh6XnQCXNtf2PTRBq3HMpz%2F310culMKaPhu0FOrMBUzZpowHsAMtb9HgyA4UhHmsH9W%2BSjl%2BkIHHh%2Bp9cmGNXWXvlWz%2FOVIfkPAOvbhCs8lHUZhqvsFG9O4xN%2Bg23MVtrh12dJSjLswXbD39I%2F5Hlt9g6aZH8vmjAB2hP5F0bJaZTz%2F13sxIQrYLQS9u8mQepB3HRHb3VO9mohLDqzNKrncOAkCb7MJJRBzoYs1qgtRHBAnEk%2Fx32iwv12%2FC%2FBb%2BWrS7sSRz%2BeD14gpGODEjAKEI%3D&amp;X-Amz-Signature=41a70cb147d978f47017168b826ca73eccdfd8ef5153e4ab770d277d0c249b99&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22untitled%22" alt=""><br>
+<p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ca22d429-50db-40fd-a389-edf611079489/untitled?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45IHKPGFWL%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120545Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEAAaCXVzLXdlc3QtMiJIMEYCIQD7cIh6Ogu3uSmm1LmURDDLOhnyVAok8Yf9cpXGHZoVQgIhALx22mjTlUoVvLPE9xg1gxlR7BpaCyYWaraURiPylDAKKuMDCOn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjc0NTY3MTQ5MzcwIgw2iGxPzJTAHFEAkHoqtwNX1BlUpi6okLhxieOgHtnAkg5hHKP3NwUssG9WM7PvyF1zS3%2F9qXiwRWwCpw9%2Bn3bsiIAzwpHZXGjsnGaQ2gwDzF83bk8gA6TDJ0nMY9FOftyxzW7E5nSxyFZYALR1hEEnJOHxsngssr%2B9ahKsSGKzGRVglYVlLQg1GIGIaWUNKZMjyCltOZeAIxV%2F%2FunsgiZmrxs1YqFVJq1fzt1XxMZbxqVo72yA1sC6%2Br2al%2FO7BnMHdHwlYSb4WQ4OsWeQ7fzNG1tnVl0540Idp2hzBhMv5Q84A8i0oNOKMYorj7Ysfv7k2Sg6Cw7bSPTBo%2Fmhfd7Vb%2FMfO%2BY6%2Bv%2FkH5s5GN2YrmpNBEh9%2BhHpEUXpQV1dpbhB%2FALWKPv9sV0%2BllFPZu8VKCTovbrwmNXFaHz5UwOtqSgSwEtFIOAhL0CHJNkaAEQ2xZoWVQklvfB3ni3JcBl8VDnsfanulYgmCUDrK%2FgainU4UY9VveReiu%2BBeNMPe3OobJGCCtCy9gy%2BjURt3A4MKNusa7xA3MotuSflIPY827yual90Ud7Cqo6u3O%2FlcuVNh6XnQCXNtf2PTRBq3HMpz%2F310culMKaPhu0FOrMBUzZpowHsAMtb9HgyA4UhHmsH9W%2BSjl%2BkIHHh%2Bp9cmGNXWXvlWz%2FOVIfkPAOvbhCs8lHUZhqvsFG9O4xN%2Bg23MVtrh12dJSjLswXbD39I%2F5Hlt9g6aZH8vmjAB2hP5F0bJaZTz%2F13sxIQrYLQS9u8mQepB3HRHb3VO9mohLDqzNKrncOAkCb7MJJRBzoYs1qgtRHBAnEk%2Fx32iwv12%2FC%2FBb%2BWrS7sSRz%2BeD14gpGODEjAKEI%3D&amp;X-Amz-Signature=41a70cb147d978f47017168b826ca73eccdfd8ef5153e4ab770d277d0c249b99&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22untitled%22" alt="" loading="lazy"><br>
 Different outputs in Node v10 and v11</p>
 <p>此更改不仅会影响到 setTimeout，还会影响 setImmediate。让我们尝试在 Node v10 和Node v11 中运行以下代码，看看输出是怎样的:</p>
 <pre><code>setImmediate(() =&gt; console.log('immediate1'));
@@ -985,7 +1072,7 @@ setImmediate(() =&gt; console.log('immediate3'));
 setImmediate(() =&gt; console.log('immediate4'));
 </code></pre>
 <p>Node.js v10 和 Node.js v11 明确地给出了两个不同的输出：</p>
-<figure data-type="image" tabindex="1"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/14a4d2e1-5e40-44ce-a5bc-52dd5ffbc8ab/untitled?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45ONFOS75K%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120533Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFXVh8HY55tza4cXP7A8AAAasLjdsPmkOAzSmAHeqJn1AiBf14AV8z6WeXTfPCQJLxJpFo%2BbQPHM0jDTRECHkWDLEyrjAwjo%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDI3NDU2NzE0OTM3MCIMW0PS2PjOwTS1YDQTKrcDyerVOXeZZ8oqjMXH3z%2FAIWjy6Ebv2mBzdPxqAv0DNrNbhJ9GBBndQ8NHn3oO9U9UgJzId4CTKoWagYRY%2FVCBLFH56%2BtOb4RVB80fJG%2FwrM0S6riX%2BZPIE0LzzPGBbi%2BUhjMOqwTycgw8gNlIYYJOiVaKIOytLKqk18YThdwr48arh9rKyZ4vJYAWz7fXRSZptkDPtsRnqWDH2Ns7Jlen%2Bn9ske3bkrY8WOl7usxRO8PCwrcWW%2By2qf8zFekZBMRNCSUNdtMqpBDq4pXP73X0hQbhNg%2BZIAAGXipTPIUZAUYIzK%2FKtIlu0HQ3HnFLE9ebJsHPXbTuV89NTcUi4KHGnY1AzfVmHAfHP%2FS4NtCZkCu9ewO6rGw3OJAP9esozyr9mu6nnHDpGw9r7UMW30I3sMkkgCFZl1oM92o36h4IPJVGDAoAZ8Z6lV%2Fu8T17zpvFGNR2x6Okc5RIZqmz2Grk8Bcpo4cmxj%2FsT9%2Br1DANzBtvZR8dJqjTs2woCbxf5dlPutYMaVCB1WWFD7X4%2Bn9idHq033d9dzUPt4S7p4uX3%2F9uihQATZBdgFOo65MFp%2F3cXMO0G07GHzD69oXtBTq1AeY5bcKG%2Bz3Mg54SBAvFiQ1n%2F3pu220PXsTIaqXvFBKSXUm%2BYBvkYzSGygE0gZu92ZVFhLCVJalSzp%2BwcucqDbLbfrMkeCn%2FQIDHVTpoI6CR%2Fi0ZIqe4e8BgKZ5tOFKV%2B%2F71i6aJ18F0%2FzLR0pXbc0GaeW6E6kJnGxrZwbfWviooJJNXacln6iuvIS%2BUrtoj%2BMsb98E2tSM9UqWpqLcr5sMmc4kkxmyxRLZ3zM51TpHklHFHOho%3D&amp;X-Amz-Signature=ddab24370e2a688e968a080477ad79f98be8f97abd0a23451c6515f4dc54a41a&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22untitled%22" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/14a4d2e1-5e40-44ce-a5bc-52dd5ffbc8ab/untitled?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45ONFOS75K%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120533Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFXVh8HY55tza4cXP7A8AAAasLjdsPmkOAzSmAHeqJn1AiBf14AV8z6WeXTfPCQJLxJpFo%2BbQPHM0jDTRECHkWDLEyrjAwjo%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDI3NDU2NzE0OTM3MCIMW0PS2PjOwTS1YDQTKrcDyerVOXeZZ8oqjMXH3z%2FAIWjy6Ebv2mBzdPxqAv0DNrNbhJ9GBBndQ8NHn3oO9U9UgJzId4CTKoWagYRY%2FVCBLFH56%2BtOb4RVB80fJG%2FwrM0S6riX%2BZPIE0LzzPGBbi%2BUhjMOqwTycgw8gNlIYYJOiVaKIOytLKqk18YThdwr48arh9rKyZ4vJYAWz7fXRSZptkDPtsRnqWDH2Ns7Jlen%2Bn9ske3bkrY8WOl7usxRO8PCwrcWW%2By2qf8zFekZBMRNCSUNdtMqpBDq4pXP73X0hQbhNg%2BZIAAGXipTPIUZAUYIzK%2FKtIlu0HQ3HnFLE9ebJsHPXbTuV89NTcUi4KHGnY1AzfVmHAfHP%2FS4NtCZkCu9ewO6rGw3OJAP9esozyr9mu6nnHDpGw9r7UMW30I3sMkkgCFZl1oM92o36h4IPJVGDAoAZ8Z6lV%2Fu8T17zpvFGNR2x6Okc5RIZqmz2Grk8Bcpo4cmxj%2FsT9%2Br1DANzBtvZR8dJqjTs2woCbxf5dlPutYMaVCB1WWFD7X4%2Bn9idHq033d9dzUPt4S7p4uX3%2F9uihQATZBdgFOo65MFp%2F3cXMO0G07GHzD69oXtBTq1AeY5bcKG%2Bz3Mg54SBAvFiQ1n%2F3pu220PXsTIaqXvFBKSXUm%2BYBvkYzSGygE0gZu92ZVFhLCVJalSzp%2BwcucqDbLbfrMkeCn%2FQIDHVTpoI6CR%2Fi0ZIqe4e8BgKZ5tOFKV%2B%2F71i6aJ18F0%2FzLR0pXbc0GaeW6E6kJnGxrZwbfWviooJJNXacln6iuvIS%2BUrtoj%2BMsb98E2tSM9UqWpqLcr5sMmc4kkxmyxRLZ3zM51TpHklHFHOho%3D&amp;X-Amz-Signature=ddab24370e2a688e968a080477ad79f98be8f97abd0a23451c6515f4dc54a41a&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22untitled%22" alt="" loading="lazy"></figure>
 <p>如果您替换 Promise.resolve（）然后使用 process.nextTick，则此结果完全相同，因为微任务是在运行 process.nextTick 回调之后才会运行。让我们尝试运行以下代码段：</p>
 <pre><code>setImmediate(() =&gt; console.log('timeout1'));
 setImmediate(() =&gt; {
@@ -996,148 +1083,9 @@ setImmediate(() =&gt; console.log('timeout3'));
 setImmediate(() =&gt; console.log('timeout4'));
 </code></pre>
 <p>上述脚本在 Node.js v10 和 Node.js  v11 中的输出如下：</p>
-<figure data-type="image" tabindex="2"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b84ac947-af7a-446b-a959-23db4f52ab10/untitled?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45CXUAYZWA%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120446Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCJ7oIbNAtX2v369L2krOhV%2BqbpEY1X9ch3xdsIexPKZwIhAOFAyPEvPdUcrIj61GZOQuNHz6NY5HjrAaXFBq4aED9HKuMDCOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjc0NTY3MTQ5MzcwIgxf5QY9SHTwFz9aY5kqtwPgaV%2Fiw2STipPnG7MzSsSVBeimQQ4o2L%2FUC0pVw9mohITvRqsYbMhMGm%2FQ9qKqyYvmKUDolG4A8xxEZOynbBoSKiicwU6DYpEHqjqCTpkjqSCBSxaG9uyLXJo2YQzbn3oQ0F3aLgYKh8Xmj6c75Rzkk3fAufTkBQcs%2Fe0LJOr9ptInNHMzstRHYlNTUOnF2Spj%2FCXl8%2B0PLUuVhfPrYTi424azWQNL2enqzbb1fpRb9dAxr6z%2FRDjLlmVfNz4vo9ag767%2FRARYSRnhAmKAT6toJafrJsa%2B6F7DoTWf7EIqrk4DrBYinM9XRz96WCX%2FS89QtxQc2yhXua%2BIUZbrajS0ag%2FzJzBRwzmXriSPtp5pvEw9cJwtrdKhiTtnmOqD1iAaTaXDHs6AfP693zHo%2BPrHdZhWAPhKjZnhncUYFpzPsxJPNE69x14J0zBQcJsgALPUhHOKPv4ArOPzzKlwlABkqS%2FPRmGHTWuDxi4Z6NSmsqGfK1ZdmUnFZ7oMmYcZaXgHwNrm6JzO%2FgNFohj27wpTou8G95CzmJqO7n7QiDij7vCMHqHTRR%2BRkuqZ%2Bv2gm1dAiywtXMHNMPLvhe0FOrMB%2BphHhVxJ5lnhblEY1ZVuS17FV1Bomyr5JrPJzESKN%2BEyHmo8VoGSqTNbIvt1h5kcuhC%2FVdxqGYERwOY%2FFrTucQWGvj5cdhgBXuPJokqlRyPTRsiPpQ4oOWuv93HeV1BKFQD05GshSeCVXO87Rjd4gqtmD1ddP2dAJStAio3KxIbB8gnv2DCXgspkncSywBjP78eV2mykGyxvkO5jfp4NilDMLZFd%2FgxRRqn1ecgQC3gFEe4%3D&amp;X-Amz-Signature=7e792e689db5fa9456902102730ca49895426a6a48fd836a492964aace21a178&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22untitled%22" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b84ac947-af7a-446b-a959-23db4f52ab10/untitled?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45CXUAYZWA%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120446Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCJ7oIbNAtX2v369L2krOhV%2BqbpEY1X9ch3xdsIexPKZwIhAOFAyPEvPdUcrIj61GZOQuNHz6NY5HjrAaXFBq4aED9HKuMDCOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjc0NTY3MTQ5MzcwIgxf5QY9SHTwFz9aY5kqtwPgaV%2Fiw2STipPnG7MzSsSVBeimQQ4o2L%2FUC0pVw9mohITvRqsYbMhMGm%2FQ9qKqyYvmKUDolG4A8xxEZOynbBoSKiicwU6DYpEHqjqCTpkjqSCBSxaG9uyLXJo2YQzbn3oQ0F3aLgYKh8Xmj6c75Rzkk3fAufTkBQcs%2Fe0LJOr9ptInNHMzstRHYlNTUOnF2Spj%2FCXl8%2B0PLUuVhfPrYTi424azWQNL2enqzbb1fpRb9dAxr6z%2FRDjLlmVfNz4vo9ag767%2FRARYSRnhAmKAT6toJafrJsa%2B6F7DoTWf7EIqrk4DrBYinM9XRz96WCX%2FS89QtxQc2yhXua%2BIUZbrajS0ag%2FzJzBRwzmXriSPtp5pvEw9cJwtrdKhiTtnmOqD1iAaTaXDHs6AfP693zHo%2BPrHdZhWAPhKjZnhncUYFpzPsxJPNE69x14J0zBQcJsgALPUhHOKPv4ArOPzzKlwlABkqS%2FPRmGHTWuDxi4Z6NSmsqGfK1ZdmUnFZ7oMmYcZaXgHwNrm6JzO%2FgNFohj27wpTou8G95CzmJqO7n7QiDij7vCMHqHTRR%2BRkuqZ%2Bv2gm1dAiywtXMHNMPLvhe0FOrMB%2BphHhVxJ5lnhblEY1ZVuS17FV1Bomyr5JrPJzESKN%2BEyHmo8VoGSqTNbIvt1h5kcuhC%2FVdxqGYERwOY%2FFrTucQWGvj5cdhgBXuPJokqlRyPTRsiPpQ4oOWuv93HeV1BKFQD05GshSeCVXO87Rjd4gqtmD1ddP2dAJStAio3KxIbB8gnv2DCXgspkncSywBjP78eV2mykGyxvkO5jfp4NilDMLZFd%2FgxRRqn1ecgQC3gFEe4%3D&amp;X-Amz-Signature=7e792e689db5fa9456902102730ca49895426a6a48fd836a492964aace21a178&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22untitled%22" alt="" loading="lazy"></figure>
 <h2 id="这其中发生了什么">这其中发生了什么？</h2>
 <p>随着 Node v11 的新改动，nextTick 回调 和 微任务( microtasks )将在每个单独的 setTimeout 和setImmediate 回调之间运行，即使定时器队列或 immediates 队列不为空。就setTimeout 和 Promise 回调而言，Node.js v11中的新改动与浏览器行为相匹配，从而提高了 Node.js 中浏览器JavaScript的可重用性。但是，这一重大变化可能会破坏明确依赖旧行为的现有的 Node.js 应用程序。因此，如果要升级到Node v11或更高版本（最好是下一个LTS v12），您可能需要谨慎考虑。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[[译] 跟着例子学 monorepo (一)]]></title>
-        <id>https://conceal.name/post/yi-gen-zhao-li-zi-xue-monorepo-yi</id>
-        <link href="https://conceal.name/post/yi-gen-zhao-li-zi-xue-monorepo-yi">
-        </link>
-        <updated>2019-01-25T11:57:10.000Z</updated>
-        <summary type="html"><![CDATA[<p>原文链接:  <a href="https://codeburst.io/monorepos-by-example-part-1-3a883b49047e">https://codeburst.io/monorepos-by-example-part-1-3a883b49047e</a></p>
-]]></summary>
-        <content type="html"><![CDATA[<p>原文链接:  <a href="https://codeburst.io/monorepos-by-example-part-1-3a883b49047e">https://codeburst.io/monorepos-by-example-part-1-3a883b49047e</a></p>
-<!-- more -->
-<p>让我们通过实例来探索 monorepos.</p>
-<figure data-type="image" tabindex="1"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6c320ff3-c7a8-4673-864d-86dd61a42b31/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45MSRJ7VNW%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120642Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEAAaCXVzLXdlc3QtMiJHMEUCIQDxMSzMZ6jd9XKBzRKqzL5nrcGb9z7v38n9To2RRhRBdwIgLXinDAM9oUp6QrCLo2RpNQ2xeam6bLTMgGc%2FM8rZ5UQq4wMI6f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwyNzQ1NjcxNDkzNzAiDOJkK8XwXItE8Th7iCq3A7V9680a4NGC%2BM6IrB8JQqCNhQO6SM39nNEv8THQ9Uj0NLuIP2f%2BtWeWc00wmD0Ede3Tlv8vcEKCSDHY9uwUBxzV3PqVGEX%2FaV0VMML3pLDZRxqkjGyp7ELJ%2BMg5iaV7dFxk7uURWPyn7CdVfmsgY2XLC5mfaRnXQHCikrvHFA0A7PMFoPoJXp8K5Nkt43sKQCwSOJINWii5orJoXkno4tPGlIkoy1woEBZd%2FHE9YM0h5Soez9qYje0e2pMOFdNFmC%2BEY%2BUauYQnXo22hilKsqFEqfUxe1%2BLNjGUgQjh4gM0aAi0ud9vRuAMUMazq4il23uBdIqes9Mtge%2B6Kvqw9nocgqGGg57edHdM4IFwoDaM6M52KSfRMQpHa4c6l%2FG7tG0XeShMU3ojhty51iysmvypxuBVgKT7ozUg8pq8GZMVOBo8c4UnwZ5ip%2BaEbcRiiJFH1267kFtOdEvOTf6813AiZofv1RXxDMYVfWcEnWe9yLamrQoy9uUdq664Re5PRppybvymkAiWht6awoO0uBRGuETvxnqydcApq3nI3FF2yIIeuAvki1rXR5Y3BhuSRcbyhRYVk9Aw0I6G7QU6tAF3ViJTpyXgJsd61h1AHwg2cRIXNBDR%2FNCHmXUHl2hLOzCh20%2B5m3b9L%2BQ034RtSGuYoiWOqz5ZKP2fI5b1CaqkVX%2BWf6uYRn2aEfLHK%2FPA9uqOo6MpXNBPJXjY2dEBTx%2Fr7rU%2FEMZkLQyw9IYD%2BRyRm1nw0dt72Smv86PrwqDap%2FjaQy7HAE6GpazithtM5AMEnNl3ykK6PXz7gsY1VmC4z9dITceA9IjjjukWbtmfbUXiI0M%3D&amp;X-Amz-Signature=890a8bc1afe6a8c11ced249a506fbadb40c858c167b1633a8db20a6cc71b9c1a&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
-<p>首先，关于 monorepo:</p>
-<blockquote>
-<p>Definitions vary, but we define a monorepo as follows:<br>
-The repository contains more than one logical project (e.g. an iOS client and a web-application)<br>
-These projects are most likely unrelated, loosely connected or can be connected by other means (e.g via dependency management tools)<br>
-The repository is large in many ways:</p>
-</blockquote>
-<ul>
-<li>Number of commits</li>
-<li>Number of branches and/or tags</li>
-<li>Number of files tracked</li>
-<li>Size of content tracked (as measured by looking at the .git directory of the repository)</li>
-</ul>
-<p>Atlassian — Monorepos in Git.</p>
-<p>其次，我也赞同这些反对 monorepo 项目的论据:</p>
-<p><a href="https://medium.com/@maoberlehner/monorepos-in-the-wild-33c6eb246cb9">Monorepos in the Wild - Markus Oberlehner - Medium</a></p>
-<p>接下来，我们将通过示例来讨论几个实际的问题，使用 lerna 来管理一个 monorepo 项目（ javascript 项目 ) .</p>
-<p>这个系列的最终 monorepo 在这里，<a href="https://github.com/larkintuckerllc/hello-monorepo">点击查看</a>.</p>
-<h2 id="脚手架">脚手架</h2>
-<p>在我们处理 monprepo项目 ( 特别是lerna所管理的monorepo项目 ) 的问题时,  我们需要先建立一个 lerna monorepo 项目,  幸运的是这十分的简单.</p>
-<p>首先,  全局安装lerna:</p>
-<pre><code>sudo npm install --global lerna
-</code></pre>
-<p><strong>注意</strong>:  本教程使用的是nodejs v8.9.4 与 Lerna  v2.9.0</p>
-<p>创建一个新的文件夹,  并在其中运行一下命令将其转换为一个Lerna monorepo 项目.</p>
-<pre><code>git init
-lerna init
-</code></pre>
-<p>最后生成的文件夹结构应该是这个样子的:</p>
-<figure data-type="image" tabindex="2"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e6236042-0794-4d12-a3bb-5f7f6673c9d8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45ONFOS75K%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120703Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFXVh8HY55tza4cXP7A8AAAasLjdsPmkOAzSmAHeqJn1AiBf14AV8z6WeXTfPCQJLxJpFo%2BbQPHM0jDTRECHkWDLEyrjAwjo%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDI3NDU2NzE0OTM3MCIMW0PS2PjOwTS1YDQTKrcDyerVOXeZZ8oqjMXH3z%2FAIWjy6Ebv2mBzdPxqAv0DNrNbhJ9GBBndQ8NHn3oO9U9UgJzId4CTKoWagYRY%2FVCBLFH56%2BtOb4RVB80fJG%2FwrM0S6riX%2BZPIE0LzzPGBbi%2BUhjMOqwTycgw8gNlIYYJOiVaKIOytLKqk18YThdwr48arh9rKyZ4vJYAWz7fXRSZptkDPtsRnqWDH2Ns7Jlen%2Bn9ske3bkrY8WOl7usxRO8PCwrcWW%2By2qf8zFekZBMRNCSUNdtMqpBDq4pXP73X0hQbhNg%2BZIAAGXipTPIUZAUYIzK%2FKtIlu0HQ3HnFLE9ebJsHPXbTuV89NTcUi4KHGnY1AzfVmHAfHP%2FS4NtCZkCu9ewO6rGw3OJAP9esozyr9mu6nnHDpGw9r7UMW30I3sMkkgCFZl1oM92o36h4IPJVGDAoAZ8Z6lV%2Fu8T17zpvFGNR2x6Okc5RIZqmz2Grk8Bcpo4cmxj%2FsT9%2Br1DANzBtvZR8dJqjTs2woCbxf5dlPutYMaVCB1WWFD7X4%2Bn9idHq033d9dzUPt4S7p4uX3%2F9uihQATZBdgFOo65MFp%2F3cXMO0G07GHzD69oXtBTq1AeY5bcKG%2Bz3Mg54SBAvFiQ1n%2F3pu220PXsTIaqXvFBKSXUm%2BYBvkYzSGygE0gZu92ZVFhLCVJalSzp%2BwcucqDbLbfrMkeCn%2FQIDHVTpoI6CR%2Fi0ZIqe4e8BgKZ5tOFKV%2B%2F71i6aJ18F0%2FzLR0pXbc0GaeW6E6kJnGxrZwbfWviooJJNXacln6iuvIS%2BUrtoj%2BMsb98E2tSM9UqWpqLcr5sMmc4kkxmyxRLZ3zM51TpHklHFHOho%3D&amp;X-Amz-Signature=c8a2712d091e11648e627377de26b28e83dc74c6fc855a167660dd11d73ba6f8&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
-<h2 id="创建第一个package">创建第一个package</h2>
-<p>现在，我们已经有了一个 Lerna monorepo 项目,  就可以开始尝试创建 package 了.  在部署到 npm 仓库中时,  每个package 将会是以单独的一个 npm package 的形式存在的.  通俗来说就是,  package 允许更松散的耦合以及独立的依赖管理( 稍后会做介绍 ).</p>
-<p>我们可以通过在 packages 文件夹下新建一个文件的形式来创建一个 package, 并在对应目录下执行以下命令 :</p>
-<pre><code>npm init -y
-</code></pre>
-<p>这时，项目文件夹结构会类似这样:</p>
-<figure data-type="image" tabindex="3"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/36ddea1a-a400-4be3-b787-81bce47bc391/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45LZLCVEHV%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120718Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEAAaCXVzLXdlc3QtMiJHMEUCIHeMXwTjQdYh2X0En3fLEOTR6btDLr7YHVQ2FWzlgiIVAiEAjU4JQA9aCxXoc28K%2Bc2028wbRvjcaCGLPgl6UpztDMIq4wMI6f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwyNzQ1NjcxNDkzNzAiDMTLLo2flcj%2BLKam2Sq3AyPNa8l7%2FyI%2B44Lkx6IdK4Mn5o1Ahu9nfBAD5HpChinlIipZ6WyJ4ILx4OCFQ69%2BRnoY3HBXK2EAQ4N9rEsPAmat%2Fktb4TfhK3Ake1xB9VgB%2FPMbBpMbT%2FrsQe6B%2BOosNxfe41g4FXE5SJ%2BzagOgMUJr%2BK4qlfsCfactdANoS%2BUgoaQtR7l7d%2BcuP1Qr8T6q63ARni8KCj9YjEm4HQQpmEsjlBvc4d2DMxUK8C6rM58Uhygb%2FMUWrw7fx4nQ3qv%2FEQekHdik76GJiFGn9TK%2Bv7Olg1t8zYxhL10Tz707ktx5DpMvcA5LI8YdzFeabEjeVfifmUHfH374SvK5pDQ39eCtqZnH%2FCYgOT3HcFFzuEGCSb3Vhvks5PYbr2PsxDudgNs0uxB4ekjT0LYL668qiZRSE%2FGpYNXBSreLA3dvkmzi8NJ4TZTL2St9N14UYClLQA4AgfCZIXascKB0s%2BJIEITizxdwi5TRnjNooESqAHeYnbgoPvmefurEFwhxehDbKeQNAe7ykv3sGz94HftY61WYkjCsJ7bgPEWn6tLHALByrPt2%2Fm8M7wu5N%2FdcMOrKQs7m7elYb3gws4%2BG7QU6tAFQhZKUIAJusg7%2F3ZS3opmS3zZ2tpkU%2BjRC6NaOFlzSvh%2BMKgNbYuwlAQTo9A%2BdCTCpNl%2BLNdVuokbfZhCb90KxJzoOxSvZYLkRD61oITou5SbCH7eV8I%2FIBGT77GJa7ZjRhbnV1aGsRKPJLj0aRv5CxAR1nPKJKG%2BfALixgyFaoQcs5XNZj89fkmGeyUdAiUXbURcZULcGYmM0rmiQFjCKqxCxJSF7XQvBEcclgBplp1NcIsI%3D&amp;X-Amz-Signature=7597a8b79d9d38dc9f5d79568bfe6cd39cf85a48c35b9ea98f870dafc73b9cf5&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
-<h2 id="第三方依赖">第三方依赖</h2>
-<p>假设我们三个项目都依赖于 npm 包 sillyname@0.0.3  ( 特定版本 ),  我们可以运行命令: ( Lerna 命令可以在项目下的任何文件夹中执行  )</p>
-<pre><code>lerna add sillyname@0.0.3
-</code></pre>
-<p>然后, 项目的目录结构将会是类似于这样的:</p>
-<figure data-type="image" tabindex="4"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a3da5a86-d2b0-4d67-ae24-5a29e3aef528/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45A7KMKUXE%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120730Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD1YLxe6Z4xK7f9s92jKIoPV1WGXuoif8s0%2B8ztdLoEJQIgfdRgDpR3mW2xjvEqaMYTGHpLZjzTBwYaQEA7uLwWHJIq4wMI6P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwyNzQ1NjcxNDkzNzAiDEtlJzYXgtUWFHsbLiq3A1Nn9CPRRM6WTVXxhihGPbjfO3H9%2F8G7qsnow1l7omXs5m3Udae%2Fy64qBsukWxD5S5Ejmh4HxQGUnE70PlMrJ%2FSeEBV6DA%2B5UZoum5ltgju%2FAqLeHNpnMNhWfXg99Z%2FUFGC2iQ1uDYWW7Zu6iHR7gUbaUwgnwdFzN0AdiP3ivTqLbBbfhmSYdXERm2uXXEN00J5rJoBKfcs2YcdaxW9sbOK2ofUSkeywGPorvNZafPV0zfxan5HtoHIsHzbSdsaLXF4AHyluLQax%2FJeEXgNtYDjT7nB6qXI8dvM%2FJDOM9TWzfDsYB35oBow%2Bo0gmSuiu6swdr8KtiSESGMV9G6zoZwD6O4OGMrByxpdL4bCBRc2JquUVIrvV7tPCu09rTfEYRlKUsVJjnJWV%2FP5Wjcxu8qpscEDwCIDXTexx1s%2BQZuAeZkO3CnUwuIZZdQszsveb2mx3fw9krcka5RP%2FPdst4yceXbSh8H6lw9hN23f%2BLwX0IhR8hmZAwfkMlNwXnldot6WUNH1CDR%2FhTOUNFOXQmSKc0hvcYUP4mCiyoW9Y%2FLYydfc3U62KuYXq8YSl5SYm9n5JmlQhfs4wmvuF7QU6tAFL3sCn6xEh7aHadhzQywv0LOZMOkjUUntvrbohmii3t3XsB%2Bjw%2Feo6q%2F2u%2FosNoxCBRVpBaeM12eoPovzwcdZam1DLYqYogJXCHaVPavk0Fe6pMCt4MTNoUGD5Mvvw5utZSs%2F2z%2FhK8t8YuhE4uxETvks061IHArE1ovtvz6qDc87q%2Be%2BJo8R14t7C0jWtPMVnGu7C4Onls5HQG4l1F4nBGLIuwD22jQbylDa1FNH56NVKJB8%3D&amp;X-Amz-Signature=e71c2a1903a71ff06fb13440b3c08446e09ca49285f3a7b7b652caf78802d078&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
-<p>显然:</p>
-<ul>
-<li>因为我们希望每个 package 都是独立的，所以每个 package 都会更新自己的 package.json 具有对 sillyname 的依赖.</li>
-<li>注意，他生成了 package-lock.json ( 很像 yarn , npm 现在锁定了二级依赖 ). 另外,  Lerna 文档中提到, 他也是支持 yarn 的.</li>
-<li>使用 Lerna 我们可以使用一条命令将依赖安装到每个 package 中.</li>
-<li>每个 package 都有着自己的 sillyname 副本, 安装缓慢同时也浪费磁盘.</li>
-<li>一种更高效的方式便是手动更新每个包的 package.json 然后在父文件夹的 node_modules 中安装 sillyname ( nodejs 是会在父文件夹中查找依赖的 ), 不过这是令人乏味的.</li>
-</ul>
-<p>对此, Lerna 也有着解决方法; 使用  <em>hoist</em> 参数</p>
-<pre><code>lerna add sillyname@0.0.3 --hoist
-</code></pre>
-<p>最后的项目文件夹结构将会是这样的 (截图中并没有展示庞大的 node_modules 文件夹) :</p>
-<figure data-type="image" tabindex="5"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/519f0c3d-d351-4a2a-b9e1-8b780837ba33/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45DEWQT7VH%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120747Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEAAaCXVzLXdlc3QtMiJIMEYCIQCTNeZsUW4kWuDjxCem3bAMns7l0qqj5r7%2BUhHu6eDWCwIhAKgCov7rmj7qt7F6uUgn%2BJ3CjFU2eVxz6zMs2lSywgNTKuMDCOn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjc0NTY3MTQ5MzcwIgxtrFZF0%2FlxfKQKP6kqtwPUFlgOSZr3faYZAgwoRUCglBwFnfj7COe9mzidJ58Q96UJO5R73YYHkcWOqwPmrZDqcy6rScKV5GBg8a8meQaWBpUIqTW4ry%2FZsEccYxMnVS1w%2FbQsLO8roqwjcvJr13zT0msp%2Bqy%2FU0PhaYTMF4yJtcuvHz35VS0tcTVTmXsgdbH43eB7lEbrehsY3c6RysOpNNfNz0YDRcXhEwEIOZodS4oy2BYjj4bA9CZEXbhbuNOla37PzFPhGS1H4M9X0SLpqDXTln0vLThqO9jzTto2fBAJsHRidCt3hOznqDvhkh3VThvmg%2BEq4Y85gSIO8UVJ2XBUzoBnuH8qEdVqNlxYLGScfleTckTU%2BtDt0DVd%2FVomcAZOdOIiGc3iaG2KU129sJsVOu7b3FhqGToNXnTKiT0870PJjnYnhVtZvm5ptC%2FwCUGAqxAzjNVgPEGxHDdASnWP3T1Zvw%2BWPGSPyAvDNQCIWylInaWmA7Osw6AjVrrix89PkMyKYSEMH1yK8%2FI%2FT5QqECNgHqi8ZmhfiXYxjknlY1Whq0qQnsKYGDZqp9PBYICyAgEXDS3IUvLBpNuEUGW%2BzMkNMI%2F%2Fhe0FOrMBAUbPzXUS61xlonQk2PQQwSzZgCMPOY9nPZO15TLmU5mjLAMVYK%2FatSNa3atKN6VdybjsWiUDCWgC4tNcSCkcKhGE3fXQquQfEvX9RDSF%2BgvOCpjNuA3vr5lgalT6zconZzxBA9fpDiJ95Ekr2Wx6J2Qc0mcql2mW%2BQooyOFZwVIe3iiJPVew9dCHmr6Ay2uQ1emi10nB7%2FNcEivMigzcYmfrR0ApVVb2%2BFK2buyy1nrbxQQ%3D&amp;X-Amz-Signature=ee9ff4d07bbb8f58b17793ec8cbfdaca991cd5c6f3cac29d894f720754e034f6&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
-<p>显然:</p>
-<ul>
-<li>每个 package.json 都将 sillyname 列为依赖项.</li>
-<li>sillyname 安装在了项目根目录的 node_modules 文件夹中</li>
-<li>node_modules 中的其他软件包是因为 Lerna 是软件的开发依赖.</li>
-</ul>
-<h2 id="有选择的升级">有选择的升级</h2>
-<p>假如我们只想为 grocery 这个 package 升级 sillyname 的版本, 我们可以执行以下命令:</p>
-<pre><code>lerna add sillyname@0.1.0 --scope=grocery
-</code></pre>
-<p>然后, 项目的目录结构将会是类似于这样的:</p>
-<figure data-type="image" tabindex="6"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/59129a27-7714-4d98-973f-a5ee45c08ffc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45OC3NB4GW%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120800Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEAAaCXVzLXdlc3QtMiJHMEUCIQDhTqc1Jnwj6mIVYJjwbKRo2eQPmLA3npna%2B%2FA00mj6WgIgTt%2BiHMXaChYKcdsWuH3968hh4ifm7ezsvAv72bv8Dgkq4wMI6f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwyNzQ1NjcxNDkzNzAiDKetLgzXi4ziNzxeDCq3A1Ocd1eRgkabUgdynq0EUQHutC47P3ygEWOiyXXn2Ezf2NG8zVxzloEXX9Yo%2BzoOqrglkXIJ57B49UCmjpQDV69z%2FT6ktjH0%2F9yJyP%2BYnhKRsL8UgrXU5RAvzSN18o2x2vw8chr6UIF3FZC%2Fa7w7d519joBZtyUsZEciBM26TWEyabU60jSPb3JZCBtkWElKWZIfWWxOllSJpNCd1kHJWX8QlxCtP%2Bnp%2BDAMU4HHas0L7L%2BHRsCXcpnZz5Lun2fYTzfE5QxupQCrg%2B5JGYJgPj7pAs%2BYX2cKWQpik6OF9rpmYLXEMJwJApXgwdhPLxbJQSoeqCcyclRUzR1Aj%2B2iCZH4MsTZrEeILhgBZpCzSoZKKjm71FWl4ASNdHhEOWngzP4QppQYvv0sl8kTs1ZEOlWlWBU9TfSndlb9cH2mDJpY5O5xokgOToQfEqftttMZXlLPEJUuJIEG2FvGruQjnYxdrRzxfYknjs0q3Hj2xm88lZmUV69DW%2BXVtCDgG3bPDiRHe6O%2FxSX5t77QvURc6do11iJRfEvf3%2BzDFp1Sn1DR8RwuYLoUJToWz12prKmmc7NPcUQ76igwgoaG7QU6tAFVgts3DCcXsNqqPFNRgsGCDc8h8tS6edOi3OcMtvLIT2cDlcKcmOr4Sv%2Fgk5688L%2BgH1Wmy6F65fHBC%2Fw2Y59jZJPgwkndSpYbrDoJvYISQ%2BherYC2LPnIcxCbyJRQyiyWWlgDWov3gzBWZSUOIowO7RvkCIy29OtdOiDY7dw7%2FfgBO6DZaW3PJt1rO5CpfiZfWoDBBSJGGvIV2sl3ROZx1Pj25m5h%2FFZgRqSaqcqF7IuInDY%3D&amp;X-Amz-Signature=f0169fe7bc8c3da4a505d7e5d3e7b975ef98448674f29a405b107c9c73ce2bc3&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
-<p>显然:</p>
-<ul>
-<li>grocery 的 package.json 会更新为依赖 sillyname@0.1.0</li>
-<li>grocery 文件夹下会有一个 node_modules, 其中包含了新版本的 sillyname</li>
-</ul>
-<h2 id="内部依赖">内部依赖</h2>
-<p>现在, 加入我们希望 grocery 去依赖 apple 和 banana, 我们可以执行以下命令:</p>
-<pre><code>lerna add apple banana --scope=grocery
-</code></pre>
-<p>最后的项目文件夹结构将会是这样的</p>
-<figure data-type="image" tabindex="7"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/894d88e0-af5e-4888-9fbe-724ddaa9030b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45AVFIE2OT%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120817Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCBTc4PJH8QtP3ilSv4Oz7EMiZbYza8Cau9tl1j7L5%2B8wIhAMcvg%2FXheFlPTe3xX19OiDvpG0XB1XydWbzkVGdnCh8AKuMDCOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjc0NTY3MTQ5MzcwIgzzMDBbl3pdBO16vdcqtwOtY%2BYs1XzZaUN7HdryTaDunWze4jKG52Z%2BYwOd1BdFUN8ba9Sz2tY7xu532G%2BtsmNX0IzFCr0N2Mf9y52uto8Pb%2B7YhcDeyzv1Tj2%2FbGBfBSvdSciitxDAga3WnDXGQAwXAFUomSMB50BGl%2B3KNVsG2m7ftGBLiudsbZ5Xm4Cm64Y4%2BRZi6bnt8xqVoX3%2BKQamc0s3jyC6XevxaBYm2j2YjcUIQQXmG9nXnkoACRTVPo4BqWjlLY%2FWlLARGjFbX5R9VlcD6oSJqpxJn%2BrueT05rxzRfp0gNAEr3gUVXk6puUkEiYx6iehqZCpaDgw2KVgurhXQzs4H%2BJVvYM1qO1qI7nSNhQ02JXqmOhvWlrzf%2BIYHfy3f7uJiNhujN664F63SiLOMsIXlBERL7T%2Bwv8TzIGK0phlUzuq%2BLiYacGzM0fxmIbWUlzErmEbar8HhWWbCZAdqMAP4v8oJf903%2B4o5TLKZ0Vo1d1xEE%2FCyMJ%2FtRxsFCaC3NMtRIab4RoaqQ0Ta6YbJDH6AS5uoHuztZEnpA3C109WKfmw4kk3g5KB7KBfn0N1M7WuN3YFKkbY3N3IGgxYnM3KDMJv8he0FOrMB2Mdch5WiRjnYOi6rxEwW2LmxmKaKViEiOIRNXzIBEzmKGHr8%2BLk17C8v6vqvS%2FpqaAjqruRTQcdGmYUm3sIxJc2MYvqb0ie1eItv4PmPKaIm8Ed9Zblu1hb%2FbsW9qer0jT2FomdlV5jCYxZt1GKG5ZDrWzZkbnV7RGX3dV7XnBg6tc0IG%2Fq%2BdFZJVz1MwGcRaRDhWFzBQm%2F3cyBXUgMFPkFlH2OoKBckXijR8TXODKCqVmA%3D&amp;X-Amz-Signature=143de3cfaaa805715d562c0d9cfcd5823970d76dee0ec45700d057fc04d37d92&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22Untitled.png%22" alt=""></figure>
-<p>显然:</p>
-<ul>
-<li>grocery 的 package.json 已更新, 依赖于 apple 和 banana.</li>
-<li>Lerna 在 grocery 的 node_modules 文件夹中创建了软连接, 运行 grocery 透明的访问 apple 和 banana 中的文件.</li>
-</ul>
-<h2 id="相关代码">相关代码</h2>
-<p>现在, 我们已经设置好了相关依赖, 可以开始编写一些代码了.</p>
-<p><em>packages/apple/index.js</em></p>
-<pre><code>const sillyname = require('sillyname');
-module.exports = `apple and ${sillyname()}`;
-</code></pre>
-<p><em>packages/banana/index.js</em></p>
-<pre><code>const sillyname = require('sillyname');
-module.exports = `banana and ${sillyname()}`;
-</code></pre>
-<p><em>packages/apple/grocery.js</em></p>
-<pre><code>const sillyname = require('sillyname');
-const apple = require('apple');
-const banana = require('banana');
-console.log(`grocery and ${sillyname()}`);
-console.log(apple);
-console.log(banana);
-</code></pre>
-<p>然后在 grocery 的目录下运行一下命令:</p>
-<pre><code>node index.js
-</code></pre>
-<p>最后的输出会是这样的:</p>
-<pre><code>grocery and Linenhiss Butterfly
-apple and Trailspeaker Scribe
-banana and Translucentpuma Kangaroo
-</code></pre>
-<p>完成编码后, 我们添加以下文件, 因为我们不希望将 node_modules 文件夹存储在源代码管理中.</p>
-<p><em>.gitignore</em></p>
-<pre><code>**/node_modules
-</code></pre>
-<p>然后将所有的文件提交到 git 仓库之中.</p>
-<h2 id="bootstrap">Bootstrap</h2>
-<p>现在, 假如团队的另一名成员要加入开发. 首先, 他需要全局安装 Lerna.</p>
-<pre><code>sudo npm install --global lerna
-</code></pre>
-<p>然后, 他需要克隆仓库, 然后运行对应的名来安装所有依赖 ( 包括符号链接 ):</p>
-<pre><code>lerna bootstrap --hoist
-</code></pre>
-<p>现在, 这么成员就可以开始编码了. 遵循他们自己的工作流模式 (创建新分支等等).</p>
-<h2 id="下一步">下一步</h2>
-<p>在下一篇文章<a href="https://medium.com/@johntucker_48673/monorepos-by-example-part-2-4153712cfa31">Monorepos By Example：Part 2</a> ( 未翻译 )中，我们将继续探讨一些更实际的问题。</p>
 ]]></content>
     </entry>
 </feed>
