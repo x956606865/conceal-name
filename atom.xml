@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://conceal.name</id>
     <title>常名斋</title>
-    <updated>2020-01-02T10:09:22.067Z</updated>
+    <updated>2020-01-03T03:26:07.765Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://conceal.name"/>
     <link rel="self" href="https://conceal.name/atom.xml"/>
@@ -10,6 +10,76 @@
     <logo>https://conceal.name/images/avatar.png</logo>
     <icon>https://conceal.name/favicon.ico</icon>
     <rights>All rights reserved 2020, 常名斋</rights>
+    <entry>
+        <title type="html"><![CDATA[周报 2019.12.30-2020.01.03]]></title>
+        <id>https://conceal.name/post/zhou-bao-20191230-20200103</id>
+        <link href="https://conceal.name/post/zhou-bao-20191230-20200103">
+        </link>
+        <updated>2020-01-03T03:21:54.000Z</updated>
+        <summary type="html"><![CDATA[<p><em>封面图作者: SiyuMU</em></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><em>封面图作者: SiyuMU</em></p>
+<!-- more -->
+<h2 id="新闻">新闻</h2>
+<ul>
+<li>
+<p><a href="https://www.ithome.com/0/466/294.htm">Python 2.7 正式终止支持</a></p>
+<p>虽然应该后续会有民间组织着手继续维护python2，但是对于企业来说，应该是不得不下决心转向python3了</p>
+</li>
+<li>
+<p>Facebook 发布 Hermes， 一个新的专门用于 React Native 的 JS 引擎</p>
+</li>
+</ul>
+<h2 id="文章">文章</h2>
+<ul>
+<li>
+<p><a href="https://www.zhangxinxu.com/wordpress/2019/12/css-repeat/">CSS repeat()函数详细介绍</a></p>
+<p>不知不觉中，grid布局原来已经可以在现代浏览器中放心使用了啊，看了下语法，比flex似乎要舒服不少，感觉可以试用一波了</p>
+</li>
+<li>
+<p><a href="https://www.zhangxinxu.com/wordpress/2019/12/css-flex-basis/">Oh My God，CSS flex-basis原来有这么多细节</a></p>
+<p>虽然经常在用flex，但是依旧感觉长见识了。不愧是在前端现在完全偏向于JS方向的趋势下，还能把CSS玩出花来的大佬</p>
+</li>
+<li>
+<p><a href="https://bre.is/maM5o3Zx">TLS安全通信原理</a></p>
+<p>老生常谈的TLS加密，写的比较清晰，时不时复习一下还是不错的。</p>
+</li>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/73772711">花椒前端基于 WebAssembly 的 H.265 播放器研发</a></p>
+<p>深度好文</p>
+</li>
+<li>
+<p><a href="http://idiotsky.top/2017/08/16/gc-three-color/">一张图了解三色标记法</a></p>
+<p>以前JS是使用的引用标记法，所以会存在循环引用导致无法回收的问题。而后续更新后，JS也换用了这种GC回收检测方法....</p>
+</li>
+</ul>
+<h2 id="资源">资源</h2>
+<ul>
+<li>
+<p><a href="http://www.nicetool.net/list/shenghuo/">常用在线工具</a></p>
+<p>常用在线工具合集，真的是太全了，日常信息查询、信安加解密、快速生成测试数据、快速代码执行、数据格式化等等等等.....</p>
+</li>
+<li>
+<p><a href="https://github.com/Atarity/deploy-your-own-saas">Atarity/deploy-your-own-saas</a></p>
+<p>一个资源收集仓库，收集各种能够自己部署的SaaS 服务</p>
+</li>
+</ul>
+<h2 id="工具">工具</h2>
+<ul>
+<li>
+<p><a href="https://learngitbranching.js.org/">Learn Git Branching </a></p>
+<p>【非常值得尝试】Learn Git Branching 是一个交互式学习 Git 的网站。沙盒里你能执行相应的命令，还能看到每个命令的执行情况； 通过一系列刺激的关卡挑战，逐步深入的学习 Git 的强大功能，在这个过程中你可能还会发现一些有意思的事情。</p>
+</li>
+</ul>
+<h2 id="js库">JS库</h2>
+<ul>
+<li>
+<p><a href="https://github.com/jagenjo/litegraph.js">jagenjo/litegraph.js</a></p>
+<p>使用Javascript编写的图形节点引擎和编辑器。</p>
+</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.12.23-2019.12.27]]></title>
         <id>https://conceal.name/post/zhou-bao-20191223-20191227</id>
@@ -1007,85 +1077,6 @@ console.log(dashify('São Tomé and Príncipe'));
 <p>我的 rust 代码例子: <a href="https://github.com/x956606865/test-extract">https://github.com/x956606865/test-extract</a></p>
 <p>另一位大佬用python写的更牛逼的版本:  <a href="https://github.com/kingname/GeneralNewsExtractor">https://github.com/kingname/GeneralNewsExtractor</a></p>
 <p>Link:<a href="https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664">https://www.notion.so/aj0k3r/2127bd615e034209b818875d2fcec664</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[[译]Node v11 中定时器和微指令的新变化]]></title>
-        <id>https://conceal.name/post/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua</id>
-        <link href="https://conceal.name/post/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua">
-        </link>
-        <updated>2019-03-04T11:59:34.000Z</updated>
-        <summary type="html"><![CDATA[<p>本文是我之前关于  Node.js  事件循环的系列文章的简短跟进。在之前的系列文章中，我详细讨论了Timers，setImmediate，process.nextTick，Promises等等。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>本文是我之前关于  Node.js  事件循环的系列文章的简短跟进。在之前的系列文章中，我详细讨论了Timers，setImmediate，process.nextTick，Promises等等。</p>
-<!-- more -->
-<p>但是，自 Node.js  v11.0.0 起，对 setTimeout，setImmediate，process.nextTick 和Promises 的行为进行了一些重大更改。在本文中，我将讨论这些新的更改以及 Node &lt; v11.0.0 和 Node ≥ v11.0.0 之间的功能的一些比较。如果您错过了我之前关于 Node.js事件循环的任何文章，我建议您从以下链接中阅读它们然后返回此处以查看 Node v11.0.0中引入的新更改。</p>
-<ul>
-<li><a href="https://jsblog.insiderattack.net/event-loop-and-the-big-picture-nodejs-event-loop-part-1-1cb67a182810">Reactor Pattern and the Big Picture</a></li>
-<li><a href="https://jsblog.insiderattack.net/timers-immediates-and-process-nexttick-nodejs-event-loop-part-2-2c53fd511bb3">Timers and Immediates</a></li>
-<li><a href="https://jsblog.insiderattack.net/promises-next-ticks-and-immediates-nodejs-event-loop-part-3-9226cbe7a6aa">Promises, Next-Ticks and Immediates</a></li>
-<li><a href="https://jsblog.insiderattack.net/handling-io-nodejs-event-loop-part-4-418062f917d1">Handling I/O</a></li>
-<li><a href="https://jsblog.insiderattack.net/event-loop-best-practices-nodejs-event-loop-part-5-e29b2b50bfe2">Event Loop Best Practices</a></li>
-</ul>
-<h2 id="详解">详解</h2>
-<p>如果您分别在浏览器和 Node.js 中单独运行以下代码，会得到完全相反的结果。</p>
-<pre><code>setTimeout(() =&gt; console.log('timeout1'));
-setTimeout(() =&gt; {
-    console.log('timeout2')
-    Promise.resolve().then(() =&gt; console.log('promise resolve'))
-});
-setTimeout(() =&gt; console.log('timeout3'));
-setTimeout(() =&gt; console.log('timeout4'));
-</code></pre>
-<p>在浏览器中，会输出如下结果:</p>
-<pre><code>timeout1
-timeout2
-promise resolve
-timeout3
-timeout4
-</code></pre>
-<p>然而在低于v11.0.0版本的 Node.js 中，会输出以下结果:</p>
-<pre><code>timeout1
-timeout2
-timeout3
-timeout4
-promise resolve
-</code></pre>
-<p>在 Node.js 的实现中，当程序横跨 C ++  /  JavaScript 边界时，会在事件循环( event loop )的每个阶段之间执行 process.nextTick 回调和微任务 (  microtasks, 例如，promise回调 )。因此，在执行 Promise 的回调之前，所有定时器的回调都会在事件循环( event loop )的定时器阶段执行，从而产生上述输出。</p>
-<p>然而，浏览器和Node之间的这种矛盾的输出已经被讨论了很长一段时间了，并且一个特性（或bug修复）已经登陆 Node.js v11.0.0 用以跟踪浏览器行为。使用此功能，Node.js v11.0.0或更高版本将输出与浏览器输出匹配的以下内容：</p>
-<pre><code>timeout1
-timeout2
-promise resolve
-timeout3
-timeout4
-</code></pre>
-<p>请参阅以下 Node v10.15.1 和 Node v11.10.0 之间的比较：</p>
-<p><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ca22d429-50db-40fd-a389-edf611079489/untitled?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45IHKPGFWL%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120545Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEAAaCXVzLXdlc3QtMiJIMEYCIQD7cIh6Ogu3uSmm1LmURDDLOhnyVAok8Yf9cpXGHZoVQgIhALx22mjTlUoVvLPE9xg1gxlR7BpaCyYWaraURiPylDAKKuMDCOn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjc0NTY3MTQ5MzcwIgw2iGxPzJTAHFEAkHoqtwNX1BlUpi6okLhxieOgHtnAkg5hHKP3NwUssG9WM7PvyF1zS3%2F9qXiwRWwCpw9%2Bn3bsiIAzwpHZXGjsnGaQ2gwDzF83bk8gA6TDJ0nMY9FOftyxzW7E5nSxyFZYALR1hEEnJOHxsngssr%2B9ahKsSGKzGRVglYVlLQg1GIGIaWUNKZMjyCltOZeAIxV%2F%2FunsgiZmrxs1YqFVJq1fzt1XxMZbxqVo72yA1sC6%2Br2al%2FO7BnMHdHwlYSb4WQ4OsWeQ7fzNG1tnVl0540Idp2hzBhMv5Q84A8i0oNOKMYorj7Ysfv7k2Sg6Cw7bSPTBo%2Fmhfd7Vb%2FMfO%2BY6%2Bv%2FkH5s5GN2YrmpNBEh9%2BhHpEUXpQV1dpbhB%2FALWKPv9sV0%2BllFPZu8VKCTovbrwmNXFaHz5UwOtqSgSwEtFIOAhL0CHJNkaAEQ2xZoWVQklvfB3ni3JcBl8VDnsfanulYgmCUDrK%2FgainU4UY9VveReiu%2BBeNMPe3OobJGCCtCy9gy%2BjURt3A4MKNusa7xA3MotuSflIPY827yual90Ud7Cqo6u3O%2FlcuVNh6XnQCXNtf2PTRBq3HMpz%2F310culMKaPhu0FOrMBUzZpowHsAMtb9HgyA4UhHmsH9W%2BSjl%2BkIHHh%2Bp9cmGNXWXvlWz%2FOVIfkPAOvbhCs8lHUZhqvsFG9O4xN%2Bg23MVtrh12dJSjLswXbD39I%2F5Hlt9g6aZH8vmjAB2hP5F0bJaZTz%2F13sxIQrYLQS9u8mQepB3HRHb3VO9mohLDqzNKrncOAkCb7MJJRBzoYs1qgtRHBAnEk%2Fx32iwv12%2FC%2FBb%2BWrS7sSRz%2BeD14gpGODEjAKEI%3D&amp;X-Amz-Signature=41a70cb147d978f47017168b826ca73eccdfd8ef5153e4ab770d277d0c249b99&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22untitled%22" alt="" loading="lazy"><br>
-Different outputs in Node v10 and v11</p>
-<p>此更改不仅会影响到 setTimeout，还会影响 setImmediate。让我们尝试在 Node v10 和Node v11 中运行以下代码，看看输出是怎样的:</p>
-<pre><code>setImmediate(() =&gt; console.log('immediate1'));
-setImmediate(() =&gt; {
-    console.log('immediate2')
-    Promise.resolve().then(() =&gt; console.log('promise resolve'))
-});
-setImmediate(() =&gt; console.log('immediate3'));
-setImmediate(() =&gt; console.log('immediate4'));
-</code></pre>
-<p>Node.js v10 和 Node.js v11 明确地给出了两个不同的输出：</p>
-<figure data-type="image" tabindex="1"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/14a4d2e1-5e40-44ce-a5bc-52dd5ffbc8ab/untitled?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45ONFOS75K%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120533Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFXVh8HY55tza4cXP7A8AAAasLjdsPmkOAzSmAHeqJn1AiBf14AV8z6WeXTfPCQJLxJpFo%2BbQPHM0jDTRECHkWDLEyrjAwjo%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDI3NDU2NzE0OTM3MCIMW0PS2PjOwTS1YDQTKrcDyerVOXeZZ8oqjMXH3z%2FAIWjy6Ebv2mBzdPxqAv0DNrNbhJ9GBBndQ8NHn3oO9U9UgJzId4CTKoWagYRY%2FVCBLFH56%2BtOb4RVB80fJG%2FwrM0S6riX%2BZPIE0LzzPGBbi%2BUhjMOqwTycgw8gNlIYYJOiVaKIOytLKqk18YThdwr48arh9rKyZ4vJYAWz7fXRSZptkDPtsRnqWDH2Ns7Jlen%2Bn9ske3bkrY8WOl7usxRO8PCwrcWW%2By2qf8zFekZBMRNCSUNdtMqpBDq4pXP73X0hQbhNg%2BZIAAGXipTPIUZAUYIzK%2FKtIlu0HQ3HnFLE9ebJsHPXbTuV89NTcUi4KHGnY1AzfVmHAfHP%2FS4NtCZkCu9ewO6rGw3OJAP9esozyr9mu6nnHDpGw9r7UMW30I3sMkkgCFZl1oM92o36h4IPJVGDAoAZ8Z6lV%2Fu8T17zpvFGNR2x6Okc5RIZqmz2Grk8Bcpo4cmxj%2FsT9%2Br1DANzBtvZR8dJqjTs2woCbxf5dlPutYMaVCB1WWFD7X4%2Bn9idHq033d9dzUPt4S7p4uX3%2F9uihQATZBdgFOo65MFp%2F3cXMO0G07GHzD69oXtBTq1AeY5bcKG%2Bz3Mg54SBAvFiQ1n%2F3pu220PXsTIaqXvFBKSXUm%2BYBvkYzSGygE0gZu92ZVFhLCVJalSzp%2BwcucqDbLbfrMkeCn%2FQIDHVTpoI6CR%2Fi0ZIqe4e8BgKZ5tOFKV%2B%2F71i6aJ18F0%2FzLR0pXbc0GaeW6E6kJnGxrZwbfWviooJJNXacln6iuvIS%2BUrtoj%2BMsb98E2tSM9UqWpqLcr5sMmc4kkxmyxRLZ3zM51TpHklHFHOho%3D&amp;X-Amz-Signature=ddab24370e2a688e968a080477ad79f98be8f97abd0a23451c6515f4dc54a41a&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22untitled%22" alt="" loading="lazy"></figure>
-<p>如果您替换 Promise.resolve（）然后使用 process.nextTick，则此结果完全相同，因为微任务是在运行 process.nextTick 回调之后才会运行。让我们尝试运行以下代码段：</p>
-<pre><code>setImmediate(() =&gt; console.log('timeout1'));
-setImmediate(() =&gt; {
-    console.log('timeout2')
-    process.nextTick(() =&gt; console.log('next tick'))
-});
-setImmediate(() =&gt; console.log('timeout3'));
-setImmediate(() =&gt; console.log('timeout4'));
-</code></pre>
-<p>上述脚本在 Node.js v10 和 Node.js  v11 中的输出如下：</p>
-<figure data-type="image" tabindex="2"><img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b84ac947-af7a-446b-a959-23db4f52ab10/untitled?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=ASIAT73L2G45CXUAYZWA%2F20191012%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20191012T120446Z&amp;X-Amz-Expires=86400&amp;X-Amz-Security-Token=AgoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCJ7oIbNAtX2v369L2krOhV%2BqbpEY1X9ch3xdsIexPKZwIhAOFAyPEvPdUcrIj61GZOQuNHz6NY5HjrAaXFBq4aED9HKuMDCOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjc0NTY3MTQ5MzcwIgxf5QY9SHTwFz9aY5kqtwPgaV%2Fiw2STipPnG7MzSsSVBeimQQ4o2L%2FUC0pVw9mohITvRqsYbMhMGm%2FQ9qKqyYvmKUDolG4A8xxEZOynbBoSKiicwU6DYpEHqjqCTpkjqSCBSxaG9uyLXJo2YQzbn3oQ0F3aLgYKh8Xmj6c75Rzkk3fAufTkBQcs%2Fe0LJOr9ptInNHMzstRHYlNTUOnF2Spj%2FCXl8%2B0PLUuVhfPrYTi424azWQNL2enqzbb1fpRb9dAxr6z%2FRDjLlmVfNz4vo9ag767%2FRARYSRnhAmKAT6toJafrJsa%2B6F7DoTWf7EIqrk4DrBYinM9XRz96WCX%2FS89QtxQc2yhXua%2BIUZbrajS0ag%2FzJzBRwzmXriSPtp5pvEw9cJwtrdKhiTtnmOqD1iAaTaXDHs6AfP693zHo%2BPrHdZhWAPhKjZnhncUYFpzPsxJPNE69x14J0zBQcJsgALPUhHOKPv4ArOPzzKlwlABkqS%2FPRmGHTWuDxi4Z6NSmsqGfK1ZdmUnFZ7oMmYcZaXgHwNrm6JzO%2FgNFohj27wpTou8G95CzmJqO7n7QiDij7vCMHqHTRR%2BRkuqZ%2Bv2gm1dAiywtXMHNMPLvhe0FOrMB%2BphHhVxJ5lnhblEY1ZVuS17FV1Bomyr5JrPJzESKN%2BEyHmo8VoGSqTNbIvt1h5kcuhC%2FVdxqGYERwOY%2FFrTucQWGvj5cdhgBXuPJokqlRyPTRsiPpQ4oOWuv93HeV1BKFQD05GshSeCVXO87Rjd4gqtmD1ddP2dAJStAio3KxIbB8gnv2DCXgspkncSywBjP78eV2mykGyxvkO5jfp4NilDMLZFd%2FgxRRqn1ecgQC3gFEe4%3D&amp;X-Amz-Signature=7e792e689db5fa9456902102730ca49895426a6a48fd836a492964aace21a178&amp;X-Amz-SignedHeaders=host&amp;response-content-disposition=filename%20%3D%22untitled%22" alt="" loading="lazy"></figure>
-<h2 id="这其中发生了什么">这其中发生了什么？</h2>
-<p>随着 Node v11 的新改动，nextTick 回调 和 微任务( microtasks )将在每个单独的 setTimeout 和setImmediate 回调之间运行，即使定时器队列或 immediates 队列不为空。就setTimeout 和 Promise 回调而言，Node.js v11中的新改动与浏览器行为相匹配，从而提高了 Node.js 中浏览器JavaScript的可重用性。但是，这一重大变化可能会破坏明确依赖旧行为的现有的 Node.js 应用程序。因此，如果要升级到Node v11或更高版本（最好是下一个LTS v12），您可能需要谨慎考虑。</p>
 ]]></content>
     </entry>
 </feed>
