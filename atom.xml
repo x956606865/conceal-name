@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://conceal.name</id>
     <title>常名斋</title>
-    <updated>2020-01-10T03:38:30.639Z</updated>
+    <updated>2020-06-05T03:30:38.435Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://conceal.name"/>
     <link rel="self" href="https://conceal.name/atom.xml"/>
@@ -11,9 +11,69 @@
     <icon>https://conceal.name/favicon.ico</icon>
     <rights>All rights reserved 2020, 常名斋</rights>
     <entry>
+        <title type="html"><![CDATA[周报 2020.06.01-2020.06.05]]></title>
+        <id>https://conceal.name/post/zhou-bao-20200601-20200605/</id>
+        <link href="https://conceal.name/post/zhou-bao-20200601-20200605/">
+        </link>
+        <updated>2020-06-05T03:25:41.000Z</updated>
+        <summary type="html"><![CDATA[<p><em>封面图作者: vremyatsay</em></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><em>封面图作者: vremyatsay</em></p>
+<!-- more -->
+<h2 id="文章">文章</h2>
+<ul>
+<li>
+<p><a href="https://luyuhuang.tech/2020/04/28/gzip-and-deflate.html">Gzip 格式和 DEFLATE 压缩算法</a></p>
+<p>介绍了Gzip用到的相关算法，包括基础的霍夫曼压缩算法，可以了解</p>
+</li>
+<li>
+<p><a href="https://www.zhangxinxu.com/wordpress/2019/11/css-grid-minmax/">CSS minmax()函数简介</a></p>
+<p>不说了，grid布局用起来</p>
+</li>
+<li>
+<p><a href="https://www.zhangxinxu.com/wordpress/2020/01/css-any-hover-media/">CSS any-hover any-pointer media查询与交互体验提升</a></p>
+<p>挺有用的css知识点</p>
+</li>
+<li>
+<p><a href="http://svgtrick.com/tricks/6965573cfd669a224ac3d746964f8379">SVG 滤镜原来还可以这么用</a></p>
+<p>介绍了利用SVG对一张图做部分蒙版模糊效果的方法，很厉害</p>
+</li>
+<li>
+<p><a href="https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api">Best Practices for Designing a Pragmatic RESTful API</a></p>
+<p>介绍了多种RESTFul API设计的最佳实践</p>
+</li>
+</ul>
+<h2 id="资源">资源</h2>
+<ul>
+<li>
+<p><a href="https://github.com/luoxue-victor/webpack-box">luoxue-victor/webpack-box</a></p>
+<p>整理收集webpack最佳实践的仓库</p>
+</li>
+</ul>
+<h2 id="工具">工具</h2>
+<ul>
+<li>
+<p><a href="https://github.com/zuluoaaa/makeJs">zuluoaaa/makeJs</a></p>
+<p>用JS写的JS解释器，代码清晰，可以作为学习编译原理的参考</p>
+</li>
+</ul>
+<h2 id="js库">JS库</h2>
+<ul>
+<li>
+<p><a href="https://github.com/atlassian/react-beautiful-dnd">atlassian/react-beautiful-dnd</a></p>
+<p>atlassian家开源的高性能拖拽列表库。emmm，没错，就是jira用的那个！</p>
+</li>
+<li>
+<p><a href="https://github.com/fabricjs/fabric.js">fabricjs/fabric.js</a></p>
+<p>Fabric 是一个强大而简单的 JS Canvas 库，我们能通过使用它实现在 Canvas 上创建、填充图形、给图形填充渐变颜色。 组合图形（包括组合图形、图形文字、图片等）等一系列功能。简单来说我们可以通过使用 Fabric 从而以较为简单的方式实现较为复杂的 Canvas 功能</p>
+</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[周报 2019.01.06-2020.01.10]]></title>
-        <id>https://conceal.name/post/zhou-bao-20190106-20200110</id>
-        <link href="https://conceal.name/post/zhou-bao-20190106-20200110">
+        <id>https://conceal.name/post/zhou-bao-20190106-20200110/</id>
+        <link href="https://conceal.name/post/zhou-bao-20190106-20200110/">
         </link>
         <updated>2020-01-10T03:33:26.000Z</updated>
         <summary type="html"><![CDATA[<p><em>封面图作者:耀_unripe</em></p>
@@ -75,8 +135,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.12.30-2020.01.03]]></title>
-        <id>https://conceal.name/post/zhou-bao-20191230-20200103</id>
-        <link href="https://conceal.name/post/zhou-bao-20191230-20200103">
+        <id>https://conceal.name/post/zhou-bao-20191230-20200103/</id>
+        <link href="https://conceal.name/post/zhou-bao-20191230-20200103/">
         </link>
         <updated>2020-01-03T03:21:54.000Z</updated>
         <summary type="html"><![CDATA[<p><em>封面图作者: SiyuMU</em></p>
@@ -145,8 +205,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.12.23-2019.12.27]]></title>
-        <id>https://conceal.name/post/zhou-bao-20191223-20191227</id>
-        <link href="https://conceal.name/post/zhou-bao-20191223-20191227">
+        <id>https://conceal.name/post/zhou-bao-20191223-20191227/</id>
+        <link href="https://conceal.name/post/zhou-bao-20191223-20191227/">
         </link>
         <updated>2019-12-27T03:31:01.000Z</updated>
         <summary type="html"><![CDATA[<p><em>封面图作者: zip</em></p>
@@ -211,8 +271,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.12.16-2019.12.20]]></title>
-        <id>https://conceal.name/post/zhou-bao-20191216-20191220</id>
-        <link href="https://conceal.name/post/zhou-bao-20191216-20191220">
+        <id>https://conceal.name/post/zhou-bao-20191216-20191220/</id>
+        <link href="https://conceal.name/post/zhou-bao-20191216-20191220/">
         </link>
         <updated>2019-12-20T06:56:05.000Z</updated>
         <summary type="html"><![CDATA[<p>封面图作者: Pnakoticat</p>
@@ -279,8 +339,8 @@ WebAssembly 也叫 Wasm，目前 1.0 版本的 Wasm 已经支持 Chrome、Firefo
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.12.09-2019.12.13]]></title>
-        <id>https://conceal.name/post/20191209-20191213</id>
-        <link href="https://conceal.name/post/20191209-20191213">
+        <id>https://conceal.name/post/20191209-20191213/</id>
+        <link href="https://conceal.name/post/20191209-20191213/">
         </link>
         <updated>2019-12-13T10:00:37.000Z</updated>
         <summary type="html"><![CDATA[<p><em>封面图作者: SiyuMU</em></p>
@@ -366,8 +426,8 @@ WebAssembly 也叫 Wasm，目前 1.0 版本的 Wasm 已经支持 Chrome、Firefo
     </entry>
     <entry>
         <title type="html"><![CDATA[ 周报 2019.12.02-2019.12.06]]></title>
-        <id>https://conceal.name/post/zhou-bao-20191202-20191206</id>
-        <link href="https://conceal.name/post/zhou-bao-20191202-20191206">
+        <id>https://conceal.name/post/zhou-bao-20191202-20191206/</id>
+        <link href="https://conceal.name/post/zhou-bao-20191202-20191206/">
         </link>
         <updated>2019-12-06T03:29:14.000Z</updated>
         <summary type="html"><![CDATA[<p><em>(封面图作者: 画师JW)</em></p>
@@ -480,8 +540,8 @@ console.log(boxen('unicorn', {padding: 1, margin: 1, borderStyle: 'double'}));
     </entry>
     <entry>
         <title type="html"><![CDATA[小工具安利之<UTool>]]></title>
-        <id>https://conceal.name/post/xiao-gong-ju-an-li-zhi-lessutoolgreater</id>
-        <link href="https://conceal.name/post/xiao-gong-ju-an-li-zhi-lessutoolgreater">
+        <id>https://conceal.name/post/xiao-gong-ju-an-li-zhi-lessutoolgreater/</id>
+        <link href="https://conceal.name/post/xiao-gong-ju-an-li-zhi-lessutoolgreater/">
         </link>
         <updated>2019-12-05T10:17:26.000Z</updated>
         <summary type="html"><![CDATA[<p><em>封面图作者:フライ</em></p>
@@ -553,8 +613,8 @@ console.log(boxen('unicorn', {padding: 1, margin: 1, borderStyle: 'double'}));
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.11.25-2019.11.29]]></title>
-        <id>https://conceal.name/post/zhou-bao-20191125-20191129</id>
-        <link href="https://conceal.name/post/zhou-bao-20191125-20191129">
+        <id>https://conceal.name/post/zhou-bao-20191125-20191129/</id>
+        <link href="https://conceal.name/post/zhou-bao-20191125-20191129/">
         </link>
         <updated>2019-11-29T03:54:36.000Z</updated>
         <summary type="html"><![CDATA[<p>(封面图作者: SiyuMU)</p>
@@ -712,8 +772,8 @@ mkdirp('/tmp/foo/bar/baz', function (err) {
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.11.18-2019.11.22]]></title>
-        <id>https://conceal.name/post/zhou-bao-20191118-20191122</id>
-        <link href="https://conceal.name/post/zhou-bao-20191118-20191122">
+        <id>https://conceal.name/post/zhou-bao-20191118-20191122/</id>
+        <link href="https://conceal.name/post/zhou-bao-20191118-20191122/">
         </link>
         <updated>2019-11-22T03:30:14.000Z</updated>
         <summary type="html"><![CDATA[<p><em>(封面图作者: nys)</em></p>
@@ -852,202 +912,6 @@ require('yargs')
 <li>
 <p>fiora</p>
 <figure data-type="image" tabindex="3"><img src="https://hellogithub.cn-bj.ufileos.com/hellogithub/43/img/fiora.png" alt="" loading="lazy"></figure>
-</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[周报 2019.11.11-2019.11.15]]></title>
-        <id>https://conceal.name/post/zhou-bao-20191111-20191115</id>
-        <link href="https://conceal.name/post/zhou-bao-20191111-20191115">
-        </link>
-        <updated>2019-11-15T02:48:04.000Z</updated>
-        <summary type="html"><![CDATA[<p><em>(封面图作者: 香川悠作)</em></p>
-]]></summary>
-        <content type="html"><![CDATA[<p><em>(封面图作者: 香川悠作)</em></p>
-<!-- more -->
-<h2 id="文章">文章</h2>
-<ul>
-<li>
-<p><a href="https://vasanthk.gitbooks.io/react-bits/">React Bits</a></p>
-<p>关于JSX相关小技巧的集合</p>
-</li>
-<li>
-<p><a href="https://zellwk.com/blog/converting-callbacks-to-promises/">converting-callbacks-to-promises</a></p>
-<p>将回调函数转变为promise的各种方案（英文）</p>
-</li>
-<li>
-<p><a href="https://itnext.io/how-json-stringify-killed-my-express-server-d8d0565a1a61">how-json-stringify-killed-my-express-server</a></p>
-<p>JSON.stringify为什么在服务端会大量占用CPU资源（英文）</p>
-</li>
-<li>
-<p><a href="https://www.conventionalcommits.org/zh-cn/v1.0.0-beta.4/">约定式提交</a></p>
-<p>详细介绍了commit message的通用约定规范，其对应的目的，带来的好处等等</p>
-</li>
-<li>
-<p><a href="https://www.duyaoss.com/archives/3/">浅谈部分机场的使用感受</a></p>
-<p>由于自建SSR容易被BAN，速度慢等等问题，机场（SSR as Service） 成了另一种<strong>个人用</strong>梯子的一个方案，这篇文章讲了目前的一些知名大型机场的一些优缺点以及费用等等</p>
-</li>
-<li>
-<p><a href="https://easyai.tech/blog/59pdf-nlp-all-in-one/">「59页PDF」自然语言处理 NLP 基本概念大全（免费下载</a></p>
-<p>如题</p>
-</li>
-<li>
-<p><a href="https://juejin.im/post/5dbf749df265da4d560910b8">精读《React Conf 2019 - Day1》</a></p>
-<p>React conf大会的内容总结，未来的发展方向，新的写法，新的特性等等，值得一看</p>
-</li>
-<li>
-<p><a href="https://juejin.im/post/5d5ccdd75188255625591357">axios如何利用promise无痛刷新token(一)</a></p>
-<p>在用户无感知情况下刷新token过期时间，替换token是做token状态管理的一大重点，本文主要讲了以前端判断为主的一种方案以及以后端判断为主的另一种方案，值得了解。PS: 以及后续<a href="https://juejin.im/post/5dcac7686fb9a04a9e37b595">axios如何利用promise无痛刷新token(二)</a></p>
-</li>
-<li>
-<p><a href="https://juejin.im/post/5dc4d823f265da4d4c202d3b">V8 是怎么跑起来的 —— V8 的 JavaScript 执行管道</a></p>
-<p>对V8部分机制的介绍，文章有一点点小长，可以单纯的作为扩展知识面的一个了解。</p>
-</li>
-<li>
-<p><a href="https://zhuanlan.zhihu.com/p/87940654">《面向传统，Serverless 进化之路》分享文字版</a></p>
-<p>标标准准的基于函数云的微服务架构实践，全面函数化的微服务，可以参考思路。（PS: 没有参加今年的 JS Conf好可惜）</p>
-</li>
-<li>
-<p><a href="https://juejin.im/post/5db4253451882556a035ae5d?utm_source=tuicool&amp;utm_medium=referral">带你手写微前端框架</a></p>
-<p>微前端的代码实现方案思路，可以参考。PS：这是微前端，不是微服务。</p>
-</li>
-<li>
-<p><a href="https://fangpenlin.com/posts/2019/10/07/elliptic-curve-cryptography-explained/">椭圆曲线加密法(英文)</a></p>
-<p>基于数学的椭圆曲线加密技术，很厉害，但是没看懂.....</p>
-</li>
-</ul>
-<h2 id="工具">工具</h2>
-<ul>
-<li>
-<p><a href="https://github.com/b3log/solo">b3log/solo</a></p>
-<p>一款小而美的博客系统，专为程序员设计，包含了一整套的成型的个人博客搭建方案和后台系统。(PS: 同时推荐个人感觉更好用的零成本的博客搭建系统 <a href="https://gridea.dev/">Gridea</a></p>
-<p>示例图见附录2.</p>
-</li>
-<li>
-<p><a href="https://github.com/mcollina/autocannon">mcollina/autocannon</a></p>
-<p>知名的压力测试工具</p>
-<p>示例图见附录2.</p>
-</li>
-<li>
-<p><a href="https://crontab.guru/">crontab</a></p>
-<p>在线编辑cron表达式的工具</p>
-</li>
-<li>
-<p><a href="https://github.com/n8n-io/n8n">n8n-io/n8n</a></p>
-<p>开源的个人自动化workflow工具，如果你用过zapire或者IFTTT，那这个可能是个不错的替代品</p>
-<p>示例图见附录2.</p>
-</li>
-<li>
-<p><a href="https://github.com/lra/mackup">lra/mackup</a></p>
-<p>与Dropbox等网盘结合的系统配置备份工具，支持超过200多个常用的命令行APP的配置备份与意见还原。同时可以轻松的自定义自己的备份app，让换开发机或者一键导入环境变得更简单</p>
-</li>
-<li>
-<p><a href="https://www.yinsiduanxin.com/dl/1.html">隱私小號</a></p>
-<p>在线网页工具，提供大量可供收发临时短信的手机号，可以用于短信功能的实机测试</p>
-</li>
-<li>
-<p><a href="https://github.com/imgproxy/imgproxy">imgproxy/imgproxy</a></p>
-<p>Go语言写的一个图片代理服务器，支持docker部署，可以代理服务，预处理图片，包括裁剪、压缩、缩放、简单特效等等实用功能，支持图片存放在本地、S3以及google drive。<strong>值得关注</strong></p>
-</li>
-<li>
-<p><a href="https://screendump.techulus.com/">screendump</a></p>
-<p>一个在线预览目标Url在不同尺寸下显示效果的网站，虽然不能像浏览器开发者工具一样还可以操作，但是好处是方便，可以一次看到所有常用尺寸下的效果，对静态站的效果很不错。</p>
-</li>
-</ul>
-<h2 id="js-库">JS 库</h2>
-<ul>
-<li>
-<p><a href="https://github.com/matthewmueller/x-ray">matthewmueller/x-ray</a></p>
-<p>从html中提取元素转换为json输出的类库</p>
-<p>示例代码见附录1.</p>
-</li>
-<li>
-<p><a href="https://github.com/ai/nanoid/">ai/nanoid</a></p>
-<p>非常简单轻量的UUID生成器类库，基于uuid v4规范，适用于简单的环境</p>
-</li>
-<li>
-<p><a href="https://github.com/jonschlinkert/dashify">jonschlinkert/dashify</a></p>
-<p>功能简单的使用小工具库，就是把大小驼峰字符串转换为中划线分割的字符串，简单，但是有时候很实用。</p>
-<p>示例代码见附录1.</p>
-</li>
-<li>
-<p><a href="https://github.com/react-hook-form/react-hook-form/blob/master/docs/README.zh-CN.md">react-hook-form/react-hook-form</a></p>
-<p>使用react-hook实现的form组件，对代码侵入性非常低，而且基于hook的写法也非常简洁，支持RN和Web，有个在线工具可以在线拖拽生成对应代码直接使用，在github上的star也非常高，<strong>十分值得关注</strong>。</p>
-</li>
-</ul>
-<h2 id="一句话新闻">一句话新闻</h2>
-<ul>
-<li>Typescript 3.7版本正式发布，支持可选运算符、nullish 合并、原生的断言 assert 方法等等期待已久的新特性，值得关注。</li>
-<li>10月25日，谷歌发布了一种新的搜索算法 BERT，已经用于生产环境。这种算法最大的特点，就是考虑了搜索词的语序。以前的算法只考虑每个词本身，搜索hello world与搜索world hello，结果是一样的。<a href="https://blog.google/products/search/search-language-understanding-bert/">点击查看</a></li>
-<li>Github官方终于推出了手机版的github，ios版已经可以下载试玩了，安卓版似乎是审核问题，还需要稍等.<a href="https://github.com/mobile">传送门</a></li>
-</ul>
-<h2 id="附录1-部分代码演示">附录1 部分代码演示</h2>
-<ul>
-<li>
-<p>matthewmueller/x-ray</p>
-<pre><code class="language-javascript">var Xray = require('x-ray')
-var x = Xray()
-
-x('https://blog.ycombinator.com/', '.post', [
-  {
-    title: 'h1 a',
-    link: '.article-title@href'
-  }
-])
-  .paginate('.nav-previous a@href')
-  .limit(3)
-  .write('results.json')
-</code></pre>
-</li>
-<li>
-<p>jonschlinkert/dashify</p>
-<pre><code class="language-javascript">var dashify = require('dashify');
-
-console.log(dashify('fooBar'));
-//=&gt; 'foo-bar'
-
-console.log(dashify('fooBarBaz'));
-//=&gt; 'foo-bar-baz'
-
-console.log(dashify('foo bar'));
-//=&gt; 'foo-bar'
-
-console.log(dashify('foo barBaz'));
-//=&gt; 'foo-bar-baz'
-
-console.log(dashify('foo barBaz quux'));
-//=&gt; 'foo-bar-baz-quux'
-
-console.log(dashify('São Tomé and Príncipe'));
-//=&gt; 'são-tomé-and-príncipe'
-</code></pre>
-</li>
-</ul>
-<h2 id="附录2-部分截图演示">附录2 部分截图演示</h2>
-<ul>
-<li>
-<p>solo</p>
-<ul>
-<li>
-<figure data-type="image" tabindex="1"><img src="https://user-images.githubusercontent.com/970828/56886176-f210a700-6aa0-11e9-894f-75eda5cf3317.png" alt="" loading="lazy"></figure>
-</li>
-<li>
-<figure data-type="image" tabindex="2"><img src="https://user-images.githubusercontent.com/970828/56886177-f2a93d80-6aa0-11e9-8a87-14731bdf59e7.png" alt="" loading="lazy"></figure>
-</li>
-</ul>
-</li>
-<li>
-<p>mcollina/autocannon</p>
-<ul>
-<li><img src="https://raw.githubusercontent.com/mcollina/autocannon/master/demo.gif" alt="" loading="lazy"></li>
-</ul>
-</li>
-<li>
-<p>n8n-io/n8n</p>
-<ul>
-<li><img src="https://raw.githubusercontent.com/n8n-io/n8n/master/docs/images/n8n-screenshot.png" alt="" loading="lazy"></li>
-</ul>
 </li>
 </ul>
 ]]></content>
