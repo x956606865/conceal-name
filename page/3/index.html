@@ -26,7 +26,7 @@
 
   </head>
   <body>
-    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+    <div class="main px-4 flex flex-col lg:flex-row">
       <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
   <div class="lg:sticky top-0">
     <div class="sidebar-content">
@@ -40,18 +40,34 @@
       
         <div class="animated fadeInLeft" style="animation-delay: 0.4s">
           <p class="my-4 text-gray-600 font-light hidden lg:block">
-            文章目录
+            万物有名，常名斋，藏名斋。
           </p>
-          <div class="toc-container hidden lg:block">
-            <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
-<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
-</ul>
-</li>
-</ul>
-
+          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
+            
+              
+                <a href="https://github.com/x956606865" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-github-line"></i>
+                </a>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
           </div>
         </div>
       
@@ -95,60 +111,43 @@
 </div>
 <div class="mask" onclick="closeMenu()">
 </div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">关于</h1>
-        <div class="text-sm text-gray-700 lg:my-8">
-          2019-01-25 / 1 min read
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
+        <h2 class="latest-article text-lg text-gray-700 mb-8">
+          <i class="remixicon-article-line"></i>
+          最新文章
+        </h2>
+        
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
+    
+      <a href="https://conceal.name/post/ecma-ti-an-decorator-yan-jiu/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://conceal.name/post-images/ecma-ti-an-decorator-yan-jiu.png'">
         </div>
-        
-        <div class="post-content yue">
-          <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<p>这里是一个无名无实者的博客...</p>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<p>星河在上，波光在下.</p>
+      </a>
+    
+    <div class="content">
+      <a href="https://conceal.name/post/ecma-ti-an-decorator-yan-jiu/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">ECMA 提案-&#39;decorator&#39; 研究</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>//ps:根据大佬的解释，现在提案修改，不推荐使用legacy这种模式了，新版模式待研究后再更新Orz</p>
 
-        </div>
+      </div>
+      <div class="text-gray-400 text-sm font-light">2018-11-04 / 3 min read</div>
+    </div>
+  </section>
 
-        
-
-
-        <div class="flex justify-between py-8">
-          
-
+        <div class="read-more">
           
         </div>
+        <div class="index-page">
+          <div class="pagination-container animated fadeIn">
+  
+    <a href="https://conceal.name/page/2/" class="page-btn"><i class="remixicon-arrow-left-line"></i> 上一页</a>
+  
+  
+</div>
 
-        
-          
-            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container"></div>
-
-<script>
-
-  var gitalk = new Gitalk({
-    clientID: '76291ba0cf1990c7ea9c',
-    clientSecret: '6470aeab5dae3db34487b64b739450bdf3c53036',
-    repo: 'conceal-name',
-    owner: 'x956606865',
-    admin: ['x956606865'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-
-  gitalk.render('gitalk-container')
-
-</script>
-
-          
-
-          
-        
-
+        </div>
       </div>
     </div>
 
