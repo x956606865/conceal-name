@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://conceal.name</id>
     <title>常名斋</title>
-    <updated>2020-06-19T03:39:58.253Z</updated>
+    <updated>2020-07-19T06:05:14.420Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://conceal.name"/>
     <link rel="self" href="https://conceal.name/atom.xml"/>
@@ -10,6 +10,62 @@
     <logo>https://conceal.name/images/avatar.png</logo>
     <icon>https://conceal.name/favicon.ico</icon>
     <rights>All rights reserved 2020, 常名斋</rights>
+    <entry>
+        <title type="html"><![CDATA[周报 2020.07.15-2020.07.19]]></title>
+        <id>https://conceal.name/post/zhou-bao-20200715-20200719/</id>
+        <link href="https://conceal.name/post/zhou-bao-20200715-20200719/">
+        </link>
+        <updated>2020-07-19T06:02:29.000Z</updated>
+        <summary type="html"><![CDATA[<p><em>封面图作者: momu。</em></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><em>封面图作者: momu。</em></p>
+<!-- more -->
+<h2 id="文章">文章</h2>
+<ul>
+<li>
+<p><a href="https://cjting.me/2020/07/01/douyu-crawler-and-font-anti-crawling/">斗鱼关注人数爬取 ── 字体反爬的攻与防</a></p>
+<p>神奇的反爬虫思路</p>
+</li>
+<li>
+<p><a href="https://hackernoon.com/please-dont-use-offset-and-limit-for-your-pagination-8ux3u4y">如Please Don't Use OFFSET and LIMIT For Your Pagination</a></p>
+<p>“请不要用offset和limit来做分页了”，这篇文章描述了这种方式做分页带来的性能问题</p>
+</li>
+<li>
+<p><a href="https://juejin.im/post/5f0b2450f265da230739a2ff">前端进阶算法：别再说你不懂topk问题了</a></p>
+<p>前端少数需要知道的一些算法</p>
+</li>
+<li>
+<p><a href="https://juejin.im/post/5f0f2d006fb9a07eb3292c13">你的浏览器，独一无二--解读浏览器指纹</a></p>
+<p>做浏览器指纹一直都是用户比较反对的事，但是确实很多时候都有想要唯一确认用户的终端的需求</p>
+</li>
+</ul>
+<h2 id="资源">资源</h2>
+<ul>
+<li>
+<p><a href="http://www.sheshbabu.com/posts/rust-for-javascript-developers-functions-and-control-flow/">Rust for JavaScript Developers</a></p>
+<p>写给JavaScript程序员看的Rust教程，将两者之前的概念进行对比讲解</p>
+</li>
+<li>
+<p><a href="https://course.elementsofai.com/">芬兰政府发布免费课程《人工智能简介》</a></p>
+<p>芬兰政府发布免费课程《人工智能简介》，向欧洲的普通公民介绍人工智能知识。内容涵盖了从AI的哲学含义到诸如贝叶斯概率之类的技术主题，大概需要六周的时间才能完成，每个部分需要5到10个小时。</p>
+</li>
+</ul>
+<h2 id="工具">工具</h2>
+<ul>
+<li>
+<p><a href="https://github.com/rafeca/prettyjson">rafeca/prettyjson</a></p>
+<p>命令行中调试接口的时候可能会用到，把返回的json处理成比较漂亮的样子</p>
+</li>
+</ul>
+<h2 id="js库">JS库</h2>
+<ul>
+<li>
+<p><a href="https://repl.it/">repl.it</a></p>
+<p>在线的repl运行工具，最近新增了github仓库导入功能，以后想要看某个github工具怎么样，不需要克隆到本地了，直接在线运行看效果就OK了</p>
+</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[周报 2020.06.15-2020.06.19]]></title>
         <id>https://conceal.name/post/zhou-bao-20200615-20200619/</id>
@@ -646,79 +702,6 @@ console.log(boxen('unicorn', {padding: 1, margin: 1, borderStyle: 'double'}));
 </code></pre>
 </li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[小工具安利之<UTool>]]></title>
-        <id>https://conceal.name/post/xiao-gong-ju-an-li-zhi-lessutoolgreater/</id>
-        <link href="https://conceal.name/post/xiao-gong-ju-an-li-zhi-lessutoolgreater/">
-        </link>
-        <updated>2019-12-05T10:17:26.000Z</updated>
-        <summary type="html"><![CDATA[<p><em>封面图作者:フライ</em></p>
-<h2 id="简介">简介</h2>
-<blockquote>
-<p>uTools是一个极简、插件化、跨平台的现代桌面软件。通过自由选配丰富的插件，打造你得心应手的工具集合。</p>
-<p>当你熟悉它后，能够为你节约大量时间，让你可以更加专注地改变世界。</p>
-</blockquote>
-]]></summary>
-        <content type="html"><![CDATA[<p><em>封面图作者:フライ</em></p>
-<h2 id="简介">简介</h2>
-<blockquote>
-<p>uTools是一个极简、插件化、跨平台的现代桌面软件。通过自由选配丰富的插件，打造你得心应手的工具集合。</p>
-<p>当你熟悉它后，能够为你节约大量时间，让你可以更加专注地改变世界。</p>
-</blockquote>
-<!-- more -->
-<p>总体来说uTools就是一个类似Alfred的产品，基础功能和Alfred基本一致，快速搜索文件、快速打开app、快速执行自定义命令等等，连快捷键都和Alfred很类似，</p>
-<h2 id="对比alfred">对比Alfred</h2>
-<ul>
-<li>优点:
-<ul>
-<li>免费</li>
-<li>面向插件</li>
-<li>对开发者友好</li>
-<li>插件基于JS，书写简单</li>
-</ul>
-</li>
-<li>缺点
-<ul>
-<li>因为基于JS，注定性能要逊色于Alfred</li>
-<li>输入体验不如Alfred</li>
-<li>社区还很新，不够成熟</li>
-</ul>
-</li>
-</ul>
-<h2 id="使用">使用</h2>
-<h3 id="唤出">唤出</h3>
-<p>默认快捷键 <code>option + space</code> 就可以唤出输入框</p>
-<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205173238.png" alt="" loading="lazy"></figure>
-<h3 id="快速打开app">快速打开APP</h3>
-<p>这一点其实和Alfred没什么区别，当你直接输入想要打开的app名字时，可以直接搜索到，并回车打开 (可以使用拼音)。</p>
-<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205173525.png" alt="" loading="lazy"></figure>
-<h3 id="安装插件">安装插件</h3>
-<p>唤出输入框后，直接点击右侧的原型图标就可以打开插件，安装很多功能增强的插件。</p>
-<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205173745.png" alt="" loading="lazy"></figure>
-<h2 id="部分插件介绍">部分插件介绍</h2>
-<h3 id="网页快开">网页快开</h3>
-<p>这个其实就是把输入框变得类似chrome地址栏，输入地址就直接打开浏览器打开对应的网址，输入内容，就调用搜索引擎。</p>
-<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205175130.png" alt="" loading="lazy"></figure>
-<p>当然，这个功能其实没啥，不过因为这个插件还可以自己设置一个关键字，设置输入这个关键字后，默认以隐身模式打开特定网址。因为工作中有时候会在一个项目管理工具里来回切换不同的账号，这个功能反而挺有用。</p>
-<h3 id="tempmail">tempmail</h3>
-<p>这个插件在软件测试的时候十分有用，直接唤起uTool，输入插件关键字 <code>tm</code> , 就可以快速获取一个临时邮箱，收发邮件</p>
-<figure data-type="image" tabindex="5"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205175641.png" alt="" loading="lazy"></figure>
-<h3 id="各类文档插件">各类文档插件</h3>
-<p>各类文档正在陆续增加中，估计以后会直接集成dash</p>
-<figure data-type="image" tabindex="6"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182013.png" alt="" loading="lazy"></figure>
-<h3 id="编码转换">编码转换</h3>
-<p>快速在输入框中进行各种编解码，比如日期格式化、uuid生成、md5等知名hash生成、进制转换等等.</p>
-<figure data-type="image" tabindex="7"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182114.png" alt="" loading="lazy"></figure>
-<h3 id="颜色助手">颜色助手</h3>
-<p>输入关键字后可以打开吸管直接全局取色，也可以读取到剪贴板中的图片，识别图片主色，或者输入色值，进行rgb、hex等等格式转换。</p>
-<figure data-type="image" tabindex="8"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182452.png" alt="" loading="lazy"></figure>
-<h3 id="等等">等等</h3>
-<p>其他还有不少不错的插件，比如快速修改host、todolist管理、剪贴板历史、翻译、图床等等，不过因为都有更好的原生app替代品，所以就不介绍了......</p>
-<h2 id="补充">补充</h2>
-<p>uTool还有一点我很喜欢，不知道Alfred有没有，之前用的时候没注意。uTool在打开的时候，会尝试读取你的剪贴板，如果你的剪贴板有文件，他就会搜索你的已安装插件里面支持图片处理的插件，然后问你是否要使用这个插件，把剪贴板文件作为输入。</p>
-<figure data-type="image" tabindex="9"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/20191205182534.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>
