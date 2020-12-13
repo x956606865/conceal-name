@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://conceal.name</id>
     <title>常名斋</title>
-    <updated>2020-12-13T13:42:07.871Z</updated>
+    <updated>2020-12-13T14:50:04.287Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://conceal.name"/>
     <link rel="self" href="https://conceal.name/atom.xml"/>
@@ -16,11 +16,7 @@
         <link href="https://conceal.name/post/zhou-bao-20200715-20200719/">
         </link>
         <updated>2020-07-19T06:02:29.000Z</updated>
-        <summary type="html"><![CDATA[<p><em>封面图作者: momu。</em></p>
-]]></summary>
-        <content type="html"><![CDATA[<p><em>封面图作者: momu。</em></p>
-<!-- more -->
-<h2 id="文章">文章</h2>
+        <content type="html"><![CDATA[<h2 id="文章">文章</h2>
 <ul>
 <li>
 <p><a href="https://cjting.me/2020/07/01/douyu-crawler-and-font-anti-crawling/">斗鱼关注人数爬取 ── 字体反爬的攻与防</a></p>
