@@ -12,6 +12,15 @@
 <link rel="stylesheet" href="https://conceal.name/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="周报 2020.06.08-2020.06.12 - 常名斋 - Atom Feed" href="https://conceal.name/atom.xml">
 
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100208259-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-100208259-1');
+  </script>
     
 
   <meta name="description" content="封面图作者: 黒井ススム
@@ -60,6 +69,8 @@ WSL Linux 子系统，真香！附完整实操
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
  
+  
+    <link rel="stylesheet" href="https://conceal.name/media/css/prism-github.css">
   
 
   
@@ -167,6 +178,8 @@ WSL Linux 子系统，真香！附完整实操
       
 
       
+        <div id="vlaine-comment"></div>
+      
 
       <footer class="py-12 text-center px-4 md:px-0" v-pre>
   至大无外，至小无内。
@@ -265,6 +278,11 @@ WSL Linux 子系统，真香！附完整实操
   
   <!-- Code Highlight -->
   
+    <script src="https://conceal.name/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
 
   <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
@@ -350,6 +368,23 @@ WSL Linux 子系统，真香！附完整实操
     //初始化
     initImg();
   </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: '0Bynv3317JdQzREKavwHXPcx-gzGzoHsz',
+    appKey: 'KyTcUc0qVFiSvszv0l5Gc3ln',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '来都来了，不妨评论一下',
+    visitor: true,
+    highlight: true,
+    recordIP: false,
+  })
+</script>
   
   
     
