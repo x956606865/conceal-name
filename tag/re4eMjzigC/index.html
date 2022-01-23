@@ -1,364 +1,232 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>常名斋</title>
-<meta name="description" content="万物有名，常名斋，藏名斋。" />
-<link rel="shortcut icon" href="https://conceal.name/favicon.ico?v=1642916758755">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-
+<link rel="shortcut icon" href="https://conceal.name/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://conceal.name/media/css/tailwind.css">
 <link rel="stylesheet" href="https://conceal.name/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="常名斋 - Atom Feed" href="https://conceal.name/atom.xml">
 
+    
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100208259-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta name="description" content="万物有名，常名斋，藏名斋。" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-  gtag('config', 'UA-100208259-1');
-</script>
-
-
-  </head>
-  <body>
-    <div id="app" class="main px-4 flex flex-col lg:flex-row">
-      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
-  <div class="lg:sticky top-0">
-    <div class="sidebar-content">
-      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
-        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
-        <a href="https://conceal.name">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://conceal.name/images/avatar.png?v=1642916758755" alt="">
-        </a>
-        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">常名斋</h1>
-      </div>
-      
-        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
-          <p class="my-4 text-gray-600 font-light hidden lg:block">
-            万物有名，常名斋，藏名斋。
-          </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-                <a href="https://github.com/x956606865" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-github-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-          </div>
-        </div>
-      
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
     </div>
   </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="https://x956606865.github.io/conceal-name/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
+    
+      <a href="https://x956606865.github.io/conceal-name//archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
+      </a>
+    
+      <a href="https://x956606865.github.io/conceal-name//tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
+      </a>
+    
+      <a href="https://x956606865.github.io/conceal-name//post/about/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
+    
+    <a href="https://conceal.name/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
 </div>
 
-<div class="menu-container">
-  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
-  <div>
-    
-      
-        <a href="https://x956606865.github.io/conceal-name/" class="menu" style="animation-delay: 0s">
-          首页
-        </a>
-      
-    
-      
-        <a href="https://x956606865.github.io/conceal-name//archives" class="menu" style="animation-delay: 0.2s">
-          归档
-        </a>
-      
-    
-      
-        <a href="https://x956606865.github.io/conceal-name//tags" class="menu" style="animation-delay: 0.4s">
-          标签
-        </a>
-      
-    
-      
-        <a href="https://x956606865.github.io/conceal-name//post/about/" class="menu" style="animation-delay: 0.6000000000000001s">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="site-footer">
-    <div class="py-4 text-gray-700">至大无外，至小无内。</div>
-    <a class="rss" href="https://conceal.name/atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-<div class="mask" onclick="closeMenu()">
-</div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="text-lg text-gray-700 mb-8">
-          <i class="remixicon-bookmark-line"></i> Program
-        </h2>
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
+        <i class="ri-hashtag"></i>
+        Program
+      </h1>
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
         
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
     
-      <a href="https://conceal.name/post/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://conceal.name/post-images/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://conceal.name/post/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen/">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">基于文本密度提取网页正文</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://conceal.name/post/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          基于文本密度提取网页正文
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-10-11</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <h2 id="前言">前言</h2>
 <p>近期看到了一篇蛮不错的论文《<a href="http://kns.cnki.net//KXReader/Detail?TIMESTAMP=637061287807268750&amp;DBCODE=CJFQ&amp;TABLEName=CJFDLAST2019&amp;FileName=GWDZ201908029&amp;RESULT=1&amp;SIGN=Ru92HQCAbOX5F3X475n1xKVQA7I%3d&amp;UID=WEEvREcwSlJHSldTTEYzVTE0ZUZRMGFJdytrZXZHWmJkaE5oc3RlMlJyMD0%3d%249A4hF_YAuvQ5obgVAqNKPCYcEjKensW4IQMovwHtwkF4VYPoHbKxJw!!&amp;autoLogin=0">基于文本及符号密度的网页正文提取方法</a>》，因为刚好在学习Rust写hello world，想想干脆试试能不能实现这个思路吧，于是开始尝试代码实现。</p>
 
       </div>
-      <div class="text-gray-400 text-sm font-light">2019-10-11 / 8 min read</div>
+      <a href="https://conceal.name/post/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen/" class="btn">
+        阅读更多
+      </a>
     </div>
-  </section>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://conceal.name/post-images/ji-yu-wen-ben-mi-du-ti-qu-wang-ye-zheng-wen.jpg" alt="基于文本密度提取网页正文">
+    
+  </div>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
     
-      <a href="https://conceal.name/post/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://conceal.name/post-images/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://conceal.name/post/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua/">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">[译]Node v11 中定时器和微指令的新变化</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://conceal.name/post/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          [译]Node v11 中定时器和微指令的新变化
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-03-04</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <p>本文是我之前关于  Node.js  事件循环的系列文章的简短跟进。在之前的系列文章中，我详细讨论了Timers，setImmediate，process.nextTick，Promises等等。</p>
 
       </div>
-      <div class="text-gray-400 text-sm font-light">2019-03-04 / 4 min read</div>
+      <a href="https://conceal.name/post/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua/" class="btn">
+        阅读更多
+      </a>
     </div>
-  </section>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://conceal.name/post-images/yi-node-v11-zhong-ding-shi-qi-he-wei-zhi-ling-de-xin-bian-hua.jpg" alt="[译]Node v11 中定时器和微指令的新变化">
+    
+  </div>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${2 * 0.2}s` }">
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
     
-      <a href="https://conceal.name/post/yi-gen-zhao-li-zi-xue-monorepo-yi/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://conceal.name/post-images/yi-gen-zhao-li-zi-xue-monorepo-yi.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://conceal.name/post/yi-gen-zhao-li-zi-xue-monorepo-yi/">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">[译] 跟着例子学 monorepo (一)</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://conceal.name/post/yi-gen-zhao-li-zi-xue-monorepo-yi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          [译] 跟着例子学 monorepo (一)
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-01-25</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <p>原文链接:  <a href="https://codeburst.io/monorepos-by-example-part-1-3a883b49047e">https://codeburst.io/monorepos-by-example-part-1-3a883b49047e</a></p>
 
       </div>
-      <div class="text-gray-400 text-sm font-light">2019-01-25 / 6 min read</div>
+      <a href="https://conceal.name/post/yi-gen-zhao-li-zi-xue-monorepo-yi/" class="btn">
+        阅读更多
+      </a>
     </div>
-  </section>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://conceal.name/post-images/yi-gen-zhao-li-zi-xue-monorepo-yi.jpg" alt="[译] 跟着例子学 monorepo (一)">
+    
+  </div>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${3 * 0.2}s` }">
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
     
-      <a href="https://conceal.name/post/lerna-xue-xi-san-fa-bu-pian/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://conceal.name/post-images/lerna-xue-xi-san-fa-bu-pian.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://conceal.name/post/lerna-xue-xi-san-fa-bu-pian/">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">lerna学习（三）发布篇</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://conceal.name/post/lerna-xue-xi-san-fa-bu-pian/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          lerna学习（三）发布篇
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-11-24</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <p>接着之前的思路，现在我们已经完成了项目的初始化构建，然后开始往里面写新的package。</p>
 <p>在写入的package后就需要涉及到上传的问题了，如果是开源项目，那直接使用lerna的publish命令即可。但是比如一些公司的技术沉淀之类的整合，有很多是不适合直接公开在网络上的，所以需要的是上传私有库。比起npm的私有包的方案，其实我更倾向于搭建私有npm仓库的做法。一来，代码是存储在自己的服务器的。二来，lerna也默认不允许直接发布私有包。</p>
 
       </div>
-      <div class="text-gray-400 text-sm font-light">2018-11-24 / 5 min read</div>
+      <a href="https://conceal.name/post/lerna-xue-xi-san-fa-bu-pian/" class="btn">
+        阅读更多
+      </a>
     </div>
-  </section>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://conceal.name/post-images/lerna-xue-xi-san-fa-bu-pian.jpg" alt="lerna学习（三）发布篇">
+    
+  </div>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${4 * 0.2}s` }">
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
     
-      <a href="https://conceal.name/post/lerna-xue-xi-yi-si-lu-pian/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://conceal.name/post-images/lerna-xue-xi-yi-si-lu-pian.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://conceal.name/post/lerna-xue-xi-yi-si-lu-pian/">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">lerna 学习（一）思路篇</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://conceal.name/post/lerna-xue-xi-yi-si-lu-pian/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          lerna 学习（一）思路篇
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-11-22</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <h2 id="lerna是啥">Lerna是啥?</h2>
 <blockquote>
 <p>Lerna is a tool that optimizes the workflow around managing multi-package repositories with git and npm.</p>
 </blockquote>
 
       </div>
-      <div class="text-gray-400 text-sm font-light">2018-11-22 / 5 min read</div>
+      <a href="https://conceal.name/post/lerna-xue-xi-yi-si-lu-pian/" class="btn">
+        阅读更多
+      </a>
     </div>
-  </section>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://conceal.name/post-images/lerna-xue-xi-yi-si-lu-pian.jpg" alt="lerna 学习（一）思路篇">
+    
+  </div>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${5 * 0.2}s` }">
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
     
-      <a href="https://conceal.name/post/xiang-mu-gui-fan-hua-kai-fa-tan-suo/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://conceal.name/post-images/xiang-mu-gui-fan-hua-kai-fa-tan-suo.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://conceal.name/post/xiang-mu-gui-fan-hua-kai-fa-tan-suo/">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">项目规范化开发探索</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://conceal.name/post/xiang-mu-gui-fan-hua-kai-fa-tan-suo/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          项目规范化开发探索
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-11-12</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        前因
+这次在fcc2018前端大会上，听到了余澈前辈的《开源项目维护》分享，深有收获.所以站在前人的肩膀上探索探索
+痛点
+现在前端项目开发，主要是由代码、依赖库、文档、changelog、测试文件等等几部分组成。但是由于前端开发的不规范，大...
       </div>
-      <div class="text-gray-400 text-sm font-light">2018-11-12 / 8 min read</div>
+      <a href="https://conceal.name/post/xiang-mu-gui-fan-hua-kai-fa-tan-suo/" class="btn">
+        阅读更多
+      </a>
     </div>
-  </section>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://conceal.name/post-images/xiang-mu-gui-fan-hua-kai-fa-tan-suo.jpg" alt="项目规范化开发探索">
+    
+  </div>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${6 * 0.2}s` }">
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
     
-      <a href="https://conceal.name/post/ecma-ti-an-decorator-yan-jiu/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://conceal.name/post-images/ecma-ti-an-decorator-yan-jiu.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://conceal.name/post/ecma-ti-an-decorator-yan-jiu/">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">ECMA 提案-&#39;decorator&#39; 研究</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://conceal.name/post/ecma-ti-an-decorator-yan-jiu/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          ECMA 提案-&#39;decorator&#39; 研究
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-11-04</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
         <p>//ps:根据大佬的解释，现在提案修改，不推荐使用legacy这种模式了，新版模式待研究后再更新Orz</p>
 
       </div>
-      <div class="text-gray-400 text-sm font-light">2018-11-04 / 3 min read</div>
+      <a href="https://conceal.name/post/ecma-ti-an-decorator-yan-jiu/" class="btn">
+        阅读更多
+      </a>
     </div>
-  </section>
-
-        <div class="pagination-container animated fadeIn">
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://conceal.name/post-images/ecma-ti-an-decorator-yan-jiu.png" alt="ECMA 提案-&#39;decorator&#39; 研究">
+    
+  </div>
   
-  
-</div>
-
       </div>
+
+      
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  至大无外，至小无内。
+</footer>
+
     </div>
-
-    <script src="https://conceal.name/media/prism.js"></script>  
-<script>
-
-Prism.highlightAll()
-
-let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-// This should probably be throttled.
-// Especially because it triggers during smooth scrolling.
-// https://lodash.com/docs/4.17.10#throttle
-// You could do like...
-// window.addEventListener("scroll", () => {
-//    _.throttle(doThatStuff, 100);
-// });
-// Only not doing it here to keep this Pen dependency-free.
-
-window.addEventListener("scroll", event => {
-  let fromTop = window.scrollY;
-
-  mainNavLinks.forEach((link, index) => {
-    let section = document.getElementById(decodeURI(link.hash).substring(1));
-    let nextSection = null
-    if (mainNavLinks[index + 1]) {
-      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-    }
-    if (section.offsetTop <= fromTop) {
-      if (nextSection) {
-        if (nextSection.offsetTop > fromTop) {
-          link.classList.add("current");
-        } else {
-          link.classList.remove("current");    
-        }
-      } else {
-        link.classList.add("current");
-      }
-    } else {
-      link.classList.remove("current");
-    }
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target
-          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
-          lazyImage.classList.remove("lazy")
-          lazyImageObserver.unobserve(lazyImage)
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage)
-    })
-  } else {
-    // Possibly fall back to a more compatible method here
-  }
-});
-
-const menuContainer = document.querySelector('.menu-container')
-const menus = document.querySelectorAll('.menu-container .menu')
-const mask = document.querySelector('.mask')
-const contentWrapper = document.querySelector('.content-wrapper')
-const latestArticle = document.querySelector('.latest-article')
-const readMore = document.querySelector('.read-more')
-const indexPage = document.querySelector('.index-page')
-
-const isHome = location.pathname === '/'
-if (latestArticle) {
-  latestArticle.style.display = isHome ? 'block' : 'none'
-  readMore.style.display = isHome ? 'block' : 'none'
-  indexPage.style.display = isHome ? 'none' : 'block'
-}
-
-const openMenu = () => {
-  menuContainer.classList.add('open')
-  menus.forEach(menu => {
-    menu.classList.add('animated', 'fadeInLeft')
-  })
-  mask.classList.add('open')
-  contentWrapper.classList.add('is-second')
-}
-
-const closeMenu = () => {
-  menuContainer.classList.remove('open')
-  menus.forEach(menu => {
-    menu.classList.remove('animated', 'fadeInLeft')
-  })
-  mask.classList.remove('open')
-  contentWrapper.classList.remove('is-second')
-}
-</script>
-  
-  </body>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://conceal.name/media/scripts/main.js"></script>
+</body>
 </html>
