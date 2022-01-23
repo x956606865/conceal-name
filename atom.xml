@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://conceal.name</id>
     <title>常名斋</title>
-    <updated>2022-01-23T05:56:46.188Z</updated>
+    <updated>2022-01-23T07:02:48.163Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://conceal.name"/>
     <link rel="self" href="https://conceal.name/atom.xml"/>
@@ -10,6 +10,26 @@
     <logo>https://conceal.name/images/avatar.png</logo>
     <icon>https://conceal.name/favicon.ico</icon>
     <rights>All rights reserved 2022, 常名斋</rights>
+    <entry>
+        <title type="html"><![CDATA[个人汉化 - 《hold me tight》]]></title>
+        <id>https://conceal.name/post/ge-ren-han-hua-lesslesshold-me-tightgreatergreater/</id>
+        <link href="https://conceal.name/post/ge-ren-han-hua-lesslesshold-me-tightgreatergreater/">
+        </link>
+        <updated>2022-01-23T06:44:19.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://conceal.name/post-images/1642921017339.jpg" alt="" loading="lazy"></figure>
+<h1 id="作者">作者:</h1>
+<pre><code>環月紙袋
+</code></pre>
+<h1 id="简介">简介：</h1>
+<pre><code>あいりな/りなあい(宮下愛+天王寺璃奈)本です。
+璃奈ちゃん部屋の段ボールを片付ける話、イチゴのアイスを食べる話、お泊まりに向かう話の3本立て。
+基本いちゃいちゃちょっとしんみりドキドキする感じです。
+</code></pre>
+<h1 id="下载">下载</h1>
+<pre><code>http://pan.moukeer.com/f/31601893-539056985-9c5882
+（访问密码：3289）</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[周报 2020.07.15-2020.07.19]]></title>
         <id>https://conceal.name/post/zhou-bao-20200715-20200719/</id>
@@ -582,120 +602,6 @@ WebAssembly 也叫 Wasm，目前 1.0 版本的 Wasm 已经支持 Chrome、Firefo
 <li>
 <p>SwitchKey</p>
 <figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/CleanShot20191210at112318@2x.png" alt="" loading="lazy"></figure>
-</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ 周报 2019.12.02-2019.12.06]]></title>
-        <id>https://conceal.name/post/zhou-bao-20191202-20191206/</id>
-        <link href="https://conceal.name/post/zhou-bao-20191202-20191206/">
-        </link>
-        <updated>2019-12-06T03:29:14.000Z</updated>
-        <summary type="html"><![CDATA[<p><em>(封面图作者: 画师JW)</em></p>
-]]></summary>
-        <content type="html"><![CDATA[<p><em>(封面图作者: 画师JW)</em></p>
-<!-- more -->
-<h2 id="新闻">新闻</h2>
-<ul>
-<li>
-<p><a href="https://bre.is/fTMdj3kU">Optional Chaining 进入 ES2020，不用满屏<code>x &amp;&amp; x.yyy</code>了</a></p>
-<p>微软 TypeScript 程序经理 Daniel Rosenwasser 宣布 Optional Chaning（?. ）进入 TC39 Stage 4 状态，这意味着该特性现在已经是 ES2020 标准的一部分。</p>
-</li>
-</ul>
-<h2 id="文章">文章</h2>
-<ul>
-<li>
-<p>椭圆曲线加密算法系列:<a href="https://zhuanlan.zhihu.com/p/36326221">《一》</a> <a href="https://zhuanlan.zhihu.com/p/44743146">《二》</a> <a href="https://zhuanlan.zhihu.com/p/66794410">《三》</a></p>
-<p>椭圆曲线加密算法是区块链加密技术的核心，典型的非对称加密算法。这个系列文章从最基础的椭圆曲线开始介绍，然后定义有限域，数学算式推导，一步一步的证明椭圆加密算法的思路。因为是数学推导，与代码无关，很适合作为了解学习。</p>
-</li>
-<li>
-<p><a href="https://www.toutiao.com/a6738596936057618951/">如何构建自己的产品知识库</a></p>
-</li>
-<li>
-<p><a href="https://chanind.github.io/javascript/2019/09/28/avoid-100vh-on-mobile-web.html">手机网页避免使用 100vh</a></p>
-<p>手机浏览器由于会自动显示/隐藏地址栏，所以网页如果设成高度为 100vh，会有一部分看不见，可以参考 <a href="https://css-tricks.com/the-trick-to-viewport-units-on-mobile/">CSS Tricks</a> 和 <a href="https://stackoverflow.com/questions/37112218/css3-100vh-not-constant-in-mobile-browser">Stack Overflow</a> 的解决方法。</p>
-</li>
-<li>
-<p><a href="https://theailearner.com/optical-character-recognition/">OCR 教程</a></p>
-<p>这组系列文章教你如何自己写一个 OCR（光学字符识别）系统，从照片识别出文字。</p>
-</li>
-</ul>
-<h2 id="资源">资源</h2>
-<ul>
-<li>
-<p><a href="https://github.com/fangzesheng/free-api">freeAPI</a></p>
-<p>一个收集各种免费API的仓库。目前已经有比较丰富的收集量了，自己做工具做实验的时候还不错。</p>
-</li>
-<li>
-<p><a href="https://github.com/nusr/hacker-laws-zh">nusr/hacker-laws-zh</a></p>
-<p>这是一个中文仓库，收集了各种对开发人员有用的定律、理论、原则和模式</p>
-</li>
-<li>
-<p><a href="https://github.com/goldbergyoni/nodebestpractices">Node.js 编程最佳实践</a></p>
-<p>该仓库收集 Node.js 编程的注意点，目前已经有80多条了。</p>
-</li>
-</ul>
-<h2 id="工具">工具</h2>
-<ul>
-<li>
-<p><a href="https://git-lfs.github.com/">git-lfs</a></p>
-<p>全称 <code>Git Large File Storage</code>  , 用于处理在git上存储大文件的情况，比如存储上G的文件，该工具做了相关处理，可以优化对应的上传下载速度。</p>
-</li>
-<li>
-<p><a href="https://github.com/pahen/madge">madge</a></p>
-<p>分析项目中的js文件，可视化输出相互的依赖关系。</p>
-<p>配图见附录</p>
-</li>
-<li>
-<p><a href="https://apps.apple.com/cn/app/new-file-menu/id1064959555?l=en&amp;mt=12">New File Menu</a></p>
-<p>功能很简单，就是给mac在文件夹的右键菜单中添加一个 <code>新建文件</code> 的功能</p>
-</li>
-<li>
-<p><a href="https://u.tools/">uTool</a></p>
-<p>国人产品，差不多算是alfred的仿品，不过用着很舒服，潜力很大。</p>
-</li>
-<li>
-<p><a href="https://free.com.tw/go64/">Go64</a></p>
-<p>MacOS在10.15版本不再支持32位的程序，所以不少人犹豫要不要升级，本地有多少32位程序，升级后会不会因此而造成不少损失？这个程序就是遍历本机所有可执行文件（也可以只遍历Application目录），然后列出本地有哪些app是32位的。</p>
-</li>
-<li>
-<p><a href="https://github.com/jumpserver/jumpserver">jumpserver</a></p>
-<p>非常少见的开源的堡垒机管理后台工具，试用了下，很不错，我已经开始用来管理自己的各个服务器了。</p>
-</li>
-</ul>
-<h2 id="js库">JS库</h2>
-<ul>
-<li>
-<p><a href="https://github.com/sindresorhus/boxen">sindresorhus/boxen</a></p>
-<p>用于js命令行工具的库，可以在终端生成一个类似于div的盒子，可以使用padding之类的简单方式布局。</p>
-<p>配图与实例代码见附录</p>
-</li>
-</ul>
-<h2 id="娱乐">娱乐</h2>
-<ul>
-<li><a href="https://zzkia.noddl.me:8020/">洛基亚短信图片生成 器</a></li>
-</ul>
-<h2 id="附录一">附录一</h2>
-<ul>
-<li>
-<p>madge</p>
-<figure data-type="image" tabindex="1"><img src="https://camo.githubusercontent.com/efe42226657c331807a70f06cc8cea889ef3ba8f/687474703a2f2f706168656e2e6769746875622e696f2f6d616467652f6d616467652e737667" alt="" loading="lazy"></figure>
-</li>
-<li>
-<p>boxsen</p>
-<figure data-type="image" tabindex="2"><img src="https://github.com/sindresorhus/boxen/raw/master/screenshot.png" alt="" loading="lazy"></figure>
-</li>
-</ul>
-<h2 id="附录二">附录二</h2>
-<ul>
-<li>
-<p>Boxsen</p>
-<pre><code class="language-javascript">const boxen = require('boxen');
-
-console.log(boxen('unicorn', {padding: 1}));
-console.log(boxen('unicorn', {padding: 1, margin: 1, borderStyle: 'double'}));
-</code></pre>
 </li>
 </ul>
 ]]></content>
