@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://conceal.name</id>
+    <id>https://conceal.life</id>
     <title>常名斋</title>
-    <updated>2022-01-23T07:25:16.710Z</updated>
+    <updated>2022-01-24T03:53:28.526Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://conceal.name"/>
-    <link rel="self" href="https://conceal.name/atom.xml"/>
+    <link rel="alternate" href="https://conceal.life"/>
+    <link rel="self" href="https://conceal.life/atom.xml"/>
     <subtitle>万物有名，常名斋，藏名斋。</subtitle>
-    <logo>https://conceal.name/images/avatar.png</logo>
-    <icon>https://conceal.name/favicon.ico</icon>
+    <logo>https://conceal.life/images/avatar.png</logo>
+    <icon>https://conceal.life/favicon.ico</icon>
     <rights>All rights reserved 2022, 常名斋</rights>
     <entry>
         <title type="html"><![CDATA[个人汉化 - 《hold me tight》]]></title>
-        <id>https://conceal.name/post/ge-ren-han-hua-lesslesshold-me-tightgreatergreater/</id>
-        <link href="https://conceal.name/post/ge-ren-han-hua-lesslesshold-me-tightgreatergreater/">
+        <id>https://conceal.life/post/ge-ren-han-hua-lesslesshold-me-tightgreatergreater/</id>
+        <link href="https://conceal.life/post/ge-ren-han-hua-lesslesshold-me-tightgreatergreater/">
         </link>
         <updated>2022-01-23T06:44:19.000Z</updated>
         <content type="html"><![CDATA[<h1 id="作者">作者:</h1>
@@ -31,8 +31,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2020.07.15-2020.07.19]]></title>
-        <id>https://conceal.name/post/zhou-bao-20200715-20200719/</id>
-        <link href="https://conceal.name/post/zhou-bao-20200715-20200719/">
+        <id>https://conceal.life/post/zhou-bao-20200715-20200719/</id>
+        <link href="https://conceal.life/post/zhou-bao-20200715-20200719/">
         </link>
         <updated>2020-07-19T06:02:29.000Z</updated>
         <content type="html"><![CDATA[<h2 id="文章">文章</h2>
@@ -83,8 +83,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2020.06.15-2020.06.19]]></title>
-        <id>https://conceal.name/post/zhou-bao-20200615-20200619/</id>
-        <link href="https://conceal.name/post/zhou-bao-20200615-20200619/">
+        <id>https://conceal.life/post/zhou-bao-20200615-20200619/</id>
+        <link href="https://conceal.life/post/zhou-bao-20200615-20200619/">
         </link>
         <updated>2020-06-19T03:36:34.000Z</updated>
         <summary type="html"><![CDATA[<p><em>封面图作者: Yoly。</em></p>
@@ -137,8 +137,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2020.06.08-2020.06.12]]></title>
-        <id>https://conceal.name/post/zhou-bao-20200608-20200612/</id>
-        <link href="https://conceal.name/post/zhou-bao-20200608-20200612/">
+        <id>https://conceal.life/post/zhou-bao-20200608-20200612/</id>
+        <link href="https://conceal.life/post/zhou-bao-20200608-20200612/">
         </link>
         <updated>2020-06-12T03:22:26.000Z</updated>
         <summary type="html"><![CDATA[<p><em>封面图作者: 黒井ススム</em></p>
@@ -193,8 +193,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2020.06.01-2020.06.05]]></title>
-        <id>https://conceal.name/post/zhou-bao-20200601-20200605/</id>
-        <link href="https://conceal.name/post/zhou-bao-20200601-20200605/">
+        <id>https://conceal.life/post/zhou-bao-20200601-20200605/</id>
+        <link href="https://conceal.life/post/zhou-bao-20200601-20200605/">
         </link>
         <updated>2020-06-05T03:25:41.000Z</updated>
         <summary type="html"><![CDATA[<p><em>封面图作者: vremyatsay</em></p>
@@ -253,8 +253,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.01.06-2020.01.10]]></title>
-        <id>https://conceal.name/post/zhou-bao-20190106-20200110/</id>
-        <link href="https://conceal.name/post/zhou-bao-20190106-20200110/">
+        <id>https://conceal.life/post/zhou-bao-20190106-20200110/</id>
+        <link href="https://conceal.life/post/zhou-bao-20190106-20200110/">
         </link>
         <updated>2020-01-10T03:33:26.000Z</updated>
         <summary type="html"><![CDATA[<p><em>封面图作者:耀_unripe</em></p>
@@ -316,8 +316,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.12.30-2020.01.03]]></title>
-        <id>https://conceal.name/post/zhou-bao-20191230-20200103/</id>
-        <link href="https://conceal.name/post/zhou-bao-20191230-20200103/">
+        <id>https://conceal.life/post/zhou-bao-20191230-20200103/</id>
+        <link href="https://conceal.life/post/zhou-bao-20191230-20200103/">
         </link>
         <updated>2020-01-03T03:21:54.000Z</updated>
         <summary type="html"><![CDATA[<p><em>封面图作者: SiyuMU</em></p>
@@ -386,8 +386,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.12.23-2019.12.27]]></title>
-        <id>https://conceal.name/post/zhou-bao-20191223-20191227/</id>
-        <link href="https://conceal.name/post/zhou-bao-20191223-20191227/">
+        <id>https://conceal.life/post/zhou-bao-20191223-20191227/</id>
+        <link href="https://conceal.life/post/zhou-bao-20191223-20191227/">
         </link>
         <updated>2019-12-27T03:31:01.000Z</updated>
         <summary type="html"><![CDATA[<p><em>封面图作者: zip</em></p>
@@ -452,8 +452,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.12.16-2019.12.20]]></title>
-        <id>https://conceal.name/post/zhou-bao-20191216-20191220/</id>
-        <link href="https://conceal.name/post/zhou-bao-20191216-20191220/">
+        <id>https://conceal.life/post/zhou-bao-20191216-20191220/</id>
+        <link href="https://conceal.life/post/zhou-bao-20191216-20191220/">
         </link>
         <updated>2019-12-20T06:56:05.000Z</updated>
         <summary type="html"><![CDATA[<p>封面图作者: Pnakoticat</p>
@@ -520,8 +520,8 @@ WebAssembly 也叫 Wasm，目前 1.0 版本的 Wasm 已经支持 Chrome、Firefo
     </entry>
     <entry>
         <title type="html"><![CDATA[周报 2019.12.09-2019.12.13]]></title>
-        <id>https://conceal.name/post/20191209-20191213/</id>
-        <link href="https://conceal.name/post/20191209-20191213/">
+        <id>https://conceal.life/post/20191209-20191213/</id>
+        <link href="https://conceal.life/post/20191209-20191213/">
         </link>
         <updated>2019-12-13T10:00:37.000Z</updated>
         <summary type="html"><![CDATA[<p><em>封面图作者: SiyuMU</em></p>

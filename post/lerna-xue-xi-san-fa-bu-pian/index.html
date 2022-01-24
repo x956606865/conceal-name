@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>lerna学习（三）发布篇 - 常名斋</title>
-<link rel="shortcut icon" href="https://conceal.name/favicon.ico">
+<link rel="shortcut icon" href="https://conceal.life/favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
-<link rel="stylesheet" href="https://conceal.name/media/css/tailwind.css">
-<link rel="stylesheet" href="https://conceal.name/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="lerna学习（三）发布篇 - 常名斋 - Atom Feed" href="https://conceal.name/atom.xml">
+<link rel="stylesheet" href="https://conceal.life/media/css/tailwind.css">
+<link rel="stylesheet" href="https://conceal.life/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="lerna学习（三）发布篇 - 常名斋 - Atom Feed" href="https://conceal.life/atom.xml">
 
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100208259-1"></script>
@@ -29,21 +29,21 @@
   <meta property="og:description" content="接着之前的思路，现在我们已经完成了项目的初始化构建，然后开始往里面写新的package。
 在写入的package后就需要涉及到上传的问题了，如果是开源项目，那直接使用lerna的publish命令即可。但是比如一些公司的技术沉淀之类的整合，..." />
   <meta property="og:type" content="articles">
-  <meta property="og:url" content="https://conceal.name/post/lerna-xue-xi-san-fa-bu-pian/" />
-  <meta property="og:image" content="https://conceal.name/post-images/lerna-xue-xi-san-fa-bu-pian.jpg">
+  <meta property="og:url" content="https://conceal.life/post/lerna-xue-xi-san-fa-bu-pian/" />
+  <meta property="og:image" content="https://conceal.life/post-images/lerna-xue-xi-san-fa-bu-pian.jpg">
   <meta property="og:image:height" content="630">
   <meta property="og:image:width" content="1200">
   <meta name="twitter:title" content="lerna学习（三）发布篇 - 常名斋">
   <meta name="twitter:description" content="接着之前的思路，现在我们已经完成了项目的初始化构建，然后开始往里面写新的package。
 在写入的package后就需要涉及到上传的问题了，如果是开源项目，那直接使用lerna的publish命令即可。但是比如一些公司的技术沉淀之类的整合，...">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://conceal.name/post/lerna-xue-xi-san-fa-bu-pian/">
+  <link rel="canonical" href="https://conceal.life/post/lerna-xue-xi-san-fa-bu-pian/">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
  
   
-    <link rel="stylesheet" href="https://conceal.name/media/css/prism-github.css">
+    <link rel="stylesheet" href="https://conceal.life/media/css/prism-github.css">
   
 
   
@@ -51,7 +51,7 @@
 
 <body>
   <div class="antialiased flex flex-col min-h-screen" id="app">
-    <a href="https://conceal.name" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+    <a href="https://conceal.life" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
       常名斋
     </a>
     <div class="max-w-4xl w-full mx-auto">
@@ -60,12 +60,12 @@
           lerna学习（三）发布篇
         </h1>
         
-          <img src="https://conceal.name/post-images/lerna-xue-xi-san-fa-bu-pian.jpg" alt="lerna学习（三）发布篇" class="block w-full mb-8">
+          <img src="https://conceal.life/post-images/lerna-xue-xi-san-fa-bu-pian.jpg" alt="lerna学习（三）发布篇" class="block w-full mb-8">
         
         <div class="mb-8 flex flex-wrap">
           <div class="text-gray-400 text-sm mr-4">2018-11-24 · 5 min read</div>
           
-            <a href="https://conceal.name/tag/re4eMjzigC/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+            <a href="https://conceal.life/tag/re4eMjzigC/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
               <i class="ri-hashtag"></i>
               Program
             </a>
@@ -235,11 +235,11 @@ lerna publish --registry=http://xxxx.com:7001
 </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://conceal.name/media/scripts/main.js"></script>
+  <script src="https://conceal.life/media/scripts/main.js"></script>
   
   <!-- Code Highlight -->
   
-    <script src="https://conceal.name/media/prism.js"></script>
+    <script src="https://conceal.life/media/prism.js"></script>
     <script>
       Prism.highlightAll()
     </script>
