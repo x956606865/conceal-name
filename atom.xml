@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://conceal.life</id>
     <title>常名斋</title>
-    <updated>2022-01-24T03:53:28.526Z</updated>
+    <updated>2022-02-09T11:30:43.626Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://conceal.life"/>
     <link rel="self" href="https://conceal.life/atom.xml"/>
@@ -10,6 +10,24 @@
     <logo>https://conceal.life/images/avatar.png</logo>
     <icon>https://conceal.life/favicon.ico</icon>
     <rights>All rights reserved 2022, 常名斋</rights>
+    <entry>
+        <title type="html"><![CDATA[个人汉化 - 《可可的喜欢和香音不一样》]]></title>
+        <id>https://conceal.life/post/ge-ren-han-hua-lesslesske-ke-de-xi-huan-he-xiang-yin-bu-yi-yang-greatergreater/</id>
+        <link href="https://conceal.life/post/ge-ren-han-hua-lesslesske-ke-de-xi-huan-he-xiang-yin-bu-yi-yang-greatergreater/">
+        </link>
+        <updated>2022-02-09T11:29:09.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="作者">作者:</h1>
+<pre><code>北原朋萌。
+</code></pre>
+<h1 id="简介">简介：</h1>
+<pre><code>ラブライブ!東京地区予選を惜しくも2位敗退してしまったLiella!　スクールアイドル活動で結果を出せなかった可可は、家族との約束通り上海に帰らないといけないのですが、ずっとメッセージを返信できずにいました。　大好きなかのんと離れ離れになりたくない。　そんな時、かのんが「次のラブライブのために一緒に新しい曲を作って欲しい」と可可に声をかけたのでした。
+</code></pre>
+<h1 id="下载">下载</h1>
+<pre><code>http://pan.moukeer.com/f/31601893-542237032-4306aa
+</code></pre>
+<p>（访问密码：3289）</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[个人汉化 - 《hold me tight》]]></title>
         <id>https://conceal.life/post/ge-ren-han-hua-lesslesshold-me-tightgreatergreater/</id>
@@ -514,93 +532,6 @@ WebAssembly 也叫 Wasm，目前 1.0 版本的 Wasm 已经支持 Chrome、Firefo
 <li>
 <p><a href="https://github.com/lovell/sharp">lovell/sharp</a></p>
 <p>sharp 是 Node.js 平台上相当热门的一个图像处理库，其实际上是基于 C 语言编写 的 libvips 库封装而来，因此高性能也成了 sharp 的一大卖点。sharp 可以方便地实现常见的图片编辑操作，如裁剪、格式转换、旋转变换、滤镜添加等。</p>
-</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[周报 2019.12.09-2019.12.13]]></title>
-        <id>https://conceal.life/post/20191209-20191213/</id>
-        <link href="https://conceal.life/post/20191209-20191213/">
-        </link>
-        <updated>2019-12-13T10:00:37.000Z</updated>
-        <summary type="html"><![CDATA[<p><em>封面图作者: SiyuMU</em></p>
-]]></summary>
-        <content type="html"><![CDATA[<p><em>封面图作者: SiyuMU</em></p>
-<!-- more -->
-<h2 id="新闻">新闻</h2>
-<ul>
-<li><a href="https://www.solidot.org/story?sid=62899">GitHub 计划在中国设立子公司</a></li>
-</ul>
-<h2 id="设计">设计</h2>
-<ul>
-<li>
-<p><a href="https://free.com.tw/whocanuse/">Who Can Use 檢查網頁配色對視力障礙使用者友善程度</a></p>
-</li>
-<li>
-<p><a href="https://uxdesign.cc/design-better-data-tables-4ecc99d23356">表格的体验优化</a></p>
-<p>本文采用大量示意图，展示了表格应该怎么设计，才能让用户获得最佳的使用体验。</p>
-</li>
-</ul>
-<h2 id="文章">文章</h2>
-<ul>
-<li>
-<p><a href="https://juejin.im/post/5de7c053518825125d1497e2">图形算法（邻接矩阵）</a></p>
-<p>邻接矩阵在前端的部分应用，很值得一阅。</p>
-</li>
-<li>
-<p><a href="https://mp.weixin.qq.com/s/NmIfVW4SNahp7fgn7fUPsw">深入浅出之 swr</a></p>
-<p>前不久才提到的<a href="https://github.com/zeit/swr">swr</a>这个库，才过不久就有了源码解析，不得不说目前这个库在前端的受关注度很高。</p>
-</li>
-<li>
-<p><a href="https://www.cnblogs.com/esofar/p/9291685.html">快速签发 Let's Encrypt 证书指南</a></p>
-<p>目前看到的最简单的签发https证书的方式。</p>
-</li>
-</ul>
-<h2 id="资源">资源</h2>
-<ul>
-<li>
-<p><a href="https://github.com/sindresorhus/awesome">sindresorhus/awesome</a></p>
-<p>收集awesome仓库的awesome仓库，很好，很强。</p>
-</li>
-<li>
-<p><a href="http://theory.stanford.edu/~amitp/GameProgramming/">A* 寻路算法教程</a></p>
-<p>一个免费的英文教程，介绍 A* 寻路算法，寻找两点之间的最短路径。</p>
-</li>
-<li>
-<p><a href="https://github.com/microsoft/api-guidelines/blob/master/Guidelines.md">微软 REST API 设计指南</a></p>
-<p>微软的官方文档，讲解微软对 REST API 的设计要求。</p>
-</li>
-</ul>
-<h2 id="工具">工具</h2>
-<ul>
-<li>
-<p><a href="https://github.com/itsuhane/SwitchKey">SwitchKey</a></p>
-<p>简单实用，为不同的软件添加设置默认的输入法，比如聊天软件默认拼音输入法，编辑器默认英文输入法，省去每次来回切换输入法的蛋疼。重复的事情就应该扔给代码去自动化！！</p>
-<p>使用方法，在对应的软件聚焦的时候，点击顶部图标，点击新增，就会自动记录当前软件以及当前输入法，切换输入法后再次记录会覆盖。( PS: 最新mac系统会看不到新增按钮，不过并不影响，点击最上面的空白区域就是了 )</p>
-<p>示意图见附录一</p>
-</li>
-<li>
-<p><a href="https://free.com.tw/moises-ai/">Moises.ai</a></p>
-<p>一个线上利用AI来去除音乐中人声部分的工具，据说比普通的去除人声的软件效果好很多</p>
-</li>
-</ul>
-<h2 id="js库">JS库</h2>
-<ul>
-<li>
-<p><a href="https://github.com/Valve/fingerprintjs2">fingerprint.js</a></p>
-<p>一个在浏览器生成用户指纹的 JS 库，可以识别用户，不使用 Cookie。</p>
-</li>
-<li>
-<p><a href="https://github.com/lubjs/lub">lubjs</a></p>
-<p>阿里的员工刚开源不久的用于简化命令行工具书写的框架, 用法感觉有点诡异，不过可以关注</p>
-</li>
-</ul>
-<h2 id="附录一">附录一</h2>
-<ul>
-<li>
-<p>SwitchKey</p>
-<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/CleanShot20191210at112318@2x.png" alt="" loading="lazy"></figure>
 </li>
 </ul>
 ]]></content>
