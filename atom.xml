@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://conceal.life</id>
     <title>常名斋</title>
-    <updated>2022-02-18T02:43:23.510Z</updated>
+    <updated>2022-04-16T05:47:17.909Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://conceal.life"/>
     <link rel="self" href="https://conceal.life/atom.xml"/>
@@ -10,6 +10,27 @@
     <logo>https://conceal.life/images/avatar.png</logo>
     <icon>https://conceal.life/favicon.ico</icon>
     <rights>All rights reserved 2022, 常名斋</rights>
+    <entry>
+        <title type="html"><![CDATA[安利与杂谈 (一)]]></title>
+        <id>https://conceal.life/post/an-li-yu-za-tan-yi/</id>
+        <link href="https://conceal.life/post/an-li-yu-za-tan-yi/">
+        </link>
+        <updated>2022-04-16T05:45:31.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="游戏">游戏</h3>
+<figure data-type="image" tabindex="1"><img src="https://conceal.life/post-images/1650087954006.jpeg" alt="" loading="lazy"></figure>
+<p>这周印象最深刻的游戏，应该是《巴别十书》了。作为一款乙女游戏，比较难得的女主真的是帅爆了，特别是打完美结局的时候，女主真的是让我整个人都燃起来了，差点都忘了这是一款乙女游戏了。</p>
+<p>不过也正是这样有魅力的女主，才让我玩着很有沉浸感，没有其他乙女游戏那种，好男人某明奇妙就爱上了自己的那种迷惑的感觉。女主这种魅力，有一堆男人爱上并无违和感啊23333。顺带一提，游戏的立绘和音乐都非常的棒，解密难度不高，是我这种平时不玩解密的人，也能不看攻略解决的程度。总体来说，如果你喜欢乙女向游戏，这个游戏，这个价格绝对是不亏的！</p>
+<h2 id="番剧">番剧</h2>
+<figure data-type="image" tabindex="2"><img src="https://conceal.life/post-images/1650087962508.jpg" alt="" loading="lazy"></figure>
+<p>《派对浪客诸葛孔明》这个番我算是从漫画开始追的，一直以为这种番从名字上来看，就是烂片，但是没想到原作的发展意外的很稳定，孔明的人设一直都没有崩。或许说所谓的计谋之类的剧情设计，有不少漏洞或者想当然的地方。但是不得不说，这其实是一个三国爱好者，对于三国的自己的理解的表达。番剧的制作也挺精良，歌是真滴好听，作为偶尔听下96猫的歌的路人，这次感觉要被96猫给圈粉了。</p>
+<h2 id="购物">购物</h2>
+<figure data-type="image" tabindex="3"><img src="https://conceal.life/post-images/1650087969249.jpeg" alt="" loading="lazy"></figure>
+<p>在盆友的安利下，买了这种水墨屏的单词卡，感觉意外的还不错。</p>
+<p>整体小巧的，主要按键几乎只有一个，需要的操作也基本只是单击和双击而已，可以说简洁到极点了。</p>
+<p>我个人是很依赖艾宾浩斯遗忘曲线来背单词或者复习语法的。所以之前一直是用的Anki来记单词和复习单词。不过Anki对我来说不能作为一个碎片化时间背单词的工具，不论是载体还是操作复杂度，都让我很难养成在碎片时间打开它的习惯，更多的是每天睡前定时复习的习惯。而这个单词卡，确确实实让我有了一种，坐电梯、坐地铁之类的，没事可以拿出来背上10个单词的冲动。</p>
+<p>不过目前来说，这个产品的缺点还是有不少的，可能是因为主要支持英语的原因，目前虽然可以用来背日语单词，但是缺少例句，很容易导致单词背了不会用。而且他的自定义辞书导入，只能导入想背的英语单词，不能导入日语的，挺蛋疼的......</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[百合向漫画推荐（二）]]></title>
         <id>https://conceal.life/post/bai-he-xiang-man-hua-tui-jian-er/</id>
@@ -447,72 +468,6 @@
 <p>使用Javascript编写的图形节点引擎和编辑器。</p>
 </li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[周报 2019.12.23-2019.12.27]]></title>
-        <id>https://conceal.life/post/zhou-bao-20191223-20191227/</id>
-        <link href="https://conceal.life/post/zhou-bao-20191223-20191227/">
-        </link>
-        <updated>2019-12-27T03:31:01.000Z</updated>
-        <summary type="html"><![CDATA[<p><em>封面图作者: zip</em></p>
-]]></summary>
-        <content type="html"><![CDATA[<p><em>封面图作者: zip</em></p>
-<!-- more -->
-<h2 id="新闻">新闻</h2>
-<ul>
-<li>
-<p><a href="https://v8.dev/blog/v8-release-80">JavaScript引擎V8发布v8.0版本</a></p>
-<p>12月18日，JavaScript引擎V8发布v8.0版本，此版本除了修复一些 bug外，还带来了性能的提高。该版本通过指针压缩，将唯一的低位存储到堆中即可节省内存资源。经过测试，平均节省40％ 的堆内存。更多详情，可从官方渠道了解更多。目前该版本是预览版，正式版将于几个星期后随 Chrome 80 Stable 一起发布。</p>
-</li>
-</ul>
-<h2 id="文章">文章</h2>
-<ul>
-<li>
-<p><a href="https://bre.is/BFhuTv7B">JavaScript, ES6, ES7, ES10 where are we?</a></p>
-<p>介绍了现在ES新特性分别处于stage 0,1,2,3,4阶段的特性有哪些，哪些提案已经被拒绝。( PS:observer提案被拒绝了就很难受 )</p>
-</li>
-<li>
-<p><a href="https://mp.weixin.qq.com/s/cSGz9Zf4HYEkxN_2qkIa1g">机器学习中的因果关系</a></p>
-<p>原文章标题满满的公众号营销的感觉。但是实际内容很不错，作为扩展阅读非常合适，不需要深入研究过机器学习。</p>
-</li>
-<li>
-<p><a href="https://mp.weixin.qq.com/s/BH-gmMpHUkMvBcSBgJWnwA">JWT攻击手册：如何入侵你的Token</a></p>
-<p>jwt的安全相关问题，很多值得注意以及检查的点。</p>
-</li>
-<li>
-<p><a href="https://juejin.im/post/5dfc709b51882579dc6f7f71">你知道 Chrome Devtool Performance报告中的DCL, L, FP, FCP, FMP, LCP 的含义吗</a></p>
-<p>值得看一看</p>
-</li>
-</ul>
-<h2 id="资源">资源</h2>
-<ul>
-<li>
-<p><a href="https://selfhostedsource.tech/self-hosted">self-hosted</a></p>
-<p>一个资源集，持续收集各种可以自己部署的开源优质服务</p>
-</li>
-<li>
-<p><a href="https://github.com/xindoo/eng-practices-cn">谷歌工程实践</a></p>
-<p>谷歌官方的工程实践文档，这是汉化版，目前只汉化了Code Review部分，值得了解</p>
-</li>
-</ul>
-<h2 id="工具">工具</h2>
-<ul>
-<li>
-<p><a href="https://github.com/voidcosmos/npkill">voidcosmos/npkill</a></p>
-<p>列出当前所有目录中的node_moudles目录，以及其大小，然后选择删除。可以瞬间释放大量内存</p>
-</li>
-</ul>
-<h2 id="js库">JS库</h2>
-<ul>
-<li>
-<p><a href="https://github.com/jagenjo/litegraph.js">jagenjo/litegraph.js</a></p>
-<p>使用Javascript编写的图形节点引擎和编辑器。</p>
-</li>
-</ul>
-<h2 id="备注">备注</h2>
-<p>每期周报如果有特别重要的内容，十分值得关注的内容，会被打上&quot;值得关注&quot;标签，然后放到<a href="https://www.notion.so/aj0k3r/7790dd5fcb5e4da2b148c6da46d5298b?v=8490bb6c307443f7a496181fc0582ee3">这个地方</a></p>
-<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/tanlukang/inceptionpad-wiki/images/xiabin/2019-12-27@2x.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>
